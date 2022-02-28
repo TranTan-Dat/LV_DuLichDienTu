@@ -1,5 +1,0 @@
-@startuml demo
-class Dummy {
-  String data
-  void methods()
-}
