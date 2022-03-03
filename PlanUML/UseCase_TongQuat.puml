@@ -6,7 +6,8 @@ actor "Du khách" as DK
 actor "Khách hàng" as KH 
 rectangle DuLichDienTu {
   usecase "Cung cấp dịch vụ" as DV
-  usecase "Quản lý loại dịch vụ" as QLLDV
+  'Loại dv nằm trong
+  ' usecase "Quản lý loại dịch vụ" as QLLDV
   usecase "Quản lý lịch trình du lịch" as QLLT
   usecase "Đăng Nhập" as DangNhap
   ' usecase "Biên Nhận" as BienNhan
@@ -16,22 +17,27 @@ rectangle DuLichDienTu {
   usecase "Nhà cung cấp dịch vụ" as DangKy_NCC
   usecase "du khách" as DangKy_DK
   usecase "Lịch trình du lịch" as LTDL
-  usecase "Tài Khoản" as TK
+  usecase "Tài khoản khách hàng" as TK
   usecase "Loại dịch vụ" as LDV
+  usecase "Quản lý nhà cung cấp" as QLNCC
+  usecase "Địa điểm du lịch" as DD
 }
-NCC --> DV
-QL --> QLLDV
+DV <--- NCC
+' QL --> QLLDV
+QL --> QLNCC
 QL --> QLLT
 QL --> TK
 QL --> LDV
+QL --> DD
 
 TT <-- DK
 ThongTinCaNhan <-- DK  
 LTDL <--- DK
 
 QLLT ..> DangNhap : include
-QLLDV ..> DangNhap : include
-DV ..> DangNhap : include
+' QLLDV ..> DangNhap : include
+QLNCC ..> DangNhap :include
+DV .> DangNhap : include
 TK ..> DangNhap : include
 LDV ..> DangNhap : include
 

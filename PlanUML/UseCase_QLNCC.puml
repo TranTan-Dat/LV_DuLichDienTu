@@ -1,0 +1,45 @@
+@startuml So Do class
+
+' Dịch vụ du lịch ở đây bao gồm các khu vui chơi,
+' ăn ngủ nghỉ, dịch vụ đi lại, các dịch vụ sẽ có loại DV
+'Dịch vụ sẽ gồm có:
+'1. Phương tiện để đi lại (gồm có phương tiện đi đến nơi du lịch và phương tiện đi lại ở điểm du lịch)
+'2. Tham quan và ăn uống
+'3. chỗ ngủ
+
+Class LOAIDICHVU{}
+
+class NHACUNGCAP{}
+
+class LICHTRINHDULICH{
+
+  LTDL_ThanhToan()
+}
+
+
+class DUKHACH{}
+Class THANHTOAN{}
+Class CHITIETTHANHTOAN{}
+
+
+class LOAIDICHVU{}
+class PHUONGTIENDILAI{}
+Class ANUONGTHAMQUAN{}
+Class NGHINGOI{}
+
+
+' ------------------
+DUKHACH - LICHTRINHDULICH
+LICHTRINHDULICH --- CUNGCAPDICHVU
+CUNGCAPDICHVU -- NHACUNGCAP
+NHACUNGCAP - LOAIDICHVU
+LICHTRINHDULICH -- THANHTOAN
+THANHTOAN - CHITIETTHANHTOAN
+CHITIETTHANHTOAN - CUNGCAPDICHVU
+
+
+CUNGCAPDICHVU <|-- NGHINGOI
+CUNGCAPDICHVU <|-- ANUONGTHAMQUAN
+CUNGCAPDICHVU <|-- PHUONGTIENDILAI
+
+@enduml
