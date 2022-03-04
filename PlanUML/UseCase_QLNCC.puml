@@ -7,39 +7,74 @@
 '2. Tham quan và ăn uống
 '3. chỗ ngủ
 
-Class LOAIDICHVU{}
+
+
+Class LOAIDICHVU{
+  LDV_ID
+}
 
 class NHACUNGCAP{}
 
 class LICHTRINHDULICH{
 
-  LTDL_ThanhToan()
+  Them()
+  Sua()
+  ThanhToan()
 }
 
 
-class DUKHACH{}
+class DUKHACH{
+  DK_TAIKHOAN: String
+  DK_MATKHAU: String
+  DK_HOTEN: String
+  DK_NGAYSINH: Datetime
+  DK_SDT: String
+  SuaThongTin()
+  ThanhToan()
+}
 Class THANHTOAN{}
-Class CHITIETTHANHTOAN{}
+' Class CHITIETTHANHTOAN{}
+Class CUNGCAPDICHVU{
+  CCDV_ID 
+}
+'một lịch trình thì có 1-> n ngày, 1 ngày đi sẽ có nhiều dịch vụ bởi nhà cung cấp dv
+'1 ncc_DVu -> cung cấp cho nhiều lịch trình 
+'=> thực thể yếu => thêm chi tiết lịch trình du lịch mỗi ngày đi sẽ là 1 chi tiết
 
+  ' chỗ rối ở đây nếu hôm nay đi 2 chỗ mai đi 4 chỗ thì ghi sao
+class CHITIETLICHTRINHDULICH{
+  CTLTDL_ID: String
+  CTLTDL_NGAY: Datetime
+
+}
+
+'1 nhà cung cấp có thể có nhiều loại dịch vụ du lịch
+class CHITIETCUNGCAPDICHVU{
+  CTCCDV_ID:
+  NCC_ID:
+  CCDV_ID:
+}
 
 class LOAIDICHVU{}
-class PHUONGTIENDILAI{}
-Class ANUONGTHAMQUAN{}
-Class NGHINGOI{}
+' class PHUONGTIENDILAI{}
+' Class ANUONGTHAMQUAN{}
+' Class NGHINGOI{}
 
 
 ' ------------------
 DUKHACH - LICHTRINHDULICH
-LICHTRINHDULICH --- CUNGCAPDICHVU
-CUNGCAPDICHVU -- NHACUNGCAP
+CUNGCAPDICHVU -- CHITIETCUNGCAPDICHVU
+CHITIETCUNGCAPDICHVU - NHACUNGCAP
 NHACUNGCAP - LOAIDICHVU
 LICHTRINHDULICH -- THANHTOAN
-THANHTOAN - CHITIETTHANHTOAN
-CHITIETTHANHTOAN - CUNGCAPDICHVU
+' THANHTOAN -- CHITIETTHANHTOAN
+' CHITIETTHANHTOAN --- CUNGCAPDICHVU
+LICHTRINHDULICH - CHITIETLICHTRINHDULICH
+CHITIETLICHTRINHDULICH -- CUNGCAPDICHVU
+LOAIDICHVU -- CUNGCAPDICHVU
 
-
-CUNGCAPDICHVU <|-- NGHINGOI
-CUNGCAPDICHVU <|-- ANUONGTHAMQUAN
-CUNGCAPDICHVU <|-- PHUONGTIENDILAI
+' CUNGCAPDICHVU <|-- NGHINGOI
+' CUNGCAPDICHVU <|-- ANUONGTHAMQUAN
+' CUNGCAPDICHVU <|-- PHUONGTIENDILAI
 
 @enduml
