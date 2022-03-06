@@ -32,7 +32,7 @@ QL --> DD
 
 TT <-- DK
 ThongTinCaNhan <-- DK  
-LTDL <--- DK
+LTDL <-- DK
 
 QLLT ..> DangNhap : include
 ' QLLDV ..> DangNhap : include
@@ -45,7 +45,5 @@ DangNhap <.. LTDL : include
 DangNhap <.. ThongTinCaNhan : include
 DangNhap <.. TT : include
 
-DangKy <. DangKy_NCC : extend
-DangKy <.. DangKy_DK : extend
 KH--> DangKy
 @enduml

@@ -1,0 +1,16 @@
+@startuml Hệ Thống Sàn điện tử
+left to right direction
+actor "Nhà cung cấp DV" as NCC
+actor "Quản lý" as QL
+actor "Khách hàng" as KH 
+
+rectangle DuLichDienTu {
+    
+  usecase "Quản lý loại dịch vụ" as LDV
+  usecase "Quản lý nhà cung cấp" as QLNCC
+  usecase "Đăng Ký" as DangKy
+}
+QL -- LDV
+QL -- QLNCC
+KH -- DangKy
+@enduml
