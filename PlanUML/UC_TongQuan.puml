@@ -8,9 +8,12 @@ rectangle DuLichDienTu {
     
   usecase "Quản lý loại dịch vụ" as LDV
   usecase "Quản lý nhà cung cấp" as QLNCC
+  usecase "Thêm nhà cung cấp" as Themncc
   usecase "Đăng Ký" as DangKy
 }
 QL -- LDV
 QL -- QLNCC
 KH -- DangKy
+Themncc -- NCC
+QLNCC -- Themncc
 @enduml
