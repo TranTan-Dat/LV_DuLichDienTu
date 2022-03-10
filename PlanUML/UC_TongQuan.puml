@@ -2,18 +2,25 @@
 left to right direction
 actor "Nhà cung cấp DV" as NCC
 actor "Quản lý" as QL
-actor "Khách hàng" as KH 
+actor "Du khách" as DK
 
-rectangle DuLichDienTu {
-    
+rectangle DuLichDienTu {    
   usecase "Quản lý loại dịch vụ" as LDV
   usecase "Quản lý nhà cung cấp" as QLNCC
   usecase "Thêm nhà cung cấp" as Themncc
-  usecase "Đăng Ký" as DangKy
+  usecase "Quản lý thông tin du khách" as QLDK  
+  usecase "Thêm tài khoản du khách" as ThemTKDK
+  usecase "Thêm dịch vụ cung cấp" as DVCC
 }
 QL -- LDV
 QL -- QLNCC
-KH -- DangKy
+QL -- QLDK
 Themncc -- NCC
+NCC - DVCC
 QLNCC -- Themncc
+DK - ThemTKDK
+
+
+
+QLDK -- ThemTKDK
 @enduml
