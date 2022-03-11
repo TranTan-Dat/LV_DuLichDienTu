@@ -3,24 +3,32 @@ left to right direction
 actor "Nhà cung cấp DV" as NCC
 actor "Quản lý" as QL
 actor "Du khách" as DK
+actor "Khách hàng" as KH
 
 rectangle DuLichDienTu {    
   usecase "Quản lý loại dịch vụ" as LDV
-  usecase "Quản lý nhà cung cấp" as QLNCC
-  usecase "Thêm nhà cung cấp" as Themncc
-  usecase "Quản lý thông tin du khách" as QLDK  
+  usecase "Thêm nhà cung cấp" as ThemNCC
+  usecase "Sửa nhà cung cấp" as SuaNCC
+  usecase "Sửa thông tin tài khoản" as SuaTTTK
   usecase "Thêm tài khoản du khách" as ThemTKDK
   usecase "Thêm dịch vụ cung cấp" as DVCC
+  usecase "Đăng ký" as DKy 
+  usecase "Đăng nhập"  as DNhap 
+  
 }
 QL -- LDV
-QL -- QLNCC
-QL -- QLDK
-Themncc -- NCC
-NCC - DVCC
-QLNCC -- Themncc
-DK - ThemTKDK
+QL -- SuaNCC
+QL -- SuaTTTK
+NCC -- ThemNCC
+NCC -- DVCC 
+NCC - SuaNCC
+ThemTKDK --- DK 
+SuaTTTK -- DK
 
-
-
-QLDK -- ThemTKDK
+DVCC ..> DNhap : include
+ThemNCC ..> DNhap : include
+LDV ..> DNhap : include
+SuaNCC ..> DNhap : include
+SuaTTTK ..> DNhap : include
+KH -- DKy
 @enduml
