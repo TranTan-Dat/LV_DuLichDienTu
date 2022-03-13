@@ -8,7 +8,7 @@ actor "Khách hàng" as KH
 rectangle DuLichDienTu {    
   usecase "Quản lý loại dịch vụ" as LDV
   usecase "Thêm nhà cung cấp" as ThemNCC
-  usecase "Sửa nhà cung cấp" as SuaNCC
+  usecase "Cập nhật nhà cung cấp" as SuaNCC
   usecase "Sửa thông tin tài khoản" as SuaTTTK
   usecase "Thêm tài khoản du khách" as ThemTKDK
   usecase "Thêm dịch vụ cung cấp" as DVCC
