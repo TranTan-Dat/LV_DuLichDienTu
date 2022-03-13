@@ -3347,7 +3347,10 @@ ul.project_files li a i {
   font-size: 35px;
 }
 .login {
-  background: #f7f7f7;
+  /* background: #f7f7f7; */
+  background-image: url('../../production/images/bg_img.png');
+  background-size: 100%,100%;
+  background-repeat: no-repeat;
 }
 .login .fa-paw {
   font-size: 26px;
@@ -3357,8 +3360,8 @@ a.hiddenanchor {
 }
 .login_wrapper {
   right: 0;
-  margin: 5% auto 0;
-  max-width: 350px;
+  margin: 12% auto 0;
+  max-width: 400px;
   position: relative;
 }
 .cropper .docs-cropped .modal-body > canvas,
@@ -3368,7 +3371,7 @@ a.hiddenanchor {
   max-width: 100%;
 }
 .login_form,
-.registration_form {
+/* .registration_form {
   position: absolute;
   top: 0;
   width: 100%;
@@ -3377,10 +3380,40 @@ a.hiddenanchor {
   z-index: 21;
   opacity: 0;
   width: 100%;
+} */
+/* Custom form du khách và ncc đăng ký */
+* .registration_Tourist_form,
+* .registration_Business_form {
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
+.registration_Tourist_form,
+.registration_Business_form {
+  z-index: 21;
+  opacity: 0;
+  width: 100%;
+}
+.TypeUser_form {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.TypeUser_form {
+  z-index: 21;
+  opacity: 0;
+  width: 100%;
+}
+
 .login_form {
   z-index: 22;
 }
+ /* Đăng nhập thì -> form login
+ đăng ký thì nhắm vào form đk */
+ /* -> đổi lại đăng ký nhắm tới form chọn loại người dùng 
+ -> mới chọn rồi mới cho qua form đk */
+/* 
+ ---CODE MẪU---
 #signin:target ~ .login_wrapper .login_form,
 #signup:target ~ .login_wrapper .registration_form {
   z-index: 22;
@@ -3389,6 +3422,25 @@ a.hiddenanchor {
 }
 #signin:target ~ .login_wrapper .registration_form,
 #signup:target ~ .login_wrapper .login_form {
+  animation-name: fadeOutLeft;
+} */
+
+
+/* Custom css TypeUser */
+#signin:target ~ .login_wrapper .login_form,
+#TypeUser:target ~ .login_wrapper .TypeUser_form,
+#Tourist:target ~ .login_wrapper .registration_Tourist_form,
+#Business:target ~ .login_wrapper .registration_Business_form 
+ {
+  z-index: 22;
+  animation-name: fadeInLeft;
+  animation-delay: 0.1s;
+}
+
+#signin:target ~ .login_wrapper .TypeUser_form,
+#TypeUser:target ~ .login_wrapper .login_form,
+#Tourist:target ~ .login_wrapper .login_form,
+#Business:target ~ .login_wrapper * {
   animation-name: fadeOutLeft;
 }
 .animate {
@@ -3442,7 +3494,7 @@ form:after {
   font: 400 25px Helvetica, Arial, sans-serif;
   letter-spacing: -0.05em;
   line-height: 20px;
-  margin: 10px 0 30px;
+  margin: 10px 0 10px;
 }
 .login_content h1:after,
 .login_content h1:before {
@@ -3450,7 +3502,7 @@ form:after {
   height: 1px;
   position: absolute;
   top: 10px;
-  width: 20%;
+  width: 15%;
 }
 .login_content h1:after {
   background: #7e7e7e;
