@@ -1,12 +1,49 @@
 @startuml SoDoUC
 left to right direction
-actor "Food Critic" as fc
+actor "Quản lý" as QL
+actor "Khách Hàng" as KH
+actor "Nhà cung cấp" as NCC
+actor "Du khách" as DKhach
+
+
 rectangle  SoDoTongQuan{
-  usecase "Eat Food" as UC1
-  usecase "Pay for Food" as UC2
-  usecase "Drink" as UC3
+  usecase "Quản lý loại dịch vụ" as QLLDV
+  usecase "Quản lý loại hình dịch vụ" as QLLHDV
+  usecase "Quản lý thông tin điểm đến" as QLTTDD
+
+  usecase "Cập nhật địa điểm " as CapNhat_TTDD
+  usecase "Đăng ký địa điểm mới" as Them_TTDD
+  usecase "Cập nhật thông tin khách hàng" as CapNhat_TTKH
+
+  usecase "Quản lý thông tin khách hàng" as QLTTKH
+  usecase "Đăng ký" as DKy
+  usecase "Đăng nhập" as DNhap
+  usecase "Quản lý lịch trình chuyến đi" as QLCD
+  
 }
-fc --> UC1
-fc --> UC2
-fc --> UC3
+CapNhat_TTDD -- QLTTDD
+Them_TTDD -- QLTTDD
+ QLTTKH - DKy
+CapNhat_TTKH - QLTTKH
+
+KH --- CapNhat_TTKH
+KH -- DKy
+
+QLTTDD - QL
+QLLHDV ---- QL
+QLTTKH - QL
+QLLDV -- QL
+
+
+
+NCC --|> KH
+
+DKhach --|> KH
+
+NCC - CapNhat_TTDD
+NCC - Them_TTDD
+
+
+DKhach -- QLCD
+
 @enduml
