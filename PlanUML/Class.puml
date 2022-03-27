@@ -1,5 +1,5 @@
 @startuml So Do class
-
+ skinparam linetype ortho
 ' Dịch vụ du lịch ở đây bao gồm các khu vui chơi,
 ' ăn ngủ nghỉ, dịch vụ đi lại, các dịch vụ sẽ có loại DV
 'Dịch vụ sẽ gồm có:
@@ -9,103 +9,74 @@
 
 
 
-Class DANHSACHDICHVU{
-  DSDV_ID
-  DSDV_TEN
-  Them()
-  Sua()
-}
-
 class NHACUNGCAP{
-  NCC_ID
-  NCC_Ten
-  NCC_SOLUONGDICHVU
-  NCC_DANHSACHDICHVU
-  Them()
-  Sua()
+  NCC_SOLUONGDICHVUCUNGCAP: Int
 }
 
-class LICHTRINHDULICH{
-  LTDL_ID: String
-  LTDL_Ten: String
-  DK_HOTEN: String
-  LTDL_NgayBatDau: String
-  LTDL_NgayKetThuc: String
+class CHITIETNHACUNGCAP{
+  CTNCC_ID: String
 
-
-  Them()
-  Sua()
-  ThanhToan()
 }
 
+class THONGTINDIADIEM{
+  THONGTINDIADIEM_ID: String
+
+}
 
 class DUKHACH{
-  DK_TAIKHOAN: String
-  DK_MATKHAU: String
-  DK_HOTEN: String
-  DK_NGAYSINH: Datetime
-  DK_SDT: String
-  SuaThongTin()
-  ThanhToan()
-}
-Class THANHTOAN{}
-Class CHITIETTHANHTOAN{
 
 }
-
-Class CUNGCAPDICHVU{
-  CCDV_ID : String
-  CCDV_Ten: StrinG
-  CCDV_LOAIDICHVU: String
-  CCDV_LoaiDV: String
+class LICHTRINHDULICH{
+  LTDL_ID: String
+  LTDL_TEN: String 
+  LTDL_NGAYBATDAU: Date 
+  LTDL_NGAYKETTHUC: Date
+  LTDL_SOLUONGDIEMDEN: Int
 }
-'một lịch trình thì có 1-> n ngày, 1 ngày đi sẽ có nhiều dịch vụ bởi nhà cung cấp dv
-'1 ncc_DVu -> cung cấp cho nhiều lịch trình 
-'=> thực thể yếu => thêm chi tiết lịch trình du lịch mỗi ngày đi sẽ là 1 chi tiết
-
-  ' chỗ rối ở đây nếu hôm nay đi 2 chỗ mai đi 4 chỗ thì ghi sao
 class CHITIETLICHTRINHDULICH{
-  CTLTDL_ID: String
-  CTLTDL_NGAY: Datetime
-  CTLTDL_DIADIEM: String
-  CTLTDL_THANHPHO: String
+ CTLTDL_ID: String
+
+}
+
+class KHACHHANG{
+  KH_ID: String
+  KH_Ten: String
+  KH_SDT: String
+  KH_DIACHI: String
+
+}
+
+class LOAIKHACHHANG{
+
+  LKH_ID: String
+  LKH_TEN: String
+
+}
+
+class LOAIDICHVU{
+  LDV_ID: String
+  LDV_TEN: String
+}
+
+class LOAIHINHDICHVU{
+  LHDV_ID: String
+  LHDV_TEN: String
 }
 
 
-'1 nhà cung cấp có thể có nhiều loại dịch vụ du lịch
-class CHITIETDANHSACHDICHVU{
-  CTDSDV_ID
-  DSDV_ID
-  NCC_ID
-  
-}
+KHACHHANG "*"-"1" LOAIKHACHHANG
 
-class DANHSACHDICHVU{}
-' class PHUONGTIENDILAI{}
-' Class ANUONGTHAMQUAN{}
-' Class NGHINGOI{}
+NHACUNGCAP "1"-"*" CHITIETNHACUNGCAP
+CHITIETNHACUNGCAP "*"-"1" LOAIDICHVU 
+LOAIDICHVU "1"--"*" LOAIHINHDICHVU
+THONGTINDIADIEM "*"-"1" NHACUNGCAP
 
 
-' ------------------
+LICHTRINHDULICH "*"-"1" DUKHACH
+CHITIETLICHTRINHDULICH "*"-"1" LICHTRINHDULICH
+THONGTINDIADIEM "*"--"*" CHITIETLICHTRINHDULICH
 
-CHITIETDANHSACHDICHVU -- NHACUNGCAP
-CHITIETDANHSACHDICHVU - DANHSACHDICHVU
-
-
-
-' DUKHACH - LICHTRINHDULICH
-
-
-' NHACUNGCAP - DANHSACHDICHVU
-' LICHTRINHDULICH -- THANHTOAN
-' THANHTOAN - CHITIETTHANHTOAN
-' ' CHITIETTHANHTOAN --- CUNGCAPDICHVU
-' LICHTRINHDULICH -- CHITIETLICHTRINHDULICH
-' CHITIETLICHTRINHDULICH -- CUNGCAPDICHVU
-' DANHSACHDICHVU -- CUNGCAPDICHVU
-
-' CUNGCAPDICHVU <|-- NGHINGOI
-' CUNGCAPDICHVU <|-- ANUONGTHAMQUAN
-' CUNGCAPDICHVU <|-- PHUONGTIENDILAI
+NHACUNGCAP ---|> KHACHHANG
+KHACHHANG <|-- DUKHACH
 
 @enduml
