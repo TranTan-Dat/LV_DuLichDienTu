@@ -23,10 +23,10 @@ rectangle  SoDoTongQuan{
 }
 CapNhat_TTDD -- QLTTDD
 Them_TTDD -- QLTTDD
- QLTTKH - DKy
-CapNhat_TTKH - QLTTKH
+QLTTKH - DKy
+CapNhat_TTKH .> QLTTKH : extend
 
-KH --- CapNhat_TTKH
+KH -- CapNhat_TTKH
 KH -- DKy
 
 QLTTDD - QL
