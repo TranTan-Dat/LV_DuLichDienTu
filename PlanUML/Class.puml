@@ -20,22 +20,23 @@ class CHITIETNHACUNGCAP{
 
 class THONGTINDIADIEM{
   THONGTINDIADIEM_ID: String
-
+  THONGTINDIADIEM_DIACHI: String
+  THONGTINDIADIEM_SDT: String
 }
 
 class DUKHACH{
-
+  DK_SDT: String
 }
 class LICHTRINHDULICH{
   LTDL_ID: String
   LTDL_TEN: String 
   LTDL_NGAYBATDAU: Date 
   LTDL_NGAYKETTHUC: Date
-  LTDL_SOLUONGDIEMDEN: Int
 }
 class LICHTRINHTRONGNGAY{
  CTLTDL_ID: String
- NGAYDI: Date 23/4
+ CTLTDL_NGAYDI: Date
+
 
 }
 
@@ -45,10 +46,14 @@ class LICHTRINHTRONGNGAY{
 
 class KHACHHANG{
   KH_ID: String
-  KH_Ten: String
-  KH_SDT: String
-  KH_DIACHI: String
+  KH_MATKHAU: String
+  KH_HoTen: String
+  KH_HinhAnh: String
+  KH_EMAIL: String
 
+  
+  DangNhap()
+  DangXuat()
 }
 
 class LOAIKHACHHANG{
