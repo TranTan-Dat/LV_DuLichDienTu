@@ -1,99 +1,92 @@
-@startuml So Do class
+@startuml SoDoclass
  skinparam linetype ortho
 ' Dịch vụ du lịch ở đây bao gồm các khu vui chơi,
 ' ăn ngủ nghỉ, dịch vụ đi lại, các dịch vụ sẽ có loại DV
 'Dịch vụ sẽ gồm có:
 '1. Phương tiện để đi lại (gồm có phương tiện đi đến nơi du lịch và phương tiện đi lại ở điểm du lịch)
-'2. Tham quan và ăn uống
-'3. chỗ ngủ
+'2. Tham quan 
+'3.ăn uống
+'4. chỗ ngủ
 
 
 
-class NHACUNGCAP{
-  NCC_SOLUONGDICHVUCUNGCAP: Int
+class NhaCungCap{
+  NhaCungCap_SoLuongDichVuCungCap: Int
 }
 
-class CHITIETNHACUNGCAP{
-  CTNCC_ID: String
+class ChiTietNhaCungCap{
+  ChiTietNhaCungCap_Id: String
 
 }
 
-class THONGTINDIADIEM{
-  THONGTINDIADIEM_ID: String
-  THONGTINDIADIEM_DIACHI: String
-  THONGTINDIADIEM_SDT: String
+class ThongTinDiaDiem{
+  ThongTinDiaDiem_Id: String
+  ThongTinDiaDiem_DiaChi: String
+  ThongTinDiaDiem_Sdt: String
 }
-class TRANGTHAIHOATDONG{
-  TTHD_ID: String
+class TrangThaiHoatDong{
+  TTHD_Id: String
   TTHD_Ten: String
 }
 
-class DUKHACH{
-  DK_SDT: String
+class DuKhach{
+  DuKhach_SDT: String
 }
-class LICHTRINHDULICH{
-  LTDL_ID: String
-  LTDL_TEN: String 
-  LTDL_NGAYBATDAU: Date 
-  LTDL_NGAYKETTHUC: Date
+class LichTrinhDuLich{
+  LichTrinhDuLich_Id: String
+  LichTrinhDuLich_Ten: String 
+  LichTrinhDuLich_NgayBatDau: Date 
+  LichTrinhDuLich_NgayKetThuc: Date
 }
-class LICHTRINHTRONGNGAY{
- CTLTDL_ID: String
- CTLTDL_NGAYDI: Date
-
+class LichTrinhTrongNgay{
+ LichTrinhTrongNgay_Id: String
+ LichTrinhTrongNgay_NgayDi: Date
 
 }
 
-' class chitiet{
-
-' }
-
-class KHACHHANG{
-  KH_ID: String
-  KH_MATKHAU: String
+class KhachHang{
+  KH_Id: String
+  KH_MatKhau: String
   KH_HoTen: String
   KH_HinhAnh: String
-  KH_EMAIL: String
+  KH_Email: String
 
   
   DangNhap()
   DangXuat()
 }
 
-class LOAIKHACHHANG{
+class LoaiKhachHang{
 
-  LKH_ID: String
-  LKH_TEN: String
+  LoaiKhachHang_Id: String
+  LoaiKhachHang_Ten: String
 
 }
 
-class LOAIDICHVU{
-  LDV_ID: String
-  LDV_TEN: String
+class LoaIdichVu{
+  LoaIdichVu_Id: String
+  LoaIdichVu_Ten: String
 }
 
-class LOAIHINHDICHVU{
-  LHDV_ID: String
-  LHDV_TEN: String
+class LoaiHinhDichVu{
+  LoaiHinhDichVu_Id: String
+  LoaiHinhDichVu_Ten: String
 }
-TRANGTHAIHOATDONG "1"-"*" THONGTINDIADIEM
+TrangThaiHoatDong "1"-"*" ThongTinDiaDiem
 
-KHACHHANG "*"-"1" LOAIKHACHHANG
+KhachHang "*"-"1" LoaiKhachHang
 
-NHACUNGCAP "1"-"*" CHITIETNHACUNGCAP
-CHITIETNHACUNGCAP "*"-"1" LOAIDICHVU 
-LOAIDICHVU "1"--"*" LOAIHINHDICHVU
-THONGTINDIADIEM "*"-"1" NHACUNGCAP
+NhaCungCap "1"-"*" ChiTietNhaCungCap
+ChiTietNhaCungCap "*"-"1" LoaIdichVu 
+LoaIdichVu "1"--"*" LoaiHinhDichVu
+ThongTinDiaDiem "*"-"1" NhaCungCap
 
 
-LICHTRINHDULICH "*"-"1" DUKHACH
-LICHTRINHTRONGNGAY "*"-"1" LICHTRINHDULICH
-THONGTINDIADIEM "*"--"1" LICHTRINHTRONGNGAY
+LichTrinhDuLich "*"-"1" DuKhach
+LichTrinhTrongNgay "*"-"1" LichTrinhDuLich
+ThongTinDiaDiem "*"--"1" LichTrinhTrongNgay
 
-' THONGTINDIADIEM "*"-"1" chitiet
-' chitiet "1"-"*" LICHTRINHTRONGNGAY
-
-NHACUNGCAP ---|> KHACHHANG
-KHACHHANG <|-- DUKHACH
+NhaCungCap ---|> KhachHang
+KhachHang <|-- DuKhach
 
 @enduml
