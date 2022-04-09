@@ -21,5 +21,18 @@ namespace LV_DuLichDienTu.Models
 
         [DisplayName("Mã bài viết")]
         public Boolean bvdd_tinhtrang{get;set;}
+
+
+        [ForeignKey("dddl_id")]
+        public int dddl_id {get;set;}
+        public DiaDiem_DuLich DiaDiem_DuLich {get;set;}
+        
+        [ForeignKey("nv_id")]
+        public int nv_id {get;set;}
+        public NhanVien NhanVien {get;set;}
+
+        [ForeignKey("dk_id")]
+        public int dk_id {get;set;}
+        public DuKhach DuKhach {get;set;}
     }
 }
