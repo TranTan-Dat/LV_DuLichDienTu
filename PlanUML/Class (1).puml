@@ -1,0 +1,102 @@
+@startuml SoDoclass
+ skinparam linetype ortho
+' Dịch vụ du lịch ở đây bao gồm các khu vui chơi,
+' ăn ngủ nghỉ, dịch vụ đi lại, các dịch vụ sẽ có loại DV
+'Dịch vụ sẽ gồm có:
+'1. Phương tiện để đi lại (gồm có phương tiện đi đến nơi du lịch và phương tiện đi lại ở điểm du lịch)
+'2. Tham quan 
+'3.ăn uống
+'4. chỗ ngủ
+
+
+
+class NhaCungCap{
+  + ncc_id: int
+  + ncc_taikhoan: string
+  + ncc_matkhau: string
+  + ncc_ten: string
+  + ncc_email: string
+  + ncc_dienthoai: string
+  + ncc_diachi: string
+}
+
+class DiaDiem_DuLich{
+  + dddl_id: int
+  + dddl_ten: string
+  + dddl_mota: string
+}
+
+class BaiViet_DiaDiem{
+  + bvdd_id: int
+  + bvdd_tieude: string
+  + bvdd_noidung: string
+  + bvdd_tinhtrang: boolean
+}
+
+class DuKhach{
+  + dk_id: int
+  + dk_taikhoan: string
+  + dk_matKhau: string
+  + dk_hoten: string
+  + dk_cmnd: string
+  + dk_dienthoai: string
+  + dk_diachi: string
+  + dk_email: string 
+  + dk_diemthanhvien: int
+}
+
+class LoaiDichvu{
+  ldv_id: int
+  ldv_ten: string
+  ldv_mota: string
+}
+
+class Dichvu{
+  + dv_id: int
+  + dv_ten: string
+  + dv_dienthoai_hotro: string
+  + dv_mota: string
+}
+
+class CamKetDichVu{
+  + ckdv_id: int
+  + ckdv_noidung: string
+  + ckdv_boithuong: string
+}
+
+class Hopdong{
+  + hd_id: int
+  + hd_ngaybatdau: date
+  + hd_ngayketthuc: date
+  + hd_chiphi: double
+  + hd_danhgiachatluong: double
+  + hd_phanhoi: double
+}
+
+class NhanVien{
+  + nv_id: int
+  + nv_taikhoan: string
+  + nv_matKhau: string
+  + nv_hoten: string
+  + nv_cmnd: string
+  + nv_dienthoai: string
+  + nv_diachi: string
+  + nv_email: string 
+}
+
+class Hinh_DiaDiemDuLich{
+  + hinh_id: int
+  + hinh_duongdan: string
+}
+
+NhaCungCap "1" -- "*" Dichvu
+LoaiDichvu "1" -- "*" Dichvu
+DuKhach "1" -- "*" BaiViet_DiaDiem
+DiaDiem_DuLich "1" -- "*" BaiViet_DiaDiem
+NhanVien "1" -- "*" BaiViet_DiaDiem
+(DuKhach, Dichvu) .. Hopdong
+DiaDiem_DuLich "1" -- "*" Hinh_DiaDiemDuLich
+Dichvu "1" -- "*" CamKetDichVu
+
+
+@enduml
