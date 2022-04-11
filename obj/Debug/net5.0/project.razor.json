@@ -15624,8 +15624,33 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\NhaCungCaps\\Delete.cshtml",
+      "TargetPath": "Views\\NhaCungCaps\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\DuKhachs\\Details.cshtml",
+      "TargetPath": "Views\\DuKhachs\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\Hinh_DiaDiemDuLichs\\Index.cshtml",
+      "TargetPath": "Views\\Hinh_DiaDiemDuLichs\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\DuKhachs\\Edit.cshtml",
+      "TargetPath": "Views\\DuKhachs\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\LoaiDichVus\\Edit.cshtml",
+      "TargetPath": "Views\\LoaiDichVus\\Edit.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15634,13 +15659,233 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\Hinh_DiaDiemDuLichs\\Create.cshtml",
+      "TargetPath": "Views\\Hinh_DiaDiemDuLichs\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\DiaDiem_DuLichs\\Create.cshtml",
+      "TargetPath": "Views\\DiaDiem_DuLichs\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\NhanViens\\Details.cshtml",
+      "TargetPath": "Views\\NhanViens\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\BaiViet_DiaDiems\\Details.cshtml",
+      "TargetPath": "Views\\BaiViet_DiaDiems\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\NhaCungCaps\\Index.cshtml",
+      "TargetPath": "Views\\NhaCungCaps\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\HopDongs\\Index.cshtml",
+      "TargetPath": "Views\\HopDongs\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\HopDongs\\Details.cshtml",
+      "TargetPath": "Views\\HopDongs\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\NhaCungCaps\\Create.cshtml",
+      "TargetPath": "Views\\NhaCungCaps\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\DiaDiem_DuLichs\\Index.cshtml",
+      "TargetPath": "Views\\DiaDiem_DuLichs\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\Hinh_DiaDiemDuLichs\\Delete.cshtml",
+      "TargetPath": "Views\\Hinh_DiaDiemDuLichs\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\CamKetDichVus\\Delete.cshtml",
+      "TargetPath": "Views\\CamKetDichVus\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\Hinh_DiaDiemDuLichs\\Details.cshtml",
+      "TargetPath": "Views\\Hinh_DiaDiemDuLichs\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\DiaDiem_DuLichs\\Edit.cshtml",
+      "TargetPath": "Views\\DiaDiem_DuLichs\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\DichVus\\Index.cshtml",
+      "TargetPath": "Views\\DichVus\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\CamKetDichVus\\Create.cshtml",
+      "TargetPath": "Views\\CamKetDichVus\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\LoaiDichVus\\Create.cshtml",
+      "TargetPath": "Views\\LoaiDichVus\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\DiaDiem_DuLichs\\Delete.cshtml",
+      "TargetPath": "Views\\DiaDiem_DuLichs\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\DichVus\\Edit.cshtml",
+      "TargetPath": "Views\\DichVus\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\BaiViet_DiaDiems\\Index.cshtml",
+      "TargetPath": "Views\\BaiViet_DiaDiems\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\LoaiDichVus\\Delete.cshtml",
+      "TargetPath": "Views\\LoaiDichVus\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\BaiViet_DiaDiems\\Edit.cshtml",
+      "TargetPath": "Views\\BaiViet_DiaDiems\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\CamKetDichVus\\Edit.cshtml",
+      "TargetPath": "Views\\CamKetDichVus\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\LoaiDichVus\\Details.cshtml",
+      "TargetPath": "Views\\LoaiDichVus\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\DuKhachs\\Index.cshtml",
+      "TargetPath": "Views\\DuKhachs\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\DiaDiem_DuLichs\\Details.cshtml",
+      "TargetPath": "Views\\DiaDiem_DuLichs\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\BaiViet_DiaDiems\\Create.cshtml",
+      "TargetPath": "Views\\BaiViet_DiaDiems\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\NhanViens\\Edit.cshtml",
+      "TargetPath": "Views\\NhanViens\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\NhanViens\\Index.cshtml",
+      "TargetPath": "Views\\NhanViens\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\LoaiDichVus\\Index.cshtml",
+      "TargetPath": "Views\\LoaiDichVus\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\HopDongs\\Create.cshtml",
+      "TargetPath": "Views\\HopDongs\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\CamKetDichVus\\Index.cshtml",
+      "TargetPath": "Views\\CamKetDichVus\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\BaiViet_DiaDiems\\Delete.cshtml",
+      "TargetPath": "Views\\BaiViet_DiaDiems\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\DichVus\\Create.cshtml",
+      "TargetPath": "Views\\DichVus\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\CamKetDichVus\\Details.cshtml",
+      "TargetPath": "Views\\CamKetDichVus\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\NhanViens\\Create.cshtml",
+      "TargetPath": "Views\\NhanViens\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\DuKhachs\\Create.cshtml",
+      "TargetPath": "Views\\DuKhachs\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\DichVus\\Details.cshtml",
+      "TargetPath": "Views\\DichVus\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\NhaCungCaps\\Details.cshtml",
+      "TargetPath": "Views\\NhaCungCaps\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\NhaCungCaps\\Edit.cshtml",
+      "TargetPath": "Views\\NhaCungCaps\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\NhanViens\\Delete.cshtml",
+      "TargetPath": "Views\\NhanViens\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\Hinh_DiaDiemDuLichs\\Edit.cshtml",
+      "TargetPath": "Views\\Hinh_DiaDiemDuLichs\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\HopDongs\\Delete.cshtml",
+      "TargetPath": "Views\\HopDongs\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\DichVus\\Delete.cshtml",
+      "TargetPath": "Views\\DichVus\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\HopDongs\\Edit.cshtml",
+      "TargetPath": "Views\\HopDongs\\Edit.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15651,6 +15896,11 @@
     {
       "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\DuKhachs\\Delete.cshtml",
+      "TargetPath": "Views\\DuKhachs\\Delete.cshtml",
       "FileKind": "mvc"
     }
   ],

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xHDghQscZjC6M1/I5LSXIUkkSGx/XEwaHzir/iLQmlKbHWdpcZhb9VLTE3UoNIw0okXv/E1z8nidnCylFzHHYg==",
+  "dgSpecHash": "SdzVC/v3l8lavmwVm+I4B9G8OzZPEg1+TFG4hWfE5G2eoIzZM5pbFJA6Uo5ido1vW0e6df1AZOseSBF1NymC9Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_dulichdientu\\LV_DuLichDienTu.csproj",
+  "projectFilePath": "C:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\LV_DuLichDienTu.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Asus\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\microsoft.aspnetcore.diagnostics.entityframeworkcore\\5.0.14\\microsoft.aspnetcore.diagnostics.entityframeworkcore.5.0.14.nupkg.sha512",

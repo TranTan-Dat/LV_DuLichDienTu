@@ -1,0 +1,65 @@
+@model IEnumerable<LV_DuLichDienTu.Models.HopDong>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.hd_ngaybatdau)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.hd_ngayketthuc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.hd_chiphi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.hd_danhgiachatluong)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.hd_phanhoi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dk_id)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.hd_ngaybatdau)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hd_ngayketthuc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hd_chiphi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hd_danhgiachatluong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hd_phanhoi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dk_id)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.hd_id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.hd_id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.hd_id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -45,13 +45,13 @@ class DuKhach{
   + dk_diemthanhvien: int
 }
 
-class LoaiDichvu{
+class LoaiDichVu{
   ldv_id: int
   ldv_ten: string
   ldv_mota: string
 }
 
-class Dichvu{
+class DichVu{
   + dv_id: int
   + dv_ten: string
   + dv_dienthoai_hotro: string
@@ -64,7 +64,7 @@ class CamKetDichVu{
   + ckdv_boithuong: string
 }
 
-class Hopdong{
+class HopDong{
   + hd_id: int
   + hd_ngaybatdau: date
   + hd_ngayketthuc: date
@@ -89,14 +89,14 @@ class Hinh_DiaDiemDuLich{
   + hinh_duongdan: string
 }
 
-NhaCungCap "1" -- "*" Dichvu
-LoaiDichvu "1" -- "*" Dichvu
+NhaCungCap "1" -- "*" DichVu
+LoaiDichVu "1" -- "*" DichVu
 DuKhach "1" -- "*" BaiViet_DiaDiem
 DiaDiem_DuLich "1" -- "*" BaiViet_DiaDiem
 NhanVien "1" -- "*" BaiViet_DiaDiem
-(DuKhach, Dichvu) .. Hopdong
+(DuKhach, DichVu) .. HopDong
 DiaDiem_DuLich "1" -- "*" Hinh_DiaDiemDuLich
-Dichvu "1" -- "*" CamKetDichVu
+DichVu "1" -- "*" CamKetDichVu
 
 
 @enduml

@@ -1,0 +1,47 @@
+@model IEnumerable<LV_DuLichDienTu.Models.CamKetDichVu>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ckdv_noidung)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ckdv_boithuong)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dv_id)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ckdv_noidung)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ckdv_boithuong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dv_id)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ckdv_id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ckdv_id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ckdv_id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

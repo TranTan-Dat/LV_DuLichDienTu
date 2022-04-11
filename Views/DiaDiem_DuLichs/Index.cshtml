@@ -1,0 +1,53 @@
+@model IEnumerable<LV_DuLichDienTu.Models.DiaDiem_DuLich>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.dddl_ten)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dddl_mota)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.hinh_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.bvdd_id)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.dddl_ten)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dddl_mota)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hinh_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.bvdd_id)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.dddl_id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.dddl_id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.dddl_id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

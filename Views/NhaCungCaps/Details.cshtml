@@ -1,0 +1,60 @@
+@model LV_DuLichDienTu.Models.NhaCungCap
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>NhaCungCap</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ncc_taikhoan)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ncc_taikhoan)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ncc_matkhau)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ncc_matkhau)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ncc_ten)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ncc_ten)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ncc_email)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ncc_email)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ncc_dienthoai)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ncc_dienthoai)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ncc_diachi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ncc_diachi)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.dv_id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dv_id)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ncc_id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

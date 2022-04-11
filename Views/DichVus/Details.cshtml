@@ -1,0 +1,60 @@
+@model LV_DuLichDienTu.Models.DichVu
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>DichVu</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.dv_ten)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dv_ten)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.dv_dienthoai_hotro)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dv_dienthoai_hotro)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.dv_mota)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dv_mota)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.bvdd_id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.bvdd_id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ncc_id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ncc_id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ldv_id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ldv_id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.hd_id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.hd_id)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.dv_id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

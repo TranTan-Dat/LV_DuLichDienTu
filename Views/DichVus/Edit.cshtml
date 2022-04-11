@@ -1,0 +1,61 @@
+@model LV_DuLichDienTu.Models.DichVu
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>DichVu</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="dv_id" />
+            <div class="form-group">
+                <label asp-for="dv_ten" class="control-label"></label>
+                <input asp-for="dv_ten" class="form-control" />
+                <span asp-validation-for="dv_ten" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dv_dienthoai_hotro" class="control-label"></label>
+                <input asp-for="dv_dienthoai_hotro" class="form-control" />
+                <span asp-validation-for="dv_dienthoai_hotro" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dv_mota" class="control-label"></label>
+                <input asp-for="dv_mota" class="form-control" />
+                <span asp-validation-for="dv_mota" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="bvdd_id" class="control-label"></label>
+                <input asp-for="bvdd_id" class="form-control" />
+                <span asp-validation-for="bvdd_id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ncc_id" class="control-label"></label>
+                <input asp-for="ncc_id" class="form-control" />
+                <span asp-validation-for="ncc_id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ldv_id" class="control-label"></label>
+                <input asp-for="ldv_id" class="form-control" />
+                <span asp-validation-for="ldv_id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="hd_id" class="control-label"></label>
+                <input asp-for="hd_id" class="form-control" />
+                <span asp-validation-for="hd_id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

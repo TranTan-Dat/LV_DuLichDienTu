@@ -1,0 +1,65 @@
+@model LV_DuLichDienTu.Models.DuKhach
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>DuKhach</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="dk_taikhoan" class="control-label"></label>
+                <input asp-for="dk_taikhoan" class="form-control" />
+                <span asp-validation-for="dk_taikhoan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dk_hoten" class="control-label"></label>
+                <input asp-for="dk_hoten" class="form-control" />
+                <span asp-validation-for="dk_hoten" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dk_cmnd" class="control-label"></label>
+                <input asp-for="dk_cmnd" class="form-control" />
+                <span asp-validation-for="dk_cmnd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dk_dienthoai" class="control-label"></label>
+                <input asp-for="dk_dienthoai" class="form-control" />
+                <span asp-validation-for="dk_dienthoai" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dk_diachi" class="control-label"></label>
+                <input asp-for="dk_diachi" class="form-control" />
+                <span asp-validation-for="dk_diachi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dk_email" class="control-label"></label>
+                <input asp-for="dk_email" class="form-control" />
+                <span asp-validation-for="dk_email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dk_diemthanhvien" class="control-label"></label>
+                <input asp-for="dk_diemthanhvien" class="form-control" />
+                <span asp-validation-for="dk_diemthanhvien" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="bvdd_id" class="control-label"></label>
+                <input asp-for="bvdd_id" class="form-control" />
+                <span asp-validation-for="bvdd_id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

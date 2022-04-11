@@ -1,0 +1,66 @@
+@model LV_DuLichDienTu.Models.DuKhach
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>DuKhach</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.dk_taikhoan)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dk_taikhoan)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.dk_hoten)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dk_hoten)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.dk_cmnd)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dk_cmnd)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.dk_dienthoai)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dk_dienthoai)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.dk_diachi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dk_diachi)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.dk_email)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dk_email)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.dk_diemthanhvien)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dk_diemthanhvien)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.bvdd_id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.bvdd_id)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.dk_id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,41 @@
+@model LV_DuLichDienTu.Models.CamKetDichVu
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>CamKetDichVu</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ckdv_id" />
+            <div class="form-group">
+                <label asp-for="ckdv_noidung" class="control-label"></label>
+                <input asp-for="ckdv_noidung" class="form-control" />
+                <span asp-validation-for="ckdv_noidung" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ckdv_boithuong" class="control-label"></label>
+                <input asp-for="ckdv_boithuong" class="form-control" />
+                <span asp-validation-for="ckdv_boithuong" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dv_id" class="control-label"></label>
+                <input asp-for="dv_id" class="form-control" />
+                <span asp-validation-for="dv_id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

@@ -1,0 +1,54 @@
+@model LV_DuLichDienTu.Models.BaiViet_DiaDiem
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>BaiViet_DiaDiem</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.bvdd_tieude)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.bvdd_tieude)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.bvdd_noidung)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.bvdd_noidung)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.bvdd_tinhtrang)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.bvdd_tinhtrang)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.dddl_id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dddl_id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.nv_id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.nv_id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.dk_id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dk_id)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.bvdd_id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

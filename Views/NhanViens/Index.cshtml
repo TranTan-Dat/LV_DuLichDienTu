@@ -1,0 +1,77 @@
+@model IEnumerable<LV_DuLichDienTu.Models.NhanVien>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nv_taikhoan)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nv_matKhau)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nv_hoten)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nv_cmnd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nv_dienthoai)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nv_diachi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nv_email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.bvdd_id)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nv_taikhoan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nv_matKhau)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nv_hoten)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nv_cmnd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nv_dienthoai)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nv_diachi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nv_email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.bvdd_id)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.nv_id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.nv_id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.nv_id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

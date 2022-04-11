@@ -1,0 +1,65 @@
+@model LV_DuLichDienTu.Models.NhanVien
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>NhanVien</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="nv_taikhoan" class="control-label"></label>
+                <input asp-for="nv_taikhoan" class="form-control" />
+                <span asp-validation-for="nv_taikhoan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="nv_matKhau" class="control-label"></label>
+                <input asp-for="nv_matKhau" class="form-control" />
+                <span asp-validation-for="nv_matKhau" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="nv_hoten" class="control-label"></label>
+                <input asp-for="nv_hoten" class="form-control" />
+                <span asp-validation-for="nv_hoten" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="nv_cmnd" class="control-label"></label>
+                <input asp-for="nv_cmnd" class="form-control" />
+                <span asp-validation-for="nv_cmnd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="nv_dienthoai" class="control-label"></label>
+                <input asp-for="nv_dienthoai" class="form-control" />
+                <span asp-validation-for="nv_dienthoai" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="nv_diachi" class="control-label"></label>
+                <input asp-for="nv_diachi" class="form-control" />
+                <span asp-validation-for="nv_diachi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="nv_email" class="control-label"></label>
+                <input asp-for="nv_email" class="form-control" />
+                <span asp-validation-for="nv_email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="bvdd_id" class="control-label"></label>
+                <input asp-for="bvdd_id" class="form-control" />
+                <span asp-validation-for="bvdd_id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
