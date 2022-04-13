@@ -14,7 +14,7 @@ namespace LV_DuLichDienTu.Models
         [DisplayName("Mã nhà cung cấp")]
         public int ncc_id{get;set;}
 
-        [DisplayName("Tài Khoản ncc")]
+        [DisplayName("Tài Khoản nhà cung cấp")]
         public string ncc_taikhoan{get;set;}
 
         [DisplayName("Mật khẩu")]
@@ -33,6 +33,7 @@ namespace LV_DuLichDienTu.Models
         public string ncc_diachi{get;set;}
         
         [ForeignKey("DichVu")]
+        [DisplayName("Mã dịch vụ")]
         public int dv_id  {get;set;}
         public ICollection<DichVu> dichVus {get;set;}
     }

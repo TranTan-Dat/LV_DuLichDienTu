@@ -45,6 +45,7 @@ namespace LV_DuLichDienTu.Controllers
         // GET: Hinh_DiaDiemDuLichs/Create
         public IActionResult Create()
         {
+            ViewData["dddl_ten"] = new SelectList(_context.DiaDiem_DuLich,"dddl_id","dddl_ten");
             return View();
         }
 
@@ -112,6 +113,7 @@ namespace LV_DuLichDienTu.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["dddl_id"] = new SelectList(_context.DiaDiem_DuLich, "dddl_id", "dddl_id", hinh_DiaDiemDuLich.dddl_id);  
             return View(hinh_DiaDiemDuLich);
         }
 

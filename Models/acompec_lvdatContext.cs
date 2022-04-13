@@ -7,9 +7,9 @@ using LV_DuLichDienTu.Models;
 
 namespace LV_DuLichDienTu.Models
 {
-    public class acomptec_lvdatContext : DbContext
+    public class acompec_lvdatContext : DbContext
     {
-        public acomptec_lvdatContext(DbContextOptions<acomptec_lvdatContext> options): base(options)
+        public acompec_lvdatContext(DbContextOptions<acompec_lvdatContext> options): base(options)
         {
 
         }

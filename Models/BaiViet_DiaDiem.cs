@@ -13,7 +13,7 @@ namespace LV_DuLichDienTu.Models
         [DisplayName("Mã bài viết")]
         public int bvdd_id{get;set;}
 
-        [DisplayName("Mã bài viết")]
+        [DisplayName("Tiêu đề bài viết")]
         public string bvdd_tieude{get;set;}
 
         [DisplayName("Mã bài viết")]
