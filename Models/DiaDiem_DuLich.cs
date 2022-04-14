@@ -19,11 +19,11 @@ namespace LV_DuLichDienTu.Models
         public string dddl_mota {get;set;}
 
 
-        [ForeignKey("Hinh_DiaDiemDuLich")]
+        [ForeignKey("hinh_id")]
         public int hinh_id {get; set;}
         public ICollection<Hinh_DiaDiemDuLich> hinh_DiaDiemDuLiches {get; set;}
 
-        [ForeignKey("BaiViet_DiaDiem")]
+        [ForeignKey("bvdd_id")]
         public int bvdd_id {get; set;}
         public ICollection<BaiViet_DiaDiem> baiViet_DiaDiems {get; set;}
     }
