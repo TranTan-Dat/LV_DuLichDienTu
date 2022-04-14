@@ -31,3 +31,51 @@
         <a asp-action="Index">Back to List</a>
     </form>
 </div>
+
+
+
+
+
+<div class="row">
+    <div class="col-md-10 center-margin">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>BẠN CÓ THẬT SỰ MUỐN XÓA DỮ LIỆU: </h2>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <br>
+                <form asp-action="Delete" id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left" novalidate="">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="hinh_id" />
+                    <div class="form-group">
+                        <div class="control-label col-md-6 col-sm-6 col-xs-12">
+                            <label asp-for="hinh_duongdan"></label><span>:</span>
+                        </div>
+                        <div class="control-label text-left col-md-6 col-sm-6 col-xs-12">
+                            <label class="normal-text">@Html.DisplayFor(model => model.hinh_duongdan) </label>
+                            
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="control-label col-md-6 col-sm-6 col-xs-12">
+                            <label asp-for="dddl_id" class="control-label">Mã địa điểm du lịch: </label>
+                        </div>
+
+                        <div class="control-label text-left col-md-6 col-sm-6 col-xs-12">
+                            <label class="normal-text control-label">@Html.DisplayFor(model => model.dddl_id)</label>
+                            
+                        </div>
+                    </div>
+                    <div class="ln_solid"></div>
+                    <div class="form-group">
+                        <div class="items-center">
+                            <button asp-action="Index" class="btn btn-success"> Quay lại</button>
+                            <input type="submit" value="Xóa" class="btn btn-danger" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

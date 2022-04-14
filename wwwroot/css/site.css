@@ -69,3 +69,15 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+
+.text-left{
+  text-align: left !important;
+}
+.normal-text{
+  font-weight: 100;
+  margin: 0;
+}
+.items-center{
+  text-align: center;
+}
