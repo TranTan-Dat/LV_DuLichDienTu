@@ -21,7 +21,8 @@
             </th>
             <th>
               @* <p>Tên địa điểm du lịch</p> *@
-              @Html.DisplayNameFor(model => model.dddl_id)
+              @* @Html.DisplayNameFor(model => model.dddl_id) *@
+              Tên địa điểm du lịch
             </th>
             <th>Tùy chọn</th>
           </tr>
@@ -34,11 +35,10 @@
                 @Html.DisplayFor(modelItem => item.hinh_duongdan)
               </td>
               <td>
-                @Html.DisplayFor(modelItem => item.dddl_id)
+                @Html.DisplayFor(modelItem => item.DiaDiem_DuLich.dddl_ten)
                 @*
                   NẾU Ở ĐÂY ĐỂ DDDL_ID NÓ SẼ RA ID ĐỊA ĐIỂM CỦA TƯNG ẢNH
                   @Html.DisplayFor(modelItem => item.dddl_id)
-
                 *@
               </td>
               <td>

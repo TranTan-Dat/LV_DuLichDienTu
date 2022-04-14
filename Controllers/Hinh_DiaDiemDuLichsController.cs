@@ -15,13 +15,16 @@ namespace LV_DuLichDienTu.Controllers
 
         public Hinh_DiaDiemDuLichsController(acompec_lvdatContext context)
         {
+
             _context = context;
         }
 
         // GET: Hinh_DiaDiemDuLichs
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Hinh_DiaDiemDuLich.ToListAsync());
+            var appDBContext = _context.Hinh_DiaDiemDuLich.Include(e => e.DiaDiem_DuLich);
+            return View(await appDBContext.ToListAsync());
+            // return View(await _context.Hinh_DiaDiemDuLich.ToListAsync());
         }
 
         // GET: Hinh_DiaDiemDuLichs/Details/5
@@ -74,6 +77,7 @@ namespace LV_DuLichDienTu.Controllers
             }
 
             var hinh_DiaDiemDuLich = await _context.Hinh_DiaDiemDuLich.FindAsync(id);
+            ViewData["dddl_ten"] = new SelectList(_context.DiaDiem_DuLich,"dddl_id","dddl_ten",hinh_DiaDiemDuLich.dddl_id);
             if (hinh_DiaDiemDuLich == null)
             {
                 return NotFound();
@@ -113,7 +117,7 @@ namespace LV_DuLichDienTu.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["dddl_id"] = new SelectList(_context.DiaDiem_DuLich, "dddl_id", "dddl_id", hinh_DiaDiemDuLich.dddl_id);  
+            ViewData["dddl_ten"] = new SelectList(_context.DiaDiem_DuLich, "dddl_id", "dddl_ten", hinh_DiaDiemDuLich.dddl_id);  
             return View(hinh_DiaDiemDuLich);
         }
 

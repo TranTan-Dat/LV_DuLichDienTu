@@ -18,8 +18,9 @@ namespace LV_DuLichDienTu.Models
 
         [ForeignKey("dddl_id")]
         [Required]
-        [DisplayName("Mã địa điểm du lịch")]
         public int dddl_id {get; set;}
-        public DiaDiem_DuLich DiaDiem_DuLich{get;set;}
+        [ForeignKey("dddl_id")]
+        public virtual DiaDiem_DuLich DiaDiem_DuLich{get;set;}
+        
     }
 }
