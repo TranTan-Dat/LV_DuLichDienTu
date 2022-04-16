@@ -21,6 +21,7 @@ namespace LV_DuLichDienTu.Controllers
         // GET: BaiViet_DiaDiems
         public async Task<IActionResult> Index()
         {
+            var appDBContext = _context.BaiViet_DiaDiem.Include(e=>e.DiaDiem_DuLich).Include(f=>f.NhanVien).Include(g=>g.DuKhach);
             return View(await _context.BaiViet_DiaDiem.ToListAsync());
         }
 
