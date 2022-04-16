@@ -18,8 +18,8 @@ namespace LV_DuLichDienTu.Models
         [DisplayName("Mô tả về địa điểm")]
         public string dddl_mota {get;set;}
 
-        // [DisplayName("Tỉnh thành")]
-        // public string dddl_tinhthanh {get;set;}
+        [DisplayName("Tỉnh thành")]
+        public string dddl_tinhthanh {get;set;}
 
         // [DisplayName("Tổng ảnh")]
         // public string Sum_Pic {get;set;}
