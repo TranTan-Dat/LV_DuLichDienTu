@@ -384,3 +384,4 @@ C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\H
 C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\Hinh_DiaDiemDuLichs\Details.cshtml.g.cs
 C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\Hinh_DiaDiemDuLichs\Edit.cshtml.g.cs
 C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\Hinh_DiaDiemDuLichs\Index.cshtml.g.cs
+C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\Hinh_DiaDiemDuLichs\Create copy.cshtml.g.cs

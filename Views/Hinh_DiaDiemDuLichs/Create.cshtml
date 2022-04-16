@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "Create";
 }
-
+@* 
 <div class="row">
     <div class="col-md-10 center-margin">
         <div class="x_panel">
@@ -24,7 +24,6 @@
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <input id="name" asp-for="hinh_duongdan" required="required"
                                 class="form-control col-md-7 col-xs-12" />
-
                         </div>
                     </div>
                     <div class="form-group">
@@ -49,7 +48,8 @@
             </div>
         </div>
     </div>
-</div>
+</div> *@
+
 <div class="">
     <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12">
@@ -78,22 +78,22 @@
                         </div>
                         @* Trường danh sách chọn dữ liệu mã địa điểm*@
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name"> 
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">
                                 <label asp-for="dddl_id" class="control-label">Mã địa điểm du lịch</label>
                                 <span class="required">*</span>
                             </label>
-                            
+
                             <div class="col-md-6 col-sm-6 col-xs-12">
                                 <select class="form-control col-md-7 col-xs-12" asp-for="dddl_id"
-                                asp-items="ViewBag.dddl_ten"></select>
+                                    asp-items="ViewBag.dddl_ten"></select>
                             </div>
                         </div>
                         <div class="ln_solid"></div>
                         <div class="form-group">
                             <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 items-center">
-                                
+
                                 <button asp-action="Index" class="btn btn-success"> Quay lại</button>
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary">Lưu</button>
                             </div>
                         </div>
 

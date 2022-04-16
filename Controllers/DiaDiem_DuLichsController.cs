@@ -21,6 +21,17 @@ namespace LV_DuLichDienTu.Controllers
         // GET: DiaDiem_DuLichs
         public async Task<IActionResult> Index()
         {
+            
+            //  = from p in _context.DiaDiem_DuLich
+            // where p.dddl_id = _context.Hinh_DiaDiemDuLich.Find(c => c.dddl_id)
+            // group p by p.PartID into gp
+            // select new
+            //        {
+            //            PartID = gp.PartID,
+            //            InstanceCount = gp.Count(),
+            //        }
+
+            // ViewData["tempData"] = _context.DiaDiem_DuLich.; 
             return View(await _context.DiaDiem_DuLich.ToListAsync());
         }
 

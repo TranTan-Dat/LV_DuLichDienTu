@@ -18,6 +18,11 @@ namespace LV_DuLichDienTu.Models
         [DisplayName("Mô tả về địa điểm")]
         public string dddl_mota {get;set;}
 
+        // [DisplayName("Tổng ảnh")]
+        // public string Sum_Pic {get;set;}
+
+        // [DisplayName("Tổng Bài Viết")]
+        // public string Sum_Article {get;set;}
 
         [ForeignKey("hinh_id")]
         public int hinh_id {get; set;}
