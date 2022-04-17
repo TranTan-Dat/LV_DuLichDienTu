@@ -16,10 +16,10 @@ namespace LV_DuLichDienTu.Models
         [DisplayName("Tiêu đề bài viết")]
         public string bvdd_tieude{get;set;}
 
-        [DisplayName("Mã bài viết")]
+        [DisplayName("Nội dung bài viết")]
         public string bvdd_noidung{get;set;}
 
-        [DisplayName("Mã bài viết")]
+        [DisplayName("Tình trạng")]
         public Boolean bvdd_tinhtrang{get;set;}
 
 

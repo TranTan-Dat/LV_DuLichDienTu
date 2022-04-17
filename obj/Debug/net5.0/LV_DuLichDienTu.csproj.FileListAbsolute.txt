@@ -334,11 +334,6 @@ C:\Users\Asus\Desktop\LV_Etourism\LV_dulichdientu\obj\Debug\net5.0\LV_DuLichDien
 C:\Users\Asus\Desktop\LV_Etourism\LV_dulichdientu\obj\Debug\net5.0\ref\LV_DuLichDienTu.dll
 C:\Users\Asus\Desktop\LV_Etourism\LV_dulichdientu\obj\Debug\net5.0\LV_DuLichDienTu.pdb
 C:\Users\Asus\Desktop\LV_Etourism\LV_dulichdientu\obj\Debug\net5.0\LV_DuLichDienTu.genruntimeconfig.cache
-C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\BaiViet_DiaDiems\Create.cshtml.g.cs
-C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\BaiViet_DiaDiems\Delete.cshtml.g.cs
-C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\BaiViet_DiaDiems\Details.cshtml.g.cs
-C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\BaiViet_DiaDiems\Edit.cshtml.g.cs
-C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\BaiViet_DiaDiems\Index.cshtml.g.cs
 C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\CamKetDichVus\Create.cshtml.g.cs
 C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\CamKetDichVus\Delete.cshtml.g.cs
 C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\CamKetDichVus\Details.cshtml.g.cs
@@ -385,3 +380,8 @@ C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\H
 C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\HopDongs\Details.cshtml.g.cs
 C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\HopDongs\Edit.cshtml.g.cs
 C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\HopDongs\Index.cshtml.g.cs
+C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\BaiViet_DiaDiems\Create.cshtml.g.cs
+C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\BaiViet_DiaDiems\Delete.cshtml.g.cs
+C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\BaiViet_DiaDiems\Details.cshtml.g.cs
+C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\BaiViet_DiaDiems\Edit.cshtml.g.cs
+C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\BaiViet_DiaDiems\Index.cshtml.g.cs
