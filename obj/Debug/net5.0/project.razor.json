@@ -15669,6 +15669,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\BaiViet_DiaDiems\\Index copy.cshtml",
+      "TargetPath": "Views\\BaiViet_DiaDiems\\Index copy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\NhanViens\\Details.cshtml",
       "TargetPath": "Views\\NhanViens\\Details.cshtml",
       "FileKind": "mvc"
@@ -15901,6 +15906,11 @@
     {
       "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\BaiViet_DiaDiems\\Edit copy.cshtml",
+      "TargetPath": "Views\\BaiViet_DiaDiems\\Edit copy.cshtml",
       "FileKind": "mvc"
     },
     {

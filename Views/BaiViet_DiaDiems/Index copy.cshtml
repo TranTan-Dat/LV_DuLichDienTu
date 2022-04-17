@@ -43,12 +43,7 @@
                 @Html.DisplayFor(modelItem => item.bvdd_noidung)
             </td>
             <td>
-                @* @Html.DisplayFor(modelItem => item.bvdd_tinhtrang) *@
-                @{
-                    if(item.bvdd_tinhtrang == true)
-                    {<p>đang hoạt động</p>}
-                    else{<p>Đã đóng cửa</p>}
-                }
+                @Html.DisplayFor(modelItem => item.bvdd_tinhtrang)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.dddl_id)

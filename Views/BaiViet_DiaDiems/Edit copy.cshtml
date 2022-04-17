@@ -25,22 +25,7 @@
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    @* <input class="form-check-input" asp-for="bvdd_tinhtrang" /> @Html.DisplayNameFor(model => model.bvdd_tinhtrang) *@
-                    <select class="form-control col-md-7 col-xs-12" asp-for="bvdd_tinhtrang">
-                    @{
-                        if(@ViewBag.ReturnMA == true)
-                        {
-                            <option value=true>Đang mở cửa</option>
-                            <option value=flase>Đã đóng cửa / đang bảo trì</option>
-                        }
-                        else
-                        {
-                            <option value=false>Đã đóng cửa / đang bảo trì</option>
-                            <option value=true>Đang mở cửa</option>
-                        }
-                    }
-                    
-                </select>
+                    <input class="form-check-input" asp-for="bvdd_tinhtrang" /> @Html.DisplayNameFor(model => model.bvdd_tinhtrang)
                 </label>
             </div>
             <div class="form-group">
