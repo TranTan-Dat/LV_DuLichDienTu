@@ -380,3 +380,8 @@ C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\D
 C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\DiaDiem_DuLichs\Details.cshtml.g.cs
 C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\DiaDiem_DuLichs\Edit.cshtml.g.cs
 C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\DiaDiem_DuLichs\Index.cshtml.g.cs
+C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\DuKhachs\Create.cshtml.g.cs
+C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\DuKhachs\Delete.cshtml.g.cs
+C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\DuKhachs\Details.cshtml.g.cs
+C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\DuKhachs\Edit.cshtml.g.cs
+C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\DuKhachs\Index.cshtml.g.cs
