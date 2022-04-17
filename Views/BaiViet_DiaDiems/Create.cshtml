@@ -1,4 +1,4 @@
-@model LV_DuLichDienTu.Models.BaiViet_DiaDiem
+@* @model LV_DuLichDienTu.Models.BaiViet_DiaDiem
 
 @{
     ViewData["Title"] = "Create";
@@ -51,5 +51,67 @@
 
 <div>
     <a asp-action="Index">Back to List</a>
+</div> *@
+
+
+
+@model LV_DuLichDienTu.Models.BaiViet_DiaDiem
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>BaiViet_DiaDiem</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="bvdd_tieude" class="control-label"></label>
+                <input asp-for="bvdd_tieude" class="form-control" />
+                <span asp-validation-for="bvdd_tieude" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="bvdd_noidung" class="control-label"></label>
+                <input asp-for="bvdd_noidung" class="form-control" />
+                <span asp-validation-for="bvdd_noidung" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                @* <label class="form-check-label">
+                    <input class="form-check-input" asp-for="bvdd_tinhtrang" /> @Html.DisplayNameFor(model =>
+                    model.bvdd_tinhtrang)
+                </label>     *@
+
+                <select class="form-control col-md-7 col-xs-12" asp-for="bvdd_tinhtrang">
+                    <option value=true>Đang hoạt động</option>
+                    <option value=flase>Đã đóng cửa / đang bảo trì</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="dddl_id" class="control-label"></label>
+                <input asp-for="dddl_id" class="form-control" />
+                <span asp-validation-for="dddl_id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="nv_id" class="control-label"></label>
+                <input asp-for="nv_id" class="form-control" />
+                <span asp-validation-for="nv_id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dk_id" class="control-label"></label>
+                <input asp-for="dk_id" class="form-control" />
+                <span asp-validation-for="dk_id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
 </div>
 
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

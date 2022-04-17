@@ -385,3 +385,4 @@ C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\B
 C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\BaiViet_DiaDiems\Details.cshtml.g.cs
 C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\BaiViet_DiaDiems\Edit.cshtml.g.cs
 C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\BaiViet_DiaDiems\Index.cshtml.g.cs
+C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\BaiViet_DiaDiems\Create copy.cshtml.g.cs
