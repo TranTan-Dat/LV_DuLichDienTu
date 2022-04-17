@@ -35,9 +35,14 @@ namespace LV_DuLichDienTu.Models
         [DisplayName("Điểm thành viên")]
         public int dk_diemthanhvien{get;set;}
 
-        [ForeignKey("BaiViet_DiaDiem")]
+        [ForeignKey("bvdd_id")]
         public int bvdd_id {get;set;}
-        public ICollection<HopDong> hopDongs {get; set;}
+        public ICollection<BaiViet_DiaDiem> BaiViet_DiaDiems {get; set;}
+
+
+        [ForeignKey("hd_id")]
+        public int hd_id {get;set;}
+        public ICollection<HopDong> HopDongs {get; set;}
         
     }
 }

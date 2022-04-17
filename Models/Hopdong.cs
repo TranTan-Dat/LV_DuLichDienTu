@@ -29,10 +29,13 @@ namespace LV_DuLichDienTu.Models
         [DisplayName("Phản hồi")]
         public Double hd_phanhoi{get;set;}
 
-        [ForeignKey("DuKhach")]
+        [ForeignKey("dk_id")]
         public int dk_id {get;set;}
         public DuKhach duKhach {get; set;}
 
+        [ForeignKey("dv_id")]
+        public int dv_id {get;set;}
+        public DichVu dichVu {get; set;}
         
     }
 }

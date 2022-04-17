@@ -53,7 +53,7 @@ namespace LV_DuLichDienTu.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("dk_id,dk_taikhoan,dk_hoten,dk_cmnd,dk_dienthoai,dk_diachi,dk_email,dk_diemthanhvien,bvdd_id")] DuKhach duKhach)
+        public async Task<IActionResult> Create([Bind("dk_id,dk_taikhoan,dk_hoten,dk_cmnd,dk_dienthoai,dk_diachi,dk_email,dk_diemthanhvien,bvdd_id,hd_id")] DuKhach duKhach)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +85,7 @@ namespace LV_DuLichDienTu.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("dk_id,dk_taikhoan,dk_hoten,dk_cmnd,dk_dienthoai,dk_diachi,dk_email,dk_diemthanhvien,bvdd_id")] DuKhach duKhach)
+        public async Task<IActionResult> Edit(int id, [Bind("dk_id,dk_taikhoan,dk_hoten,dk_cmnd,dk_dienthoai,dk_diachi,dk_email,dk_diemthanhvien,bvdd_id,hd_id")] DuKhach duKhach)
         {
             if (id != duKhach.dk_id)
             {
