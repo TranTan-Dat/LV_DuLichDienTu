@@ -21,7 +21,9 @@ namespace LV_DuLichDienTu.Controllers
         // GET: BaiViet_DiaDiems
         public async Task<IActionResult> Index()
         {
-            return View(await _context.BaiViet_DiaDiem.ToListAsync());
+            var appDBContext = _context.BaiViet_DiaDiem.Include(e=>e.NhanVien).Include(g=>g.DiaDiem_DuLich);
+            return View(await appDBContext.ToListAsync());
+        //    return View(await _context.BaiViet_DiaDiem.ToListAsync());
         }
 
         // GET: BaiViet_DiaDiems/Details/5
@@ -45,6 +47,8 @@ namespace LV_DuLichDienTu.Controllers
         // GET: BaiViet_DiaDiems/Create
         public IActionResult Create()
         {
+            ViewData["select_Hoten_NV"] = new SelectList(_context.NhanVien,"nv_id","nv_hoten");
+            ViewData["select_Ten_DD"] = new SelectList(_context.DiaDiem_DuLich,"dddl_id","dddl_ten");
             return View();
         }
 

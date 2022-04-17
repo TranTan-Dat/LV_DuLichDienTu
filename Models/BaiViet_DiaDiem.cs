@@ -25,11 +25,16 @@ namespace LV_DuLichDienTu.Models
 
         [ForeignKey("dddl_id")]
         public int dddl_id {get;set;}
-        public DiaDiem_DuLich DiaDiem_DuLich {get;set;}
+        [ForeignKey("dddl_id")]
+        public virtual DiaDiem_DuLich DiaDiem_DuLich {get;set;}
         
         [ForeignKey("nv_id")]
         public int nv_id {get;set;}
-        public NhanVien NhanVien {get;set;}
+        [ForeignKey("nv_id")]
+        //virtual giúp cho chuyển id sang tên
+
+        public virtual NhanVien NhanVien {get;set;}
+        
 
         [ForeignKey("dk_id")]
         public int dk_id {get;set;}

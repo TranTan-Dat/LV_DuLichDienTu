@@ -22,13 +22,15 @@
                 @Html.DisplayNameFor(model => model.bvdd_tinhtrang)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.dddl_id)
+                @* @Html.DisplayNameFor(model => model.dddl_id) *@
+                Tên địa điểm
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.nv_id)
+                @* @Html.DisplayNameFor(model => model.nv_id) *@
+                Tên nhân viên
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.dk_id)
+                Tùy chọn
             </th>
             <th></th>
         </tr>
@@ -51,13 +53,10 @@
                 }
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.dddl_id)
+                @Html.DisplayFor(modelItem => item.DiaDiem_DuLich.dddl_ten)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.nv_id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.dk_id)
+                @Html.DisplayFor(modelItem => item.NhanVien.nv_hoten)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.bvdd_id">Edit</a> |
