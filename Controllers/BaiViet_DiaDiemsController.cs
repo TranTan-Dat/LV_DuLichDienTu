@@ -81,6 +81,9 @@ namespace LV_DuLichDienTu.Controllers
             {
                 return NotFound();
             }
+            ViewData["ReturnMA"] = baiViet_DiaDiem.bvdd_tinhtrang;
+            ViewData["select_Hoten_NV"] = new SelectList(_context.NhanVien,"nv_id","nv_hoten");
+            ViewData["select_Ten_DD"] = new SelectList(_context.DiaDiem_DuLich,"dddl_id","dddl_ten");
             return View(baiViet_DiaDiem);
         }
 
@@ -116,6 +119,7 @@ namespace LV_DuLichDienTu.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            
             return View(baiViet_DiaDiem);
         }
 
@@ -133,7 +137,7 @@ namespace LV_DuLichDienTu.Controllers
             {
                 return NotFound();
             }
-
+            var appDBContext =  _context.BaiViet_DiaDiem.Include(e=>e.NhanVien).Include(g=>g.DiaDiem_DuLich);
             return View(baiViet_DiaDiem);
         }
 

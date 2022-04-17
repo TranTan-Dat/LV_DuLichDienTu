@@ -30,13 +30,13 @@
                     @{
                         if(@ViewBag.ReturnMA == true)
                         {
-                            <option value=true>Đang mở cửa</option>
+                            <option value=true>Đang hoạt động</option>
                             <option value=flase>Đã đóng cửa / đang bảo trì</option>
                         }
                         else
                         {
                             <option value=false>Đã đóng cửa / đang bảo trì</option>
-                            <option value=true>Đang mở cửa</option>
+                            <option value=true>Đang hoạt động</option>
                         }
                     }
                     
@@ -44,14 +44,16 @@
                 </label>
             </div>
             <div class="form-group">
-                <label asp-for="dddl_id" class="control-label"></label>
-                <input asp-for="dddl_id" class="form-control" />
-                <span asp-validation-for="dddl_id" class="text-danger"></span>
+                <label asp-for="dddl_id" class="control-label">Tên địa điểm</label>
+                @* <input asp-for="dddl_id" class="form-control" />
+                <span asp-validation-for="dddl_id" class="text-danger"></span> *@
+                <select asp-for="nv_id" asp-items="ViewBag.select_Hoten_NV  "></select>
             </div>
             <div class="form-group">
-                <label asp-for="nv_id" class="control-label"></label>
-                <input asp-for="nv_id" class="form-control" />
-                <span asp-validation-for="nv_id" class="text-danger"></span>
+                <label asp-for="nv_id" class="control-label">Tên nhân viên</label>
+                @* <input asp-for="nv_id" class="form-control" />
+                <span asp-validation-for="nv_id" class="text-danger"></span> *@
+                <select asp-for="dddl_id" asp-items="ViewBag.select_Ten_DD"></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
