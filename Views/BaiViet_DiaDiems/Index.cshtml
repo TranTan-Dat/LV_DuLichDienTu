@@ -36,34 +36,122 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.bvdd_tieude)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.bvdd_noidung)
-            </td>
-            <td>
-                @* @Html.DisplayFor(modelItem => item.bvdd_tinhtrang) *@
-                @{
-                    if(item.bvdd_tinhtrang == true)
-                    {<p>đang hoạt động</p>}
-                    else{<p>Đã đóng cửa</p>}
-                }
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DiaDiem_DuLich.dddl_ten)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NhanVien.nv_hoten)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.bvdd_id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.bvdd_id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.bvdd_id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.bvdd_tieude)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.bvdd_noidung)
+                </td>
+                <td>
+                    @* @Html.DisplayFor(modelItem => item.bvdd_tinhtrang) *@
+                    @{
+                        if (item.bvdd_tinhtrang == true)
+                        {
+                            <p>Đang hoạt động</p>
+                        }
+                        else
+                        {
+                            <p>Đã đóng cửa</p>
+                        }
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DiaDiem_DuLich.dddl_ten)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NhanVien.nv_hoten)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.bvdd_id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.bvdd_id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.bvdd_id">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
+
+
+
+<div class="">
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel">
+                <div class="x_content">
+                    <div>
+                        <h2>
+                            DANH SÁCH BÀI VIẾT VỀ ĐỊA ĐIỂM <small><a asp-action="Create"> Thêm mới</a></small>
+                        </h2>
+                    </div>
+
+                    <table id="datatable" class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.bvdd_tieude)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.bvdd_noidung)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.bvdd_tinhtrang)
+                                </th>
+                                <th>
+                                    Tên địa điểm
+                                </th>
+                                <th>
+                                    Tên nhân viên
+                                </th>
+                                <th>Tùy chọn</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.bvdd_tieude)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.bvdd_noidung)
+                                    </td>
+                                    <td>
+                                        @* @Html.DisplayFor(modelItem => item.bvdd_tinhtrang) *@
+                                        @{
+                                            if (item.bvdd_tinhtrang == true)
+                                            {
+                                                <p>Đang hoạt động</p>
+                                            }
+                                            else
+                                            {
+                                                <p>Đã đóng cửa</p>
+                                            }
+                                        }
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.DiaDiem_DuLich.dddl_ten)
+                                    </td>
+
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.NhanVien.nv_hoten)
+                                    </td>
+
+                                    <td>
+                                        <a asp-action="Edit" asp-route-id="@item.bvdd_id" class="btn btn-primary btn-xs"><i
+                                            class="fa fa-pencil"></i> Sửa </a>|
+                                        <a asp-action="Delete" asp-route-id="@item.bvdd_id" class="btn btn-danger btn-xs"><i
+                                            class="fa fa-trash-o"></i> Xóa </a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

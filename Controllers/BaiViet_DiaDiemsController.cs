@@ -131,7 +131,7 @@ namespace LV_DuLichDienTu.Controllers
                 return NotFound();
             }
 
-            var baiViet_DiaDiem = await _context.BaiViet_DiaDiem
+            var baiViet_DiaDiem = await _context.BaiViet_DiaDiem.Include(e=>e.DiaDiem_DuLich).Include(g=>g.NhanVien)
                 .FirstOrDefaultAsync(m => m.bvdd_id == id);
             if (baiViet_DiaDiem == null)
             {
@@ -140,6 +140,7 @@ namespace LV_DuLichDienTu.Controllers
             var appDBContext =  _context.BaiViet_DiaDiem.Include(e=>e.NhanVien).Include(g=>g.DiaDiem_DuLich);
             return View(baiViet_DiaDiem);
         }
+
 
         // POST: BaiViet_DiaDiems/Delete/5
         [HttpPost, ActionName("Delete")]

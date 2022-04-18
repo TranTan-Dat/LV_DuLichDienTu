@@ -15729,6 +15729,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\BaiViet_DiaDiems\\Delete copy.cshtml",
+      "TargetPath": "Views\\BaiViet_DiaDiems\\Delete copy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\DiaDiem_DuLichs\\Edit.cshtml",
       "TargetPath": "Views\\DiaDiem_DuLichs\\Edit.cshtml",
       "FileKind": "mvc"

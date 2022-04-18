@@ -5,103 +5,105 @@
 }
 
 
-@* 
-<div class="col-md-12 col-sm-12 col-xs-12">
-  <div class="x_panel">
-    <div class="x_title">
-      <h2>BẢNG HÌNH ẢNH ĐỊA ĐIÊM DU LỊCH <small> <a asp-action="Create">Tạo mới</a></small></h2>
-      <div class="clearfix"></div>
-    </div>
-    <div class="x_content">
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>
-              @Html.DisplayNameFor(model => model.hinh_duongdan)
-            </th>
-            <th>
-              <p>Tên địa điểm du lịch</p> 
-              @Html.DisplayNameFor(model => model.dddl_id)
-              Tên địa điểm du lịch
-            </th>
-            <th>Tùy chọn</th>
-          </tr>
-        </thead>
-        <tbody>
-          @foreach (var item in Model)
-          {
-            <tr>
-              <td>
-                @Html.DisplayFor(modelItem => item.hinh_duongdan)
-              </td>
-              <td>
-                @Html.DisplayFor(modelItem => item.DiaDiem_DuLich.dddl_ten)
-                
-                  NẾU Ở ĐÂY ĐỂ DDDL_ID NÓ SẼ RA ID ĐỊA ĐIỂM CỦA TƯNG ẢNH
-                  @Html.DisplayFor(modelItem => item.dddl_id)
-                
-              </td>
-              <td>
-                <a asp-action="Edit" asp-route-id="@item.hinh_id" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i> Sửa </a>|
-                <a asp-action="Delete" asp-route-id="@item.hinh_id" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Xóa </a>
-              </td>
-            </tr>
-          }
-        </tbody>
-      </table>
-    </div>
-  </div>
-</div> *@
-
-
-
-<div class="row">
+@*
   <div class="col-md-12 col-sm-12 col-xs-12">
-    <div class="x_panel">
-      <div class="x_content">
-        <div> 
-          <h2>
-            HÌNH ẢNH ĐỊA ĐIỂM DU LỊCH <small><a asp-action="Create"> Thêm mới</a></small>
-        </h2>
-        </div>
-        
-        <table id="datatable" class="table table-striped table-bordered">
-          <thead>
-            <tr>
-              <th>
-                @Html.DisplayNameFor(model => model.hinh_duongdan)
-              </th>
-              <th>
-                @Html.DisplayNameFor(model => model.DiaDiem_DuLich.dddl_ten)
-              </th>
-              <th>Tùy chọn</th>
-            </tr>
-          </thead>
-          <tbody>
-            @foreach (var item in Model)
-            {
+  <div class="x_panel">
+  <div class="x_title">
+  <h2>BẢNG HÌNH ẢNH ĐỊA ĐIÊM DU LỊCH <small> <a asp-action="Create">Tạo mới</a></small></h2>
+  <div class="clearfix"></div>
+  </div>
+  <div class="x_content">
+  <table class="table table-striped">
+  <thead>
+  <tr>
+  <th>
+  @Html.DisplayNameFor(model => model.hinh_duongdan)
+  </th>
+  <th>
+  <p>Tên địa điểm du lịch</p>
+  @Html.DisplayNameFor(model => model.dddl_id)
+  Tên địa điểm du lịch
+  </th>
+  <th>Tùy chọn</th>
+  </tr>
+  </thead>
+  <tbody>
+  @foreach (var item in Model)
+  {
+  <tr>
+  <td>
+  @Html.DisplayFor(modelItem => item.hinh_duongdan)
+  </td>
+  <td>
+  @Html.DisplayFor(modelItem => item.DiaDiem_DuLich.dddl_ten)
+
+  NẾU Ở ĐÂY ĐỂ DDDL_ID NÓ SẼ RA ID ĐỊA ĐIỂM CỦA TƯNG ẢNH
+  @Html.DisplayFor(modelItem => item.dddl_id)
+
+  </td>
+  <td>
+  <a asp-action="Edit" asp-route-id="@item.hinh_id" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i> Sửa </a>|
+  <a asp-action="Delete" asp-route-id="@item.hinh_id" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Xóa </a>
+  </td>
+  </tr>
+  }
+  </tbody>
+  </table>
+  </div>
+  </div>
+  </div> *@
+
+
+<div class="">
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="x_panel">
+        <div class="x_content">
+          <div>
+            <h2>
+              HÌNH ẢNH ĐỊA ĐIỂM DU LỊCH <small><a asp-action="Create"> Thêm mới</a></small>
+            </h2>
+          </div>
+
+          <table id="datatable" class="table table-striped table-bordered">
+            <thead>
               <tr>
-                <td>
-                  @Html.DisplayFor(modelItem => item.hinh_duongdan)
-                </td>
-                <td>
-                  @Html.DisplayFor(modelItem => item.DiaDiem_DuLich.dddl_ten)
-                  @*
-                    NẾU Ở ĐÂY ĐỂ DDDL_ID NÓ SẼ RA ID ĐỊA ĐIỂM CỦA TƯNG ẢNH
-                    @Html.DisplayFor(modelItem => item.dddl_id)
-                  *@
-                </td>
-                <td>
-                  <a asp-action="Details" asp-route-id="@item.hinh_id" class="btn btn-success btn-xs"><i
-                    class="fa fa-search"></i> Xem chi tiết</a>|
-                  <a asp-action="Edit" asp-route-id="@item.hinh_id" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i> Sửa </a>|
-                  <a asp-action="Delete" asp-route-id="@item.hinh_id" class="btn btn-danger btn-xs"><i
-                    class="fa fa-trash-o"></i> Xóa </a>
-                </td>
+                <th>
+                  @Html.DisplayNameFor(model => model.hinh_duongdan)
+                </th>
+                <th>
+                  @Html.DisplayNameFor(model => model.DiaDiem_DuLich.dddl_ten)
+                </th>
+                <th>Tùy chọn</th>
               </tr>
-            }
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              @foreach (var item in Model)
+              {
+                <tr>
+                  <td>
+                    @Html.DisplayFor(modelItem => item.hinh_duongdan)
+                  </td>
+                  <td>
+                    @Html.DisplayFor(modelItem => item.DiaDiem_DuLich.dddl_ten)
+                    @*
+                      NẾU Ở ĐÂY ĐỂ DDDL_ID NÓ SẼ RA ID ĐỊA ĐIỂM CỦA TƯNG ẢNH
+                      @Html.DisplayFor(modelItem => item.dddl_id)
+                    *@
+                  </td>
+                  <td>
+                    <a asp-action="Details" asp-route-id="@item.hinh_id" class="btn btn-success btn-xs"><i
+                      class="fa fa-search"></i> Xem chi tiết</a>|
+                    <a asp-action="Edit" asp-route-id="@item.hinh_id" class="btn btn-primary btn-xs"><i
+                      class="fa fa-pencil"></i> Sửa </a>|
+                    <a asp-action="Delete" asp-route-id="@item.hinh_id" class="btn btn-danger btn-xs"><i
+                      class="fa fa-trash-o"></i> Xóa </a>
+                  </td>
+                </tr>
+              }
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>

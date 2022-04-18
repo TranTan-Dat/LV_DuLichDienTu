@@ -4,65 +4,95 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
 
-<h4>BaiViet_DiaDiem</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="bvdd_id" />
-            <div class="form-group">
-                <label asp-for="bvdd_tieude" class="control-label"></label>
-                <input asp-for="bvdd_tieude" class="form-control" />
-                <span asp-validation-for="bvdd_tieude" class="text-danger"></span>
+
+
+
+<div class="">
+    <div class="row">
+        <div class="col-md-10 center-margin">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2>TẠO MỚI BÀI VIẾT VỀ ĐỊA ĐIỂM</h2>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <br>
+                    <form asp-action="Edit" id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left" novalidate="">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="bvdd_id" />
+
+                        <div class="form-group">
+                            <div class="control-label col-md-3 col-sm-3 col-xs-12">
+                                <label asp-for="bvdd_tieude"></label>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input asp-for="bvdd_tieude" class="form-control" />
+                                <span asp-validation-for="bvdd_tieude" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="control-label col-md-3 col-sm-3 col-xs-12">
+                                <label asp-for="bvdd_noidung"></label>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input asp-for="bvdd_noidung" class="form-control" />
+                                <span asp-validation-for="bvdd_noidung" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="control-label col-md-3 col-sm-3 col-xs-12">
+                                <label asp-for="bvdd_tinhtrang"></label>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <select class="form-control col-md-7 col-xs-12" asp-for="bvdd_tinhtrang">
+                                    @{
+                                        if(@ViewBag.ReturnMA == true)
+                                        {
+                                            <option value=true>Đang hoạt động</option>
+                                            <option value=flase>Đã đóng cửa / đang bảo trì</option>
+                                        }
+                                        else
+                                        {
+                                            <option value=false>Đã đóng cửa / đang bảo trì</option>
+                                            <option value=true>Đang hoạt động</option>
+                                        }
+                                    }
+                                    
+                                </select>
+                            </div>
+                        </div>  
+
+                        <div class="form-group">
+                            <div class="control-label col-md-3 col-sm-3 col-xs-12">
+                                <label asp-for="dddl_id">Tên địa điểm</label>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <select asp-for="dddl_id" asp-items="ViewBag.select_Ten_DD " class="form-control col-md-7 col-xs-12"></select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="control-label col-md-3 col-sm-3 col-xs-12">
+                                <label asp-for="nv_id">Tên nhân viên</label>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <select asp-for="nv_id" asp-items="ViewBag.select_Hoten_NV  " class="form-control col-md-7 col-xs-12"></select>
+                            </div>
+                        </div>
+                        
+                        <div class="ln_solid"></div>
+                        <div class="form-group">
+                            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                                <button asp-action="Index" class="btn btn-success"> Quay lại</button>
+                                <input type="submit" value="Lưu" class="btn btn-primary" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="bvdd_noidung" class="control-label"></label>
-                <input asp-for="bvdd_noidung" class="form-control" />
-                <span asp-validation-for="bvdd_noidung" class="text-danger"></span>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    @* <input class="form-check-input" asp-for="bvdd_tinhtrang" /> @Html.DisplayNameFor(model => model.bvdd_tinhtrang) *@
-                    <select class="form-control col-md-7 col-xs-12" asp-for="bvdd_tinhtrang">
-                    @{
-                        if(@ViewBag.ReturnMA == true)
-                        {
-                            <option value=true>Đang hoạt động</option>
-                            <option value=flase>Đã đóng cửa / đang bảo trì</option>
-                        }
-                        else
-                        {
-                            <option value=false>Đã đóng cửa / đang bảo trì</option>
-                            <option value=true>Đang hoạt động</option>
-                        }
-                    }
-                    
-                </select>
-                </label>
-            </div>
-            <div class="form-group">
-                <label asp-for="dddl_id" class="control-label">Tên địa điểm</label>
-                @* <input asp-for="dddl_id" class="form-control" />
-                <span asp-validation-for="dddl_id" class="text-danger"></span> *@
-                <select asp-for="nv_id" asp-items="ViewBag.select_Hoten_NV  "></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="nv_id" class="control-label">Tên nhân viên</label>
-                @* <input asp-for="nv_id" class="form-control" />
-                <span asp-validation-for="nv_id" class="text-danger"></span> *@
-                <select asp-for="dddl_id" asp-items="ViewBag.select_Ten_DD"></select>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
