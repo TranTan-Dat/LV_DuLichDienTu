@@ -17,7 +17,7 @@ namespace LV_DuLichDienTu.Models
         [DisplayName("Tên")]
         public string ldv_ten{get;set;}
 
-        [DisplayName("Mô tử")]
+        [DisplayName("Mô tả")]
         public string ldv_mota{get;set;}
 
 
