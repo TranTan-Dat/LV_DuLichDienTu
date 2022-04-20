@@ -14,7 +14,7 @@ namespace LV_DuLichDienTu.Models
         [DisplayName("Mã nhà cung cấp")]
         public int ncc_id{get;set;}
 
-        [DisplayName("Tài Khoản nhà cung cấp")]
+        [DisplayName("Tài Khoản ")]
         public string ncc_taikhoan{get;set;}
 
         [DisplayName("Mật khẩu")]
