@@ -1,77 +1,189 @@
 @model IEnumerable<LV_DuLichDienTu.Models.NhanVien>
 
 @{
-    ViewData["Title"] = "Index";
+  ViewData["Title"] = "Index";
 }
 
 <h1>Index</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.nv_taikhoan)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.nv_matKhau)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.nv_hoten)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.nv_cmnd)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.nv_dienthoai)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.nv_diachi)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.nv_email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.bvdd_id)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.nv_taikhoan)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.nv_matKhau)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.nv_hoten)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.nv_cmnd)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.nv_dienthoai)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.nv_diachi)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.nv_email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.bvdd_id)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.nv_id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.nv_id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.nv_id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+@* <p>
+  <a asp-action="Create">Create New</a>
+  </p>
+  <table class="table">
+  <thead>
+  <tr>
+  <th>
+  @Html.DisplayNameFor(model => model.nv_taikhoan)
+  </th>
+  <th>
+  @Html.DisplayNameFor(model => model.nv_matKhau)
+  </th>
+  <th>
+  @Html.DisplayNameFor(model => model.nv_hoten)
+  </th>
+  <th>
+  @Html.DisplayNameFor(model => model.nv_cmnd)
+  </th>
+  <th>
+  @Html.DisplayNameFor(model => model.nv_dienthoai)
+  </th>
+  <th>
+  @Html.DisplayNameFor(model => model.nv_diachi)
+  </th>
+  <th>
+  @Html.DisplayNameFor(model => model.nv_email)
+  </th>
+  <th>
+  @Html.DisplayNameFor(model => model.bvdd_id)
+  </th>
+  <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  @foreach (var item in Model) {
+  <tr>
+  <td>
+  @Html.DisplayFor(modelItem => item.nv_taikhoan)
+  </td>
+  <td>
+  @Html.DisplayFor(modelItem => item.nv_matKhau)
+  </td>
+  <td>
+  @Html.DisplayFor(modelItem => item.nv_hoten)
+  </td>
+  <td>
+  @Html.DisplayFor(modelItem => item.nv_cmnd)
+  </td>
+  <td>
+  @Html.DisplayFor(modelItem => item.nv_dienthoai)
+  </td>
+  <td>
+  @Html.DisplayFor(modelItem => item.nv_diachi)
+  </td>
+  <td>
+  @Html.DisplayFor(modelItem => item.nv_email)
+  </td>
+  <td>
+  @Html.DisplayFor(modelItem => item.bvdd_id)
+  </td>
+  <td>
+  <a asp-action="Edit" asp-route-id="@item.nv_id">Edit</a> |
+  <a asp-action="Details" asp-route-id="@item.nv_id">Details</a> |
+  <a asp-action="Delete" asp-route-id="@item.nv_id">Delete</a>
+  </td>
+  </tr>
+  }
+  </tbody>
+  </table> *@
+
+
+
+<div class="">
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="x_panel">
+        <div class="x_content">
+          <div>
+            <h2>
+              ĐỊA ĐIỂM DU LỊCH <small><a asp-action="Create"> Thêm mới</a></small>
+            </h2>
+          </div>
+
+          <table id="datatable" class="table table-striped table-bordered">
+            <thead>
+              <tr>
+                <th>
+                  @Html.DisplayNameFor(model => model.nv_taikhoan)
+                </th>
+
+                @* <th>
+                  @Html.DisplayNameFor(model => model.nv_matKhau)
+                  </th> *@
+
+                <th>
+                  @Html.DisplayNameFor(model => model.nv_hoten)
+                </th>
+
+                <th>
+                  @Html.DisplayNameFor(model => model.nv_cmnd)
+                </th>
+
+                <th>
+                  @Html.DisplayNameFor(model => model.nv_dienthoai)
+                </th>
+
+                <th>
+                  @Html.DisplayNameFor(model => model.nv_diachi)
+                </th>
+
+                <th>
+                  @Html.DisplayNameFor(model => model.nv_email)
+                </th>
+
+                <th>
+                  @* @Html.DisplayNameFor(model => model.bvdd_id) *@
+                  Tổng số bài viết *
+                </th>
+
+
+
+                <th>Tùy chọn</th>
+              </tr>
+            </thead>
+            <tbody>
+              @foreach (var item in Model)
+              {
+                <tr>
+                  <td>
+                    @Html.DisplayFor(modelItem => item.nv_taikhoan)
+                  </td>
+
+                  @* <td type="password">
+                    @Html.DisplayFor(modelItem => item.nv_matKhau)
+                    </td> *@
+
+                  <td>
+                    @Html.DisplayFor(modelItem => item.nv_hoten)
+                  </td>
+
+                  <td>
+                    @Html.DisplayFor(modelItem => item.nv_cmnd)
+                  </td>
+
+                  <td>
+                    @Html.DisplayFor(modelItem => item.nv_dienthoai)
+                  </td>
+
+                  <td>
+                    @Html.DisplayFor(modelItem => item.nv_diachi)
+                  </td>
+
+                  <td>
+                    @Html.DisplayFor(modelItem => item.nv_email)
+                  </td>
+
+                  <td>
+                    @Html.DisplayFor(modelItem => item.bvdd_id)
+                  </td>
+
+
+
+
+                  <td>
+                    <a asp-action="Details" asp-route-id="@item.nv_id" class="btn btn-success btn-xs"><i
+                      class="fa fa-search"></i> Xem chi tiết</a>|
+                    <a asp-action="Edit" asp-route-id="@item.nv_id" class="btn btn-primary btn-xs"><i
+                      class="fa fa-pencil"></i> Sửa </a>|
+                    <a asp-action="Delete" asp-route-id="@item.nv_id" class="btn btn-danger btn-xs"><i
+                      class="fa fa-trash-o"></i> Xóa </a>
+                  </td>
+                </tr>
+              }
+            </tbody>
+          </table>
+          *: Bấm vào chi tiết để xem được danh sách bài viết nhân viên
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

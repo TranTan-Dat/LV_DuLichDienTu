@@ -4,9 +4,8 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
 
-<p>
+@* <p>
     <a asp-action="Create">Create New</a>
 </p>
 <table class="table">
@@ -80,4 +79,120 @@
         </tr>
 }
     </tbody>
-</table>
+</table> *@
+
+
+<div class="">
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="x_panel">
+        <div class="x_content">
+          <div>
+            <h2>
+              DU KHÁCH<small><a asp-action="Create"> Thêm mới</a></small>
+            </h2>
+          </div>
+
+          <table id="datatable" class="table table-striped table-bordered">
+            <thead>
+              <tr>
+                <th>
+                  @Html.DisplayNameFor(model => model.dk_taikhoan)
+                </th>
+
+                @* <th>
+                  @Html.DisplayNameFor(model => model.nv_matKhau)
+                  </th> *@
+
+                <th>
+                  @Html.DisplayNameFor(model => model.dk_hoten)
+                </th>
+
+                <th>
+                  @Html.DisplayNameFor(model => model.dk_cmnd)
+                </th>
+
+                <th>
+                  @Html.DisplayNameFor(model => model.dk_dienthoai)
+                </th>
+
+                <th>
+                  @Html.DisplayNameFor(model => model.dk_diachi)
+                </th>
+
+                <th>
+                  @Html.DisplayNameFor(model => model.dk_email)
+                </th>
+
+                <th>
+                  @Html.DisplayNameFor(model => model.dk_diemthanhvien)
+                </th>
+
+                <th>
+                  @* @Html.DisplayNameFor(model => model.hd_id) *@
+                  Tổng hợp đồng
+                </th>
+
+
+
+                <th>Tùy chọn</th>
+              </tr>
+            </thead>
+            <tbody>
+              @foreach (var item in Model)
+              {
+                <tr>
+                  <td>
+                    @Html.DisplayFor(modelItem => item.dk_taikhoan)
+                  </td>
+
+                  @* <td type="password">
+                    @Html.DisplayFor(modelItem => item.nv_matKhau)
+                    </td> *@
+
+                  <td>
+                    @Html.DisplayFor(modelItem => item.dk_hoten)
+                  </td>
+
+                  <td>
+                    @Html.DisplayFor(modelItem => item.dk_cmnd)
+                  </td>
+
+                  <td>
+                    @Html.DisplayFor(modelItem => item.dk_dienthoai)
+                  </td>
+
+                  <td>
+                    @Html.DisplayFor(modelItem => item.dk_diachi)
+                  </td>
+
+                  <td>
+                    @Html.DisplayFor(modelItem => item.dk_email)
+                  </td>
+
+                  <td>
+                    @Html.DisplayFor(modelItem => item.dk_diemthanhvien)
+                  </td>
+                  <td>cái này để tổng hợp đồng sau</td>
+
+
+
+
+                  <td>
+                    <a asp-action="Details" asp-route-id="@item.dk_id" class="btn btn-success btn-xs"><i
+                      class="fa fa-search"></i> Xem chi tiết</a>|
+                    <a asp-action="Edit" asp-route-id="@item.dk_id" class="btn btn-primary btn-xs"><i
+                      class="fa fa-pencil"></i> Sửa </a>|
+                    <a asp-action="Delete" asp-route-id="@item.dk_id" class="btn btn-danger btn-xs"><i
+                      class="fa fa-trash-o"></i> Xóa </a>
+                  </td>
+                </tr>
+              }
+            </tbody>
+          </table>
+          *: Bấm vào chi tiết để xem được danh sách hợp đồng của du khách
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
