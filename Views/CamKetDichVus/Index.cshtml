@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "Index";
 }
-
+@* 
 <h1>Index</h1>
 
 <p>
@@ -44,4 +44,63 @@
         </tr>
 }
     </tbody>
-</table>
+</table> *@
+
+<div class="row">
+  <div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+      <div class="x_content">
+        <div> 
+          <h2>
+            CAM KẾT DỊCH VỤ <small><a asp-action="Create"> Thêm mới</a></small>
+        </h2>
+        </div>
+        
+        <table id="datatable" class="table table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>
+                @Html.DisplayNameFor(model => model.ckdv_noidung)
+              </th>
+              <th>
+                @Html.DisplayNameFor(model => model.ckdv_boithuong)
+              </th>
+              <th>
+                @Html.DisplayNameFor(model => model.dv_id)
+              </th>
+              <th>Tùy chọn</th>
+            </tr>
+          </thead>
+          <tbody>
+            @foreach (var item in Model)
+            {
+              <tr>
+                <td>
+                  @Html.DisplayFor(modelItem => item.ckdv_noidung)
+                </td>
+                <td>
+                  @Html.DisplayFor(modelItem => item.ckdv_boithuong)
+                </td>
+                <td>
+                  @Html.DisplayFor(modelItem => item.dv_id)
+                  @*
+                    NẾU Ở ĐÂY ĐỂ DDDL_ID NÓ SẼ RA ID ĐỊA ĐIỂM CỦA TƯNG ẢNH
+                    @Html.DisplayFor(modelItem => item.dddl_id)
+                  *@
+                </td>
+                <td>
+                  <a asp-action="Details" asp-route-id="@item.ckdv_id" class="btn btn-success btn-xs"><i
+                    class="fa fa-search"></i> Xem chi tiết</a>|
+                  <a asp-action="Edit" asp-route-id="@item.ckdv_id" class="btn btn-primary btn-xs"><i
+                    class="fa fa-pencil"></i> Sửa </a>|
+                  <a asp-action="Delete" asp-route-id="@item.ckdv_id" class="btn btn-danger btn-xs"><i
+                    class="fa fa-trash-o"></i> Xóa </a>
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

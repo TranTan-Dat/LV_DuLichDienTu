@@ -3,14 +3,16 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace LV_DuLichDienTu.Migrations
 {
     [DbContext(typeof(acompec_lvdatContext))]
-    partial class acompec_lvdatContextModelSnapshot : ModelSnapshot
+    [Migration("20220421063114_InitWebDB4")]
+    partial class InitWebDB4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -70,12 +72,15 @@ namespace LV_DuLichDienTu.Migrations
                     b.Property<string>("ckdv_noidung")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("dichVudv_id")
+                        .HasColumnType("int");
+
                     b.Property<int>("dv_id")
                         .HasColumnType("int");
 
                     b.HasKey("ckdv_id");
 
-                    b.HasIndex("dv_id");
+                    b.HasIndex("dichVudv_id");
 
                     b.ToTable("CamKetDichVu");
                 });
@@ -368,9 +373,7 @@ namespace LV_DuLichDienTu.Migrations
                 {
                     b.HasOne("LV_DuLichDienTu.Models.DichVu", "dichVu")
                         .WithMany("camKetDichVus")
-                        .HasForeignKey("dv_id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("dichVudv_id");
 
                     b.Navigation("dichVu");
                 });

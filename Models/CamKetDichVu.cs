@@ -20,8 +20,9 @@ namespace LV_DuLichDienTu.Models
         [DisplayName("Bồi thường")]
         public string ckdv_boithuong{get;set;}
         
-        [ForeignKey("DichVu")]
+        [ForeignKey("dv_id")]
         public int dv_id  {get;set;}
-        public  DichVu dichVu {get;set;}
+        [ForeignKey("dv_id")]
+        public virtual DichVu dichVu {get;set;}
     }
 }

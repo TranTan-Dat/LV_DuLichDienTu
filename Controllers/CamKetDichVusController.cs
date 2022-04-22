@@ -21,7 +21,8 @@ namespace LV_DuLichDienTu.Controllers
         // GET: CamKetDichVus
         public async Task<IActionResult> Index()
         {
-            return View(await _context.CamKetDichVu.ToListAsync());
+            var acompec_lvdatContext = _context.CamKetDichVu.Include(c => c.dichVu);
+            return View(await acompec_lvdatContext.ToListAsync());
         }
 
         // GET: CamKetDichVus/Details/5
@@ -33,6 +34,7 @@ namespace LV_DuLichDienTu.Controllers
             }
 
             var camKetDichVu = await _context.CamKetDichVu
+                .Include(c => c.dichVu)
                 .FirstOrDefaultAsync(m => m.ckdv_id == id);
             if (camKetDichVu == null)
             {
@@ -45,6 +47,7 @@ namespace LV_DuLichDienTu.Controllers
         // GET: CamKetDichVus/Create
         public IActionResult Create()
         {
+            ViewData["Select_dv_ten"] = new SelectList(_context.DichVu, "dv_id", "dv_ten");
             return View();
         }
 
@@ -61,6 +64,7 @@ namespace LV_DuLichDienTu.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["dv_id"] = new SelectList(_context.DichVu, "dv_id", "dv_id", camKetDichVu.dv_id);
             return View(camKetDichVu);
         }
 
@@ -77,6 +81,8 @@ namespace LV_DuLichDienTu.Controllers
             {
                 return NotFound();
             }
+            ViewData["dv_id"] = new SelectList(_context.DichVu, "dv_id", "dv_id", camKetDichVu.dv_id);
+            ViewData["selectdv_ten"] = new SelectList(_context.DichVu, "dv_id", "dv_ten");
             return View(camKetDichVu);
         }
 
@@ -112,6 +118,7 @@ namespace LV_DuLichDienTu.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["selectdv_ten"] = new SelectList(_context.DichVu, "dv_id", "dv_ten");
             return View(camKetDichVu);
         }
 
@@ -124,6 +131,7 @@ namespace LV_DuLichDienTu.Controllers
             }
 
             var camKetDichVu = await _context.CamKetDichVu
+                .Include(c => c.dichVu)
                 .FirstOrDefaultAsync(m => m.ckdv_id == id);
             if (camKetDichVu == null)
             {

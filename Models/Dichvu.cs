@@ -23,14 +23,15 @@ namespace LV_DuLichDienTu.Models
         [DisplayName("Mô tả")]
         public string dv_mota{get;set;}
 
-        [ForeignKey("bvdd_id")]
-        public int bvdd_id {get;set;}
+        [ForeignKey("ckdv_id")]
+        public int ckdv_id {get;set;}
         public ICollection<CamKetDichVu> camKetDichVus {get;set;}
         
 
         [ForeignKey("ncc_id")]
         public int ncc_id {get;set;}
-        public NhaCungCap nhaCungCap{get;set;}
+        [ForeignKey("ncc_id")]
+        public virtual NhaCungCap nhaCungCap{get;set;}
 
         [ForeignKey("ldv_id")]
         public int ldv_id {get;set;}

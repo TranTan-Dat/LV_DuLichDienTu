@@ -44,8 +44,11 @@ namespace LV_DuLichDienTu.Controllers
 
         // GET: DichVus/Create
         public IActionResult Create()
-        {
+        {   
+            ViewData["Select_TenNCC"]= new SelectList(_context.NhaCungCap,"ncc_id","ncc_ten");
+            ViewData["Select_LoaiDV"]= new SelectList(_context.LoaiDichVu,"ldv_id","ldv_ten");
             return View();
+            
         }
 
         // POST: DichVus/Create
@@ -53,7 +56,7 @@ namespace LV_DuLichDienTu.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("dv_id,dv_ten,dv_dienthoai_hotro,dv_mota,bvdd_id,ncc_id,ldv_id,hd_id")] DichVu dichVu)
+        public async Task<IActionResult> Create([Bind("dv_id,dv_ten,dv_dienthoai_hotro,dv_mota,ckdv_id,ncc_id,ldv_id,hd_id")] DichVu dichVu)
         {
             if (ModelState.IsValid)
             {
@@ -77,6 +80,8 @@ namespace LV_DuLichDienTu.Controllers
             {
                 return NotFound();
             }
+            ViewData["Select_TenNCC"]= new SelectList(_context.NhaCungCap,"ncc_id","ncc_ten");
+            ViewData["Select_LoaiDV"]= new SelectList(_context.LoaiDichVu,"ldv_id","ldv_ten");
             return View(dichVu);
         }
 
@@ -85,7 +90,7 @@ namespace LV_DuLichDienTu.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("dv_id,dv_ten,dv_dienthoai_hotro,dv_mota,bvdd_id,ncc_id,ldv_id,hd_id")] DichVu dichVu)
+        public async Task<IActionResult> Edit(int id, [Bind("dv_id,dv_ten,dv_dienthoai_hotro,dv_mota,ckdv_id,ncc_id,ldv_id,hd_id")] DichVu dichVu)
         {
             if (id != dichVu.dv_id)
             {
@@ -125,11 +130,11 @@ namespace LV_DuLichDienTu.Controllers
 
             var dichVu = await _context.DichVu
                 .FirstOrDefaultAsync(m => m.dv_id == id);
+            
             if (dichVu == null)
             {
                 return NotFound();
-            }
-
+            };
             return View(dichVu);
         }
 
