@@ -365,11 +365,6 @@ C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\D
 C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\DuKhachs\Details.cshtml.g.cs
 C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\DuKhachs\Edit.cshtml.g.cs
 C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\DuKhachs\Index.cshtml.g.cs
-C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\HopDongs\Create.cshtml.g.cs
-C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\HopDongs\Delete.cshtml.g.cs
-C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\HopDongs\Details.cshtml.g.cs
-C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\HopDongs\Edit.cshtml.g.cs
-C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\HopDongs\Index.cshtml.g.cs
 C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\BaiViet_DiaDiems\Create.cshtml.g.cs
 C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\BaiViet_DiaDiems\Delete.cshtml.g.cs
 C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\BaiViet_DiaDiems\Details.cshtml.g.cs
@@ -389,3 +384,8 @@ C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\C
 C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\CamKetDichVus\Details.cshtml.g.cs
 C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\CamKetDichVus\Edit.cshtml.g.cs
 C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\CamKetDichVus\Index.cshtml.g.cs
+C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\HopDongs\Create.cshtml.g.cs
+C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\HopDongs\Delete.cshtml.g.cs
+C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\HopDongs\Details.cshtml.g.cs
+C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\HopDongs\Edit.cshtml.g.cs
+C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\HopDongs\Index.cshtml.g.cs

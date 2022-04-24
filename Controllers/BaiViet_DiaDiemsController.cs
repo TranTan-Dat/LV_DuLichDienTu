@@ -23,6 +23,7 @@ namespace LV_DuLichDienTu.Controllers
         {
             var appDBContext = _context.BaiViet_DiaDiem.Include(e=>e.NhanVien).Include(g=>g.DiaDiem_DuLich);
             return View(await appDBContext.ToListAsync());
+
         //    return View(await _context.BaiViet_DiaDiem.ToListAsync());
         }
 

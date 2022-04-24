@@ -21,7 +21,9 @@ namespace LV_DuLichDienTu.Controllers
         // GET: HopDongs
         public async Task<IActionResult> Index()
         {
-            return View(await _context.HopDong.ToListAsync());
+            var acompec_lvdatContext = _context.HopDong.Include(h => h.dichVu).Include(h => h.duKhach);
+           
+            return View(await acompec_lvdatContext.ToListAsync());
         }
 
         // GET: HopDongs/Details/5
@@ -33,6 +35,8 @@ namespace LV_DuLichDienTu.Controllers
             }
 
             var hopDong = await _context.HopDong
+                .Include(h => h.dichVu)
+                .Include(h => h.duKhach)
                 .FirstOrDefaultAsync(m => m.hd_id == id);
             if (hopDong == null)
             {
@@ -45,6 +49,8 @@ namespace LV_DuLichDienTu.Controllers
         // GET: HopDongs/Create
         public IActionResult Create()
         {
+            ViewData["dv_ten"] = new SelectList(_context.DichVu, "dv_id", "dv_ten");
+            ViewData["dk_hoten"] = new SelectList(_context.DuKhach, "dk_id", "dk_hoten");
             return View();
         }
 
@@ -61,6 +67,8 @@ namespace LV_DuLichDienTu.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["dv_id"] = new SelectList(_context.DichVu, "dv_id", "dv_id", hopDong.dv_id);
+            ViewData["dk_id"] = new SelectList(_context.DuKhach, "dk_id", "dk_id", hopDong.dk_id);
             return View(hopDong);
         }
 
@@ -77,6 +85,8 @@ namespace LV_DuLichDienTu.Controllers
             {
                 return NotFound();
             }
+            ViewData["dv_ten"] = new SelectList(_context.DichVu, "dv_id", "dv_ten", hopDong.dv_id);
+            ViewData["dk_hoten"] = new SelectList(_context.DuKhach, "dk_id", "dk_hoten", hopDong.dk_id);
             return View(hopDong);
         }
 
@@ -112,6 +122,8 @@ namespace LV_DuLichDienTu.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["dv_id"] = new SelectList(_context.DichVu, "dv_id", "dv_id", hopDong.dv_id);
+            ViewData["dk_id"] = new SelectList(_context.DuKhach, "dk_id", "dk_id", hopDong.dk_id);
             return View(hopDong);
         }
 
@@ -124,6 +136,8 @@ namespace LV_DuLichDienTu.Controllers
             }
 
             var hopDong = await _context.HopDong
+                .Include(h => h.dichVu)
+                .Include(h => h.duKhach)
                 .FirstOrDefaultAsync(m => m.hd_id == id);
             if (hopDong == null)
             {

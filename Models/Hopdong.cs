@@ -27,15 +27,17 @@ namespace LV_DuLichDienTu.Models
         public Double hd_danhgiachatluong{get;set;}
 
         [DisplayName("Phản hồi")]
-        public Double hd_phanhoi{get;set;}
+        public String hd_phanhoi{get;set;}
 
         [ForeignKey("dk_id")]
         public int dk_id {get;set;}
-        public DuKhach duKhach {get; set;}
+        [ForeignKey("dk_id")]
+        public virtual DuKhach duKhach {get; set;}
 
         [ForeignKey("dv_id")]
         public int dv_id {get;set;}
-        public DichVu dichVu {get; set;}
+        [ForeignKey("dv_id")]
+        public virtual DichVu dichVu {get; set;}
         
     }
 }
