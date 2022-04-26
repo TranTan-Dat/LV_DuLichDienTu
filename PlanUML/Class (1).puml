@@ -24,7 +24,9 @@ class DiaDiem_DuLich{
   + dddl_id: int
   + dddl_ten: string
   + dddl_mota: string
+  + dddl_tinhthanh: string
 }
+
 
 class BaiViet_DiaDiem{
   + bvdd_id: int

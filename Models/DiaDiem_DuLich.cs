@@ -34,5 +34,9 @@ namespace LV_DuLichDienTu.Models
         [ForeignKey("bvdd_id")]
         public int bvdd_id {get; set;}
         public ICollection<BaiViet_DiaDiem> baiViet_DiaDiems {get; set;}
+
+        // [ForeignKey("tp_id")]
+        // public int tp_id {get; set;}
+        // public virtual ThanhPho thanhPho{get;set;}
     }
 }
