@@ -20,6 +20,8 @@ namespace LV_DuLichDienTu.Models
 
         [DisplayName("Tỉnh thành")]
         public string dddl_tinhthanh {get;set;}
+        [DisplayName("Quận huyện")]
+        public string dddl_quanhuyen {get;set;}
 
         // [DisplayName("Tổng ảnh")]
         // public string Sum_Pic {get;set;}

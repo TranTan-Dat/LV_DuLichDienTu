@@ -72,8 +72,12 @@
                                 </span>
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input asp-for="hinh_duongdan" type="text" id="first-name" required="required"
-                                    class="form-control col-md-7 col-xs-12">
+                                @* <input asp-for="hinh_duongdan" type="text" id="first-name" required="required"
+                                    class="form-control col-md-7 col-xs-12"> *@
+                                <input type="file" asp-for="imageUpload" onchange="ShowImgPreview(this, document.getElementById('imagePreview'))"/>
+                                <img id="imagePreview" style="width: 200px; height:200px;"/>
+
+
                             </div>
                         </div>
                         @* Trường danh sách chọn dữ liệu mã địa điểm*@
@@ -93,7 +97,7 @@
                             <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 items-center">
 
                                 <button asp-action="Index" class="btn btn-success"> Quay lại</button>
-                                <button type="submit" class="btn btn-primary">Lưu</button>
+                                <button type="submit" id="btnsubmit" class="btn btn-primary">Lưu</button>
                             </div>
                         </div>
 

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Web;
+using System.IO;
+using Microsoft.AspNetCore.Http;
 
 namespace LV_DuLichDienTu.Models
 {
@@ -22,5 +25,8 @@ namespace LV_DuLichDienTu.Models
         [ForeignKey("dddl_id")]
         public virtual DiaDiem_DuLich DiaDiem_DuLich{get;set;}
         
+        [NotMapped]
+        public IFormFile imageUpload{get;set;}
+
     }
 }

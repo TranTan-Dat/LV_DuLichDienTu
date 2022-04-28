@@ -286,6 +286,7 @@
   <script src="~/Template/vendors/pdfmake/build/pdfmake.min.js"></script>
   <script src="~/Template/vendors/pdfmake/build/vfs_fonts.js"></script>
   <script src="~/js/citiesLoad.js"></script>
+  <script src="~/js/ChangeUrlToFile.js"></script>
 
 
 
@@ -296,6 +297,16 @@
       if ((Date.parse(endDate) <= Date.parse(startDate))) {
         alert('Ngày kết thúc phải "lớn hơn" ngày bắt đầu');
         document.getElementById("EndDate").value = "";
+      }
+    }
+
+    function ShowImgPreview(imageUpload, imagePreview) {
+      if (imageUpload.files && imageUpload.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+          $(imagePreview).attr('src', e.target.result);
+        }
+        reader.readAsDataURL(imageUpload.files[0]);
       }
     }
 

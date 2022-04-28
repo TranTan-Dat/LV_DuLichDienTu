@@ -6,16 +6,21 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using LV_DuLichDienTu.Models;
+using System.Data;
+using System.IO;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 
 namespace LV_DuLichDienTu.Controllers
 {
     public class Hinh_DiaDiemDuLichsController : Controller
     {
+
         private readonly acompec_lvdatContext _context;
-
-        public Hinh_DiaDiemDuLichsController(acompec_lvdatContext context)
+        private IWebHostEnvironment _env;
+        public Hinh_DiaDiemDuLichsController(acompec_lvdatContext context, IWebHostEnvironment env)
         {
-
+            _env = env;
             _context = context;
         }
 
@@ -48,8 +53,9 @@ namespace LV_DuLichDienTu.Controllers
         // GET: Hinh_DiaDiemDuLichs/Create
         public IActionResult Create()
         {
-            ViewData["dddl_ten"] = new SelectList(_context.DiaDiem_DuLich,"dddl_id","dddl_ten");
-            return View();
+            Hinh_DiaDiemDuLich imgs = new Hinh_DiaDiemDuLich();
+            ViewData["dddl_ten"] = new SelectList(_context.DiaDiem_DuLich, "dddl_id", "dddl_ten");
+            return View(imgs);
         }
 
         // POST: Hinh_DiaDiemDuLichs/Create
@@ -60,10 +66,20 @@ namespace LV_DuLichDienTu.Controllers
         public async Task<IActionResult> Create([Bind("hinh_id,hinh_duongdan,dddl_id")] Hinh_DiaDiemDuLich hinh_DiaDiemDuLich)
         {
             if (ModelState.IsValid)
-            {
+            {   
+                
+                var dir = _env.ContentRootPath;
+                using(var fileStream = new FileStream(Path.Combine(dir,"file.png"), FileMode.Create, FileAccess.Write))
+                {
+                //    hinh_DiaDiemDuLich.imageUpload.CopyTo(fileStream);
+                hinh_DiaDiemDuLich.hinh_duongdan  = fileStream.Name.ToString();
+                }
+                
                 _context.Add(hinh_DiaDiemDuLich);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
+
+
             }
             return View(hinh_DiaDiemDuLich);
         }
@@ -77,7 +93,7 @@ namespace LV_DuLichDienTu.Controllers
             }
 
             var hinh_DiaDiemDuLich = await _context.Hinh_DiaDiemDuLich.FindAsync(id);
-            ViewData["dddl_ten"] = new SelectList(_context.DiaDiem_DuLich,"dddl_id","dddl_ten",hinh_DiaDiemDuLich.dddl_id);
+            ViewData["dddl_ten"] = new SelectList(_context.DiaDiem_DuLich, "dddl_id", "dddl_ten", hinh_DiaDiemDuLich.dddl_id);
             if (hinh_DiaDiemDuLich == null)
             {
                 return NotFound();
@@ -117,7 +133,7 @@ namespace LV_DuLichDienTu.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["dddl_ten"] = new SelectList(_context.DiaDiem_DuLich, "dddl_id", "dddl_ten", hinh_DiaDiemDuLich.dddl_id);  
+            ViewData["dddl_ten"] = new SelectList(_context.DiaDiem_DuLich, "dddl_id", "dddl_ten", hinh_DiaDiemDuLich.dddl_id);
             return View(hinh_DiaDiemDuLich);
         }
 

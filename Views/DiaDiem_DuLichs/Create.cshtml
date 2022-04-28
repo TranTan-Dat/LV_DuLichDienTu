@@ -80,7 +80,7 @@
 
                         <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
-                                <label asp-for="dddl_tinhthanh"></label>
+                                <label asp-for="dddl_tinhthanh">Tỉnh thành </br> Quận huyện</label>
                                 <span class="required">
                                     *
                                 </span>
@@ -88,17 +88,17 @@
                             
                             <div class="col-md-6 col-sm-6 col-xs-12" name="myform" id="myForm"> 
                                     @* Chọn Tỉnh / Thành Phố:  *@
-                                    <select class="form-control col-md-7 col-xs-12 SLTinhThanh"  name="state" id="countySel" size="1">
-                                        <option asp-for="dddl_id" value="" selected="selected">Chọn Tỉnh / Thành Phố</option>
+                                    <select class="form-control col-md-7 col-xs-12 SLTinhThanh"  name="dddl_tinhthanh" asp-for="dddl_tinhthanh" id="countySel" size="1">
+                                        <option  value="" selected="selected">Chọn Tỉnh / Thành Phố</option>
                                     </select> 
                                     @* Chọn Quận/Huyện:  *@
-                                    <select class="form-control col-md-7 col-xs-12 SLTinhThanh"  name="countrya" id="stateSel" size="1">
+                                    <select class="form-control col-md-7 col-xs-12 SLTinhThanh"  name="dddl_quanhuyen" asp-for="dddl_quanhuyen" id="stateSel" size="1">
                                         <option value="" selected="selected">Chọn Quận/Huyện</option>
                                     </select>
-                                    @* Chọn xã/phường:  *@
+                                    @* Chọn xã/phường: 
                                     <select class="form-control col-md-7 col-xs-12 "  name="district" id="districtSel" size="1">
                                         <option value="" selected="selected">Chọn xã/phường</option>
-                                    </select>
+                                    </select> *@
                             </div>
                         </div>
                         
@@ -111,10 +111,8 @@
                             </label>
                             @* Này là form group cho bài viết nhưng chưa làm đc *@
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input asp-for="dddl_mota" type="text" id="first-name" required="required"
-                                    class="form-control col-md-7 col-xs-12">
-
-
+                                <textarea asp-for="dddl_mota" type="text" id="first-name" required="required"
+                                    class="form-control col-md-7 col-xs-12"></textarea>
                                 <div id="alerts"></div>
                             </div>
                         </div>
