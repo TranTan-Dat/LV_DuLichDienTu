@@ -89,11 +89,12 @@
                             <div class="col-md-6 col-sm-6 col-xs-12" name="myform" id="myForm"> 
                                     @* Chọn Tỉnh / Thành Phố:  *@
                                     <select class="form-control col-md-7 col-xs-12 SLTinhThanh"  name="dddl_tinhthanh" asp-for="dddl_tinhthanh" id="countySel" size="1">
-                                        <option  value="" selected="selected">Chọn Tỉnh / Thành Phố</option>
+                                        @* disabled không cho chọn dữ liệu mặc định *@
+                                        <option  value="" selected="selected" disabled >Chọn Tỉnh / Thành Phố</option>
                                     </select> 
                                     @* Chọn Quận/Huyện:  *@
                                     <select class="form-control col-md-7 col-xs-12 SLTinhThanh"  name="dddl_quanhuyen" asp-for="dddl_quanhuyen" id="stateSel" size="1">
-                                        <option value="" selected="selected">Chọn Quận/Huyện</option>
+                                        <option value="" selected="selected" disabled>Chọn Quận/Huyện</option>
                                     </select>
                                     @* Chọn xã/phường: 
                                     <select class="form-control col-md-7 col-xs-12 "  name="district" id="districtSel" size="1">

@@ -1,7 +1,10 @@
 
 var stateObject = {
       "TP Hồ Chí Minh": {
-        "Quận 1": "Quận 1","Quận 2": [""],"Quận 3": [""],"Quận 4": [""],"Quận 11": [""],
+        "Quận 1": [""],"Quận 2": [""],"Quận 3": [""],"Quận 4": [""],"Quận 5": [""],"Quận 6": [""],"Quận 7": [""],"Quận 8": [""],"Quận 9": [""],"Quận 10": [""],"Quận 11": [""],"Quận 12": [""],"Quận Bình Tân": [""],"Quận Bình Thạnh": [""],"Quận Gò Vấp": [""],"Quận Phú Nhuận": [""],"Quận Tân Bình": [""],"Quận Tân Phú": [""],"Quận Thủ Đức": [""],"Huyện Bình Chánh": [""],"Huyện Cần Giờ": [""],"Huyện Củ Chi": [""],"Huyện Hóc Môn": [""],"Huyện Nhà Bè": [""],                                    
+      },
+      "TP Cần Thơ": {
+        "Quận Ninh Kiều": [""],"Quận Cái Răng": [""],"Quận Bình Thủy": [""],"Quận Ô Môn": [""],"Huyện Phong Điền": [""],"Huyện Thốt Nốt": [""],"Huyện Cờ Đỏ": [""],"Huyện Vĩnh Thạnh": [""],"Huyện Thới Lai": [""],                                     
       },
     }
 
