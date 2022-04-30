@@ -19,6 +19,7 @@ namespace LV_DuLichDienTu.Models
         public string dddl_mota {get;set;}
 
         [DisplayName("Tỉnh thành")]
+        
         public string dddl_tinhthanh {get;set;}
         [DisplayName("Quận huyện")]
         public string dddl_quanhuyen {get;set;}

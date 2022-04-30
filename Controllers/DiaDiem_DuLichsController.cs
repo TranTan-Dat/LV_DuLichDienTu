@@ -38,7 +38,7 @@ namespace LV_DuLichDienTu.Controllers
             {
                 return NotFound();
             }
-
+            ViewData["gtri"] = diaDiem_DuLich.dddl_mota;
             return View(diaDiem_DuLich);
         }
 

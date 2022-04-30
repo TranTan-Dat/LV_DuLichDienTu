@@ -47,7 +47,7 @@
 
 </head>
 
-<body class="nav-md">
+<body class="nav-md footer_fixed">
   <div class="container body">
     <div class="main_container">
       <div class="col-md-3 left_col">
@@ -221,7 +221,8 @@
       <!-- footer content -->
       <footer>
         <div class="pull-right">
-          Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+          WEBSITE DU LỊCH ĐIỆN TỬ - Được thiết kế và chỉnh sửa bởi: <a href="https://www.facebook.com/TanDatTr/"> TRẦN
+            ĐẠT</a>
         </div>
         <div class="clearfix"></div>
       </footer>
@@ -287,7 +288,7 @@
   <script src="~/Template/vendors/pdfmake/build/vfs_fonts.js"></script>
   <script src="~/js/citiesLoad.js"></script>
   <script src="~/js/ChangeUrlToFile.js"></script>
-
+  <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
 
 
   <script>
@@ -309,6 +310,29 @@
         reader.readAsDataURL(imageUpload.files[0]);
       }
     }
+
+    ClassicEditor
+      .create(document.querySelector('#dddl_mota'), {
+        // toolbar: [ 'heading', '|', 'bold', 'italic', 'link' ]
+      })
+      .then(editor => {
+        window.editor = editor;
+
+      })
+      .catch(err => {
+        console.error(err.stack);
+      });
+
+
+    window.onload = function outVal() {
+      let output_val = document.getElementById("output");
+      
+      const input_val = document.getElementById("input").innerText;
+
+      var trimmedcontent = input_val.substring(1, input_val.length-2);
+      output_val.innerHTML = trimmedcontent;
+    }
+
 
   </script>
 
