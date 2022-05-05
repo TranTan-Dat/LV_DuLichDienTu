@@ -86,21 +86,21 @@
                     </div>
                     <div class="form-group">
                         <div class="control-label col-md-6 col-sm-6 col-xs-12">
-                            <label asp-for="ldv_id" class="control-label"></label><span>:</span>
+                            <label asp-for="ldv_id" class="control-label">Tên loại dịch vụ</label><span>: </span>
                         </div>
 
                         <div class="control-label text-left col-md-6 col-sm-6 col-xs-12">
-                            <label class="normal-text control-label">@Html.DisplayFor(model => model.ldv_id)</label>
+                            <label class="normal-text control-label">@Html.DisplayFor(model => model.loaiDichVu.ldv_ten)</label>
                             
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="control-label col-md-6 col-sm-6 col-xs-12">
-                            <label asp-for="ncc_id" class="control-label"></label><span>:</span>
+                            <label asp-for="ncc_id" class="control-label">Tên nhà cung cấp</label><span>:</span>
                         </div>
 
                         <div class="control-label text-left col-md-6 col-sm-6 col-xs-12">
-                            <label class="normal-text control-label">@Html.DisplayFor(model => model.ncc_id)</label>
+                            <label class="normal-text control-label">@Html.DisplayFor(model => model.nhaCungCap.ncc_ten)</label>
                             
                         </div>
                     </div>

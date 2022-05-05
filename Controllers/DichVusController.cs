@@ -130,7 +130,7 @@ namespace LV_DuLichDienTu.Controllers
                 return NotFound();
             }
 
-            var dichVu = await _context.DichVu
+            var dichVu = await _context.DichVu.Include(m=>m.nhaCungCap).Include(n=>n.loaiDichVu)
                 .FirstOrDefaultAsync(m => m.dv_id == id);
             
             if (dichVu == null)
