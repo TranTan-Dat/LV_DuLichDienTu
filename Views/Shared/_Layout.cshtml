@@ -47,7 +47,7 @@
 
 </head>
 
-<body class="nav-md footer_fixed">
+<body class="nav-md ">
   <div class="container body">
     <div class="main_container">
       <div class="col-md-3 left_col">
@@ -75,27 +75,31 @@
           <!-- sidebar menu -->
           <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
             <div class="menu_section">
-              <h3>General</h3>
+              <h3>Nhân viên</h3>
               <ul class="nav side-menu">
-                <li><a href="~/BaiViet_DiaDiems"><i class="fa fa-file-photo-o"></i> BÀI VIẾT ĐỊA ĐIỂM</a>
-                </li>
-                <li><a href="~/CamKetDichVus"><i class="fa fa-paste"></i> CAM KẾT DỊCH VỤ</a>
-                </li>
-                <li><a href="~/DiaDiem_DuLichs"><i class="fa fa-map-marker"></i> ĐỊA ĐIỂM DU LỊCH</a>
-                </li>
-                <li><a href="~/DichVus"><i class="fa fa-home"></i> DỊCH VỤ</a>
-                </li>
-                <li><a href="~/DuKhachs"><i class="fa fa-home"></i> DU KHÁCH</a>
-                </li>
-                <li><a href="~/Hinh_DiaDiemDuLichs"><i class="fa fa-home"></i> HÌNH ĐỊA ĐIỂM DU LỊCH</a>
-                </li>
-                <li><a href="~/HopDongs"><i class="fa fa-home"></i> HỢP ĐỒNG</a>
-                </li>
-                <li><a href="~/LoaiDichVus"><i class="fa fa-home"></i>LOẠI DỊCH VỤ</a>
-                </li>
-                <li><a href="~/NhaCungCaps"><i class="fa fa-home"></i>NHÀ CUNG CẤP</a>
-                </li>
-                <li><a href="~/NhanViens"><i class="fa fa-home"></i>NHÂN VIÊN</a>
+                <li><a href="~/LoaiDichVus"><i class="fa fa-th-list"></i>LOẠI DỊCH VỤ</a></li>
+                <li><a href="~/DiaDiem_DuLichs"><i class="fa fa-map-marker"></i> ĐỊA ĐIỂM DU LỊCH</a></li>
+                <li><a href="~/BaiViet_DiaDiems"><i class="fa fa-file-photo-o"></i> BÀI VIẾT ĐỊA ĐIỂM</a></li>
+                <li><a href="~/Hinh_DiaDiemDuLichs"><i class="fa fa-picture-o"></i> HÌNH ĐỊA ĐIỂM DU LỊCH</a></li>
+                <li><a href="~/DuKhachs"><i class="fa fa-user"></i> DU KHÁCH</a></li>
+                <li><a href="~/NhaCungCaps"><i class="fa fa-users"></i>NHÀ CUNG CẤP</a></li>
+              </ul>
+
+
+              <h3>Nhà cung cấp</h3>
+              <ul class="nav side-menu">
+                <li><a href="~/DichVus"><i class="fa fa-gears"></i> DỊCH VỤ</a></li>
+                <li><a href="~/HopDongs"><i class="fa fa-file-text-o"></i> HỢP ĐỒNG</a></li>
+              </ul>
+
+              <h3>du khách</h3>
+              <ul class="nav side-menu">
+                <li><a href="~/HopDongs"><i class="fa fa-file-text-o"></i> HỢP ĐỒNG</a></li>
+              </ul>
+              <h3>Đây là trang login vô đăng ký sẽ sử dụng chức năng này</h3>
+              <ul class="nav side-menu">
+                <li><a href="~/NhanViens"><i class="fa fa-user"></i>NHÂN VIÊN</a>
+                <li><a href="~/NhaCungCaps"><i class="fa fa-users"></i>NHÀ CUNG CẤP</a></li>
                 </li>
               </ul>
             </div>
@@ -286,11 +290,12 @@
   <script src="~/Template/vendors/jszip/dist/jszip.min.js"></script>
   <script src="~/Template/vendors/pdfmake/build/pdfmake.min.js"></script>
   <script src="~/Template/vendors/pdfmake/build/vfs_fonts.js"></script>
-  <script src="~/js/citiesLoad.js"></script>
   <script src="~/js/ChangeUrlToFile.js"></script>
+  
+
+
+
   <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
-
-
   <script>
     function displayResult() {
       var startDate = document.getElementById("StartDate").value;
@@ -312,7 +317,7 @@
     }
 
     ClassicEditor
-      .create(document.querySelector('#dddl_mota'), {
+      .create(document.querySelector('#mota'), {
         // toolbar: [ 'heading', '|', 'bold', 'italic', 'link' ]
       })
       .then(editor => {
@@ -324,19 +329,11 @@
       });
 
 
-    window.onload = function outVal() {
-      let output_val = document.getElementById("output");
-      
-      const input_val = document.getElementById("input").innerText;
-
-      var trimmedcontent = input_val.substring(1, input_val.length-2);
-      output_val.innerHTML = trimmedcontent;
-    }
-
-
+    
   </script>
 
-
+  <script src="~/js/site.js"></script>
+  <script src="~/js/citiesLoad.js"></script>
 </body>
 
 </html>

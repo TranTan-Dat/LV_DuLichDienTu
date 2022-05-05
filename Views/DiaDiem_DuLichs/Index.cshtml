@@ -80,10 +80,7 @@
               <th>
                 @Html.DisplayNameFor(model => model.dddl_quanhuyen)
               </th>
-              <th>
-                @Html.DisplayNameFor(model => model.dddl_mota)
-              </th>
-              <th>Tùy chọn</th>
+              <th class="col-md-3 col-xs-12">Tùy chọn</th>
             </tr>
           </thead>
           <tbody>
@@ -99,16 +96,9 @@
                 <td>
                   @Html.DisplayFor(modelItem => item.dddl_quanhuyen)
                 </td>
-                <td>
-                  @Html.DisplayFor(modelItem => item.dddl_mota)
-                  @*
-                    NẾU Ở ĐÂY ĐỂ DDDL_ID NÓ SẼ RA ID ĐỊA ĐIỂM CỦA TƯNG ẢNH
-                    @Html.DisplayFor(modelItem => item.dddl_id)
-                  *@
-                </td>
-                <td>
+                <td >
                   <a asp-action="Details" asp-route-id="@item.dddl_id" class="btn btn-success btn-xs"><i
-                    class="fa fa-search"></i> Xem chi tiết</a>|
+                    class="fa fa-search"></i> Xem mô tả</a>|
                   <a asp-action="Edit" asp-route-id="@item.dddl_id" class="btn btn-primary btn-xs"><i
                     class="fa fa-pencil"></i> Sửa </a>|
                   <a asp-action="Delete" asp-route-id="@item.dddl_id" class="btn btn-danger btn-xs"><i

@@ -35,7 +35,8 @@ namespace LV_DuLichDienTu.Models
 
         [ForeignKey("ldv_id")]
         public int ldv_id {get;set;}
-        public LoaiDichVu loaiDichVu {get;set;}
+        [ForeignKey("ldv_id")]
+        public virtual LoaiDichVu loaiDichVu {get;set;}
 
         [ForeignKey("hd_id")]
         public int hd_id {get;set;}

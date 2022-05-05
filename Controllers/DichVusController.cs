@@ -21,7 +21,9 @@ namespace LV_DuLichDienTu.Controllers
         // GET: DichVus
         public async Task<IActionResult> Index()
         {
-            return View(await _context.DichVu.ToListAsync());
+            var appDBContext = _context.DichVu.Include(n=>n.loaiDichVu).Include(e=>e.nhaCungCap);
+            var gitr = appDBContext.Count();
+            return View(await appDBContext.ToListAsync());
         }
 
         // GET: DichVus/Details/5
@@ -32,7 +34,7 @@ namespace LV_DuLichDienTu.Controllers
                 return NotFound();
             }
 
-            var dichVu = await _context.DichVu
+            var dichVu = await _context.DichVu.Include(n=>n.loaiDichVu)
                 .FirstOrDefaultAsync(m => m.dv_id == id);
             if (dichVu == null)
             {
@@ -46,7 +48,7 @@ namespace LV_DuLichDienTu.Controllers
         public IActionResult Create()
         {   
             ViewData["Select_TenNCC"]= new SelectList(_context.NhaCungCap,"ncc_id","ncc_ten");
-            ViewData["Select_LoaiDV"]= new SelectList(_context.LoaiDichVu,"ldv_id","ldv_ten");
+            ViewData["Select_TenLoaiDV"]= new SelectList(_context.LoaiDichVu,"ldv_id","ldv_ten");
             return View();
             
         }
@@ -81,7 +83,7 @@ namespace LV_DuLichDienTu.Controllers
                 return NotFound();
             }
             ViewData["Select_TenNCC"]= new SelectList(_context.NhaCungCap,"ncc_id","ncc_ten");
-            ViewData["Select_LoaiDV"]= new SelectList(_context.LoaiDichVu,"ldv_id","ldv_ten");
+            ViewData["Select_TenLoaiDV"]= new SelectList(_context.LoaiDichVu,"ldv_id","ldv_ten");
             return View(dichVu);
         }
 

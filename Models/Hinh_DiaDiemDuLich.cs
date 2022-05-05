@@ -25,8 +25,9 @@ namespace LV_DuLichDienTu.Models
         [ForeignKey("dddl_id")]
         public virtual DiaDiem_DuLich DiaDiem_DuLich{get;set;}
         
-        [NotMapped]
-        public IFormFile imageUpload{get;set;}
+        // [NotMapped]
+        // public IFormFile myfile{get;set;}
+        
 
     }
 }

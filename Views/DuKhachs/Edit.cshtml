@@ -1,10 +1,10 @@
-@model LV_DuLichDienTu.Models.DuKhach
+@* @model LV_DuLichDienTu.Models.DuKhach
 
 @{
     ViewData["Title"] = "Edit";
 }
 
-@* <h1>Edit</h1>
+<h1>Edit</h1>
 
 <h4>DuKhach</h4>
 <hr />
@@ -17,6 +17,11 @@
                 <label asp-for="dk_taikhoan" class="control-label"></label>
                 <input asp-for="dk_taikhoan" class="form-control" />
                 <span asp-validation-for="dk_taikhoan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dk_matkhau" class="control-label"></label>
+                <input asp-for="dk_matkhau" class="form-control" />
+                <span asp-validation-for="dk_matkhau" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="dk_hoten" class="control-label"></label>
@@ -69,13 +74,19 @@
     <a asp-action="Index">Back to List</a>
 </div> *@
 
+@model LV_DuLichDienTu.Models.DuKhach
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
 
 <div class="">
     <div class="row">
         <div class="col-md-10 center-margin">
             <div class="x_panel">
                 <div class="x_title">
-                    <h2>TẠO MỚI BÀI VIẾT VỀ ĐỊA ĐIỂM</h2>
+                    <h2>CHỈNH SỬA THÔNG TIN CÁ NHÂN DU KHÁCH</h2>
                     <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
@@ -83,6 +94,16 @@
                     <form asp-action="Edit" id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left" novalidate="">
                         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                         <input type="hidden" asp-for="dk_id" />
+
+                        <div class="form-group">
+                            <div class="control-label col-md-3 col-sm-3 col-xs-12">
+                                <label asp-for="dk_hoten"></label>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input asp-for="dk_hoten" class="form-control" />
+                                <span asp-validation-for="dk_hoten" class="text-danger"></span>
+                            </div>
+                        </div>
 
                         <div class="form-group">
                             <div class="control-label col-md-3 col-sm-3 col-xs-12">
@@ -94,13 +115,14 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+
+                         <div class="form-group">
                             <div class="control-label col-md-3 col-sm-3 col-xs-12">
-                                <label asp-for="dk_hoten"></label>
+                                <label asp-for="dk_matkhau"></label>
                             </div>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input asp-for="dk_hoten" class="form-control" />
-                                <span asp-validation-for="dk_hoten" class="text-danger"></span>
+                                <input asp-for="dk_matkhau" class="form-control" />
+                                <span asp-validation-for="dk_matkhau" class="text-danger"></span>
                             </div>
                         </div>
 

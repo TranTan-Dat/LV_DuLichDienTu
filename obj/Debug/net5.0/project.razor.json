@@ -15704,11 +15704,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\Hinh_DiaDiemDuLichs\\Create copy.cshtml",
-      "TargetPath": "Views\\Hinh_DiaDiemDuLichs\\Create copy.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\DiaDiem_DuLichs\\Index.cshtml",
       "TargetPath": "Views\\DiaDiem_DuLichs\\Index.cshtml",
       "FileKind": "mvc"

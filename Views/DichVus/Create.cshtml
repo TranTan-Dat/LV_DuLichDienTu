@@ -64,7 +64,7 @@
         <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="x_panel">
                 <div class="x_title">
-                    <h2>Thêm địa điểm du lịch mới</h2>
+                    <h2>THÊM DỊCH VỤ DU LỊCH MỚI</h2>
                     <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
@@ -85,6 +85,7 @@
                                     class="form-control col-md-7 col-xs-12">
                             </div>
                         </div>
+                        
 
                         <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
@@ -107,8 +108,8 @@
                                 </span>
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input asp-for="dv_mota" type="text" id="first-name" required="required"
-                                    class="form-control col-md-7 col-xs-12">
+                                <textarea id="mota"  asp-for="dv_mota" type="text"
+                                class="form-control col-md-7 col-xs-12 "></textarea>
                             </div>
                         </div>
                         
@@ -134,7 +135,7 @@
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
                                 <select class="form-control col-md-7 col-xs-12" asp-for="ncc_id"
-                                    asp-items="ViewBag.Select_LoaiDV"></select>
+                                    asp-items="ViewBag.Select_TenLoaiDV"></select>
                             </div>
                         </div>
 

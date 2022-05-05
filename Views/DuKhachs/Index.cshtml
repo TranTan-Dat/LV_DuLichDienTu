@@ -1,3 +1,94 @@
+@* @model IEnumerable<LV_DuLichDienTu.Models.DuKhach>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.dk_taikhoan)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dk_matkhau)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dk_hoten)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dk_cmnd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dk_dienthoai)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dk_diachi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dk_email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dk_diemthanhvien)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.bvdd_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.hd_id)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.dk_taikhoan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dk_matkhau)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dk_hoten)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dk_cmnd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dk_dienthoai)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dk_diachi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dk_email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dk_diemthanhvien)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.bvdd_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hd_id)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.dk_id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.dk_id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.dk_id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table> *@
+
+
 @model IEnumerable<LV_DuLichDienTu.Models.DuKhach>
 
 @{
@@ -101,7 +192,7 @@
                 </th>
 
                 @* <th>
-                  @Html.DisplayNameFor(model => model.nv_matKhau)
+                  @Html.DisplayNameFor(model => model.dk_matkhau)
                   </th> *@
 
                 <th>
@@ -147,7 +238,7 @@
                   </td>
 
                   @* <td type="password">
-                    @Html.DisplayFor(modelItem => item.nv_matKhau)
+                    @Html.DisplayFor(modelItem => item.dk_matkhau)
                     </td> *@
 
                   <td>

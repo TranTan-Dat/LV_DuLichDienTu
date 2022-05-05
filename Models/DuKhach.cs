@@ -17,6 +17,9 @@ namespace LV_DuLichDienTu.Models
         [DisplayName("tài khoản")]
         public string dk_taikhoan{get;set;}
 
+        [DisplayName("mật khẩu")]
+        public string dk_matkhau{get;set;}
+
         [DisplayName("Họ tên")]
         public string dk_hoten{get;set;}
 

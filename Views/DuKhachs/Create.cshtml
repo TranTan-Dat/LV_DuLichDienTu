@@ -1,3 +1,80 @@
+@* @model LV_DuLichDienTu.Models.DuKhach
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>DuKhach</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="dk_taikhoan" class="control-label"></label>
+                <input asp-for="dk_taikhoan" class="form-control" />
+                <span asp-validation-for="dk_taikhoan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dk_matkhau" class="control-label"></label>
+                <input asp-for="dk_matkhau" class="form-control" />
+                <span asp-validation-for="dk_matkhau" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dk_hoten" class="control-label"></label>
+                <input asp-for="dk_hoten" class="form-control" />
+                <span asp-validation-for="dk_hoten" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dk_cmnd" class="control-label"></label>
+                <input asp-for="dk_cmnd" class="form-control" />
+                <span asp-validation-for="dk_cmnd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dk_dienthoai" class="control-label"></label>
+                <input asp-for="dk_dienthoai" class="form-control" />
+                <span asp-validation-for="dk_dienthoai" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dk_diachi" class="control-label"></label>
+                <input asp-for="dk_diachi" class="form-control" />
+                <span asp-validation-for="dk_diachi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dk_email" class="control-label"></label>
+                <input asp-for="dk_email" class="form-control" />
+                <span asp-validation-for="dk_email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dk_diemthanhvien" class="control-label"></label>
+                <input asp-for="dk_diemthanhvien" class="form-control" />
+                <span asp-validation-for="dk_diemthanhvien" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="bvdd_id" class="control-label"></label>
+                <input asp-for="bvdd_id" class="form-control" />
+                <span asp-validation-for="bvdd_id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="hd_id" class="control-label"></label>
+                <input asp-for="hd_id" class="form-control" />
+                <span asp-validation-for="hd_id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+ *@
+
+
 @model LV_DuLichDienTu.Models.DuKhach
 
 @{
@@ -74,7 +151,7 @@
         <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="x_panel">
                 <div class="x_title">
-                    <h2>Thêm địa điểm du lịch mới</h2>
+                    <h2>Thêm du khách mới</h2>
                     <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
@@ -92,6 +169,20 @@
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
                                 <input asp-for="dk_taikhoan" type="text" id="first-name" required="required"
+                                    class="form-control col-md-7 col-xs-12">
+                                <span asp-validation-for="dk_taikhoan" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
+                                <label asp-for="dk_matkhau" class="control-label"></label>
+                                <span class="required">
+                                    *
+                                </span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input asp-for="dk_matkhau" type="text" id="first-name" required="required"
                                     class="form-control col-md-7 col-xs-12">
                                 <span asp-validation-for="dk_taikhoan" class="text-danger"></span>
                             </div>
@@ -169,21 +260,6 @@
                                     class="form-control col-md-7 col-xs-12">
                                     
                                 <span asp-validation-for="dk_email" class="text-danger"></span>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
-                                <label asp-for="dk_diemthanhvien"></label>
-                                <span class="required">
-                                    *
-                                </span>
-                            </label>
-                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input asp-for="dk_diemthanhvien" type="text" id="first-name" required="required"
-                                    class="form-control col-md-7 col-xs-12">
-                                    
-                                <span asp-validation-for="dk_diemthanhvien" class="text-danger"></span>
                             </div>
                         </div>
 

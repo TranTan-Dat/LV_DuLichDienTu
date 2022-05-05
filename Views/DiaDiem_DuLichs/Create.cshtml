@@ -78,6 +78,8 @@
                             </div>
                         </div>
 
+                        
+
                         <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
                                 <label asp-for="dddl_tinhthanh">Tỉnh thành </br> Quận huyện</label>
@@ -88,13 +90,13 @@
 
                             <div class="col-md-6 col-sm-6 col-xs-12" name="myform" id="myForm">
                                 @* Chọn Tỉnh / Thành Phố: *@
-                                <select class="form-control col-md-7 col-xs-12 SLTinhThanh" name="dddl_tinhthanh"
+                                <select class="form-control col-md-7 col-xs-12 SLTinhThanh"
                                     asp-for="dddl_tinhthanh" id="countySel" size="1">
                                     @* disabled không cho chọn dữ liệu mặc định *@
                                     <option value="" selected="selected" disabled>Chọn Tỉnh / Thành Phố</option>
                                 </select>
                                 @* Chọn Quận/Huyện: *@
-                                <select class="form-control col-md-7 col-xs-12 SLTinhThanh" name="dddl_quanhuyen"
+                                <select class="form-control col-md-7 col-xs-12 SLTinhThanh" 
                                     asp-for="dddl_quanhuyen" id="stateSel" size="1">
                                     <option value="" selected="selected" disabled>Chọn Quận/Huyện</option>
                                 </select>
@@ -114,8 +116,8 @@
                             </label>
                             @* Này là form group cho bài viết nhưng chưa làm đc *@
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <textarea id="dddl_mota" asp-for="dddl_mota" type="text"
-                                    class="form-control col-md-7 col-xs-12"></textarea>y
+                                <textarea id="mota" asp-for="dddl_mota" type="text"
+                                    class="form-control col-md-7 col-xs-12"></textarea>
                                 <div id="alerts"></div>
                             </div>
                         </div>

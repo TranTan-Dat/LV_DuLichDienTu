@@ -23,9 +23,6 @@
                                     @Html.DisplayNameFor(model => model.bvdd_tieude)
                                 </th>
                                 <th>
-                                    @Html.DisplayNameFor(model => model.bvdd_noidung)
-                                </th>
-                                <th>
                                     @Html.DisplayNameFor(model => model.bvdd_tinhtrang)
                                 </th>
                                 <th>
@@ -43,9 +40,6 @@
                                 <tr>
                                     <td>
                                         @Html.DisplayFor(modelItem => item.bvdd_tieude)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.bvdd_noidung)
                                     </td>
                                     <td>
                                         @* @Html.DisplayFor(modelItem => item.bvdd_tinhtrang) *@
@@ -69,6 +63,8 @@
                                     </td>
 
                                     <td>
+                                        <a asp-action="Details" asp-route-id="@item.bvdd_id" class="btn btn-success btn-xs"><i 
+                                            class="fa fa-search"></i> Nội dung bài viết</a>|
                                         <a asp-action="Edit" asp-route-id="@item.bvdd_id" class="btn btn-primary btn-xs"><i
                                             class="fa fa-pencil"></i> Sửa </a>|
                                         <a asp-action="Delete" asp-route-id="@item.bvdd_id" class="btn btn-danger btn-xs"><i

@@ -4,58 +4,85 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>MÔ TẢ ĐỊA ĐIỂM</h1>
+@*<h1>MÔ TẢ ĐỊA ĐIỂM</h1>
 
-@* <div>
+ <div>
     <h4>DiaDiem_DuLich</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.dddl_ten)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.dddl_ten)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.dddl_mota)
-        </dt>
-        <dd class = "col-sm-10" id="innerHtml">
-            @Html.DisplayFor(model => model.dddl_mota)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.dddl_tinhthanh)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.dddl_tinhthanh)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.hinh_id)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.hinh_id)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.bvdd_id)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.bvdd_id)
-        </dd>
+    <dt class = "col-sm-2">
+    @Html.DisplayNameFor(model => model.dddl_ten)
+    </dt>
+    <dd class = "col-sm-10">
+    @Html.DisplayFor(model => model.dddl_ten)
+    </dd>
+    <dt class = "col-sm-2">
+    @Html.DisplayNameFor(model => model.dddl_mota)
+    </dt>
+    <dd class = "col-sm-10" id="innerHtml">
+    @Html.DisplayFor(model => model.dddl_mota)
+    </dd>
+    <dt class = "col-sm-2">
+    @Html.DisplayNameFor(model => model.dddl_tinhthanh)
+    </dt>
+    <dd class = "col-sm-10">
+    @Html.DisplayFor(model => model.dddl_tinhthanh)
+    </dd>
+    <dt class = "col-sm-2">
+    @Html.DisplayNameFor(model => model.hinh_id)
+    </dt>
+    <dd class = "col-sm-10">
+    @Html.DisplayFor(model => model.hinh_id)
+    </dd>
+    <dt class = "col-sm-2">
+    @Html.DisplayNameFor(model => model.bvdd_id)
+    </dt>
+    <dd class = "col-sm-10">
+    @Html.DisplayFor(model => model.bvdd_id)
+    </dd>
     </dl>
+    </div>
+    <div>
+    <a asp-action="Edit" asp-route-id="@Model.dddl_id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+    </div> *@
+@* 
+<div>
+    <h4>@Model.dddl_ten </BR></h4>
+    <div hidden class="col-sm-10" id="input">
+        @Model.dddl_mota
+    </div>
+    <div class="col-sm-10" id="output">
+    </div>
 </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model.dddl_id">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div> *@
 
-<div>
-    <h4>@Model.dddl_ten </BR></h4>
-        <div hidden class = "col-sm-10" id="input" >
-                @Model.dddl_mota
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="">
+                <h1>MÔ TẢ ĐỊA ĐIỂM</h1>
+                <h2>@Model.dddl_ten</h2>
+            </div>
+            <div class="x_content">
+                <form id="demo-form2"  class="form-horizontal form-label-left" novalidate="">
+                        <div class="col-sm-10" id="input">
+                            @Html.Raw(Model.dddl_mota);
+                        </div>
+                    <div class="form-group">
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                            <div class="ln_solid"></div>        
+                            <a asp-action="Index" class="btn btn-success"> Quay lại</a>
+                                <a asp-action="Edit" class="btn btn-primary" asp-route-id="@Model.dddl_id">Chỉnh sửa</a>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
         </div>
-        <div class = "col-sm-10" id="output">
-        </div>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.dddl_id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    </div>
 </div>

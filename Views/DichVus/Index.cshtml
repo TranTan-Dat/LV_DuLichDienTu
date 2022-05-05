@@ -93,11 +93,6 @@
               <th>
                 @Html.DisplayNameFor(model => model.dv_mota)
               </th>
-              
-              <th>
-                  Tổng cam kết dịch vụ
-              </th>
-              
               <th>
                 Tên nhà cung cấp
               </th>
@@ -110,6 +105,7 @@
                 Tổng số hợp đồng
               </th>
               <th>Tùy chọn</th>
+              
             </tr>
           </thead>
           <tbody>
@@ -123,23 +119,20 @@
                   @Html.DisplayFor(modelItem => item.dv_dienthoai_hotro)
                 </td>
                 <td>
-                  @Html.DisplayFor(modelItem => item.dv_mota)
+                  @Html.Raw(item.dv_mota)
                 </td>
                 <td>
-                  @Html.DisplayFor(modelItem => item.ckdv_id)
+                  @Html.DisplayFor(modelItem => item.nhaCungCap.ncc_ten)
                 </td>
                 <td>
-                  @Html.DisplayFor(modelItem => item.ncc_id)
-                </td>
-                <td>
-                  @Html.DisplayFor(modelItem => item.ldv_id)
+                  @Html.DisplayFor(modelItem => item.loaiDichVu.ldv_ten)
                 </td>
                 <td>
                   @Html.DisplayFor(modelItem => item.hd_id)
                 </td>
                 <td>
-                  <a asp-action="Details" asp-route-id="@item.dv_id" class="btn btn-success btn-xs"><i
-                    class="fa fa-search"></i> Xem chi tiết</a>|
+                  <a href="~/CamKetDichVus" class="btn btn-success btn-xs"><i
+                    class="fa fa-search"></i> Xem cam kết</a>|
                   <a asp-action="Edit" asp-route-id="@item.dv_id" class="btn btn-primary btn-xs"><i
                     class="fa fa-pencil"></i> Sửa </a>|
                   <a asp-action="Delete" asp-route-id="@item.dv_id" class="btn btn-danger btn-xs"><i

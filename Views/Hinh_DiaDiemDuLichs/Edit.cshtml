@@ -4,51 +4,33 @@
     ViewData["Title"] = "Edit";
 }
 
+<h1>Edit</h1>
 
-
-<div class="">
-    <div class="row">
-        <div class="col-md-10 center-margin">
-            <div class="x_panel">
-                <div class="x_title">
-                    <h2>Tạo mới hình ảnh địa điểm du lịch</h2>
-                    <div class="clearfix"></div>
-                </div>
-                <div class="x_content">
-                    <br>
-                    <form asp-action="Edit" id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left" novalidate="">
-                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                        <input type="hidden" asp-for="hinh_id" />
-                        <div class="form-group">
-                            <div class="control-label col-md-3 col-sm-3 col-xs-12">
-                                <label asp-for="hinh_duongdan"></label>
-                                <span class="required">*</span>
-                            </div>
-                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input asp-for="hinh_duongdan" class="form-control col-md-7 col-xs-12" />
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="control-label col-md-3 col-sm-3 col-xs-12">
-                                <label asp-for="dddl_id" class="control-label">Mã địa điểm du lịch</label>
-                                <span class="required">*</span>
-                            </div>
-
-                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                <select class="form-control col-md-7 col-xs-12" asp-for="dddl_id" asp-items="ViewBag.dddl_ten"></select>
-                            </div>
-                        </div>
-                        <div class="ln_solid"></div>
-                        <div class="form-group">
-                            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                                <button asp-action="Index" class="btn btn-success"> Quay lại</button>
-                                <input type="submit" value="Lưu" class="btn btn-primary" />
-                            </div>
-                        </div>
-                    </form>
-                </div>
+<h4>Hinh_DiaDiemDuLich</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="hinh_id" />
+            <div class="form-group">
+                <label asp-for="hinh_duongdan" class="control-label"></label>
+                <input asp-for="hinh_duongdan" class="form-control" />
+                <span asp-validation-for="hinh_duongdan" class="text-danger"></span>
             </div>
-        </div>
+            <div class="form-group">
+                <label asp-for="dddl_id" class="control-label"></label>
+                <select asp-for="dddl_id" class="form-control" asp-items="ViewBag.dddl_id"></select>
+                <span asp-validation-for="dddl_id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
     </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
 </div>
 
