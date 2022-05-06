@@ -1,0 +1,360 @@
+@{
+    ViewData["Title"] = "Index";
+}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Login</title>
+
+    <!-- Bootstrap -->
+    <link
+      href="~/Template/vendors/bootstrap/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      href="~/Template/vendors/font-awesome/css/font-awesome.min.css"
+      rel="stylesheet"  
+    />
+    <!-- NProgress -->
+    <link href="~/Template/vendors/nprogress/nprogress.css" rel="stylesheet" />
+    <!-- Animate.css -->
+    <link href="~/Template/vendors/animate.css/animate.min.css" rel="stylesheet" />
+
+    <!-- Custom Theme Style -->
+    <link href="~/Template/build/css/custom.min.css" rel="stylesheet" />
+    <link href="~/css/site.css " rel="stylesheet"/>
+  </head>
+
+  <body class="login" >
+    <div>
+      <a class="hiddenanchor" id="signup"></a>
+      <a class="hiddenanchor" id="signin"></a>
+      <a class="hiddenanchor" id="TypeUser"></a>
+      <a class="hiddenanchor" id="Tourist"></a>
+      <a class="hiddenanchor" id="Business"></a>
+      <a class="hiddenanchor" id="Login_Business"></a>
+      <a class="hiddenanchor" id="Login_Tourist"></a>
+      <a class="hiddenanchor" id="Login_Admin"></a>
+
+      <div class="login_wrapper">
+        <div class="animate form login_form">
+          <section class="login_content">
+            <form>
+              <h1>Bạn đăng nhập là?</h1>
+              <div>
+                <a href="#Login_Tourist" class="btn btn-round btn-success">DU KHÁCH</a>
+                <br />
+                <a href="#Login_Business" class="btn btn-round btn-primary">NHÀ CUNG CẤP DỊCH VỤ</a>
+                <br />
+                <a href="#Login_Admin" class="btn btn-round btn-danger">NHÂN VIÊN</a>
+              <div class="clearfix"></div>
+              <div class="separator">
+                <p class="change_link">
+                  
+                  <a href="#TypeUser" class="to_register"> Đăng Ký tài khoản </a>
+                </p>
+
+                <div class="clearfix"></div>
+                <br />
+              </div>
+            </form>
+          </section>
+        </div>
+
+        <!-- form ĐĂNG NHẬP DU KHÁCH -->
+        <div id="Login_Tourist" class="animate form Tourist_Login_form">
+          <section class="login_content">
+            <form>
+              <h1>Du Khách</h1>
+              <h4>Đăng Nhập</h4>
+              <div>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Tài Khoản"
+                  required=""
+                />
+              </div>
+              <div>
+                <input
+                  type="password"
+                  class="form-control"
+                  placeholder="Mật Khẩu"
+                  required=""
+                />
+              </div>
+              <div>
+                <a class="btn btn-default submit" href="">Đăng Nhập</a>
+                <a class="reset_pass" href="#">Quên mật khẩu?</a>
+              </div>
+
+              <div class="clearfix"></div>
+
+              <div class="separator">
+                <p class="change_link">
+                  
+                  <a href="#TypeUser" class="to_register"> Đăng Ký tài khoản </a>
+                </p>
+
+                <div class="clearfix"></div>
+                <br />
+              </div>
+            </form>
+          </section>
+        </div>
+
+        <!-- form ĐĂNG NHẬP NHÀ CUNG CẤP -->
+        <div id="Login_Business" class="animate form Business_Login_form">
+          <section class="login_content">
+            <form>
+              <h1>Nhà Cung Cấp</h1>
+              <h4>Đăng Nhập</h4>
+              <div>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Tài Khoản"
+                  required=""
+                />
+              </div>
+              <div>
+                <input
+                  type="password"
+                  class="form-control"
+                  placeholder="Mật Khẩu"
+                  required=""
+                />
+              </div>
+              <div>
+                <a class="btn btn-default submit" href="">Đăng Nhập</a>
+                <a class="reset_pass" href="#">Quên mật khẩu?</a>
+              </div>
+
+              <div class="clearfix"></div>
+
+              <div class="separator">
+                <p class="change_link">
+                  
+                  <a href="#TypeUser" class="to_register"> Đăng Ký tài khoản </a>
+                </p>
+
+                <div class="clearfix"></div>
+                <br />
+              </div>
+            </form>
+          </section>
+        </div>
+
+        <!-- form ĐĂNG NHẬP NHÂN VIÊN -->
+        <div id="Login_Admin" class="animate form Admin_Login_form">
+          <section class="login_content">
+            <form>
+              <h1>XIN CHÀO ĐỒNG NGHIỆP</h1>
+              <h4>Đăng Nhập</h4>
+              <div>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Tài Khoản"
+                  required=""
+                />
+              </div>
+              <div>
+                <input
+                  type="password"
+                  class="form-control"
+                  placeholder="Mật Khẩu"
+                  required=""
+                />
+              </div>
+              <div>
+                <a class="btn btn-default submit" href="">Đăng Nhập</a>
+                <a class="reset_pass" href="#">Quên mật khẩu?</a>
+              </div>
+
+              <div class="clearfix"></div>
+
+              <div class="separator">
+                <p class="change_link">
+                  
+                  <a href="#TypeUser" class="to_register"> Đăng Ký tài khoản </a>
+                </p>
+
+                <div class="clearfix"></div>
+                <br />
+              </div>
+            </form>
+          </section>
+        </div>
+
+        @* <div class="animate form login_form">
+          <section class="login_content">
+            <form>
+              <h1>Đăng Nhập</h1>
+              <div>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Tài Khoản"
+                  required=""
+                />
+              </div>
+              <div>
+                <input
+                  type="password"
+                  class="form-control"
+                  placeholder="Mật Khẩu"
+                  required=""
+                />
+              </div>
+              <div>
+                <a class="btn btn-default submit" href="index.html">Đăng Nhập</a>
+                <a class="reset_pass" href="#">Quên mật khẩu?</a>
+              </div>
+
+              <div class="clearfix"></div>
+
+              <div class="separator">
+                <p class="change_link">
+                  
+                  <a href="#TypeUser" class="to_register"> Đăng Ký tài khoản </a>
+                </p>
+
+                <div class="clearfix"></div>
+                <br />
+              </div>
+            </form>
+          </section>
+        </div> *@
+
+        <!-- form Loại NGƯỜI DÙNG -->
+        <div id="TypeUser" class="animate form TypeUser_form">
+          <section class="login_content">
+            <form>
+              <h1>Bạn muốn đăng ký làm?</h1>
+              <div>
+                <a href="#Tourist" class="btn btn-round btn-success">DU KHÁCH</a>
+                <br />
+                <a href="#Business" class="btn btn-round btn-primary">NHÀ CUNG CẤP DỊCH VỤ</a>
+              <div class="clearfix"></div>
+
+              <div class="separator">
+                <p class="change_link">
+                  Bạn đã có tài khoản?
+                  <a href="#signin" class="to_register"> Đăng nhập </a>
+                </p>
+
+                <div class="clearfix"></div>
+                <br />
+              </div>
+            </form>
+          </section>
+        </div>
+        <!-- Đăng ký làm du KHÁCH -->
+        <div id="Tourist" class="animate form registration_Tourist_form">
+          <section class="login_content">
+            <form>
+              <h1>Đăng ký</h1>
+              <h4>Làm du khách</h4>
+              <div>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Tài Khoản"
+                  required=""
+                />
+              </div>
+              <div>
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Email"
+                  required=""
+                />
+              </div>
+              <div>
+                <input
+                  type="password"
+                  class="form-control"
+                  placeholder="Mật khẩu"
+                  required=""
+                />
+              </div>
+              <div>
+                <a class="btn btn-default submit" href="">Tạo tài khoản</a>
+              </div>
+
+              <div class="clearfix"></div>
+
+              <div class="separator">
+                <p class="change_link">
+                  Đã có tài khoản?
+                  <a href="#signin" class="to_register">Đăng Nhập</a>
+                </p>
+
+                <div class="clearfix"></div>
+                <br />
+              </div>
+            </form>
+          </section>
+        </div>
+        <!-- Đăng ký làm NCC -->
+        <div id="Business" class="animate form registration_Business_form">
+          <section class="login_content">
+            <form>
+              <h1>Đăng ký</h1>
+              <h4>Làm nhà cung cấp dịch vụ</h4>
+              <div>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Tài Khoản"
+                  required=""
+                />
+              </div>
+              <div>
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Email"
+                  required=""
+                />
+              </div>
+              <div>
+                <input
+                  type="password"
+                  class="form-control"
+                  placeholder="Mật khẩu"
+                  required=""
+                />
+              </div>
+              <div>
+                <a class="btn btn-default submit" href="">Tạo tài khoản</a>
+              </div>
+
+              <div class="clearfix"></div>
+
+              <div class="separator">
+                <p class="change_link">
+                  Đã có tài khoản?
+                  <a href="#signin" class="to_register">Đăng Nhập</a>
+                </p>
+
+                <div class="clearfix"></div>
+                <br />
+              </div>
+            </form>
+          </section>
+        </div>
+      </div>
+    </div>
+  </body>
+  
+</html>

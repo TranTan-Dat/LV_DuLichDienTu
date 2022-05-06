@@ -61,6 +61,7 @@ html {
 body {
   /* Margin bottom by footer height */
   /* margin-bottom: 60px; */
+  background-size:contain;
 }
 .footer {
   position: absolute;
@@ -88,4 +89,14 @@ body {
 
 .SLTinhThanh{
   margin-bottom: 10px !important;
+}
+
+
+.login{
+ color: #000 !important;
+
+}
+.login_content{text-shadow:unset;}
+a{
+  color: #fff;
 }

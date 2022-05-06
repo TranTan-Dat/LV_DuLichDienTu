@@ -3394,12 +3394,18 @@ a.hiddenanchor {
   opacity: 0;
   width: 100%;
 }
-.TypeUser_form {
+* .TypeUser_form, 
+* .Tourist_Login_form,
+* .Business_Login_form,
+* .Admin_Login_form{
   position: absolute;
   top: 0;
   width: 100%;
 }
-.TypeUser_form {
+.TypeUser_form,  
+.Tourist_Login_form,
+.Business_Login_form,
+.Admin_Login_form {
   z-index: 21;
   opacity: 0;
   width: 100%;
@@ -3426,8 +3432,11 @@ a.hiddenanchor {
 } */
 
 
-/* Custom css TypeUser */
+/* Custom css*/
 #signin:target ~ .login_wrapper .login_form,
+#Login_Tourist:target ~ .login_wrapper .Tourist_Login_form,
+#Login_Business:target ~ .login_wrapper .Business_Login_form,
+#Login_Admin:target ~ .login_wrapper .Admin_Login_form,
 #TypeUser:target ~ .login_wrapper .TypeUser_form,
 #Tourist:target ~ .login_wrapper .registration_Tourist_form,
 #Business:target ~ .login_wrapper .registration_Business_form 
@@ -3437,7 +3446,11 @@ a.hiddenanchor {
   animation-delay: 0.1s;
 }
 
+
 #signin:target ~ .login_wrapper .TypeUser_form,
+#Login_Tourist:target ~ .login_wrapper .login_form,
+#Login_Business:target ~ .login_wrapper .login_form,
+#Login_Admin:target ~ .login_wrapper .login_form,
 #TypeUser:target ~ .login_wrapper .login_form,
 #Tourist:target ~ .login_wrapper .login_form,
 #Business:target ~ .login_wrapper * {
