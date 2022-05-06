@@ -20,6 +20,12 @@ namespace LV_DuLichDienTu.Models
         [DisplayName("Điện thoại hỗ trợ")]
         public string dv_dienthoai_hotro{get;set;}
 
+        [DisplayName("Tỉnh thành")]
+        
+        public string dv_tinhthanh {get;set;}
+        [DisplayName("Quận huyện")]
+        public string dv_quanhuyen {get;set;}
+
         [DisplayName("Mô tả")]
         public string dv_mota{get;set;}
 

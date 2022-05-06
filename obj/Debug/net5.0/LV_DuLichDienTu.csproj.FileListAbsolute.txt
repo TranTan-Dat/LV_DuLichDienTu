@@ -358,11 +358,6 @@ C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\B
 C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\BaiViet_DiaDiems\Index copy.cshtml.g.cs
 C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\BaiViet_DiaDiems\Edit copy.cshtml.g.cs
 C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\BaiViet_DiaDiems\Delete copy.cshtml.g.cs
-C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\DichVus\Create.cshtml.g.cs
-C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\DichVus\Delete.cshtml.g.cs
-C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\DichVus\Details.cshtml.g.cs
-C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\DichVus\Edit.cshtml.g.cs
-C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\DichVus\Index.cshtml.g.cs
 C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\CamKetDichVus\Create.cshtml.g.cs
 C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\CamKetDichVus\Delete.cshtml.g.cs
 C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\CamKetDichVus\Details.cshtml.g.cs
@@ -390,3 +385,10 @@ C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\D
 C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\DuKhachs\Index.cshtml.g.cs
 C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\Shared\_login.cshtml.g.cs
 C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\Login\Index.cshtml.g.cs
+C:\Users\Asus\Desktop\LV_Etourism\lv_dulichdientu\obj\Debug\net5.0\Razor\Views\DichVus\Create.cshtml.g.cs
+C:\Users\Asus\Desktop\LV_Etourism\lv_dulichdientu\obj\Debug\net5.0\Razor\Views\DichVus\Delete.cshtml.g.cs
+C:\Users\Asus\Desktop\LV_Etourism\lv_dulichdientu\obj\Debug\net5.0\Razor\Views\DichVus\Details.cshtml.g.cs
+C:\Users\Asus\Desktop\LV_Etourism\lv_dulichdientu\obj\Debug\net5.0\Razor\Views\DichVus\Edit.cshtml.g.cs
+C:\Users\Asus\Desktop\LV_Etourism\lv_dulichdientu\obj\Debug\net5.0\Razor\Views\DichVus\Index.cshtml.g.cs
+C:\Users\Asus\Desktop\LV_Etourism\lv_dulichdientu\obj\Debug\net5.0\Razor\Views\LayoutTourism\Index.cshtml.g.cs
+C:\Users\Asus\Desktop\LV_Etourism\lv_dulichdientu\obj\Debug\net5.0\Razor\Views\Shared\_LayoutTourism.cshtml.g.cs

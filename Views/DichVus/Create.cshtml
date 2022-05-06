@@ -23,6 +23,16 @@
                 <span asp-validation-for="dv_dienthoai_hotro" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="dv_tinhthanh" class="control-label"></label>
+                <input asp-for="dv_tinhthanh" class="form-control" />
+                <span asp-validation-for="dv_tinhthanh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dv_quanhuyen" class="control-label"></label>
+                <input asp-for="dv_quanhuyen" class="form-control" />
+                <span asp-validation-for="dv_quanhuyen" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="dv_mota" class="control-label"></label>
                 <input asp-for="dv_mota" class="form-control" />
                 <span asp-validation-for="dv_mota" class="text-danger"></span>
@@ -34,13 +44,11 @@
             </div>
             <div class="form-group">
                 <label asp-for="ncc_id" class="control-label"></label>
-                <input asp-for="ncc_id" class="form-control" />
-                <span asp-validation-for="ncc_id" class="text-danger"></span>
+                <select asp-for="ncc_id" class ="form-control" asp-items="ViewBag.ncc_id"></select>
             </div>
             <div class="form-group">
                 <label asp-for="ldv_id" class="control-label"></label>
-                <input asp-for="ldv_id" class="form-control" />
-                <span asp-validation-for="ldv_id" class="text-danger"></span>
+                <select asp-for="ldv_id" class ="form-control" asp-items="ViewBag.ldv_id"></select>
             </div>
             <div class="form-group">
                 <label asp-for="hd_id" class="control-label"></label>
@@ -57,7 +65,6 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div> *@
-
 
 <div class="">
     <div class="row">
@@ -97,6 +104,36 @@
                             <div class="col-md-6 col-sm-6 col-xs-12">
                                 <input asp-for="dv_dienthoai_hotro" type="text" id="first-name" required="required"
                                     class="form-control col-md-7 col-xs-12">
+                            </div>
+                        </div>
+
+        
+
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
+                                <label asp-for="dv_tinhthanh">Tỉnh thành </br> Quận huyện</label>
+                                <span class="required">
+                                    *
+                                </span>
+                            </label>
+
+                            <div class="col-md-6 col-sm-6 col-xs-12" name="myform" id="myForm">
+                                @* Chọn Tỉnh / Thành Phố: *@
+                                <select class="form-control col-md-7 col-xs-12 SLTinhThanh"
+                                    asp-for="dv_tinhthanh" id="countySel" size="1">
+                                    @* disabled không cho chọn dữ liệu mặc định *@
+                                    <option value="" selected="selected" disabled>Chọn Tỉnh / Thành Phố</option>
+                                </select>
+                                @* Chọn Quận/Huyện: *@
+                                <select class="form-control col-md-7 col-xs-12 SLTinhThanh" 
+                                    asp-for="dv_quanhuyen" id="stateSel" size="1">
+                                    <option value="" selected="selected" disabled>Chọn Quận/Huyện</option>
+                                </select>
+                                @* Chọn xã/phường:
+                                    <select class="form-control col-md-7 col-xs-12 " name="district" id="districtSel"
+                                    size="1">
+                                    <option value="" selected="selected">Chọn xã/phường</option>
+                                    </select> *@
                             </div>
                         </div>
 
@@ -144,7 +181,7 @@
                         <div class="form-group">
                             <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 items-center">
                                 <a asp-action="Index" class="btn btn-success"> Quay lại</a>
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary"> Tạo</button>
                             </div>
                         </div>
 

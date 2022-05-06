@@ -100,3 +100,12 @@ body {
 a{
   color: #fff;
 }
+.nav_menu{
+  background-color: #217ac7 !important;
+}
+h2 a{
+  color: #333;
+}
+::selection {background:#d3d3d3;color:#555;}
+::-moz-selection {background:#d3d3d3;color:#555;}
+::-webkit-selection {background:#d3d3d3;color:#555;}

@@ -15704,6 +15704,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\LayoutTourism\\Index.cshtml",
+      "TargetPath": "Views\\LayoutTourism\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\DiaDiem_DuLichs\\Index.cshtml",
       "TargetPath": "Views\\DiaDiem_DuLichs\\Index.cshtml",
       "FileKind": "mvc"
@@ -15756,6 +15761,11 @@
     {
       "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\DiaDiem_DuLichs\\Delete.cshtml",
       "TargetPath": "Views\\DiaDiem_DuLichs\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\Shared\\_LayoutTourism.cshtml",
+      "TargetPath": "Views\\Shared\\_LayoutTourism.cshtml",
       "FileKind": "mvc"
     },
     {

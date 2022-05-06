@@ -24,6 +24,16 @@
                 <span asp-validation-for="dv_dienthoai_hotro" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="dv_tinhthanh" class="control-label"></label>
+                <input asp-for="dv_tinhthanh" class="form-control" />
+                <span asp-validation-for="dv_tinhthanh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dv_quanhuyen" class="control-label"></label>
+                <input asp-for="dv_quanhuyen" class="form-control" />
+                <span asp-validation-for="dv_quanhuyen" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="dv_mota" class="control-label"></label>
                 <input asp-for="dv_mota" class="form-control" />
                 <span asp-validation-for="dv_mota" class="text-danger"></span>
@@ -35,12 +45,12 @@
             </div>
             <div class="form-group">
                 <label asp-for="ncc_id" class="control-label"></label>
-                <input asp-for="ncc_id" class="form-control" />
+                <select asp-for="ncc_id" class="form-control" asp-items="ViewBag.ncc_id"></select>
                 <span asp-validation-for="ncc_id" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ldv_id" class="control-label"></label>
-                <input asp-for="ldv_id" class="form-control" />
+                <select asp-for="ldv_id" class="form-control" asp-items="ViewBag.ldv_id"></select>
                 <span asp-validation-for="ldv_id" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -58,7 +68,6 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div> *@
-
 
 <div class="">
     <div class="row">
@@ -92,6 +101,32 @@
                                 <input asp-for="dv_dienthoai_hotro" class="form-control col-md-7 col-xs-12" />
                             </div>
                         </div>
+
+                        <div class="form-group">
+                            <div class="control-label col-md-3 col-sm-3 col-xs-12">
+                                <label asp-for="dv_tinhthanh">Tỉnh thành Quận huyện</label>
+                                <span class="required">*</span>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12" name="myform" id="myForm">
+                                @* Chọn Tỉnh / Thành Phố: *@
+                                <select class="form-control col-md-7 col-xs-12 SLTinhThanh"
+                                    asp-for="dv_tinhthanh" id="countySel" size="1">
+                                    @* disabled không cho chọn dữ liệu mặc định *@
+                                    <option value="@Html.DisplayFor(model=>model.dv_tinhthanh)" selected="selected" disabled>@Html.DisplayFor(model=>model.dv_tinhthanh)</option>
+                                </select>
+                                @* Chọn Quận/Huyện: *@
+                                <select class="form-control col-md-7 col-xs-12 SLTinhThanh" 
+                                    asp-for="dv_quanhuyen" id="stateSel" size="1">
+                                    <option value="@Html.DisplayFor(model=>model.dv_quanhuyen)" selected="selected" disabled>@Html.DisplayFor(model=>model.dv_quanhuyen)</option>
+                                </select>
+                                @* Chọn xã/phường:
+                                    <select class="form-control col-md-7 col-xs-12 " name="district" id="districtSel"
+                                    size="1">
+                                    <option value="" selected="selected">Chọn xã/phường</option>
+                                    </select> *@
+                            </div>
+                        </div>
+
                         <div class="form-group">
                             <div class="control-label col-md-3 col-sm-3 col-xs-12">
                                 <label asp-for="dv_mota" class="control-label"></label>

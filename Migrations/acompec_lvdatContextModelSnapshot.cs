@@ -126,7 +126,13 @@ namespace LV_DuLichDienTu.Migrations
                     b.Property<string>("dv_mota")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("dv_quanhuyen")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("dv_ten")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("dv_tinhthanh")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("hd_id")
@@ -135,15 +141,12 @@ namespace LV_DuLichDienTu.Migrations
                     b.Property<int>("ldv_id")
                         .HasColumnType("int");
 
-                    b.Property<int?>("loaiDichVuldv_id")
-                        .HasColumnType("int");
-
                     b.Property<int>("ncc_id")
                         .HasColumnType("int");
 
                     b.HasKey("dv_id");
 
-                    b.HasIndex("loaiDichVuldv_id");
+                    b.HasIndex("ldv_id");
 
                     b.HasIndex("ncc_id");
 
@@ -376,7 +379,9 @@ namespace LV_DuLichDienTu.Migrations
                 {
                     b.HasOne("LV_DuLichDienTu.Models.LoaiDichVu", "loaiDichVu")
                         .WithMany("dichvus")
-                        .HasForeignKey("loaiDichVuldv_id");
+                        .HasForeignKey("ldv_id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("LV_DuLichDienTu.Models.NhaCungCap", "nhaCungCap")
                         .WithMany("dichVus")

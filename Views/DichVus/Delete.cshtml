@@ -24,6 +24,18 @@
             @Html.DisplayFor(model => model.dv_dienthoai_hotro)
         </dd>
         <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.dv_tinhthanh)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dv_tinhthanh)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.dv_quanhuyen)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dv_quanhuyen)
+        </dd>
+        <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.dv_mota)
         </dt>
         <dd class = "col-sm-10">
@@ -36,17 +48,17 @@
             @Html.DisplayFor(model => model.ckdv_id)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ncc_id)
+            @Html.DisplayNameFor(model => model.nhaCungCap)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ncc_id)
-        </dd>
+            @Html.DisplayFor(model => model.nhaCungCap.ncc_id)
+        </dd class>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ldv_id)
+            @Html.DisplayNameFor(model => model.loaiDichVu)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ldv_id)
-        </dd>
+            @Html.DisplayFor(model => model.loaiDichVu.ldv_id)
+        </dd class>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.hd_id)
         </dt>
@@ -61,8 +73,6 @@
         <a asp-action="Index">Back to List</a>
     </form>
 </div> *@
-
-
 <div class="row">
     <div class="col-md-10 center-margin">
         <div class="x_panel">

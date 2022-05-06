@@ -75,7 +75,7 @@
               <h1>Du Khách</h1>
               <h4>Đăng Nhập</h4>
               <div>
-                <input
+                <input name="email"
                   type="text"
                   class="form-control"
                   placeholder="Tài Khoản"
@@ -84,14 +84,14 @@
               </div>
               <div>
                 <input
-                  type="password"
+                  type="password" name="password"
                   class="form-control"
                   placeholder="Mật Khẩu"
                   required=""
                 />
               </div>
               <div>
-                <a class="btn btn-default submit" href="">Đăng Nhập</a>
+                <a class="btn btn-default submit" asp-action="Tourism_login">Đăng Nhập</a>
                 <a class="reset_pass" href="#">Quên mật khẩu?</a>
               </div>
 
@@ -155,27 +155,29 @@
         <!-- form ĐĂNG NHẬP NHÂN VIÊN -->
         <div id="Login_Admin" class="animate form Admin_Login_form">
           <section class="login_content">
-            <form>
+            <form  asp-action="Admin_Login">
               <h1>XIN CHÀO ĐỒNG NGHIỆP</h1>
               <h4>Đăng Nhập</h4>
               <div>
                 <input
                   type="text"
+                  name="email"
                   class="form-control"
-                  placeholder="Tài Khoản"
-                  required=""
+                  placeholder="Email"
+                  required="required"
                 />
               </div>
               <div>
                 <input
                   type="password"
+                  name="password"
                   class="form-control"
                   placeholder="Mật Khẩu"
-                  required=""
+                  required="required"
                 />
               </div>
               <div>
-                <a class="btn btn-default submit" href="">Đăng Nhập</a>
+                 <button type="submit" class="btn btn-default submit">Submit</button>
                 <a class="reset_pass" href="#">Quên mật khẩu?</a>
               </div>
 

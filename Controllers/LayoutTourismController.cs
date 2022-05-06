@@ -9,18 +9,21 @@ using LV_DuLichDienTu.Models;
 
 namespace LV_DuLichDienTu.Controllers
 {
-    public class Login : Controller
+    public class LayoutTourismController : Controller
     {
         private readonly acompec_lvdatContext _context;
 
-        public Login(acompec_lvdatContext context)
+        public LayoutTourismController(acompec_lvdatContext context)
         {
             _context = context;
         }
 
-public IActionResult Index()
+        // GET: NhanViens
+        public IActionResult Index()
         {
             return View();
         }
+
+        
     }
 }

@@ -27,6 +27,10 @@ namespace LV_DuLichDienTu
         {
             services.AddControllersWithViews();
             services.AddDbContext<acompec_lvdatContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            //sesstion
+            services.AddSession();
+            services.AddHttpContextAccessor();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,7 +49,7 @@ namespace LV_DuLichDienTu
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseSession();
             app.UseRouting();
 
             app.UseAuthorization();
@@ -54,7 +58,7 @@ namespace LV_DuLichDienTu
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=login}/{action=Index}/{id?}");
+                    pattern: "{controller=LayoutTourism}/{action=Index}/{id?}");
             });
         }
     }

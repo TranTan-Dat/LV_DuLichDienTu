@@ -6,6 +6,7 @@ var stateObject = {
       "TP Cần Thơ": {
         "Quận Ninh Kiều": [""],"Quận Cái Răng": [""],"Quận Bình Thủy": [""],"Quận Ô Môn": [""],"Huyện Phong Điền": [""],"Huyện Thốt Nốt": [""],"Huyện Cờ Đỏ": [""],"Huyện Vĩnh Thạnh": [""],"Huyện Thới Lai": [""],                                     
       },
+      "TP Nha Trang":{"Đảo Hòn Tre":[]},
     }
 
     window.onload = function () {
