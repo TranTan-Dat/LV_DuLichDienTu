@@ -14,7 +14,7 @@ namespace LV_DuLichDienTu.Models
         [DisplayName("Mã nhân viên")]
         public int nv_id {get;set;}
 
-        [DisplayName("Tài khoản nhân viên")]
+        [DisplayName("Tài khoản")]
         public string nv_taikhoan {get;set;}
 
         [DisplayName("Mật Khẩu")]
