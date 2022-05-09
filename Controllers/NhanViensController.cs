@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using LV_DuLichDienTu.Models;
 
+using System.Data;
+using Microsoft.AspNetCore.Http;
+
 namespace LV_DuLichDienTu.Controllers
 {
     public class NhanViensController : Controller
@@ -76,7 +79,7 @@ namespace LV_DuLichDienTu.Controllers
             {
                 return NotFound();
             }
-            return View(nhanVien);
+            return RedirectToAction("Details","NhanViens", new {@id = HttpContext.Session.GetString("userID")});
         }
 
         // POST: NhanViens/Edit/5
