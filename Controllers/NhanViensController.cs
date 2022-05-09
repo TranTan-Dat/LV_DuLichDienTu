@@ -79,7 +79,7 @@ namespace LV_DuLichDienTu.Controllers
             {
                 return NotFound();
             }
-            return RedirectToAction("Details","NhanViens", new {@id = HttpContext.Session.GetString("userID")});
+            return View(nhanVien);
         }
 
         // POST: NhanViens/Edit/5
@@ -112,7 +112,7 @@ namespace LV_DuLichDienTu.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Details","NhanViens", new {@id = HttpContext.Session.GetString("userID")});
             }
             return View(nhanVien);
         }
