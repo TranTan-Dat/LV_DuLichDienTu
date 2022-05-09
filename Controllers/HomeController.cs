@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using LV_DuLichDienTu.Models;
+using Microsoft.EntityFrameworkCore;
+using System.Data;
+using Microsoft.AspNetCore.Http;
 
 namespace LV_DuLichDienTu.Controllers
 {
@@ -17,10 +20,10 @@ namespace LV_DuLichDienTu.Controllers
         {
             _logger = logger;
         }
-
         public IActionResult Index()
         {
-            return View();
+            
+            return RedirectToAction("Details","NhanViens", new {@id = HttpContext.Session.GetString("userID")});
         }
 
         public IActionResult Privacy()

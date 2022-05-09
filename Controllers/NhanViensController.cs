@@ -23,7 +23,6 @@ namespace LV_DuLichDienTu.Controllers
         {
             return View(await _context.NhanVien.ToListAsync());
         }
-
         // GET: NhanViens/Details/5
         public async Task<IActionResult> Details(int? id)
         {

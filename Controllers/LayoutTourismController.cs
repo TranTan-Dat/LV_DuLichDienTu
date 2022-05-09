@@ -19,11 +19,31 @@ namespace LV_DuLichDienTu.Controllers
         }
 
         // GET: NhanViens
-        public IActionResult Index()
+        public async Task<IActionResult> Index_Home()
         {
-            return View();
+             var acompec_lvdatContext = _context.Hinh_DiaDiemDuLich.Include(m=>m.DiaDiem_DuLich);
+            return View(await acompec_lvdatContext.ToArrayAsync());
         }
-
+        // public async Task<IActionResult> Index_Destination()
+        // {
+        //      var acompec_lvdatContext = _context.Hinh_DiaDiemDuLich.Include(m=>m.DiaDiem_DuLich);
+        //     return View(await acompec_lvdatContext.ToArrayAsync());
+        // }
+    
+        public async Task<IActionResult> Index_Destination(string id)
+        {
+             var acompec_lvdatContext = _context.Hinh_DiaDiemDuLich.Include(m=>m.DiaDiem_DuLich).Where(c=>c.DiaDiem_DuLich.dddl_tinhthanh==id);
+            ViewData["TP"] = id.ToString();
+            return View(await acompec_lvdatContext.ToArrayAsync());
+        }
+        public async Task<IActionResult> Index_Service_Destination(string city, string services)
+        {
+            var acompec_lvdatContext = _context.DichVu.Include(m=>m.loaiDichVu).Where(c=>c.dv_tinhthanh == city);
+            var LinqVal_acompec_lvdatContext = acompec_lvdatContext.Where(e=>e.loaiDichVu.ldv_ten == services);
+            ViewData["TP"] = city.ToString();
+            ViewData["DV"] = services.ToString();
+            return View(await LinqVal_acompec_lvdatContext.ToArrayAsync());
+        }
         
     }
 }

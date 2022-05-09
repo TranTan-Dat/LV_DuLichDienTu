@@ -1,301 +1,446 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Http;
+@using System.Data;
+
+@{
+  if (Context.Session.GetString("userName") == null)
+  {
+    Context.Response.Redirect("/Login/Index");
+  }
+}
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <!-- Meta, title, CSS, favicons, etc. -->
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="images/favicon.ico" type="image/ico" />
+  <!-- Meta, title, CSS, favicons, etc. -->
+  @{
+    var temp = Context.Session.GetString("Type_role");
+    if (temp == "NhanVien")
+    {
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="icon" href="images/favicon.ico" type="image/ico" />
 
-  <title>Gentelella Alela! | </title>
+      <title>Gentelella Alela! | </title>
 
-  <!-- Bootstrap -->
-  <link href="~/Template/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Font Awesome -->
-  <link href="~/Template/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <!-- NProgress -->
-  <link href="~/Template/vendors/nprogress/nprogress.css" rel="stylesheet">
-  <!-- iCheck -->
-  <link href="~/Template/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+      <!-- Bootstrap -->
+      <link href="~/Template/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+      <!-- Font Awesome -->
+      <link href="~/Template/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+      <!-- NProgress -->
+      <link href="~/Template/vendors/nprogress/nprogress.css" rel="stylesheet">
+      <!-- iCheck -->
+      <link href="~/Template/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
 
-  <!-- bootstrap-progressbar -->
-  <link href="~/Template/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
-  <!-- JQVMap -->
-  <link href="~/Template/vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet" />
-  <!-- bootstrap-daterangepicker -->
-  <link href="~/Template/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+      <!-- bootstrap-progressbar -->
+      <link href="~/Template/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+      <!-- JQVMap -->
+      <link href="~/Template/vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet" />
+      <!-- bootstrap-daterangepicker -->
+      <link href="~/Template/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
 
-  <!-- Custom Theme Style -->
-  <link href="~/Template/build/css/custom.min.css" rel="stylesheet">
-  <link href="~/css/site.css" rel="stylesheet">
-  <!-- bootstrap-wysiwyg -->
-  <link href="~/Template/vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
-  <!-- Select2 -->
-  <link href="~/Template/vendors/select2/dist/css/select2.min.css" rel="stylesheet">
-  <!-- Switchery -->
-  <link href="~/Template/vendors/switchery/dist/switchery.min.css" rel="stylesheet">
-  <!-- starrr -->
-  <link href="~/Template/vendors/starrr/dist/starrr.css" rel="stylesheet">
-  <!-- Datatables -->
-  <link href="~/Template/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
-  <link href="~/Template/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
-  <link href="~/Template/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
-  <link href="~/Template/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
-  <link href="~/Template/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+      <!-- Custom Theme Style -->
+      <link href="~/Template/build/css/custom.min.css" rel="stylesheet">
+      <link href="~/css/site.css" rel="stylesheet">
+      <!-- bootstrap-wysiwyg -->
+      <link href="~/Template/vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
+      <!-- Select2 -->
+      <link href="~/Template/vendors/select2/dist/css/select2.min.css" rel="stylesheet">
+      <!-- Switchery -->
+      <link href="~/Template/vendors/switchery/dist/switchery.min.css" rel="stylesheet">
+      <!-- starrr -->
+      <link href="~/Template/vendors/starrr/dist/starrr.css" rel="stylesheet">
+      <!-- Datatables -->
+      <link href="~/Template/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+      <link href="~/Template/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+      <link href="~/Template/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
+      <link href="~/Template/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
+      <link href="~/Template/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+
+    }
+    else if (temp == "DuKhach")
+    {
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Alex+Brush" rel="stylesheet">
+
+      <link rel="stylesheet" href="~/TourismTemplate/css/open-iconic-bootstrap.min.css">
+      <link rel="stylesheet" href="~/TourismTemplate/css/animate.css">
+
+      <link rel="stylesheet" href="~/TourismTemplate/css/owl.carousel.min.css">
+      <link rel="stylesheet" href="~/TourismTemplate/css/owl.theme.default.min.css">
+      <link rel="stylesheet" href="~/TourismTemplate/css/magnific-popup.css">
+
+      <link rel="stylesheet" href="~/TourismTemplate/css/aos.css">
+
+      <link rel="stylesheet" href="~/TourismTemplate/css/ionicons.min.css">
+
+      <link rel="stylesheet" href="~/TourismTemplate/css/bootstrap-datepicker.css">
+      <link rel="stylesheet" href="~/TourismTemplate/css/jquery.timepicker.css">
+
+
+      <link rel="stylesheet" href="~/TourismTemplate/css/flaticon.css">
+      <link rel="stylesheet" href="~/TourismTemplate/css/icomoon.css">
+      <link rel="stylesheet" href="~/TourismTemplate/css/style.css">
+    }
+    else
+    {
+    }
+  }
+
 
 </head>
 
-<body class="nav-md ">
-  <div class="container body">
-    <div class="main_container">
-      <div class="col-md-3 left_col">
-        <div class="left_col scroll-view">
-          <div class="navbar nav_title" style="border: 0;">
-            <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
-          </div>
-
-          <div class="clearfix"></div>
-
-          <!-- menu profile quick info -->
-          <div class="profile clearfix">
-            <div class="profile_pic">
-              <img src="~/Template/production/images/img.jpg" alt="..." class="img-circle profile_img">
-            </div>
-            <div class="profile_info">
-              <span>Welcome,</span>
-              <h2>John Doe</h2>
-            </div>
-          </div>
-          <!-- /menu profile quick info -->
-
-          <br />
-
-          <!-- sidebar menu -->
-          <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
-            <div class="menu_section">
-              <h3>Nhân viên</h3>
-              <ul class="nav side-menu">
-                <li><a href="~/LoaiDichVus"><i class="fa fa-th-list"></i>LOẠI DỊCH VỤ</a></li>
-                <li><a href="~/DiaDiem_DuLichs"><i class="fa fa-map-marker"></i> ĐỊA ĐIỂM DU LỊCH</a></li>
-                <li><a href="~/BaiViet_DiaDiems"><i class="fa fa-file-photo-o"></i> BÀI VIẾT ĐỊA ĐIỂM</a></li>
-                <li><a href="~/Hinh_DiaDiemDuLichs"><i class="fa fa-picture-o"></i> HÌNH ĐỊA ĐIỂM DU LỊCH</a></li>
-                <li><a href="~/DuKhachs"><i class="fa fa-user"></i> DU KHÁCH</a></li>
-                <li><a href="~/NhaCungCaps"><i class="fa fa-users"></i>NHÀ CUNG CẤP</a></li>
-              </ul>
 
 
-              <h3>Nhà cung cấp</h3>
-              <ul class="nav side-menu">
-                <li><a href="~/DichVus"><i class="fa fa-gears"></i> DỊCH VỤ</a></li>
-                <li><a href="~/HopDongs"><i class="fa fa-file-text-o"></i> HỢP ĐỒNG</a></li>
-              </ul>
+<body>
+  @{
+    var temp_body = Context.Session.GetString("Type_role"); 
+    var userID_temp = Context.Session.GetString("userID");
+    if (temp_body == "DuKhach")
+    {
 
-              <h3>du khách</h3>
-              <ul class="nav side-menu">
-                <li><a href="~/HopDongs"><i class="fa fa-file-text-o"></i> HỢP ĐỒNG</a></li>
-              </ul>
-              <h3>Đây là trang login vô đăng ký sẽ sử dụng chức năng này</h3>
-              <ul class="nav side-menu">
-                <li><a href="~/NhanViens"><i class="fa fa-user"></i>NHÂN VIÊN</a>
-                <li><a href="~/NhaCungCaps"><i class="fa fa-users"></i>NHÀ CUNG CẤP</a></li>
-                </li>
-              </ul>
-            </div>
+      <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+        <div class="container">
+          <a class="navbar-brand" asp-action="Index_Home">AzyTravel.</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+          aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="oi oi-menu"></span> Menu
+          </button>
 
-          </div>
-          <!-- /sidebar menu -->
-
-
-        </div>
-      </div>
-
-      <!-- top navigation -->
-      <div class="top_nav">
-        <div class="nav_menu">
-          <nav>
-            <div class="nav toggle">
-              <a id="menu_toggle"><i class="fa fa-bars"></i></a>
-            </div>
-
-            <ul class="nav navbar-nav navbar-right">
-              <li class="">
-                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown"
-                  aria-expanded="false">
-                  <img src="~/Template/production/images/img.jpg" alt="">John Doe
-                  <span class=" fa fa-angle-down"></span>
-                </a>
-                <ul class="dropdown-menu dropdown-usermenu pull-right">
-                  <li><a href="javascript:;"> Profile</a></li>
-                  <li>
-                    <a href="javascript:;">
-                      <span class="badge bg-red pull-right">50%</span>
-                      <span>Settings</span>
-                    </a>
-                  </li>
-                  <li><a href="javascript:;">Help</a></li>
-                  <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
-                </ul>
-              </li>
-
-              <li role="presentation" class="dropdown">
-                <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
-                  <i class="fa fa-envelope-o"></i>
-                  <span class="badge bg-green">6</span>
-                </a>
-                <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
-                  <li>
-                    <a>
-                      <span class="image"><img src="~/Template/production/images/img.jpg" alt="Profile Image" /></span>
-                      <span>
-                        <span>John Smith</span>
-                        <span class="time">3 mins ago</span>
-                      </span>
-                      <span class="message">
-                        Film festivals used to be do-or-die moments for movie makers. They were where...
-                      </span>
-                    </a>
-                  </li>
-                  <li>
-                    <a>
-                      <span class="image"><img src="~/Template/production/images/img.jpg" alt="Profile Image" /></span>
-                      <span>
-                        <span>John Smith</span>
-                        <span class="time">3 mins ago</span>
-                      </span>
-                      <span class="message">
-                        Film festivals used to be do-or-die moments for movie makers. They were where...
-                      </span>
-                    </a>
-                  </li>
-                  <li>
-                    <a>
-                      <span class="image"><img src="~/Template/production/images/img.jpg" alt="Profile Image" /></span>
-                      <span>
-                        <span>John Smith</span>
-                        <span class="time">3 mins ago</span>
-                      </span>
-                      <span class="message">
-                        Film festivals used to be do-or-die moments for movie makers. They were where...
-                      </span>
-                    </a>
-                  </li>
-                  <li>
-                    <a>
-                      <span class="image"><img src="~/Template/production/images/img.jpg" alt="Profile Image" /></span>
-                      <span>
-                        <span>John Smith</span>
-                        <span class="time">3 mins ago</span>
-                      </span>
-                      <span class="message">
-                        Film festivals used to be do-or-die moments for movie makers. They were where...
-                      </span>
-                    </a>
-                  </li>
-                  <li>
-                    <div class="text-center">
-                      <a>
-                        <strong>See All Alerts</strong>
-                        <i class="fa fa-angle-right"></i>
-                      </a>
-                    </div>
-                  </li>
-                </ul>
-              </li>
+          <div class="collapse navbar-collapse" id="ftco-nav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active"><a href="~/LayoutTourism" class="nav-link">TRANG CHỦ</a></li>
+              <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+              <li class="nav-item"><a href="~/LayoutDestination" class="nav-link">destination</a></li>
+              <li class="nav-item"><a href="~/TourismTemplate/hotel.html" class="nav-link">Hotels</a></li>
+              <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+              <li class="nav-item cta"><a href="contact.html" class="nav-link"><span>Add listing</span></a></li>
             </ul>
-          </nav>
+          </div>
         </div>
-      </div>
-      <!-- /top navigation -->
-
-      <!-- page content -->
-      <div class="right_col" role="main">
-        <!-- top tiles -->
-
-        <!-- /top tiles -->
-
-        @RenderBody()
-
-
-
-      </div>
-      <!-- /page content -->
-
-      <!-- footer content -->
-      <footer>
-        <div class="pull-right">
-          WEBSITE DU LỊCH ĐIỆN TỬ - Được thiết kế và chỉnh sửa bởi: <a href="https://www.facebook.com/TanDatTr/"> TRẦN
-            ĐẠT</a>
+      </nav>
+      @RenderBody()
+      <footer class="ftco-footer ftco-bg-dark ftco-section">
+        <div class="container">
+          <div class="row mb-5">
+            <div class="col-md">
+              <div class="ftco-footer-widget mb-4">
+                <h2 class="ftco-heading-2">AzyTravel</h2>
+                <p>Mang đến trải nghiệm tuyệt vời dành cho bạn</p>
+                <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                  <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                  <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                  <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md">
+              <div class="ftco-footer-widget mb-4 ml-md-5">
+                <h2 class="ftco-heading-2">Thông tin về chúng tôi</h2>
+                <ul class="list-unstyled">
+                  <li><a href="#" class="py-2 d-block">Về chúng tôi</a></li>
+                  <li><a href="#" class="py-2 d-block">Dịch vụ</a></li>
+                  <li><a href="#" class="py-2 d-block">Trở thành đối tác</a></li>
+                  <li><a href="#" class="py-2 d-block">Chính sách</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md">
+              <div class="ftco-footer-widget mb-4">
+                <h2 class="ftco-heading-2">Đặt câu hỏi / Hỗ trợ khách hàng</h2>
+                <div class="block-23 mb-3">
+                  <ul>
+                    <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San
+                        Francisco, California, USA</span></li>
+                    <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
+                    <li><a href="#"><span class="icon icon-envelope"></span><span
+                        class="text">info@yourdomain.com</span></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 text-center">
+            </div>
+          </div>
         </div>
-        <div class="clearfix"></div>
       </footer>
-      <!-- /footer content -->
-    </div>
-  </div>
+      <!-- loader -->
+      <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+          <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+          <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+          stroke="#F96D00" />
+        </svg></div>
+    }
+    else if (temp_body == "NhanVien")
+    {
+      <div class="nav-md ">
+        <div class="container body">
+          <div class="main_container">
+            <div class="col-md-3 left_col">
+              <div class="left_col scroll-view">
+                <div class="navbar nav_title" style="border: 0;">
+                  <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
+                </div>
 
-  <!-- jQuery -->
-  <script src="~/Template/vendors/jquery/dist/jquery.min.js"></script>
-  <!-- Bootstrap -->
-  <script src="~/Template/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-  <!-- FastClick -->
-  <script src="~/Template/vendors/fastclick/lib/fastclick.js"></script>
-  <!-- NProgress -->
-  <script src="~/Template/vendors/nprogress/nprogress.js"></script>
-  <!-- Chart.js -->
-  <script src="~/Template/vendors/Chart.js/dist/Chart.min.js"></script>
-  <!-- gauge.js -->
-  <script src="~/Template/vendors/gauge.js/dist/gauge.min.js"></script>
-  <!-- bootstrap-progressbar -->
-  <script src="~/Template/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
-  <!-- iCheck -->
-  <script src="~/Template/vendors/iCheck/icheck.min.js"></script>
-  <!-- Skycons -->
-  <script src="~/Template/vendors/skycons/skycons.js"></script>
-  <!-- Flot -->
-  <script src="~/Template/vendors/Flot/jquery.flot.js"></script>
-  <script src="~/Template/vendors/Flot/jquery.flot.pie.js"></script>
-  <script src="~/Template/vendors/Flot/jquery.flot.time.js"></script>
-  <script src="~/Template/vendors/Flot/jquery.flot.stack.js"></script>
-  <script src="~/Template/vendors/Flot/jquery.flot.resize.js"></script>
-  <!-- Flot plugins -->
-  <script src="~/Template/vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
-  <script src="~/Template/vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
-  <script src="~/Template/vendors/flot.curvedlines/curvedLines.js"></script>
-  <!-- DateJS -->
-  <script src="~/Template/vendors/DateJS/build/date.js"></script>
-  <!-- JQVMap -->
-  <script src="~/Template/vendors/jqvmap/dist/jquery.vmap.js"></script>
-  <script src="~/Template/vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
-  <script src="~/Template/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
-  <!-- bootstrap-daterangepicker -->
-  <script src="~/Template/vendors/moment/min/moment.min.js"></script>
-  <script src="~/Template/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+                <div class="clearfix"></div>
 
-  <!-- Custom Theme Scripts -->
-  <script src="~/Template/build/js/custom.min.js"></script>
-  <!-- Datatables -->
-  <script src="~/Template/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
-  <script src="~/Template/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-  <script src="~/Template/vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-  <script src="~/Template/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
-  <script src="~/Template/vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
-  <script src="~/Template/vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
-  <script src="~/Template/vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
-  <script src="~/Template/vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
-  <script src="~/Template/vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
-  <script src="~/Template/vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-  <script src="~/Template/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
-  <script src="~/Template/vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
-  <script src="~/Template/vendors/jszip/dist/jszip.min.js"></script>
-  <script src="~/Template/vendors/pdfmake/build/pdfmake.min.js"></script>
-  <script src="~/Template/vendors/pdfmake/build/vfs_fonts.js"></script>
-  <script src="~/js/ChangeUrlToFile.js"></script>
-  
+                <div class="profile clearfix">
+                  <div class="profile_pic"> 
+                    @* để ảnh vô sau hoặc khỏi *@
+                    @* <img src="~/Template/production/images/img.jpg" alt="..." class="img-circle profile_img"> *@
+                  </div>
+                  <div class="profile_info">
+                    <span>Chào bạn: </span>
+                    <h2>@Context.Session.GetString("userName")</h2>
+                  </div>
+                </div>
+                <br />
+                <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                  <div class="menu_section">
+                    <h3>Nhân viên</h3>
+                    <ul class="nav side-menu">
+                      <li><a href="~/LoaiDichVus/Index"><i class="fa fa-th-list"></i>LOẠI DỊCH VỤ</a></li>
+                      <li><a href="~/DiaDiem_DuLichs/Index"><i class="fa fa-map-marker"></i> ĐỊA ĐIỂM DU LỊCH</a></li>
+                      <li><a href="~/BaiViet_DiaDiems/Index"><i class="fa fa-file-photo-o"></i> BÀI VIẾT ĐỊA ĐIỂM</a></li>
+                      <li><a href="~/Hinh_DiaDiemDuLichs/Index"><i class="fa fa-picture-o"></i> HÌNH ĐỊA ĐIỂM DU LỊCH</a></li>
+                      <li><a href="~/DuKhachs/Index"><i class="fa fa-user"></i> DU KHÁCH</a></li>
+                      <li><a href="~/NhaCungCaps/Index"><i class="fa fa-users"></i>NHÀ CUNG CẤP</a></li>
+                      <li><a asp-controller="NhanViens" asp-action="Details" asp-route-id="@userID_temp"><i class="fa fa-user"></i>THÔNG TIN CÁ NHÂN</a></li>
+                    </ul>
 
 
+                    <h3>Nhà cung cấp</h3>
+                    <ul class="nav side-menu">
+                      <li><a href="~/DichVus/Index"><i class="fa fa-gears"></i> DỊCH VỤ</a></li>
+                      <li><a href="~/HopDongs/Index"><i class="fa fa-file-text-o"></i> HỢP ĐỒNG</a></li>
+                    </ul>
 
-  <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+                    <h3>du khách</h3>
+                    <ul class="nav side-menu">
+                      <li><a href="~/HopDongs/Index"><i class="fa fa-file-text-o"></i> HỢP ĐỒNG</a></li>
+                    </ul>
+                    <h3>Đây là trang login vô đăng ký sẽ sử dụng chức năng này</h3>
+                    <ul class="nav side-menu">
+                      <li><a href="~/NhanViens/Index"><i class="fa fa-user"></i>NHÂN VIÊN</a>
+                      <li><a href="~/NhaCungCaps/Index"><i class="fa fa-users"></i>NHÀ CUNG CẤP</a></li>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="top_nav">
+              <div class="nav_menu">
+                <nav>
+                  <div class="nav toggle">
+                    <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                  </div>
+
+                  <ul class="nav navbar-nav navbar-right">
+                    <li class="">
+                      <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown"
+                      aria-expanded="false">
+                        @* <img src="~/Template/production/images/img.jpg" alt=""> *@
+                        @Context.Session.GetString("userName")
+                        <span class=" fa fa-angle-down"></span>
+                      </a>
+                      <ul class="dropdown-menu dropdown-usermenu pull-right">
+                        <li><a asp-controller="Login" asp-action="Logout"><i class="fa fa-key"></i>Đăng Xuất</a></li>
+                      </ul>
+                    </li>
+
+                    <li role="presentation" class="dropdown">
+                      <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown"
+                      aria-expanded="false">
+                        <i class="fa fa-envelope-o"></i>
+                        <span class="badge bg-green">6</span>
+                      </a>
+                      <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
+                        <li>
+                          <a>
+                            <span class="image"><img src="~/Template/production/images/img.jpg"
+                            alt="Profile Image" /></span>
+                            <span>
+                              <span>John Smith</span>
+                              <span class="time">3 mins ago</span>
+                            </span>
+                            <span class="message">
+                              Film festivals used to be do-or-die moments for movie makers. They were where...
+                            </span>
+                          </a>
+                        </li>
+                        <li>
+                          <a>
+                            <span class="image"><img src="~/Template/production/images/img.jpg"
+                            alt="Profile Image" /></span>
+                            <span>
+                              <span>John Smith</span>
+                              <span class="time">3 mins ago</span>
+                            </span>
+                            <span class="message">
+                              Film festivals used to be do-or-die moments for movie makers. They were where...
+                            </span>
+                          </a>
+                        </li>
+                        <li>
+                          <a>
+                            <span class="image"><img src="~/Template/production/images/img.jpg"
+                            alt="Profile Image" /></span>
+                            <span>
+                              <span>John Smith</span>
+                              <span class="time">3 mins ago</span>
+                            </span>
+                            <span class="message">
+                              Film festivals used to be do-or-die moments for movie makers. They were where...
+                            </span>
+                          </a>
+                        </li>
+                        <li>
+                          <a>
+                            <span class="image"><img src="~/Template/production/images/img.jpg"
+                            alt="Profile Image" /></span>
+                            <span>
+                              <span>John Smith</span>
+                              <span class="time">3 mins ago</span>
+                            </span>
+                            <span class="message">
+                              Film festivals used to be do-or-die moments for movie makers. They were where...
+                            </span>
+                          </a>
+                        </li>
+                        <li>
+                          <div class="text-center">
+                            <a>
+                              <strong>See All Alerts</strong>
+                              <i class="fa fa-angle-right"></i>
+                            </a>
+                          </div>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+            <div class="right_col" role="main">
+
+              @RenderBody()
+            </div>
+            <footer>
+              <div class="pull-right">
+                WEBSITE DU LỊCH ĐIỆN TỬ - Được thiết kế và chỉnh sửa bởi: <a href="https://www.facebook.com/TanDatTr/"> TRẦN
+                  ĐẠT</a>
+              </div>
+              <div class="clearfix"></div>
+            </footer>
+          </div>
+        </div>
+      </div>
+    }
+    else
+    {
+      @RenderBody()
+    }
+  }
+  @{
+    var temp_footer = Context.Session.GetString("Type_role");
+    if (temp_footer == "NhanVien")
+    {
+      <!-- jQuery -->
+      <script src="~/Template/vendors/jquery/dist/jquery.min.js"></script>
+      <!-- Bootstrap -->
+      <script src="~/Template/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+      <!-- FastClick -->
+      <script src="~/Template/vendors/fastclick/lib/fastclick.js"></script>
+      <!-- NProgress -->
+      <script src="~/Template/vendors/nprogress/nprogress.js"></script>
+      <!-- Chart.js -->
+      <script src="~/Template/vendors/Chart.js/dist/Chart.min.js"></script>
+      <!-- gauge.js -->
+      <script src="~/Template/vendors/gauge.js/dist/gauge.min.js"></script>
+      <!-- bootstrap-progressbar -->
+      <script src="~/Template/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+      <!-- iCheck -->
+      <script src="~/Template/vendors/iCheck/icheck.min.js"></script>
+      <!-- Skycons -->
+      <script src="~/Template/vendors/skycons/skycons.js"></script>
+      <!-- Flot -->
+      <script src="~/Template/vendors/Flot/jquery.flot.js"></script>
+      <script src="~/Template/vendors/Flot/jquery.flot.pie.js"></script>
+      <script src="~/Template/vendors/Flot/jquery.flot.time.js"></script>
+      <script src="~/Template/vendors/Flot/jquery.flot.stack.js"></script>
+      <script src="~/Template/vendors/Flot/jquery.flot.resize.js"></script>
+      <!-- Flot plugins -->
+      <script src="~/Template/vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
+      <script src="~/Template/vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
+      <script src="~/Template/vendors/flot.curvedlines/curvedLines.js"></script>
+      <!-- DateJS -->
+      <script src="~/Template/vendors/DateJS/build/date.js"></script>
+      <!-- JQVMap -->
+      <script src="~/Template/vendors/jqvmap/dist/jquery.vmap.js"></script>
+      <script src="~/Template/vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+      <script src="~/Template/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+      <!-- bootstrap-daterangepicker -->
+      <script src="~/Template/vendors/moment/min/moment.min.js"></script>
+      <script src="~/Template/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+      <!-- Custom Theme Scripts -->
+      <script src="~/Template/build/js/custom.min.js"></script>
+      <!-- Datatables -->
+      <script src="~/Template/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+      <script src="~/Template/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+      <script src="~/Template/vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+      <script src="~/Template/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+      <script src="~/Template/vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+      <script src="~/Template/vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+      <script src="~/Template/vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+      <script src="~/Template/vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+      <script src="~/Template/vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+      <script src="~/Template/vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+      <script src="~/Template/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+      <script src="~/Template/vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+      <script src="~/Template/vendors/jszip/dist/jszip.min.js"></script>
+      <script src="~/Template/vendors/pdfmake/build/pdfmake.min.js"></script>
+      <script src="~/Template/vendors/pdfmake/build/vfs_fonts.js"></script>
+      <script src="~/js/ChangeUrlToFile.js"></script>
+      <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+    }
+    else if (temp_footer == "DuKhach")
+    {
+      <script src="~/TourismTemplate/js/jquery.min.js"></script>
+      <script src="~/TourismTemplate/js/jquery-migrate-3.0.1.min.js"></script>
+      <script src="~/TourismTemplate/js/popper.min.js"></script>
+      <script src="~/TourismTemplate/js/bootstrap.min.js"></script>
+      <script src="~/TourismTemplate/js/jquery.easing.1.3.js"></script>
+      <script src="~/TourismTemplate/js/jquery.waypoints.min.js"></script>
+      <script src="~/TourismTemplate/js/jquery.stellar.min.js"></script>
+      <script src="~/TourismTemplate/js/owl.carousel.min.js"></script>
+      <script src="~/TourismTemplate/js/jquery.magnific-popup.min.js"></script>
+      <script src="~/TourismTemplate/js/aos.js"></script>
+      <script src="~/TourismTemplate/js/jquery.animateNumber.min.js"></script>
+      <script src="~/TourismTemplate/js/bootstrap-datepicker.js"></script>
+      @* <script src="~/TourismTemplate/js/jquery.timepicker.min.js"></script> *@
+      <script src="~/TourismTemplate/js/scrollax.min.js"></script>
+      <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+      <script src="~/TourismTemplate/js/google-map.js"></script>
+      <script src="~/TourismTemplate/js/main.js"></script>
+      <script src="~/js/citiesLoad.js"></script>
+    }
+    else
+    {
+
+    }
+  }
+
+
+
+
+
   <script>
     function displayResult() {
       var startDate = document.getElementById("StartDate").value;
@@ -329,7 +474,7 @@
       });
 
 
-    
+
   </script>
 
   <script src="~/js/site.js"></script>

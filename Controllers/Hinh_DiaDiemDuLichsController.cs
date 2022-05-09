@@ -73,7 +73,7 @@ namespace LV_DuLichDienTu.Controllers
 
                 _context.Add(hinh_DiaDiemDuLich);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Index","hinh_DiaDiemDuLich");
+                return RedirectToAction("Index","hinh_DiaDiemDuLichs");
             }
             ViewData["dddl_ten"] = new SelectList(_context.DiaDiem_DuLich, "dddl_id", "dddl_ten", hinh_DiaDiemDuLich.dddl_id);
             return View(hinh_DiaDiemDuLich);

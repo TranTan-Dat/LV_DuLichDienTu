@@ -27,8 +27,11 @@ namespace LV_DuLichDienTu
         {
             services.AddControllersWithViews();
             services.AddDbContext<acompec_lvdatContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddSession(o => {
+                o.IdleTimeout = TimeSpan.FromSeconds(1800);
+            });
             //sesstion
-            services.AddSession();
+            // services.AddSession();
             services.AddHttpContextAccessor();
 
         }
@@ -58,7 +61,7 @@ namespace LV_DuLichDienTu
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=LayoutTourism}/{action=Index}/{id?}");
+                    pattern: "{controller=LayoutTourism}/{action=Index_Home}/{id?}");
             });
         }
     }

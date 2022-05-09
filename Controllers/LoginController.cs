@@ -38,6 +38,7 @@ namespace LV_DuLichDienTu.Controllers
             {
                 HttpContext.Session.SetString("userName", userDetails.nv_email);
                 HttpContext.Session.SetString("userID", userDetails.nv_id.ToString());
+                HttpContext.Session.SetString("Type_role", "NhanVien");
                 return RedirectToAction("Index","Home");
             }
         }
@@ -55,7 +56,8 @@ namespace LV_DuLichDienTu.Controllers
             {
                 HttpContext.Session.SetString("userName", userDetails.dk_email);
                 HttpContext.Session.SetString("userID", userDetails.dk_matkhau);
-                return RedirectToAction("Index","Home");
+                HttpContext.Session.SetString("Type_role", "DuKhach");
+                return RedirectToAction("Index_Home","LayoutTourism");
             }
         }
         //login form ncc
@@ -81,7 +83,7 @@ namespace LV_DuLichDienTu.Controllers
         {
             HttpContext.Session.Remove("userName");
             HttpContext.Session.Remove("userID");
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Login");
         }
     }
 }

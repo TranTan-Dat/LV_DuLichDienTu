@@ -1,0 +1,113 @@
+@model IEnumerable<LV_DuLichDienTu.Models.DichVu>
+@{
+    ViewData["Title"] = "Index_Service_Destination";
+}
+
+<div>
+
+</div>
+
+<div class="hero-wrap js-fullheight" style="background-image: url('/TourismTemplate/images/bg_3.jpg');">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center"
+            data-scrollax-parent="true">
+            <div class="col-md-9 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
+                <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">
+                
+                        @ViewBag.TP </br>
+                        @ViewBag.DV
+                </h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<section class="ftco-section ftco-degree-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 sidebar ftco-animate">
+                <div class="sidebar-wrap bg-light ftco-animate">
+                    <h3 class="heading mb-4">Địa Điểm Du Lịch</h3>
+                    <form asp-action="Index_Service_Destination">
+                        <div class="fields">
+                            <div class="form-group">
+                                <div class="select-wrap one-third">
+                                    <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                                    <select name="city" id="countySel" class="form-control SLTinhThanh" >
+                                        <option value="" selected="selected" disabled>Chọn Tỉnh / Thành Phố</option>
+                                        <option value="TP Cần Thơ"  >Cần Thơ</option>
+                                        <option value="TP Đà Nẵng"  >Đà Nẵng</option>
+                                        <option value="TP Hồ Chí Minh"  >Hồ Chí Minh</option>
+                                        <option value="TP Nha Trang"  >Nha Trang</option>
+                                    </select>
+                                    <select name="services" class="form-control SLTinhThanh" >
+                                        <option value="" selected="selected" disabled>Chọn loại dịch vụ</option>
+                                        <option value="Dịch vụ di chuyển"  >Di Chuyển</option>
+                                        <option value="Dịch vụ lưu trú"  >Nghỉ Dưỡng</option>
+                                        <option value="Dịch vụ ăn uống"  >Ẩm Thực</option>
+                                        <option value="Dịch vụ tham quan"  >Vui Chơi Tham Quan</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Tìm Kiếm" class="btn btn-primary py-3 px-5">
+                                
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+            <div class="col-lg-9">
+                <div class="row">
+                    @foreach(var item in Model)
+                    {
+                        <div class="col-md-4 ftco-animate">
+                        <div class="destination">
+                            <a href="#" class="img img-2 d-flex justify-content-center align-items-center"
+                                
+                                >
+                                <div class="icon d-flex justify-content-center align-items-center">
+                                    <span class="icon-search2"></span>
+                                </div>
+                            </a>
+                            <div class="text p-3">
+                                <div class="d-flex">
+                                    <div class="one">
+                                        <h3 class="title-destination"><a href="#">
+                                            @Html.DisplayFor(modelItem => item.dv_ten)
+                                        </a></h3>
+                                    </div>
+                                </div>
+                                
+                                <hr>
+                                <p class="bottom-area d-flex">
+                                    <span><i class="icon-map-o"></i> @Html.DisplayFor(modelItem => item.dv_quanhuyen)</span>
+                                    <span class="ml-auto"><a href="#">Chi Tiết</a></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                </div>
+                <div class="row mt-5">
+                    <div class="col text-center">
+                        <div class="block-27">
+                            <ul>
+                                <li><a href="#">&lt;</a></li>
+                                <li class="active"><span>1</span></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li><a href="#">&gt;</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- .col-md-8 -->
+        </div>
+    </div>
+</section> <!-- .section -->

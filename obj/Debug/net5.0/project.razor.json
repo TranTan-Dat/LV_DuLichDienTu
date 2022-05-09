@@ -15659,6 +15659,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\LayoutTourism\\Index_Service_Destination.cshtml",
+      "TargetPath": "Views\\LayoutTourism\\Index_Service_Destination.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\Hinh_DiaDiemDuLichs\\Create.cshtml",
       "TargetPath": "Views\\Hinh_DiaDiemDuLichs\\Create.cshtml",
       "FileKind": "mvc"
@@ -15704,11 +15709,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\LayoutTourism\\Index.cshtml",
-      "TargetPath": "Views\\LayoutTourism\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\DiaDiem_DuLichs\\Index.cshtml",
       "TargetPath": "Views\\DiaDiem_DuLichs\\Index.cshtml",
       "FileKind": "mvc"
@@ -15746,6 +15746,11 @@
     {
       "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\DichVus\\Index.cshtml",
       "TargetPath": "Views\\DichVus\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\LayoutTourism\\Index_Home.cshtml",
+      "TargetPath": "Views\\LayoutTourism\\Index_Home.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15809,6 +15814,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\LayoutTourism\\Index_Destination.cshtml",
+      "TargetPath": "Views\\LayoutTourism\\Index_Destination.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\DiaDiem_DuLichs\\Details.cshtml",
       "TargetPath": "Views\\DiaDiem_DuLichs\\Details.cshtml",
       "FileKind": "mvc"
@@ -15866,11 +15876,6 @@
     {
       "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\Shared\\_Login.cshtml",
-      "TargetPath": "Views\\Shared\\_Login.cshtml",
       "FileKind": "mvc"
     },
     {
