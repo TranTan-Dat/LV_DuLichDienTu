@@ -28,6 +28,6 @@ namespace LV_DuLichDienTu.Models
         // [NotMapped]
         // public IFormFile myfile{get;set;}
         
-
     }
+    
 }

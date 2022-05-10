@@ -393,3 +393,4 @@ C:\Users\Asus\Desktop\LV_Etourism\lv_dulichdientu\obj\Debug\net5.0\Razor\Views\S
 C:\Users\Asus\Desktop\LV_Etourism\lv_dulichdientu\obj\Debug\net5.0\Razor\Views\LayoutTourism\Index_Home.cshtml.g.cs
 C:\Users\Asus\Desktop\LV_Etourism\lv_dulichdientu\obj\Debug\net5.0\Razor\Views\LayoutTourism\Index_Destination.cshtml.g.cs
 C:\Users\Asus\Desktop\LV_Etourism\lv_dulichdientu\obj\Debug\net5.0\Razor\Views\LayoutTourism\Index_Service_Destination.cshtml.g.cs
+C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\LayoutTourism\Index_News.cshtml.g.cs

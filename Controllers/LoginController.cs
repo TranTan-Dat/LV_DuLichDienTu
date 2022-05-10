@@ -55,7 +55,7 @@ namespace LV_DuLichDienTu.Controllers
             else
             {
                 HttpContext.Session.SetString("userName", userDetails.dk_email);
-                HttpContext.Session.SetString("userID", userDetails.dk_matkhau);
+                HttpContext.Session.SetString("userID", userDetails.dk_id.ToString());
                 HttpContext.Session.SetString("Type_role", "DuKhach");
                 return RedirectToAction("Index_Home","LayoutTourism");
             }

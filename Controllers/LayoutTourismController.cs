@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using LV_DuLichDienTu.Models;
+using System.Dynamic;
 
 namespace LV_DuLichDienTu.Controllers
 {
@@ -18,11 +19,29 @@ namespace LV_DuLichDienTu.Controllers
             _context = context;
         }
 
-        // GET: NhanViens
         public async Task<IActionResult> Index_Home()
         {
-             var acompec_lvdatContext = _context.Hinh_DiaDiemDuLich.Include(m=>m.DiaDiem_DuLich);
-            return View(await acompec_lvdatContext.ToArrayAsync());
+            var appDBContext = _context.BaiViet_DiaDiem.Include(e=>e.NhanVien).Include(g=>g.DiaDiem_DuLich);
+            return View(await appDBContext.ToListAsync());
+        }
+
+        
+        
+        public async Task<IActionResult> Index_News(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var baiViet_DiaDiem = await _context.BaiViet_DiaDiem
+                .FirstOrDefaultAsync(m => m.bvdd_id == id);
+            if (baiViet_DiaDiem == null)
+            {
+                return NotFound();
+            }
+
+            return View(baiViet_DiaDiem);
         }
         // public async Task<IActionResult> Index_Destination()
         // {

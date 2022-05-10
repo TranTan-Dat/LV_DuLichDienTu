@@ -15619,6 +15619,11 @@
   "RootNamespace": "LV_DuLichDienTu",
   "Documents": [
     {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\LayoutTourism\\Index_News.cshtml",
+      "TargetPath": "Views\\LayoutTourism\\Index_News.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"

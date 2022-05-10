@@ -1,0 +1,81 @@
+@model LV_DuLichDienTu.Models.BaiViet_DiaDiem
+
+@{
+    ViewData["Title"] = "Index_News";
+}
+
+
+<div class="hero-wrap js-fullheight" style="background-image: url('~/TourismTemplate/images/bg_4.jpg');">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center"
+            data-scrollax-parent="true">
+            <div class="col-md-9 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
+                <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span
+                        class="mr-2"><a href="index.html">Home</a></span> <span class="mr-2"><a
+                            href="blog.html">Blog</a></span> <span>Blog Single</span></p>
+                <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Tips &amp;
+                    Articles</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<section class="ftco-section ftco-degree-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 ftco-animate">
+                <h2 class="mb-3">@Model.bvdd_tieude</h2>
+                @Html.Raw(Model.bvdd_noidung)
+            </div> <!-- .col-md-8 -->
+
+
+
+            <div class="col-md-4 sidebar ftco-animate fadeInUp ftco-animated">
+                <div class="sidebar-box ftco-animate fadeInUp ftco-animated">
+                    <h3>Bài viết gần đây</h3>
+                    <div class="block-21 mb-4 d-flex">
+                        <a class="blog-img mr-4" style="background-image: url(images/image_1.jpg);"></a>
+                        <div class="text">
+                            <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the
+                                    blind texts</a></h3>
+                            <div class="meta">
+                                <div><a href="#"><span class="icon-calendar"></span> July 12, 2018</a></div>
+                                <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                                <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block-21 mb-4 d-flex">
+                        <a class="blog-img mr-4" style="background-image: url(images/image_2.jpg);"></a>
+                        <div class="text">
+                            <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the
+                                    blind texts</a></h3>
+                            <div class="meta">
+                                <div><a href="#"><span class="icon-calendar"></span> July 12, 2018</a></div>
+                                <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                                <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block-21 mb-4 d-flex">
+                        <a class="blog-img mr-4" style="background-image: url(images/image_3.jpg);"></a>
+                        <div class="text">
+                            <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the
+                                    blind texts</a></h3>
+                            <div class="meta">
+                                <div><a href="#"><span class="icon-calendar"></span> July 12, 2018</a></div>
+                                <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                                <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</section> <!-- .section -->
