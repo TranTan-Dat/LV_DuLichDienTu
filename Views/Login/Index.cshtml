@@ -113,11 +113,12 @@
         <!-- form ĐĂNG NHẬP NHÀ CUNG CẤP -->
         <div id="Business_login" class="animate form Business_Login_form">
           <section class="login_content">
-            <form>
+            <form asp-action="Business_login">
               <h1>Nhà Cung Cấp</h1>
               <h4>Đăng Nhập</h4>
               <div>
                 <input
+                name="email"
                   type="text"
                   class="form-control"
                   placeholder="Tài Khoản"
@@ -126,6 +127,7 @@
               </div>
               <div>
                 <input
+                name="password"
                   type="password"
                   class="form-control"
                   placeholder="Mật Khẩu"

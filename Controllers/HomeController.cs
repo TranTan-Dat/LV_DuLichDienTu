@@ -25,6 +25,14 @@ namespace LV_DuLichDienTu.Controllers
             
             return RedirectToAction("Details","NhanViens", new {@id = HttpContext.Session.GetString("userID")});
         }
+        public IActionResult Index_business()
+        {
+            
+            return RedirectToAction("Details","NhaCungCaps", new {@id = HttpContext.Session.GetString("userID")});
+        }
+
+        
+
 
         public IActionResult Privacy()
         {

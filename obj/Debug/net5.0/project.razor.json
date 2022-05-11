@@ -15819,6 +15819,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\Home\\Index_business.cshtml",
+      "TargetPath": "Views\\Home\\Index_business.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\LayoutTourism\\Index_Destination.cshtml",
       "TargetPath": "Views\\LayoutTourism\\Index_Destination.cshtml",
       "FileKind": "mvc"

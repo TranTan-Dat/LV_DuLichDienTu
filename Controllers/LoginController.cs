@@ -73,8 +73,10 @@ namespace LV_DuLichDienTu.Controllers
             else
             {
                 HttpContext.Session.SetString("userName", userDetails.ncc_email);
-                HttpContext.Session.SetString("userID", userDetails.ncc_matkhau);
-                return RedirectToAction("Index","Home");
+                HttpContext.Session.SetString("userID", userDetails.ncc_id.ToString());
+                
+                HttpContext.Session.SetString("Type_role", "NhaCungCap");
+                return RedirectToAction("Index_business","Home");
             }
         }
 
