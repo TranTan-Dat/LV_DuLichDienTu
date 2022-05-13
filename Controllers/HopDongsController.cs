@@ -25,7 +25,12 @@ namespace LV_DuLichDienTu.Controllers
            
             return View(await acompec_lvdatContext.ToListAsync());
         }
-        
+        public async Task<IActionResult> List_By_ID(int?id)
+        {
+            var acompec_lvdatContext = _context.HopDong.Include(h => h.dichVu).Include(h => h.duKhach).Where(x=>x.dichVu.ncc_id==id);
+           
+            return View(await acompec_lvdatContext.ToListAsync());
+        }
 
         // GET: HopDongs/Details/5
         public async Task<IActionResult> Details(int? id)

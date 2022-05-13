@@ -64,5 +64,20 @@ namespace LV_DuLichDienTu.Controllers
             return View(await LinqVal_acompec_lvdatContext.ToArrayAsync());
         }
         
+        public async Task<IActionResult> Details_Destination(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var diaDiem_DuLich = await _context.DiaDiem_DuLich
+                .FirstOrDefaultAsync(m => m.dddl_id == id);
+            if (diaDiem_DuLich == null)
+            {
+                return NotFound();
+            }
+            return View(diaDiem_DuLich);
+        }
     }
 }

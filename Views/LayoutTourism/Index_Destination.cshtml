@@ -1,4 +1,6 @@
 @model IEnumerable<LV_DuLichDienTu.Models.Hinh_DiaDiemDuLich>;
+@using Microsoft.AspNetCore.Http;
+@using System.Data;
 @{
     ViewData["Title"] = "Index_Destination";
 }
@@ -22,313 +24,48 @@
 
 <section class="ftco-section ftco-degree-bg">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-3 sidebar ftco-animate">
-                <div class="sidebar-wrap bg-light ftco-animate">
-                    <h3 class="heading mb-4">Địa Điểm Du Lịch</h3>
-                    <form asp-action="Index_Service_Destination">
-                        <div class="fields">
-                            <div class="form-group">
-                                <div class="select-wrap one-third">
-                                    <select name="city" id="countySel" class="form-control SLTinhThanh" >
-                                        @* disabled không cho chọn dữ liệu mặc định *@
-                                        <option value="" selected="selected" disabled>Chọn Tỉnh / Thành Phố</option>
-                                        <option value="TP Cần Thơ"  >Cần Thơ</option>
-                                        <option value="TP Đà Nẵng"  >Đà Nẵng</option>
-                                        <option value="TP Hồ Chí Minh"  >Hồ Chí Minh</option>
-                                        <option value="TP Nha Trang"  >Nha Trang</option>
-                                    </select>
-                                    <select name="services" class="form-control SLTinhThanh" >
-                                        @* disabled không cho chọn dữ liệu mặc định *@
-                                        <option value="" selected="selected" disabled>Chọn loại dịch vụ</option>
-                                        <option value="Dịch vụ di chuyển"  >Di Chuyển</option>
-                                        <option value="Dịch vụ lưu trú"  >Nghỉ Dưỡng</option>
-                                        <option value="Dịch vụ ăn uống"  >Ẩm Thực</option>
-                                        <option value="Dịch vụ tham quan"  >Vui Chơi Tham Quan</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <input type="submit" value="Tìm Kiếm" class="btn btn-primary py-3 px-5">
-                                
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                @* FORM NÀY CHO CHỌN DỊCH VỤ NGHỈ DƯỠNG, ẨM THỰC, THAM QUAN VÀ VUI CHƠI GIẢI TRÍ *@
-                @* <div class="sidebar-wrap bg-light ftco-animate">
-                    <h3 class="heading mb-4">Chọn loại dịch vụ bạn quan tâm</h3>
-                    <div>
-                        <div class="fields">
-                            <div class="form-group">
-                                <div class="select-wrap one-third">
-                                    <td><a asp-action="Index_Destination" asp-route-id="3" class="btn btn-primary btn-xs margin-top">Di Chuyển</a></td>
-                                    <td><a asp-action="Index_Destination" asp-route-id="4" class="btn btn-primary btn-xs margin-top">Nghỉ Dưỡng</a></td>
-                                    <td><a asp-action="Index_Destination" asp-route-id="5" class="btn btn-primary btn-xs margin-top">Ẩm Thực</a></td>
-                                    <td><a asp-action="Index_Destination" asp-route-id="7" class="btn btn-primary btn-xs margin-top">Vui Chơi </br>Tham Quan</a></td>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> *@
-            </div>
-            <div class="col-lg-9">
-                <div class="row">
-                    @* <div class="col-md-4 ftco-animate">
-                        <div class="destination">
-                            <a href="#" class="img img-2 d-flex justify-content-center align-items-center"
-                                style="background-image: url(/TourismTemplate/images/destination-1.jpg);">
-                                <div class="icon d-flex justify-content-center align-items-center">
-                                    <span class="icon-search2"></span>
-                                </div>
-                            </a>
-                            <div class="text p-3">
-                                <div class="d-flex">
-                                    <div class="one">
-                                        <h3><a href="#">Paris, Italy</a></h3>
-                                        <p class="rate">
-                                            <i class="icon-star"></i>
-                                            <i class="icon-star"></i>
-                                            <i class="icon-star"></i>
-                                            <i class="icon-star"></i>
-                                            <i class="icon-star-o"></i>
-                                            <span>8 Rating</span>
-                                        </p>
-                                    </div>
-                                    <div class="two">
-                                        <span class="price">$200</span>
-                                    </div>
-                                </div>
-                                <p>Far far away, behind the word mountains, far from the countries</p>
-                                <p class="days"><span>2 days 3 nights</span></p>
-                                <hr>
-                                <p class="bottom-area d-flex">
-                                    <span><i class="icon-map-o"></i> San Franciso, CA</span>
-                                    <span class="ml-auto"><a href="#">Discover</a></span>
-                                </p>
-                            </div>
-                        </div>
-                    </div> *@
+        <div>
+            <div class="col-md-12">
+                <div class="destination-slider owl-carousel ftco-animate">
                     @foreach(var item in Model)
                     {
-                        <div class="col-md-4 ftco-animate">
-                        <div class="destination">
-                            <a href="#" class="img img-2 d-flex justify-content-center align-items-center"
-                                style="background-image: url(@Html.DisplayFor(modelItem=>item.hinh_duongdan));object-fit: contain; ">
-                                <div class="icon d-flex justify-content-center align-items-center">
-                                    <span class="icon-search2"></span>
-                                </div>
-                            </a>
-                            <div class="text p-3">
-                                <div class="d-flex">
-                                    <div class="one">
-                                        <h3 class="title-destination"><a href="#">
-                                            @Html.DisplayFor(modelItem => item.DiaDiem_DuLich.dddl_ten)
-                                        </a></h3>
+                        <div class="item">
+                            <div class="destination">
+                                <a href="#" class="img img-2 d-flex justify-content-center align-items-center"
+                                    style="background-image: url(@Html.DisplayFor(modelItem=>item.hinh_duongdan));object-fit: contain; ">
+                                    <div class="icon d-flex justify-content-center align-items-center">
+                                        <span class="icon-search2"></span>
                                     </div>
+                                </a>
+                                <div class="text p-3">
+                                    <div class="d-flex">
+                                        <div class="one">
+                                            <h3 class="title-destination"><a href="#">
+                                                @Html.DisplayFor(modelItem => item.DiaDiem_DuLich.dddl_ten)
+                                            </a></h3>
+                                        </div>
+                                    </div>
+                                    <p class="square">@Html.Raw(item.DiaDiem_DuLich.dddl_mota)</p>
+                                    <hr>
+                                    <p class="bottom-area d-flex">
+                                        <span><i class="icon-map-o"></i> @Html.DisplayFor(modelItem => item.DiaDiem_DuLich.dddl_quanhuyen)</span>
+                                        <span class="ml-auto"><a href="#">Chi Tiết</a></span>
+                                    </p>
                                 </div>
-                                <p class="square">@Html.Raw(item.DiaDiem_DuLich.dddl_mota)</p>
-                                <hr>
-                                <p class="bottom-area d-flex">
-                                    <span><i class="icon-map-o"></i> @Html.DisplayFor(modelItem => item.DiaDiem_DuLich.dddl_quanhuyen)</span>
-                                    <span class="ml-auto"><a href="#">Chi Tiết</a></span>
-                                </p>
                             </div>
                         </div>
-                    </div>
                     }
-                    @* <div class="col-md-4 ftco-animate">
-                        <div class="destination">
-                            <a href="#" class="img img-2 d-flex justify-content-center align-items-center"
-                                style="background-image: url(/TourismTemplate/images/destination-2.jpg);">
-                                <div class="icon d-flex justify-content-center align-items-center">
-                                    <span class="icon-search2"></span>
-                                </div>
-                            </a>
-                            <div class="text p-3">
-                                <div class="d-flex">
-                                    <div class="one">
-                                        <h3><a href="#">Paris, Italy</a></h3>
-                                        <p class="rate">
-                                            <i class="icon-star"></i>
-                                            <i class="icon-star"></i>
-                                            <i class="icon-star"></i>
-                                            <i class="icon-star"></i>
-                                            <i class="icon-star-o"></i>
-                                            <span>8 Rating</span>
-                                        </p>
-                                    </div>
-                                    <div class="two">
-                                        <span class="price">$200</span>
-                                    </div>
-                                </div>
-                                <p>Far far away, behind the word mountains, far from the countries</p>
-                                <p class="days"><span>2 days 3 nights</span></p>
-                                <hr>
-                                <p class="bottom-area d-flex">
-                                    <span><i class="icon-map-o"></i> San Franciso, CA</span>
-                                    <span class="ml-auto"><a href="#">Discover</a></span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 ftco-animate">
-                        <div class="destination">
-                            <a href="#" class="img img-2 d-flex justify-content-center align-items-center"
-                                style="background-image: url(/TourismTemplate/images/destination-3.jpg);">
-                                <div class="icon d-flex justify-content-center align-items-center">
-                                    <span class="icon-search2"></span>
-                                </div>
-                            </a>
-                            <div class="text p-3">
-                                <div class="d-flex">
-                                    <div class="one">
-                                        <h3><a href="#">Paris, Italy</a></h3>
-                                        <p class="rate">
-                                            <i class="icon-star"></i>
-                                            <i class="icon-star"></i>
-                                            <i class="icon-star"></i>
-                                            <i class="icon-star"></i>
-                                            <i class="icon-star-o"></i>
-                                            <span>8 Rating</span>
-                                        </p>
-                                    </div>
-                                    <div class="two">
-                                        <span class="price">$200</span>
-                                    </div>
-                                </div>
-                                <p>Far far away, behind the word mountains, far from the countries</p>
-                                <p class="days"><span>2 days 3 nights</span></p>
-                                <hr>
-                                <p class="bottom-area d-flex">
-                                    <span><i class="icon-map-o"></i> San Franciso, CA</span>
-                                    <span class="ml-auto"><a href="#">Discover</a></span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 ftco-animate">
-                        <div class="destination">
-                            <a href="#" class="img img-2 d-flex justify-content-center align-items-center"
-                                style="background-image: url(/TourismTemplate/images/destination-4.jpg);">
-                                <div class="icon d-flex justify-content-center align-items-center">
-                                    <span class="icon-search2"></span>
-                                </div>
-                            </a>
-                            <div class="text p-3">
-                                <div class="d-flex">
-                                    <div class="one">
-                                        <h3><a href="#">Paris, Italy</a></h3>
-                                        <p class="rate">
-                                            <i class="icon-star"></i>
-                                            <i class="icon-star"></i>
-                                            <i class="icon-star"></i>
-                                            <i class="icon-star"></i>
-                                            <i class="icon-star-o"></i>
-                                            <span>8 Rating</span>
-                                        </p>
-                                    </div>
-                                    <div class="two">
-                                        <span class="price">$200</span>
-                                    </div>
-                                </div>
-                                <p>Far far away, behind the word mountains, far from the countries</p>
-                                <p class="days"><span>2 days 3 nights</span></p>
-                                <hr>
-                                <p class="bottom-area d-flex">
-                                    <span><i class="icon-map-o"></i> San Franciso, CA</span>
-                                    <span class="ml-auto"><a href="#">Discover</a></span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 ftco-animate">
-                        <div class="destination">
-                            <a href="#" class="img img-2 d-flex justify-content-center align-items-center"
-                                style="background-image: url(/TourismTemplate/images/destination-5.jpg);">
-                                <div class="icon d-flex justify-content-center align-items-center">
-                                    <span class="icon-search2"></span>
-                                </div>
-                            </a>
-                            <div class="text p-3">
-                                <div class="d-flex">
-                                    <div class="one">
-                                        <h3><a href="#">Paris, Italy</a></h3>
-                                        <p class="rate">
-                                            <i class="icon-star"></i>
-                                            <i class="icon-star"></i>
-                                            <i class="icon-star"></i>
-                                            <i class="icon-star"></i>
-                                            <i class="icon-star-o"></i>
-                                            <span>8 Rating</span>
-                                        </p>
-                                    </div>
-                                    <div class="two">
-                                        <span class="price">$200</span>
-                                    </div>
-                                </div>
-                                <p>Far far away, behind the word mountains, far from the countries</p>
-                                <p class="days"><span>2 days 3 nights</span></p>
-                                <hr>
-                                <p class="bottom-area d-flex">
-                                    <span><i class="icon-map-o"></i> San Franciso, CA</span>
-                                    <span class="ml-auto"><a href="#">Discover</a></span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 ftco-animate">
-                        <div class="destination">
-                            <a href="#" class="img img-2 d-flex justify-content-center align-items-center"
-                                style="background-image: url(/TourismTemplate/images/destination-6.jpg);">
-                                <div class="icon d-flex justify-content-center align-items-center">
-                                    <span class="icon-search2"></span>
-                                </div>
-                            </a>
-                            <div class="text p-3">
-                                <div class="d-flex">
-                                    <div class="one">
-                                        <h3><a href="#">Paris, Italy</a></h3>
-                                        <p class="rate">
-                                            <i class="icon-star"></i>
-                                            <i class="icon-star"></i>
-                                            <i class="icon-star"></i>
-                                            <i class="icon-star"></i>
-                                            <i class="icon-star-o"></i>
-                                            <span>8 Rating</span>
-                                        </p>
-                                    </div>
-                                    <div class="two">
-                                        <span class="price">$200</span>
-                                    </div>
-                                </div>
-                                <p>Far far away, behind the word mountains, far from the countries</p>
-                                <p class="days"><span>2 days 3 nights</span></p>
-                                <hr>
-                                <p class="bottom-area d-flex">
-                                    <span><i class="icon-map-o"></i> San Franciso, CA</span>
-                                    <span class="ml-auto"><a href="#">Discover</a></span>
-                                </p>
-                            </div>
-                        </div>
-                    </div> *@
                 </div>
-                <div class="row mt-5">
-                    <div class="col text-center">
-                        <div class="block-27">
-                            <ul>
-                                <li><a href="#">&lt;</a></li>
-                                <li class="active"><span>1</span></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                                <li><a href="#">&gt;</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div> <!-- .col-md-8 -->
+            </div>
         </div>
     </div>
-</section> <!-- .section -->
+    <div class="container">
+        <h2 class="title-text">Dịch vụ</h2>     
+        <div class="col-md-12">
+             @await Component.InvokeAsync("GetDichVu_ThamQuan",@ViewBag.TP)
+        </div>
+    </div>
+</section> 
+<div>
+
+</div>

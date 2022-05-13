@@ -13566,6 +13566,38 @@
         }
       },
       {
+        "HashCode": -1270632445,
+        "Kind": "MVC.ViewComponent",
+        "Name": "__Generated__GetDichVu_ThamQuanViewComponentTagHelper",
+        "AssemblyName": "LV_DuLichDienTu",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "vc:get-dich-vu_tham-quan",
+            "Attributes": [
+              {
+                "Name": "dia-diem"
+              }
+            ]
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "MVC.ViewComponent",
+            "Name": "dia-diem",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "DiaDiem"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "__Generated__GetDichVu_ThamQuanViewComponentTagHelper",
+          "MVC.ViewComponent.Name": "GetDichVu_ThamQuan"
+        }
+      },
+      {
         "HashCode": 141407075,
         "Kind": "Components.Bind",
         "Name": "Bind",
@@ -15684,6 +15716,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\Shared\\Components\\GetDichVu_ThamQuan\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\GetDichVu_ThamQuan\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\NhanViens\\Details.cshtml",
       "TargetPath": "Views\\NhanViens\\Details.cshtml",
       "FileKind": "mvc"
@@ -15759,6 +15796,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\HopDongs\\List_By_ID.cshtml",
+      "TargetPath": "Views\\HopDongs\\List_By_ID.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\CamKetDichVus\\Create.cshtml",
       "TargetPath": "Views\\CamKetDichVus\\Create.cshtml",
       "FileKind": "mvc"
@@ -15776,6 +15818,11 @@
     {
       "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\Shared\\_LayoutTourism.cshtml",
       "TargetPath": "Views\\Shared\\_LayoutTourism.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\CamKetDichVus\\List_By_ID.cshtml",
+      "TargetPath": "Views\\CamKetDichVus\\List_By_ID.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15819,11 +15866,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\Home\\Index_business.cshtml",
-      "TargetPath": "Views\\Home\\Index_business.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\LayoutTourism\\Index_Destination.cshtml",
       "TargetPath": "Views\\LayoutTourism\\Index_Destination.cshtml",
       "FileKind": "mvc"
@@ -15844,8 +15886,23 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\DichVus\\List_By_ID.cshtml",
+      "TargetPath": "Views\\DichVus\\List_By_ID.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\NhanViens\\Index.cshtml",
       "TargetPath": "Views\\NhanViens\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\LayoutTourism\\Index_Destination copy.cshtml",
+      "TargetPath": "Views\\LayoutTourism\\Index_Destination copy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\LayoutTourism\\Details_Destination.cshtml",
+      "TargetPath": "Views\\LayoutTourism\\Details_Destination.cshtml",
       "FileKind": "mvc"
     },
     {

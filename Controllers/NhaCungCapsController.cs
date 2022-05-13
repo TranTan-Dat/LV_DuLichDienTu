@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using LV_DuLichDienTu.Models;
+using System.Data;
+using Microsoft.AspNetCore.Http;
+
 
 namespace LV_DuLichDienTu.Controllers
 {
@@ -61,7 +64,14 @@ namespace LV_DuLichDienTu.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(nhaCungCap);
+            if (HttpContext.Session.GetString("Type_role")=="NhanVien")
+            {
+                return View(nhaCungCap);
+            }
+            else{
+                return RedirectToAction("Index_business","Home");
+            }
+            
         }
 
         // GET: NhaCungCaps/Edit/5

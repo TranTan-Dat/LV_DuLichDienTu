@@ -1,0 +1,91 @@
+@model IEnumerable<LV_DuLichDienTu.Models.DichVu>
+@using Microsoft.AspNetCore.Http;
+@using System.Data;
+@{
+    ViewData["Title"] = "List_By_ID";
+}
+
+<div class="row">
+  <div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+      <div class="x_content">
+        <div> 
+          <h2>
+            DỊCH VỤ <small><a asp-action="Create"> Thêm mới</a></small>
+        </h2>
+        </div>
+        
+        <table id="datatable" class="table table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>
+                @Html.DisplayNameFor(model => model.dv_ten)
+              </th>
+              <th>
+                @Html.DisplayNameFor(model => model.dv_dienthoai_hotro)
+              </th>
+              <th>
+                @Html.DisplayNameFor(model => model.dv_tinhthanh)
+              </th>
+              <th>
+                @Html.DisplayNameFor(model => model.dv_quanhuyen)
+              </th>
+              @* <th>
+                @Html.DisplayNameFor(model => model.dv_mota)
+              </th> *@
+              <th>
+                Tên nhà cung cấp
+              </th>
+              
+              <th>
+                Tên loại dịch vụ
+              </th>
+              
+              <th>Tùy chọn</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            @foreach (var item in Model)
+            {
+              <tr>
+                <td>
+                  @Html.DisplayFor(modelItem => item.dv_ten)
+                </td>
+                <td>
+                  @Html.DisplayFor(modelItem => item.dv_dienthoai_hotro)
+                </td>
+                <td>
+                  @Html.DisplayFor(modelItem => item.dv_tinhthanh)
+                </td>
+                <td>
+                  @Html.DisplayFor(modelItem => item.dv_quanhuyen)
+                </td>
+                @* <td>
+                  @Html.Raw(item.dv_mota)
+                </td> *@
+                <td>
+                  @Html.DisplayFor(modelItem => item.nhaCungCap.ncc_ten)
+                </td>
+                <td>
+                  @Html.DisplayFor(modelItem => item.loaiDichVu.ldv_ten)
+                </td>
+                <td>
+                  <a asp-controller="CamKetDichVus" asp-action="List_By_ID" asp-route-id="@item.dv_id" class="btn btn-success btn-xs"><i
+                    class="fa fa-search"></i> Xem cam kết</a>|
+                  <a asp-action="Edit" asp-route-id="@item.dv_id" class="btn btn-primary btn-xs"><i
+                    class="fa fa-pencil"></i> Sửa </a>
+                    <p></p>
+                  <a asp-action="details" asp-route-id="@item.dv_id" class="btn btn-success btn-xs"><i
+                    class="fa fa-search"></i> Xem mô tả</a>|
+                  <a asp-action="Delete" asp-route-id="@item.dv_id" class="btn btn-danger btn-xs"><i
+                    class="fa fa-trash-o"></i> Xóa </a>
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

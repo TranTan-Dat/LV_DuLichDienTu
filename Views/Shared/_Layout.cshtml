@@ -299,8 +299,9 @@
                 <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                   <div class="menu_section">
                     <ul class="nav side-menu">
-                      <li><a href="~/DichVus/Index"><i class="fa fa-gears"></i> DỊCH VỤ</a></li>
-                      <li><a href="~/HopDongs/Index"><i class="fa fa-file-text-o"></i> HỢP ĐỒNG</a></li>
+                      <li><a asp-controller="DichVus" asp-action="List_By_ID" asp-route-id="@userID_temp"><i class="fa fa-gears"></i> DỊCH VỤ</a></li>
+                      <li><a asp-controller="HopDongs" asp-action="List_By_ID" asp-route-id="@userID_temp"><i class="fa fa-file-text-o"></i> HỢP ĐỒNG</a></li>
+                      <li><a asp-controller="NhanViens" asp-action="Details" asp-route-id="@userID_temp"><i class="fa fa-user"></i>THÔNG TIN CÁ NHÂN</a></li>
                     </ul>
                   </div>
                 </div>

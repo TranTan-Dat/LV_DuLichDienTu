@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using LV_DuLichDienTu.Models;
+using Microsoft.AspNetCore.Http;
+using System.Data;
 
 namespace LV_DuLichDienTu.Controllers
 {
@@ -24,7 +26,12 @@ namespace LV_DuLichDienTu.Controllers
             var acompec_lvdatContext = _context.CamKetDichVu.Include(c => c.dichVu);
             return View(await acompec_lvdatContext.ToListAsync());
         }
-
+        
+        public async Task<IActionResult> List_By_ID(int? id)
+        {
+            var acompec_lvdatContext = _context.CamKetDichVu.Include(c => c.dichVu).Where(m=>m.dv_id==id);
+            return View(await acompec_lvdatContext.ToListAsync());
+        }
         // GET: CamKetDichVus/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -45,9 +52,16 @@ namespace LV_DuLichDienTu.Controllers
         }
 
         // GET: CamKetDichVus/Create
-        public IActionResult Create()
+        // này là ban đầu nên khi dùng cho ncc phải có id
+        // public IActionResult Create()
+        // {
+        //     ViewData["Select_dv_ten"] = new SelectList(_context.DichVu, "dv_id", "dv_ten");
+        //     return View();
+        // }
+        public IActionResult Create(int id)
         {
-            ViewData["Select_dv_ten"] = new SelectList(_context.DichVu, "dv_id", "dv_ten");
+            
+            ViewData["Select_dv_ten"] =new SelectList(_context.DichVu.Where(m=>m.ncc_id == id), "dv_id", "dv_ten");
             return View();
         }
 
@@ -65,7 +79,12 @@ namespace LV_DuLichDienTu.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["dv_id"] = new SelectList(_context.DichVu, "dv_id", "dv_id", camKetDichVu.dv_id);
-            return View(camKetDichVu);
+
+            if(HttpContext.Session.GetString("Type_role")=="NhanVien"){
+                return View(camKetDichVu);
+            }
+            else{return RedirectToAction("List_By_ID","CamKetDichVus");}
+            
         }
 
         // GET: CamKetDichVus/Edit/5
@@ -82,7 +101,7 @@ namespace LV_DuLichDienTu.Controllers
                 return NotFound();
             }
             ViewData["dv_id"] = new SelectList(_context.DichVu, "dv_id", "dv_id", camKetDichVu.dv_id);
-            ViewData["selectdv_ten"] = new SelectList(_context.DichVu, "dv_id", "dv_ten");
+            ViewData["selectdv_ten"] = new SelectList(_context.DichVu.Where(m=>m.dv_id ==id), "dv_id", "dv_ten");
             return View(camKetDichVu);
         }
 
