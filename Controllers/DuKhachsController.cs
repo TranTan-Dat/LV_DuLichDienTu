@@ -65,14 +65,15 @@ namespace LV_DuLichDienTu.Controllers
         }
 
         // GET: DuKhachs/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(string id)
         {
+            int temp = int.Parse(id);
             if (id == null)
             {
                 return NotFound();
             }
 
-            var duKhach = await _context.DuKhach.FindAsync(id);
+            var duKhach = await _context.DuKhach.FindAsync(temp);
             if (duKhach == null)
             {
                 return NotFound();
@@ -87,6 +88,7 @@ namespace LV_DuLichDienTu.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("dk_id,dk_taikhoan,dk_matkhau,dk_hoten,dk_cmnd,dk_dienthoai,dk_diachi,dk_email,dk_diemthanhvien,bvdd_id,hd_id")] DuKhach duKhach)
         {
+            string temp = id.ToString();
             if (id != duKhach.dk_id)
             {
                 return NotFound();
@@ -110,9 +112,9 @@ namespace LV_DuLichDienTu.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return  RedirectToAction( "Detail_Tourism","LayoutTourism",new {id = int.Parse(temp)});
             }
-            return View(duKhach);
+            return RedirectToAction( "Detail_Tourism","LayoutTourism", id = int.Parse(temp));
         }
 
         // GET: DuKhachs/Delete/5

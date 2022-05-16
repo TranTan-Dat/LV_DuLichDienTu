@@ -12,6 +12,8 @@ namespace LV_DuLichDienTu.Models
         [Required]
         [DisplayName("Mã bài viết")]
         public int bvdd_id{get;set;}
+        [DisplayName("Đường dẫn ảnh")]
+        public string bvdd_Hinh_duongdan {get; set;}
 
         [DisplayName("Tiêu đề bài viết")]
         public string bvdd_tieude{get;set;}
@@ -21,7 +23,6 @@ namespace LV_DuLichDienTu.Models
 
         [DisplayName("Tình trạng")]
         public Boolean bvdd_tinhtrang{get;set;}
-
 
         [ForeignKey("dddl_id")]
         public int dddl_id {get;set;}

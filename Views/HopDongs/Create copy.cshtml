@@ -1,0 +1,180 @@
+@model LV_DuLichDienTu.Models.HopDong
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+@* <h1>Create</h1>
+
+    <h4>HopDong</h4>
+    <hr />
+    <div class="row">
+    <div class="col-md-4">
+    <form asp-action="Create">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+    <label asp-for="hd_ngaybatdau" class="control-label"></label>
+    <input asp-for="hd_ngaybatdau" type="date" class="form-control" />
+    <span asp-validation-for="hd_ngaybatdau" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+    <label asp-for="hd_ngayketthuc" class="control-label"></label>
+    <input asp-for="hd_ngayketthuc" class="form-control" />
+    <span asp-validation-for="hd_ngayketthuc" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+    <label asp-for="hd_chiphi" class="control-label"></label>
+    <input asp-for="hd_chiphi" class="form-control" />
+    <span asp-validation-for="hd_chiphi" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+    <label asp-for="hd_danhgiachatluong" class="control-label"></label>
+    <input asp-for="hd_danhgiachatluong" class="form-control" />
+    <span asp-validation-for="hd_danhgiachatluong" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+    <label asp-for="hd_phanhoi" class="control-label"></label>
+    <input asp-for="hd_phanhoi" class="form-control" />
+    <span asp-validation-for="hd_phanhoi" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+    <label asp-for="dk_id" class="control-label"></label>
+    <select asp-for="dk_id" class ="form-control" asp-items="ViewBag.dk_hoten"></select>
+    </div>
+    <div class="form-group">
+    <label asp-for="dv_id" class="control-label"></label>
+    <select asp-for="dv_id" class ="form-control" asp-items="ViewBag.dv_ten"></select>
+    </div>
+    <div class="form-group">
+    <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+    </form>
+    </div>
+    </div>
+
+    <div>
+    <a asp-action="Index">Back to List</a>
+    </div> *@
+
+
+
+
+<div class="">
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2>Thêm hợp đồng</h2>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <br />
+                    <form asp-action="Create" id="demo-form2" data-parsley-validate
+                        class="form-horizontal form-label-left">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">
+                                <label asp-for="dk_id" class="control-label">Tên du khách</label>
+                                <span class="required">*</span>
+                            </label>
+
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <select class="form-control col-md-7 col-xs-12" asp-for="dk_id" class="form-control"
+                                    asp-items="ViewBag.dk_hoten"></select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">
+                                <label asp-for="dv_id" class="control-label">Tên dịch vụ</label>
+                                <span class="required">*</span>
+                            </label>
+
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <select class="form-control col-md-7 col-xs-12" asp-for="dv_id" class="form-control"
+                                    asp-items="ViewBag.dv_ten"></select>
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
+                                <label asp-for="hd_ngaybatdau"></label>
+                                <span class="required">
+                                    *
+                                </span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input asp-for="hd_ngaybatdau" type="date" id="StartDate" required="required"
+                                    class="form-control col-md-7 col-xs-12">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
+                                <label asp-for="hd_ngayketthuc"></label>
+                                <span class="required">
+                                    *
+                                </span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input asp-for="hd_ngayketthuc" type="date" id="EndDate"
+                                    required="required" class="form-control col-md-7 col-xs-12">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
+                                <label asp-for="hd_chiphi"></label>
+                                <span class="required">
+                                    *
+                                </span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input asp-for="hd_chiphi" id="first-name" required="required"
+                                    class="form-control col-md-7 col-xs-12">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
+                                <label asp-for="hd_danhgiachatluong"></label>
+                                <span class="required">
+                                    *
+                                </span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input asp-for="hd_danhgiachatluong" id="first-name" required="required"
+                                    class="form-control col-md-7 col-xs-12">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
+                                <label asp-for="hd_phanhoi"></label>
+                                <span class="required">
+                                    *
+                                </span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input asp-for="hd_phanhoi" id="first-name" required="required"
+                                    class="form-control col-md-7 col-xs-12">
+                            </div>
+                        </div>
+
+                        <div class="ln_solid"></div>
+                        <div class="form-group">
+                            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 items-center">
+
+                                <button asp-action="Index" class="btn btn-success"> Quay lại</button>
+                                <button type="submit" onclick="displayResult()" class="btn btn-primary">Lưu</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

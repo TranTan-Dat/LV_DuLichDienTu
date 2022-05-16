@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using LV_DuLichDienTu.Models;
+using System.IO;
+using Microsoft.AspNetCore.Http;
 
 namespace LV_DuLichDienTu.Controllers
 {
@@ -36,6 +38,8 @@ namespace LV_DuLichDienTu.Controllers
             }
 
             var baiViet_DiaDiem = await _context.BaiViet_DiaDiem
+                .Include(b => b.DiaDiem_DuLich)
+                .Include(b => b.NhanVien)
                 .FirstOrDefaultAsync(m => m.bvdd_id == id);
             if (baiViet_DiaDiem == null)
             {
@@ -58,14 +62,24 @@ namespace LV_DuLichDienTu.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("bvdd_id,bvdd_tieude,bvdd_noidung,bvdd_tinhtrang,dddl_id,nv_id,dk_id")] BaiViet_DiaDiem baiViet_DiaDiem)
+        public async Task<IActionResult> Create([Bind("bvdd_id,bvdd_Hinh_duongdan,bvdd_tieude,bvdd_noidung,bvdd_tinhtrang,dddl_id,nv_id,dk_id")] BaiViet_DiaDiem baiViet_DiaDiem,IFormFile imageUpload)
         {
             if (ModelState.IsValid)
             {
+                var saveimg =  Path.Combine(Directory.GetCurrentDirectory(),"wwwroot","Image",imageUpload.FileName);
+                var stream = new FileStream(saveimg,FileMode.Create);
+                await imageUpload.CopyToAsync(stream);
+                
+                string[] tempCutSpilt = saveimg.Split('\\');
+                string ImgURL = "/"+tempCutSpilt[tempCutSpilt.Length-2]+"/"+tempCutSpilt[tempCutSpilt.Length-1];
+                baiViet_DiaDiem.bvdd_Hinh_duongdan = ImgURL;
+
                 _context.Add(baiViet_DiaDiem);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            // ViewData["dddl_id"] = new SelectList(_context.DiaDiem_DuLich, "dddl_id", "dddl_id", baiViet_DiaDiem.dddl_id);
+            // ViewData["nv_id"] = new SelectList(_context.NhanVien, "nv_id", "nv_id", baiViet_DiaDiem.nv_id);
             return View(baiViet_DiaDiem);
         }
 
@@ -93,7 +107,7 @@ namespace LV_DuLichDienTu.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("bvdd_id,bvdd_tieude,bvdd_noidung,bvdd_tinhtrang,dddl_id,nv_id,dk_id")] BaiViet_DiaDiem baiViet_DiaDiem)
+        public async Task<IActionResult> Edit(int id, [Bind("bvdd_id,bvdd_Hinh_duongdan,bvdd_tieude,bvdd_noidung,bvdd_tinhtrang,dddl_id,nv_id,dk_id")] BaiViet_DiaDiem baiViet_DiaDiem,IFormFile imageUpload)
         {
             if (id != baiViet_DiaDiem.bvdd_id)
             {
@@ -104,6 +118,14 @@ namespace LV_DuLichDienTu.Controllers
             {
                 try
                 {
+                    var saveimg =  Path.Combine(Directory.GetCurrentDirectory(),"wwwroot","Image",imageUpload.FileName);
+                    var stream = new FileStream(saveimg,FileMode.Create);
+                    await imageUpload.CopyToAsync(stream);
+                    
+                    string[] tempCutSpilt = saveimg.Split('\\');
+                    string ImgURL = "/"+tempCutSpilt[tempCutSpilt.Length-2]+"/"+tempCutSpilt[tempCutSpilt.Length-1];
+                    baiViet_DiaDiem.bvdd_Hinh_duongdan = ImgURL;
+
                     _context.Update(baiViet_DiaDiem);
                     await _context.SaveChangesAsync();
                 }
@@ -120,7 +142,8 @@ namespace LV_DuLichDienTu.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            
+            // ViewData["dddl_id"] = new SelectList(_context.DiaDiem_DuLich, "dddl_id", "dddl_id", baiViet_DiaDiem.dddl_id);
+            // ViewData["nv_id"] = new SelectList(_context.NhanVien, "nv_id", "nv_id", baiViet_DiaDiem.nv_id);
             return View(baiViet_DiaDiem);
         }
 
@@ -132,7 +155,9 @@ namespace LV_DuLichDienTu.Controllers
                 return NotFound();
             }
 
-            var baiViet_DiaDiem = await _context.BaiViet_DiaDiem.Include(e=>e.DiaDiem_DuLich).Include(g=>g.NhanVien)
+            var baiViet_DiaDiem = await _context.BaiViet_DiaDiem
+                .Include(b => b.DiaDiem_DuLich)
+                .Include(b => b.NhanVien)
                 .FirstOrDefaultAsync(m => m.bvdd_id == id);
             if (baiViet_DiaDiem == null)
             {
@@ -141,7 +166,6 @@ namespace LV_DuLichDienTu.Controllers
             var appDBContext =  _context.BaiViet_DiaDiem.Include(e=>e.NhanVien).Include(g=>g.DiaDiem_DuLich);
             return View(baiViet_DiaDiem);
         }
-
 
         // POST: BaiViet_DiaDiems/Delete/5
         [HttpPost, ActionName("Delete")]

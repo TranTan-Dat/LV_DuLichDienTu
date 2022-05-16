@@ -120,9 +120,9 @@ namespace LV_DuLichDienTu.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Details","NhaCungCaps", new{id = nhaCungCap.ncc_id});
             }
-            return View(nhaCungCap);
+            return RedirectToAction("Details","NhaCungCaps", new{id = nhaCungCap.ncc_id});
         }
 
         // GET: NhaCungCaps/Delete/5

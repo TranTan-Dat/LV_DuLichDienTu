@@ -1,5 +1,6 @@
 @model LV_DuLichDienTu.Models.CamKetDichVu
-
+@using Microsoft.AspNetCore.Http;
+@using System.Data;
 @{
     ViewData["Title"] = "Create";
 }
@@ -48,7 +49,7 @@
                 </div>
                 <div class="x_content">
                     <br />
-                    <form asp-action="Create" id="demo-form2" data-parsley-validate
+                    <form asp-action="Create"  id="demo-form2" data-parsley-validate
                         class="form-horizontal form-label-left">
                         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                         @* Trường tiêu đề và nhập DATA của đường dẫn *@

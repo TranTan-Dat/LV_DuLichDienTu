@@ -76,7 +76,7 @@
                 </div>
                 <div class="x_content">
                     <br />
-                    <form asp-action="Create" id="demo-form2" data-parsley-validate
+                    <form asp-action="Create" id="demo-form2" data-parsley-validate enctype="multipart/form-data"
                         class="form-horizontal form-label-left">
                         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                         @* Trường tiêu đề và nhập DATA của địa điểm tên *@
@@ -107,7 +107,33 @@
                             </div>
                         </div>
 
-        
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
+                                <label asp-for="dv_tieude"></label>
+                                <span class="required">
+                                    *
+                                </span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input asp-for="dv_tieude" type="text" id="first-name" required="required"
+                                    class="form-control col-md-7 col-xs-12">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
+                                <label asp-for="dv_hinh_duongdan"></label>
+                                <span class="required">
+                                    *
+                                </span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                @* <input asp-for="hinh_duongdan" type="text" id="first-name" required="required"
+                                    class="form-control col-md-7 col-xs-12"> *@
+                                <input type="file" name="imageUpload" id="imageUpload" onchange="ShowImgPreview(this, document.getElementById('imagePreview'))"/>
+                                <img id="imagePreview" style="width: 200px; height:200px;"/>
+                            </div>
+                        </div>
 
                         <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">

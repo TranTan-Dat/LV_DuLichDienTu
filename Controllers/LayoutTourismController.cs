@@ -79,5 +79,39 @@ namespace LV_DuLichDienTu.Controllers
             }
             return View(diaDiem_DuLich);
         }
+        //id dịch vụ
+        public async Task<IActionResult> Details_Service(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var dichVu = await _context.DichVu
+                .FirstOrDefaultAsync(m => m.dv_id == id);
+            if (dichVu == null)
+            {
+                return NotFound();
+            }
+             ViewData["Ten_DV"] = dichVu.dv_ten.FirstOrDefault(m => m == id);
+            
+            return View(dichVu);
+        }
+        //Thoong tin du khách search bằng id session du khách
+        public async Task<IActionResult> Detail_Tourism(string id)
+        {
+            int temp = int.Parse(id);
+
+            var duKhach = await _context.DuKhach
+                .FirstOrDefaultAsync(m => m.dk_id == temp);
+            if (duKhach == null)
+            {
+                return NotFound();
+            }
+
+            return View(duKhach);
+
+            
+        }
     }
 }

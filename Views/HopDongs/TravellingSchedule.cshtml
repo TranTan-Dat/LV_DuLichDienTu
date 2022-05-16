@@ -1,0 +1,17 @@
+@{
+    ViewData["Title"] = "TravellingSchedule";
+}
+@{
+    string tempNgay ="";
+    foreach (var item in Model)
+        {
+            
+            if (item.hd_ngaybatdau.ToString() != tempNgay)
+            {
+                <p>@item.hd_ngaybatdau</p> 
+                tempNgay = item.hd_ngaybatdau.ToString();
+            }
+        <p>Dịch vụ: @item.dichVu.dv_ten</p>
+        <p>Thành phố:@item.dichVu.dv_tinhthanh </p>
+        }
+}

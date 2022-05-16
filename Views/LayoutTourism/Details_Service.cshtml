@@ -1,0 +1,173 @@
+@model LV_DuLichDienTu.Models.DichVu;
+@using Microsoft.AspNetCore.Http;
+@using System.Data;
+
+@{
+    ViewData["Title"] = "Details_Service";
+}
+
+
+<div class="hero-wrap js-fullheight" style="background-image: url('/TourismTemplate/images/bg_4.jpg');">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center"
+            data-scrollax-parent="true">
+            <div class="col-md-9 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
+                <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span
+                        class="mr-2"><a href="index.html">Home</a></span> <span class="mr-2"><a
+                            href="blog.html">Blog</a></span> <span>Blog Single</span></p>
+                <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">CHI TIẾT DỊCH VỤ
+                    </h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<section class="ftco-section ftco-degree-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 ftco-animate">
+                <h2 class="mb-3">@Model.dv_ten</h2>
+                @Html.Raw(@Model.dv_mota)
+            </div> <!-- .col-md-8 -->
+
+
+
+            <div class="col-md-4 sidebar ftco-animate fadeInUp ftco-animated">
+                <div class="sidebar-box ftco-animate fadeInUp ftco-animated">
+                    <h3>Đăng ký bên dưới</h3>
+
+                    <div class="boxed-group-inner">
+                        <a class="trigger_popup_fricc" asp-controller="HopDongs" asp-route-id='@Context.Session.GetString("userID")' asp-route-service='@Model.dv_id'  asp-action="Create">Click here to show the popup</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<div class="hover_bkgr_fricc">
+    <span class="helper"></span>
+    <div>
+        <p>Add any HTML content<br />inside the popup box!</p>
+        @* <div class="x_panel">
+                <div class="x_content">
+                    <br />
+                    <form asp-controller="DichVus" asp-action="Details_Service_Booking" asp-route-id="" id="demo-form2" data-parsley-validate
+                        class="form-horizontal form-label-left">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">
+                                <label asp-for="dk_id" class="control-label">Tên du khách</label>
+                                <span class="required">*</span>
+                            </label>
+
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <select class="form-control col-md-7 col-xs-12" asp-for="dk_id" class="form-control"
+                                    asp-items="ViewBag.dk_hoten"></select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">
+                                <label asp-for="dv_id" class="control-label">Tên dịch vụ</label>
+                                <span class="required">*</span>
+                            </label>
+
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <select class="form-control col-md-7 col-xs-12" asp-for="dv_id" class="form-control"
+                                    asp-items="ViewBag.dv_ten"></select>
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
+                                <label asp-for="hd_ngaybatdau"></label>
+                                <span class="required">
+                                    *
+                                </span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input asp-for="hd_ngaybatdau" type="date" id="StartDate" required="required"
+                                    class="form-control col-md-7 col-xs-12">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
+                                <label asp-for="hd_ngayketthuc"></label>
+                                <span class="required">
+                                    *
+                                </span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input asp-for="hd_ngayketthuc" type="date" id="EndDate"
+                                    required="required" class="form-control col-md-7 col-xs-12">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
+                                <label asp-for="hd_chiphi"></label>
+                                <span class="required">
+                                    *
+                                </span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input asp-for="hd_chiphi" id="first-name" required="required"
+                                    class="form-control col-md-7 col-xs-12">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
+                                <label asp-for="hd_danhgiachatluong"></label>
+                                <span class="required">
+                                    *
+                                </span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input asp-for="hd_danhgiachatluong" id="first-name" required="required"
+                                    class="form-control col-md-7 col-xs-12">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
+                                <label asp-for="hd_phanhoi"></label>
+                                <span class="required">
+                                    *
+                                </span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input asp-for="hd_phanhoi" id="first-name" required="required"
+                                    class="form-control col-md-7 col-xs-12">
+                            </div>
+                        </div>
+
+                        <div class="ln_solid"></div>
+                        <div class="form-group">
+                            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 items-center">
+
+                                <button asp-action="Index" class="btn btn-success"> Quay lại</button>
+                                <button type="submit" onclick="displayResult()" class="btn btn-primary">Lưu</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+        </div> *@
+
+
+        <td class="navbar-nav ml-auto">
+
+            <button class="popupCloseButton nav-link">cancle</button>
+            <button class="popupCloseButton nav-link">Đăng Ký</button>
+        </td>
+        
+    </div>
+</div>

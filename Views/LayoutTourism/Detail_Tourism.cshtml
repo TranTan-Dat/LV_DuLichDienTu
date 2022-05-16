@@ -1,0 +1,76 @@
+@model LV_DuLichDienTu.Models.DuKhach;
+@using Microsoft.AspNetCore.Http;
+@using System.Data;
+
+@{
+    ViewData["Title"] = "Details_Service";
+}
+
+<div class="hero-wrap js-fullheight" style="background-image: url('/TourismTemplate/images/bg_4.jpg');">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center"
+            data-scrollax-parent="true">
+            <div class="col-md-9 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
+                <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span
+                        class="mr-2"><a href="index.html">Home</a></span> <span class="mr-2"><a
+                            href="blog.html">Blog</a></span> <span>Blog Single</span></p>
+                <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Thông Tin Cá Nhân
+                </h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="ftco-section contact-section ftco-degree-bg">
+    <div class="container">
+        <div class="row block-9">
+            <div class="col-md-12">
+                    <dl class="row chitiet">
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.dk_taikhoan)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.dk_taikhoan)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.dk_hoten)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.dk_hoten)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.dk_cmnd)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.dk_cmnd)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.dk_dienthoai)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.dk_dienthoai)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.dk_diachi)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.dk_diachi)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.dk_email)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.dk_email)
+                        </dd>
+                    </dl>
+                    <div class="form-group">
+                        <a asp-controller="DuKhachs" asp-action="Edit" asp-route-id='@Context.Session.GetString("userID")' class="btn btn-primary py-3 px-5">Cập Nhật Thông Tin</a>
+                    </div>
+
+            </div>
+
+
+        </div>
+    </div>
+</section>

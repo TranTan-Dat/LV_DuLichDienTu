@@ -103,6 +103,13 @@
                 @Html.DisplayNameFor(model => model.dv_dienthoai_hotro)
               </th>
               <th>
+                @Html.DisplayNameFor(model => model.dv_tieude)
+              </th>
+              
+              <th>
+                @Html.DisplayNameFor(model => model.dv_hinh_duongdan)
+              </th>
+              <th>
                 @Html.DisplayNameFor(model => model.dv_tinhthanh)
               </th>
               <th>
@@ -132,6 +139,12 @@
                 </td>
                 <td>
                   @Html.DisplayFor(modelItem => item.dv_dienthoai_hotro)
+                </td>
+                <td>
+                  @Html.DisplayFor(modelItem => item.dv_tieude)
+                </td>
+                <td>
+                  <img style="width:150px; height: 100px" src="@Html.DisplayFor(modelItem => item.dv_hinh_duongdan)"/>
                 </td>
                 <td>
                   @Html.DisplayFor(modelItem => item.dv_tinhthanh)

@@ -112,6 +112,7 @@ namespace LV_DuLichDienTu.Controllers
             {
                 try
                 {
+                    
                     _context.Update(hinh_DiaDiemDuLich);
                     await _context.SaveChangesAsync();
                 }

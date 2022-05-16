@@ -19,6 +19,12 @@ namespace LV_DuLichDienTu.Models
 
         [DisplayName("Điện thoại hỗ trợ")]
         public string dv_dienthoai_hotro{get;set;}
+        // ảnh cho dịch vụ
+        [DisplayName("Đường dẫn ảnh")]
+        public string dv_hinh_duongdan {get; set;}
+        // Tiêu đề
+        [DisplayName("Mô tả ngắn")]
+        public string dv_tieude {get; set;}
 
         [DisplayName("Tỉnh thành")]
         

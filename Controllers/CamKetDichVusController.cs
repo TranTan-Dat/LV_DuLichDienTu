@@ -76,14 +76,14 @@ namespace LV_DuLichDienTu.Controllers
             {
                 _context.Add(camKetDichVu);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("List_By_ID","CamKetDichVus", new{id = camKetDichVu.dv_id});
             }
-            ViewData["dv_id"] = new SelectList(_context.DichVu, "dv_id", "dv_id", camKetDichVu.dv_id);
+            // ViewData["dv_id"] = new SelectList(_context.DichVu, "dv_id", "dv_id", camKetDichVu.dv_id);
 
-            if(HttpContext.Session.GetString("Type_role")=="NhanVien"){
-                return View(camKetDichVu);
-            }
-            else{return RedirectToAction("List_By_ID","CamKetDichVus");}
+            // if(HttpContext.Session.GetString("Type_role")=="NhanVien"){
+            //     return View(camKetDichVu);
+            // }
+            else{return RedirectToAction("List_By_ID","CamKetDichVus", new{id = camKetDichVu.dv_id});}
             
         }
 
@@ -168,7 +168,7 @@ namespace LV_DuLichDienTu.Controllers
             var camKetDichVu = await _context.CamKetDichVu.FindAsync(id);
             _context.CamKetDichVu.Remove(camKetDichVu);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("List_By_ID","CamKetDichVus", new{id = camKetDichVu.dv_id});
         }
 
         private bool CamKetDichVuExists(int id)

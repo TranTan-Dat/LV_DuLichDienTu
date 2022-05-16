@@ -4,9 +4,61 @@
     ViewData["Title"] = "Edit";
 }
 
+@* <h1>Edit</h1>
 
+<h4>BaiViet_DiaDiem</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="bvdd_id" />
+            <div class="form-group">
+                <label asp-for="bvdd_Hinh_duongdan" class="control-label"></label>
+                <input asp-for="bvdd_Hinh_duongdan" class="form-control" />
+                <span asp-validation-for="bvdd_Hinh_duongdan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="bvdd_tieude" class="control-label"></label>
+                <input asp-for="bvdd_tieude" class="form-control" />
+                <span asp-validation-for="bvdd_tieude" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="bvdd_noidung" class="control-label"></label>
+                <input asp-for="bvdd_noidung" class="form-control" />
+                <span asp-validation-for="bvdd_noidung" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="bvdd_tinhtrang" /> @Html.DisplayNameFor(model => model.bvdd_tinhtrang)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="dddl_id" class="control-label"></label>
+                <select asp-for="dddl_id" class="form-control" asp-items="ViewBag.dddl_id"></select>
+                <span asp-validation-for="dddl_id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="nv_id" class="control-label"></label>
+                <select asp-for="nv_id" class="form-control" asp-items="ViewBag.nv_id"></select>
+                <span asp-validation-for="nv_id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dk_id" class="control-label"></label>
+                <input asp-for="dk_id" class="form-control" />
+                <span asp-validation-for="dk_id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
 
-
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+ *@
 
 <div class="">
     <div class="row">
@@ -18,7 +70,7 @@
                 </div>
                 <div class="x_content">
                     <br>
-                    <form asp-action="Edit" id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left" novalidate="">
+                    <form asp-action="Edit" id="demo-form2" data-parsley-validate=""  enctype="multipart/form-data" class="form-horizontal form-label-left" novalidate="">
                         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                         <input type="hidden" asp-for="bvdd_id" />
 
@@ -32,6 +84,18 @@
                             </div>
                         </div>
 
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
+                                <label asp-for="bvdd_Hinh_duongdan" class="control-label"></label>
+                                <span class="required">
+                                    *
+                                </span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input type="file" name="imageUpload" id="imageUpload" onchange="ShowImgPreview(this, document.getElementById('imagePreview'))"/>
+                                <img id="imagePreview" style="width: 200px; height:200px;"/>
+                            </div>
+                        </div>
                         
 
                         <div class="form-group">

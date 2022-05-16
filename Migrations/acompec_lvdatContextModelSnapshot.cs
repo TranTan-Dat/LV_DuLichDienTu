@@ -28,6 +28,9 @@ namespace LV_DuLichDienTu.Migrations
                     b.Property<int?>("DuKhachdk_id")
                         .HasColumnType("int");
 
+                    b.Property<string>("bvdd_Hinh_duongdan")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("bvdd_noidung")
                         .HasColumnType("nvarchar(max)");
 
@@ -123,6 +126,9 @@ namespace LV_DuLichDienTu.Migrations
                     b.Property<string>("dv_dienthoai_hotro")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("dv_hinh_duongdan")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("dv_mota")
                         .HasColumnType("nvarchar(max)");
 
@@ -130,6 +136,9 @@ namespace LV_DuLichDienTu.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("dv_ten")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("dv_tieude")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("dv_tinhthanh")

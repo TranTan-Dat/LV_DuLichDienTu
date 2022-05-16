@@ -264,20 +264,14 @@
         <!-- Đăng ký làm du KHÁCH -->
         <div id="Tourist" class="animate form registration_Tourist_form">
           <section class="login_content">
-            <form>
+            @* controller login action là Create_tourism *@
+            <form asp-action="Create_tourism">
               <h1>Đăng ký</h1>
               <h4>Làm du khách</h4>
               <div>
                 <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Tài Khoản"
-                  required=""
-                />
-              </div>
-              <div>
-                <input
                   type="email"
+                  name="email"
                   class="form-control"
                   placeholder="Email"
                   required=""
@@ -286,13 +280,14 @@
               <div>
                 <input
                   type="password"
+                  name="password"
                   class="form-control"
                   placeholder="Mật khẩu"
                   required=""
                 />
               </div>
               <div>
-                <a class="btn btn-default submit" href="">Tạo tài khoản</a>
+                <button class="btn btn-default submit" >Tạo tài khoản</button>
               </div>
 
               <div class="clearfix"></div>
@@ -312,20 +307,14 @@
         <!-- Đăng ký làm NCC -->
         <div id="Business" class="animate form registration_Business_form">
           <section class="login_content">
-            <form>
+            @* controller login action là Create_Business *@
+            <form asp-action="Create_Business" >
               <h1>Đăng ký</h1>
               <h4>Làm nhà cung cấp dịch vụ</h4>
               <div>
                 <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Tài Khoản"
-                  required=""
-                />
-              </div>
-              <div>
-                <input
                   type="email"
+                  name="email"
                   class="form-control"
                   placeholder="Email"
                   required=""
@@ -334,13 +323,14 @@
               <div>
                 <input
                   type="password"
+                  name="password"
                   class="form-control"
                   placeholder="Mật khẩu"
                   required=""
                 />
               </div>
               <div>
-                <a class="btn btn-default submit" href="">Tạo tài khoản</a>
+                <button class="btn btn-default submit" href="">Tạo tài khoản</button>
               </div>
 
               <div class="clearfix"></div>

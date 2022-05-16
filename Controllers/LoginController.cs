@@ -87,5 +87,39 @@ namespace LV_DuLichDienTu.Controllers
             HttpContext.Session.Remove("userID");
             return RedirectToAction("Index", "Login");
         }
+
+
+        //register for tourism and provider
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create_tourism([Bind("dk_id,dk_taikhoan,dk_matkhau,dk_hoten,dk_cmnd,dk_dienthoai,dk_diachi,dk_email,dk_diemthanhvien,bvdd_id,hd_id")] DuKhach duKhach, string email, string password)
+        {
+            if (ModelState.IsValid)
+            {
+                duKhach.dk_email= email;
+                duKhach.dk_matkhau = password;
+                _context.Add(duKhach);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            
+            return RedirectToAction("Index", "Login");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create_Business([Bind("ncc_id,ncc_taikhoan,ncc_matkhau,ncc_ten,ncc_email,ncc_dienthoai,ncc_diachi,dv_id")] NhaCungCap nhaCungCap, string email, string password)
+        {
+            if (ModelState.IsValid)
+            {
+                nhaCungCap.ncc_email= email;
+                nhaCungCap.ncc_matkhau = password;
+                _context.Add(nhaCungCap);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            
+            return RedirectToAction("Index", "Login");
+        }
     }
 }

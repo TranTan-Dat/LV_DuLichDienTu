@@ -53,10 +53,12 @@ namespace LV_DuLichDienTu.Controllers
         }
 
         // GET: HopDongs/Create
-        public IActionResult Create()
+        public IActionResult Create(int service, int id)
         {
-            ViewData["dv_ten"] = new SelectList(_context.DichVu, "dv_id", "dv_ten");
-            ViewData["dk_hoten"] = new SelectList(_context.DuKhach, "dk_id", "dk_hoten");
+
+            ViewData["dv_ten"] = new SelectList(_context.DichVu.Where(m=>m.dv_id==service), "dv_id", "dv_ten");
+            ViewData["dk_hoten"] = new SelectList(_context.DuKhach.Where(n=>n.dk_id ==id), "dk_id", "dk_hoten");
+            
             return View();
         }
 
@@ -167,6 +169,13 @@ namespace LV_DuLichDienTu.Controllers
         private bool HopDongExists(int id)
         {
             return _context.HopDong.Any(e => e.hd_id == id);
+        }
+        public async Task<IActionResult> TravellingSchedule(string id)
+        {
+            int ID = int.Parse(id);
+            var acompec_lvdatContext = _context.HopDong.Include(h => h.dichVu).Include(h => h.duKhach).Where(m=>m.dk_id==ID).OrderBy(m=>m.hd_ngaybatdau);
+
+            return View(await acompec_lvdatContext.ToListAsync());
         }
     }
 }

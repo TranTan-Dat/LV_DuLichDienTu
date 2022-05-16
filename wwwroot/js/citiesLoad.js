@@ -7,6 +7,13 @@ var stateObject = {
         "Quận Ninh Kiều": [""],"Quận Cái Răng": [""],"Quận Bình Thủy": [""],"Quận Ô Môn": [""],"Huyện Phong Điền": [""],"Huyện Thốt Nốt": [""],"Huyện Cờ Đỏ": [""],"Huyện Vĩnh Thạnh": [""],"Huyện Thới Lai": [""],                                     
       },
       "TP Nha Trang":{"Đảo Hòn Tre":[]},
+      "TP Đà Nẵng": {
+        "Quận Cẩm Lệ": [""],"Quận Hải Châu": [""],"Quận Liên Chiểu": [""],"Quận Ngũ Hành Sơn": [""],"Quận Sơn Trà": [""],"Quận Thanh Khê": [""],"Huyện Hoàng Sa": [""],"Huyện Hòa Vang": [""],                                   
+      },
+      "TP Hội An": {
+        "Phường Minh An": [""],"Phường Tân An": [""],"Phường Cẩm Phổ": [""],"Phường Thanh Hà": [""],"Phường Cẩm Châu": [""],"Phường Sơn Phong": [""],"Phường Cửa Đại": [""],"Phường Cẩm An": [""], "Xã Cẩm Hà": [""],"Xã Cẩm Kim": [""],"Xã Cẩm Thanh": [""],"Xã Tân Hiệp": [""],                    
+      },
+
     }
 
     window.onload = function () {

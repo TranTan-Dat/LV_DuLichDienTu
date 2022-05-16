@@ -25,6 +25,7 @@
 <section class="ftco-section ftco-degree-bg">
     <div class="container">
         <div>
+            Địa điểm du lịch
             <div class="col-md-12">
                 <div class="destination-slider owl-carousel ftco-animate">
                     @foreach(var item in Model)
@@ -40,7 +41,7 @@
                                 <div class="text p-3">
                                     <div class="d-flex">
                                         <div class="one">
-                                            <h3 class="title-destination"><a href="#">
+                                            <h3 class="title-destination"><a href="#">5
                                                 @Html.DisplayFor(modelItem => item.DiaDiem_DuLich.dddl_ten)
                                             </a></h3>
                                         </div>
@@ -60,10 +61,21 @@
         </div>
     </div>
     <div class="container">
-        <h2 class="title-text">Dịch vụ</h2>     
+
+        <h2 class="title-text">Dịch Vụ</h2>     
+        <div class="ln_solid"></div>
+        <h5 class="title-text">Dịch Vụ Tham Quan</h5>
         <div class="col-md-12">
              @await Component.InvokeAsync("GetDichVu_ThamQuan",@ViewBag.TP)
         </div>
+        <div class="ln_solid"></div>
+        <h5 class="title-text">Dịch Vụ Ăn Uống</h5>
+        <div class="col-md-12">
+             @await Component.InvokeAsync("GetDichVu_AnUong",@ViewBag.TP)
+        </div>
+        
+        <div class="ln_solid"></div>
+        <h5 class="title-text">Dịch Vụ Lưu Trú</h5>
     </div>
 </section> 
 <div>
