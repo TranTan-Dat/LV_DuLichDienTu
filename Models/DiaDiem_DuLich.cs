@@ -32,11 +32,11 @@ namespace LV_DuLichDienTu.Models
 
         [ForeignKey("hinh_id")]
         public int hinh_id {get; set;}
-        public ICollection<Hinh_DiaDiemDuLich> hinh_DiaDiemDuLiches {get; set;}
+        public ICollection<Hinh_DiaDiemDuLich> Hinh_DiaDiemDuLiches {get; set;}
 
         [ForeignKey("bvdd_id")]
         public int bvdd_id {get; set;}
-        public ICollection<BaiViet_DiaDiem> baiViet_DiaDiems {get; set;}
+        public ICollection<BaiViet_DiaDiem> BaiViet_DiaDiems {get; set;}
 
         // [ForeignKey("tp_id")]
         // public int tp_id {get; set;}

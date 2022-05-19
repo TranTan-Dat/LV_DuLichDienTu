@@ -13566,38 +13566,6 @@
         }
       },
       {
-        "HashCode": -1270632445,
-        "Kind": "MVC.ViewComponent",
-        "Name": "__Generated__GetDichVu_ThamQuanViewComponentTagHelper",
-        "AssemblyName": "LV_DuLichDienTu",
-        "CaseSensitive": false,
-        "TagMatchingRules": [
-          {
-            "TagName": "vc:get-dich-vu_tham-quan",
-            "Attributes": [
-              {
-                "Name": "dia-diem"
-              }
-            ]
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "MVC.ViewComponent",
-            "Name": "dia-diem",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "DiaDiem"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "ITagHelper",
-          "Common.TypeName": "__Generated__GetDichVu_ThamQuanViewComponentTagHelper",
-          "MVC.ViewComponent.Name": "GetDichVu_ThamQuan"
-        }
-      },
-      {
         "HashCode": -154062692,
         "Kind": "MVC.ViewComponent",
         "Name": "__Generated__GetDichVu_AnUongViewComponentTagHelper",
@@ -13627,6 +13595,70 @@
           "Runtime.Name": "ITagHelper",
           "Common.TypeName": "__Generated__GetDichVu_AnUongViewComponentTagHelper",
           "MVC.ViewComponent.Name": "GetDichVu_AnUong"
+        }
+      },
+      {
+        "HashCode": 1729493331,
+        "Kind": "MVC.ViewComponent",
+        "Name": "__Generated__GetDichVu_LuuTruViewComponentTagHelper",
+        "AssemblyName": "LV_DuLichDienTu",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "vc:get-dich-vu_luu-tru",
+            "Attributes": [
+              {
+                "Name": "dia-diem"
+              }
+            ]
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "MVC.ViewComponent",
+            "Name": "dia-diem",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "DiaDiem"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "__Generated__GetDichVu_LuuTruViewComponentTagHelper",
+          "MVC.ViewComponent.Name": "GetDichVu_LuuTru"
+        }
+      },
+      {
+        "HashCode": -1270632445,
+        "Kind": "MVC.ViewComponent",
+        "Name": "__Generated__GetDichVu_ThamQuanViewComponentTagHelper",
+        "AssemblyName": "LV_DuLichDienTu",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "vc:get-dich-vu_tham-quan",
+            "Attributes": [
+              {
+                "Name": "dia-diem"
+              }
+            ]
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "MVC.ViewComponent",
+            "Name": "dia-diem",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "DiaDiem"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "__Generated__GetDichVu_ThamQuanViewComponentTagHelper",
+          "MVC.ViewComponent.Name": "GetDichVu_ThamQuan"
         }
       },
       {
@@ -15850,6 +15882,11 @@
     {
       "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\Shared\\Components\\GetDichVu_AnUong\\Default.cshtml",
       "TargetPath": "Views\\Shared\\Components\\GetDichVu_AnUong\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\Shared\\Components\\GetDichVu_LuuTru\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\GetDichVu_LuuTru\\Default.cshtml",
       "FileKind": "mvc"
     },
     {

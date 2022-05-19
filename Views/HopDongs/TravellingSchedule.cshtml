@@ -1,17 +1,55 @@
 @{
     ViewData["Title"] = "TravellingSchedule";
 }
-@{
-    string tempNgay ="";
-    foreach (var item in Model)
-        {
-            
-            if (item.hd_ngaybatdau.ToString() != tempNgay)
-            {
-                <p>@item.hd_ngaybatdau</p> 
-                tempNgay = item.hd_ngaybatdau.ToString();
-            }
-        <p>Dịch vụ: @item.dichVu.dv_ten</p>
-        <p>Thành phố:@item.dichVu.dv_tinhthanh </p>
-        }
-}
+@using Microsoft.AspNetCore.Http;
+@using System.Data;
+<div class="hero-wrap js-fullheight" style="background-image: url('/TourismTemplate/images/bg_4.jpg');">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center"
+            data-scrollax-parent="true">
+            <div class="col-md-9 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
+                <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span
+                        class="mr-2"><a href="index.html">Home</a></span> <span class="mr-2"><a
+                            href="blog.html">Blog</a></span> <span>Blog Single</span></p>
+                <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Thông Tin Cá Nhân
+                </h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="ftco-section contact-section ftco-degree-bg" style=" width:700px; margin: 30px auto; border: 1px solid black; border-radius: 15px;">
+    <div class="container">
+        <div class="row block-9">
+            <div class="col-md-12">
+                <P style="text-align: center;"> Lịch Trình Du Lịch</P>
+                    <div class="form-group chitiet">
+                        
+                        @{
+                            string tempNgay ="";
+                            foreach (var item in Model)
+                                {
+                                    
+                                    if (item.hd_ngaybatdau.ToString() != tempNgay)
+                                    {   
+                                        <hr style="width:70%;">
+                                        <p></p>
+                                        <p>@item.hd_ngaybatdau</p> 
+                                        tempNgay = item.hd_ngaybatdau.ToString();
+                                    }
+                                <p>Dịch vụ: @item.dichVu.dv_ten</p>
+                                <p>Thành phố:@item.dichVu.dv_tinhthanh </p>
+                                }
+                        }
+                    </div>
+                    <div class="form-group">
+                        <a asp-controller="HopDongs" asp-action="Edit" asp-route-id='@Context.Session.GetString("userID")' class="btn btn-primary py-3 px-5">Cập Nhật Thông Tin</a>
+                    </div>
+
+            </div>
+
+
+        </div>
+    </div>
+</section>

@@ -1,5 +1,7 @@
 @model LV_DuLichDienTu.Models.DichVu
+@using System.Data;
 
+@using Microsoft.AspNetCore.Http;
 @{
     ViewData["Title"] = "Edit";
 }
@@ -184,7 +186,7 @@
                         <div class="ln_solid"></div>
                         <div class="form-group">
                             <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                                <button asp-action="Index" class="btn btn-success"> Quay lại</button>
+                                <button  asp-action="List_By_ID" asp-route-id='@Context.Session.GetString("userID")' class="btn btn-success"> Quay lại</button>
                                 <input type="submit" value="Lưu" class="btn btn-primary" />
                             </div>
                         </div>

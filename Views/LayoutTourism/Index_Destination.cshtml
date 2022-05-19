@@ -32,7 +32,7 @@
                     {
                         <div class="item">
                             <div class="destination">
-                                <a href="#" class="img img-2 d-flex justify-content-center align-items-center"
+                                <a asp-controller="DiaDiem_DuLichs" asp-action="Details" asp-route-id="@item.dddl_id" class="img img-2 d-flex justify-content-center align-items-center"
                                     style="background-image: url(@Html.DisplayFor(modelItem=>item.hinh_duongdan));object-fit: contain; ">
                                     <div class="icon d-flex justify-content-center align-items-center">
                                         <span class="icon-search2"></span>
@@ -41,12 +41,11 @@
                                 <div class="text p-3">
                                     <div class="d-flex">
                                         <div class="one">
-                                            <h3 class="title-destination"><a href="#">5
+                                            <h3 class="title-destination"><a href="#">
                                                 @Html.DisplayFor(modelItem => item.DiaDiem_DuLich.dddl_ten)
                                             </a></h3>
                                         </div>
                                     </div>
-                                    <p class="square">@Html.Raw(item.DiaDiem_DuLich.dddl_mota)</p>
                                     <hr>
                                     <p class="bottom-area d-flex">
                                         <span><i class="icon-map-o"></i> @Html.DisplayFor(modelItem => item.DiaDiem_DuLich.dddl_quanhuyen)</span>
@@ -76,6 +75,9 @@
         
         <div class="ln_solid"></div>
         <h5 class="title-text">Dịch Vụ Lưu Trú</h5>
+        <div class="col-md-12">
+             @await Component.InvokeAsync("GetDichVu_LuuTru",@ViewBag.TP)
+        </div>
     </div>
 </section> 
 <div>

@@ -8,29 +8,28 @@ actor "Du khách" as DKhach
 
 rectangle  SoDoTongQuan{
   usecase "UC-8 Quản lý loại dịch vụ" as QLLDV
-  usecase "UC-9 Quản lý loại hình dịch vụ" as QLLHDV
-  usecase "UC-3 Quản lý thông tin điểm đến" as QLTTDD
+  usecase "UC-3 Quản lý địa điểm" as QLDD
+  ' usecase "UC-9 Quản lý thông tin " as QLTTDD
 
-  usecase "UC-4 Đăng ký địa điểm mới" as Them_TTDD
-  usecase "UC-5 Cập nhật địa điểm " as CapNhat_TTDD
+  usecase "UC-4 Đăng ký dịch vụ mới" as Them_TTDD
+  usecase "UC-5 Cập nhật dịch vụ " as CapNhat_TTDD
   usecase "UC-7 Cập nhật thông tin khách hàng" as CapNhat_TTKH
 
   usecase "UC-6 Quản lý thông tin khách hàng" as QLTTKH
   usecase "UC-1 Đăng ký" as DKy
   usecase "UC-2 Đăng nhập" as DNhap
-  usecase "UC-10 Quản lý lịch trình chuyến đi" as QLCD
+  usecase "UC-10 Quản lý lịch trình du lịch" as QLCD
+  ' chỗ nay nhà cung cấp và du khách đều dùng quản lý lịch trình du lịch
 }
-CapNhat_TTDD -- QLTTDD
-Them_TTDD -- QLTTDD
+
 QLTTKH - DKy
-CapNhat_TTKH .> QLTTKH : extend
+CapNhat_TTKH ..> QLTTKH : extend
 
-KH -- CapNhat_TTKH
-KH -- DKy
+KH --- CapNhat_TTKH
+KH --- DKy
 
-QLTTDD - QL
-QLLHDV ---- QL
-QLTTKH - QL
+QLDD --- QL
+QLTTKH -- QL
 QLLDV -- QL
 
 

@@ -51,10 +51,12 @@ namespace LV_DuLichDienTu.Controllers
     
         public async Task<IActionResult> Index_Destination(string id)
         {
-             var acompec_lvdatContext = _context.Hinh_DiaDiemDuLich.Include(m=>m.DiaDiem_DuLich).Where(c=>c.DiaDiem_DuLich.dddl_tinhthanh==id);
+            var acompec_lvdatContext = _context.Hinh_DiaDiemDuLich.Include(n=>n.DiaDiem_DuLich).Where(n=>n.DiaDiem_DuLich.dddl_tinhthanh==id);
+            
             ViewData["TP"] = id.ToString();
-            return View(await acompec_lvdatContext.ToArrayAsync());
+            return View(await acompec_lvdatContext.ToListAsync());
         }
+
         public async Task<IActionResult> Index_Service_Destination(string city, string services)
         {
             var acompec_lvdatContext = _context.DichVu.Include(m=>m.loaiDichVu).Where(c=>c.dv_tinhthanh == city);

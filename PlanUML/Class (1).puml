@@ -25,6 +25,7 @@ class DiaDiem_DuLich{
   + dddl_ten: string
   + dddl_mota: string
   + dddl_tinhthanh: string
+  + dddl_quanhuyen: string
 }
 
 
@@ -33,6 +34,7 @@ class BaiViet_DiaDiem{
   + bvdd_tieude: string
   + bvdd_noidung: string
   + bvdd_tinhtrang: boolean
+  + bvdd_Hinh_duongdan: string
 }
 
 class DuKhach{
@@ -58,6 +60,10 @@ class DichVu{
   + dv_ten: string
   + dv_dienthoai_hotro: string
   + dv_mota: string
+  + dv_tinhthanh: string
+  + dv_quanhuyen: string
+  + dv_hinh_duongdan: string
+  + dv_tieude: string
 }
 
 class CamKetDichVu{

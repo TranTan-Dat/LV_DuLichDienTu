@@ -108,7 +108,7 @@
 
       <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
-          <a class="navbar-brand" asp-action="Index_Home">AzyTravel.</a>
+          <a class="navbar-brand" asp-controller="LayoutTourism" asp-action="Index_Home">AzyTravel.</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
           aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="oi oi-menu"></span> Menu
@@ -199,7 +199,7 @@
             <div class="col-md-3 left_col">
               <div class="left_col scroll-view">
                 <div class="navbar nav_title" style="border: 0;">
-                  <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
+                  <a asp-controller="NhanViens" asp-action="Details" asp-route-id="@userID_temp" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
                 </div>
 
                 <div class="clearfix"></div>
@@ -297,7 +297,7 @@
             <div class="col-md-3 left_col">
               <div class="left_col scroll-view">
                 <div class="navbar nav_title" style="border: 0;">
-                  <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
+                  <a asp-controller="NhaCungCaps" asp-action="Details" asp-route-id="@userID_temp" class="site_title"><i class="fa fa-paw"></i> <span>AzyTravel</span></a>
                 </div>
 
                 <div class="clearfix"></div>
@@ -320,7 +320,7 @@
                           class="fa fa-gears"></i> DỊCH VỤ</a></li>
                       <li><a asp-controller="HopDongs" asp-action="List_By_ID" asp-route-id="@userID_temp"><i
                           class="fa fa-file-text-o"></i> HỢP ĐỒNG</a></li>
-                      <li><a asp-controller="NhanViens" asp-action="Details" asp-route-id="@userID_temp"><i
+                      <li><a asp-controller="NhaCungCaps" asp-action="Details" asp-route-id="@userID_temp"><i
                           class="fa fa-user"></i>THÔNG TIN CÁ NHÂN</a></li>
                     </ul>
                   </div>

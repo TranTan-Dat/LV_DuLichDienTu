@@ -56,9 +56,9 @@ namespace LV_DuLichDienTu.Controllers
         }
 
         // GET: DichVus/Create
-        public IActionResult Create()
+        public IActionResult Create(int id)
         {
-            ViewData["Select_TenNCC"]= new SelectList(_context.NhaCungCap,"ncc_id","ncc_ten");
+            ViewData["Select_TenNCC"]= new SelectList(_context.NhaCungCap.Where(m=>m.ncc_id==id),"ncc_id","ncc_ten");
             ViewData["Select_TenLoaiDV"]= new SelectList(_context.LoaiDichVu,"ldv_id","ldv_ten");
             return View();
         }
@@ -178,9 +178,10 @@ namespace LV_DuLichDienTu.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var dichVu = await _context.DichVu.FindAsync(id);
+            int temp = dichVu.ncc_id;
             _context.DichVu.Remove(dichVu);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("List_By_ID", new {id = temp});
         }
 
         private bool DichVuExists(int id)

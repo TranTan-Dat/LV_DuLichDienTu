@@ -32,6 +32,7 @@ namespace LV_DuLichDienTu.Controllers
             return View(await acompec_lvdatContext.ToListAsync());
         }
 
+
         // GET: HopDongs/Details/5
         public async Task<IActionResult> Details(int? id)
         {

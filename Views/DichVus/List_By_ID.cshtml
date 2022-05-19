@@ -11,7 +11,7 @@
       <div class="x_content">
         <div> 
           <h2>
-            DỊCH VỤ <small><a asp-action="Create"> Thêm mới</a></small>
+            DỊCH VỤ <small><a asp-action="Create" asp-route-id='@Context.Session.GetString("userID")'> Thêm mới</a></small>
         </h2>
         </div>
         
