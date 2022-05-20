@@ -96,26 +96,26 @@ namespace LV_DuLichDienTu.Migrations
                     table.PrimaryKey("PK_NhanVien", x => x.nv_id);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "Hinh_DiaDiemDuLich",
-                columns: table => new
-                {
-                    hinh_id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    hinh_duongdan = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    dddl_id = table.Column<int>(type: "int", nullable: false),
-                    DiaDiem_DuLichdddl_id = table.Column<int>(type: "int", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Hinh_DiaDiemDuLich", x => x.hinh_id);
-                    table.ForeignKey(
-                        name: "FK_Hinh_DiaDiemDuLich_DiaDiem_DuLich_DiaDiem_DuLichdddl_id",
-                        column: x => x.DiaDiem_DuLichdddl_id,
-                        principalTable: "DiaDiem_DuLich",
-                        principalColumn: "dddl_id",
-                        onDelete: ReferentialAction.Restrict);
-                });
+            // migrationBuilder.CreateTable(
+            //     name: "Hinh_DiaDiemDuLich",
+            //     columns: table => new
+            //     {
+            //         hinh_id = table.Column<int>(type: "int", nullable: false)
+            //             .Annotation("SqlServer:Identity", "1, 1"),
+            //         hinh_duongdan = table.Column<string>(type: "nvarchar(max)", nullable: true),
+            //         dddl_id = table.Column<int>(type: "int", nullable: false),
+            //         DiaDiem_DuLichdddl_id = table.Column<int>(type: "int", nullable: true)
+            //     },
+            //     constraints: table =>
+            //     {
+            //         table.PrimaryKey("PK_Hinh_DiaDiemDuLich", x => x.hinh_id);
+            //         table.ForeignKey(
+            //             name: "FK_Hinh_DiaDiemDuLich_DiaDiem_DuLich_DiaDiem_DuLichdddl_id",
+            //             column: x => x.DiaDiem_DuLichdddl_id,
+            //             principalTable: "DiaDiem_DuLich",
+            //             principalColumn: "dddl_id",
+            //             onDelete: ReferentialAction.Restrict);
+            //     });
 
             migrationBuilder.CreateTable(
                 name: "DichVu",
@@ -273,10 +273,10 @@ namespace LV_DuLichDienTu.Migrations
                 table: "DichVu",
                 column: "nhaCungCapncc_id");
 
-            migrationBuilder.CreateIndex(
-                name: "IX_Hinh_DiaDiemDuLich_DiaDiem_DuLichdddl_id",
-                table: "Hinh_DiaDiemDuLich",
-                column: "DiaDiem_DuLichdddl_id");
+            // migrationBuilder.CreateIndex(
+            //     name: "IX_Hinh_DiaDiemDuLich_DiaDiem_DuLichdddl_id",
+            //     table: "Hinh_DiaDiemDuLich",
+            //     column: "DiaDiem_DuLichdddl_id");
 
             migrationBuilder.CreateIndex(
                 name: "IX_HopDong_DichVudv_id",
@@ -297,8 +297,8 @@ namespace LV_DuLichDienTu.Migrations
             migrationBuilder.DropTable(
                 name: "CamKetDichVu");
 
-            migrationBuilder.DropTable(
-                name: "Hinh_DiaDiemDuLich");
+            // migrationBuilder.DropTable(
+            //     name: "Hinh_DiaDiemDuLich");
 
             migrationBuilder.DropTable(
                 name: "HopDong");

@@ -15750,11 +15750,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\Hinh_DiaDiemDuLichs\\Index.cshtml",
-      "TargetPath": "Views\\Hinh_DiaDiemDuLichs\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\DuKhachs\\Edit.cshtml",
       "TargetPath": "Views\\DuKhachs\\Edit.cshtml",
       "FileKind": "mvc"
@@ -15772,11 +15767,6 @@
     {
       "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\LayoutTourism\\Index_Service_Destination.cshtml",
       "TargetPath": "Views\\LayoutTourism\\Index_Service_Destination.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\Hinh_DiaDiemDuLichs\\Create.cshtml",
-      "TargetPath": "Views\\Hinh_DiaDiemDuLichs\\Create.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15825,18 +15815,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\Hinh_DiaDiemDuLichs\\Delete.cshtml",
-      "TargetPath": "Views\\Hinh_DiaDiemDuLichs\\Delete.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\CamKetDichVus\\Delete.cshtml",
       "TargetPath": "Views\\CamKetDichVus\\Delete.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\Hinh_DiaDiemDuLichs\\Details.cshtml",
-      "TargetPath": "Views\\Hinh_DiaDiemDuLichs\\Details.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15965,11 +15945,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\LayoutTourism\\Index_Destination copy.cshtml",
-      "TargetPath": "Views\\LayoutTourism\\Index_Destination copy.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\LayoutTourism\\Details_Destination.cshtml",
       "TargetPath": "Views\\LayoutTourism\\Details_Destination.cshtml",
       "FileKind": "mvc"
@@ -16047,11 +16022,6 @@
     {
       "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\NhanViens\\Delete.cshtml",
       "TargetPath": "Views\\NhanViens\\Delete.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\Views\\Hinh_DiaDiemDuLichs\\Edit.cshtml",
-      "TargetPath": "Views\\Hinh_DiaDiemDuLichs\\Edit.cshtml",
       "FileKind": "mvc"
     },
     {

@@ -22,7 +22,6 @@ using LV_DuLichDienTu.Models;
 
         public DbSet<LV_DuLichDienTu.Models.DuKhach> DuKhach { get; set; }
 
-        public DbSet<LV_DuLichDienTu.Models.Hinh_DiaDiemDuLich> Hinh_DiaDiemDuLich { get; set; }
 
         public DbSet<LV_DuLichDienTu.Models.HopDong> HopDong { get; set; }
 

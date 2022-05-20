@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LV_DuLichDienTu.Migrations
 {
     [DbContext(typeof(acompec_lvdatContext))]
-    [Migration("20220506064847_InitWebDB10")]
-    partial class InitWebDB10
+    [Migration("20220519085235_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -29,6 +29,9 @@ namespace LV_DuLichDienTu.Migrations
 
                     b.Property<int?>("DuKhachdk_id")
                         .HasColumnType("int");
+
+                    b.Property<string>("bvdd_Hinh_duongdan")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("bvdd_noidung")
                         .HasColumnType("nvarchar(max)");
@@ -92,6 +95,9 @@ namespace LV_DuLichDienTu.Migrations
                     b.Property<int>("bvdd_id")
                         .HasColumnType("int");
 
+                    b.Property<string>("dddl_Hinh_duongdan")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("dddl_mota")
                         .HasColumnType("nvarchar(max)");
 
@@ -103,9 +109,6 @@ namespace LV_DuLichDienTu.Migrations
 
                     b.Property<string>("dddl_tinhthanh")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("hinh_id")
-                        .HasColumnType("int");
 
                     b.HasKey("dddl_id");
 
@@ -125,6 +128,9 @@ namespace LV_DuLichDienTu.Migrations
                     b.Property<string>("dv_dienthoai_hotro")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("dv_hinh_duongdan")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("dv_mota")
                         .HasColumnType("nvarchar(max)");
 
@@ -132,6 +138,9 @@ namespace LV_DuLichDienTu.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("dv_ten")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("dv_tieude")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("dv_tinhthanh")
@@ -195,26 +204,6 @@ namespace LV_DuLichDienTu.Migrations
                     b.HasKey("dk_id");
 
                     b.ToTable("DuKhach");
-                });
-
-            modelBuilder.Entity("LV_DuLichDienTu.Models.Hinh_DiaDiemDuLich", b =>
-                {
-                    b.Property<int>("hinh_id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("dddl_id")
-                        .HasColumnType("int");
-
-                    b.Property<string>("hinh_duongdan")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("hinh_id");
-
-                    b.HasIndex("dddl_id");
-
-                    b.ToTable("Hinh_DiaDiemDuLich");
                 });
 
             modelBuilder.Entity("LV_DuLichDienTu.Models.HopDong", b =>
@@ -348,7 +337,7 @@ namespace LV_DuLichDienTu.Migrations
                         .HasForeignKey("DuKhachdk_id");
 
                     b.HasOne("LV_DuLichDienTu.Models.DiaDiem_DuLich", "DiaDiem_DuLich")
-                        .WithMany("baiViet_DiaDiems")
+                        .WithMany("BaiViet_DiaDiems")
                         .HasForeignKey("dddl_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -396,17 +385,6 @@ namespace LV_DuLichDienTu.Migrations
                     b.Navigation("nhaCungCap");
                 });
 
-            modelBuilder.Entity("LV_DuLichDienTu.Models.Hinh_DiaDiemDuLich", b =>
-                {
-                    b.HasOne("LV_DuLichDienTu.Models.DiaDiem_DuLich", "DiaDiem_DuLich")
-                        .WithMany("hinh_DiaDiemDuLiches")
-                        .HasForeignKey("dddl_id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("DiaDiem_DuLich");
-                });
-
             modelBuilder.Entity("LV_DuLichDienTu.Models.HopDong", b =>
                 {
                     b.HasOne("LV_DuLichDienTu.Models.DuKhach", "duKhach")
@@ -428,9 +406,7 @@ namespace LV_DuLichDienTu.Migrations
 
             modelBuilder.Entity("LV_DuLichDienTu.Models.DiaDiem_DuLich", b =>
                 {
-                    b.Navigation("baiViet_DiaDiems");
-
-                    b.Navigation("hinh_DiaDiemDuLiches");
+                    b.Navigation("BaiViet_DiaDiems");
                 });
 
             modelBuilder.Entity("LV_DuLichDienTu.Models.DichVu", b =>

@@ -12,6 +12,8 @@ namespace LV_DuLichDienTu.Models
         [Required]
         [DisplayName("Mã địa điểm")]
         public int dddl_id{get;set;}
+        
+        
         [DisplayName("Tên địa điểm")]
         public string dddl_ten {get;set;}
         
@@ -24,15 +26,8 @@ namespace LV_DuLichDienTu.Models
         [DisplayName("Quận huyện")]
         public string dddl_quanhuyen {get;set;}
 
-        // [DisplayName("Tổng ảnh")]
-        // public string Sum_Pic {get;set;}
-
-        // [DisplayName("Tổng Bài Viết")]
-        // public string Sum_Article {get;set;}
-
-        [ForeignKey("hinh_id")]
-        public int hinh_id {get; set;}
-        public ICollection<Hinh_DiaDiemDuLich> Hinh_DiaDiemDuLiches {get; set;}
+        [DisplayName("Đường dẫn ảnh")]
+        public string dddl_Hinh_duongdan {get; set;}
 
         [ForeignKey("bvdd_id")]
         public int bvdd_id {get; set;}

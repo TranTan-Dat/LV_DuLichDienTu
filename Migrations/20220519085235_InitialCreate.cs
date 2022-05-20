@@ -2,12 +2,12 @@
 
 namespace LV_DuLichDienTu.Migrations
 {
-    public partial class InitWebDB : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AddColumn<string>(
-                name: "dddl_tinhthanh",
+                name: "dddl_Hinh_duongdan",
                 table: "DiaDiem_DuLich",
                 type: "nvarchar(max)",
                 nullable: true);
@@ -15,8 +15,8 @@ namespace LV_DuLichDienTu.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropColumn(
-                name: "dddl_tinhthanh",
+             migrationBuilder.DropColumn(
+                name: "dddl_Hinh_duongdan",
                 table: "DiaDiem_DuLich");
         }
     }

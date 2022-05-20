@@ -9,9 +9,6 @@
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center"
             data-scrollax-parent="true">
             <div class="col-md-9 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
-                <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span
-                        class="mr-2"><a href="index.html">Home</a></span> <span class="mr-2"><a
-                            href="blog.html">Blog</a></span> <span>Blog Single</span></p>
                 <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Thông Tin Cá Nhân
                 </h1>
             </div>
@@ -30,6 +27,9 @@
                             string tempNgay ="";
                             foreach (var item in Model)
                                 {
+                                    <div>
+
+                                    </div>
                                     
                                     if (item.hd_ngaybatdau.ToString() != tempNgay)
                                     {   
@@ -38,8 +38,53 @@
                                         <p>@item.hd_ngaybatdau</p> 
                                         tempNgay = item.hd_ngaybatdau.ToString();
                                     }
-                                <p>Dịch vụ: @item.dichVu.dv_ten</p>
-                                <p>Thành phố:@item.dichVu.dv_tinhthanh </p>
+                                    <p>Dịch vụ: @item.dichVu.dv_ten</p>
+                                    <p>Thành phố:@item.dichVu.dv_tinhthanh </p>
+
+                                    
+                                    <button onclick="document.getElementById('PopUp_Rating').style.display='block'" class="w3-button w3-black">Open Modal</button>
+
+                                    <div id="PopUp_Rating" class="w3-modal">
+                                        <div class="w3-modal-content">
+                                        <div class="w3-container">
+                                            <span onclick="document.getElementById('PopUp_Rating').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                                            <form class="rating">
+                                                <label>
+                                                    <input type="radio" name="stars" value="1" />
+                                                    <span class="icon">★</span>
+                                                </label>
+                                                <label>
+                                                    <input type="radio" name="stars" value="2" />
+                                                    <span class="icon">★</span>
+                                                    <span class="icon">★</span>
+                                                </label>
+                                                <label>
+                                                    <input type="radio" name="stars" value="3" />
+                                                    <span class="icon">★</span>
+                                                    <span class="icon">★</span>
+                                                    <span class="icon">★</span>   
+                                                </label>
+                                                <label>
+                                                    <input type="radio" name="stars" value="4" />
+                                                    <span class="icon">★</span>
+                                                    <span class="icon">★</span>
+                                                    <span class="icon">★</span>
+                                                    <span class="icon">★</span>
+                                                </label>
+                                                <label>
+                                                    <input type="radio" name="stars" value="5" />
+                                                    <span class="icon">★</span>
+                                                    <span class="icon">★</span>
+                                                    <span class="icon">★</span>
+                                                    <span class="icon">★</span>
+                                                    <span class="icon">★</span>
+                                                </label>
+                                                </form>
+                                            <button onclick="document.getElementById('PopUp_Rating').style.display='none'">Quay Lại</button>
+                                        </div>
+                                        </div>
+                                    </div>
+
                                 }
                         }
                     </div>

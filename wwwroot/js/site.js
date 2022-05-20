@@ -10,3 +10,7 @@ window.onload = function outVal() {
   var trimmedcontent = input_val.substring(1, input_val.length-2);
   output_val.innerHTML = trimmedcontent;
 }
+
+$(':radio').change(function() {
+  console.log('New star rating: ' + this.value);
+});

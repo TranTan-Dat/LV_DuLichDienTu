@@ -19,7 +19,6 @@ namespace LV_DuLichDienTu.Models
         public DbSet<DiaDiem_DuLich> diaDiem_DuLiches {get;set;}
         public DbSet<DichVu> dichVus {get;set;}
         public DbSet<DuKhach> duKhaches {get;set;}
-        public DbSet<Hinh_DiaDiemDuLich> hinh_DiaDiemDuLiches {get;set;}
         public DbSet<HopDong> hopDongs {get;set;}
         public DbSet<LoaiDichVu> loaiDichVus {get;set;}
         public DbSet<NhaCungCap> nhaCungCaps {get;set;}
