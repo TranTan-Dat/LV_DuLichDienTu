@@ -9,14 +9,14 @@
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center"
             data-scrollax-parent="true">
             <div class="col-md-9 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
-                <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Thông Tin Cá Nhân
+                <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Lịch Trình Du Lịch
                 </h1>
             </div>
         </div>
     </div>
 </div>
 
-<section class="ftco-section contact-section ftco-degree-bg" style=" width:700px; margin: 30px auto; border: 1px solid black; border-radius: 15px;">
+<section class="ftco-section contact-section ftco-degree-bg" style=" width:700px; margin: 30px auto; border: 1px solid red; border-radius: 15px;">
     <div class="container">
         <div class="row block-9">
             <div class="col-md-12">
@@ -25,66 +25,85 @@
                         
                         @{
                             string tempNgay ="";
+                            int NumPopUp = 1;
+                            string userID=Context.Session.GetString("userID");
                             foreach (var item in Model)
                                 {
-                                    <div>
-
-                                    </div>
-                                    
-                                    if (item.hd_ngaybatdau.ToString() != tempNgay)
+                                    if (item.hd_ngaybatdau.ToString("dd/MM/yyyy") != tempNgay)
                                     {   
-                                        <hr style="width:70%;">
-                                        <p></p>
-                                        <p>@item.hd_ngaybatdau</p> 
-                                        tempNgay = item.hd_ngaybatdau.ToString();
+                                        <hr style="width:100%; size:2px;">
+                                        <p style="color: red;"></p>
+                                        tempNgay =  item.hd_ngaybatdau.ToString("dd/MM/yyyy");
+                                        <p class="date-schedule">@tempNgay</p> 
+                                        
+                                        
+                                        
                                     }
-                                    <p>Dịch vụ: @item.dichVu.dv_ten</p>
-                                    <p>Thành phố:@item.dichVu.dv_tinhthanh </p>
-
+                                    <p style="color: green;">Dịch vụ: @item.dichVu.dv_ten</p>
+                                    <p>+ Thành phố: @item.dichVu.dv_tinhthanh <br>+ Đánh giá dịch vụ:  @item.hd_danhgiachatluong <span class="icon-stars-resuilt">★</span></p>
+                                    <p></p>
                                     
-                                    <button onclick="document.getElementById('PopUp_Rating').style.display='block'" class="w3-button w3-black">Open Modal</button>
+                                    <button onclick="document.getElementById('@NumPopUp').style.display='block'" class="btn-PopUp-Rating">Đánh giá chất lượng</button>
 
-                                    <div id="PopUp_Rating" class="w3-modal">
+                                    <div id='@NumPopUp' class="w3-modal">
                                         <div class="w3-modal-content">
                                         <div class="w3-container">
-                                            <span onclick="document.getElementById('PopUp_Rating').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-                                            <form class="rating">
-                                                <label>
-                                                    <input type="radio" name="stars" value="1" />
-                                                    <span class="icon">★</span>
-                                                </label>
-                                                <label>
-                                                    <input type="radio" name="stars" value="2" />
-                                                    <span class="icon">★</span>
-                                                    <span class="icon">★</span>
-                                                </label>
-                                                <label>
-                                                    <input type="radio" name="stars" value="3" />
-                                                    <span class="icon">★</span>
-                                                    <span class="icon">★</span>
-                                                    <span class="icon">★</span>   
-                                                </label>
-                                                <label>
-                                                    <input type="radio" name="stars" value="4" />
-                                                    <span class="icon">★</span>
-                                                    <span class="icon">★</span>
-                                                    <span class="icon">★</span>
-                                                    <span class="icon">★</span>
-                                                </label>
-                                                <label>
-                                                    <input type="radio" name="stars" value="5" />
-                                                    <span class="icon">★</span>
-                                                    <span class="icon">★</span>
-                                                    <span class="icon">★</span>
-                                                    <span class="icon">★</span>
-                                                    <span class="icon">★</span>
-                                                </label>
+                                            @{
+                                                @* var tempHDid = @item.hd_id;
+                                                var tempDVid = @item.dv_id; *@
+                                                <h5>Đánh giá dịch vụ</h5>
+                                                <h4 class="items-center">
+                                                    @item.dichVu.dv_ten
+                                                </h4>
+                                                <span onclick="document.getElementById('@NumPopUp').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                                                <form asp-controller="HopDongs" asp-action="Updaterating" asp-route-hdid="@item.hd_id" asp-route-dvid="@item.dv_id" asp-route-userID="@userID">
+                                                    <div class="rating">
+                                                            <label>
+                                                            <input type="radio" name="stars" value="1" />
+                                                            <span class="icon">★</span>
+                                                        </label>
+                                                        <label>
+                                                            <input type="radio" name="stars" value="2" />
+                                                            <span class="icon">★</span>
+                                                            <span class="icon">★</span>
+                                                        </label>
+                                                        <label>
+                                                            <input type="radio" name="stars" value="3" />
+                                                            <span class="icon">★</span>
+                                                            <span class="icon">★</span>
+                                                            <span class="icon">★</span>   
+                                                        </label>
+                                                        <label>
+                                                            <input type="radio" name="stars" value="4" />
+                                                            <span class="icon">★</span>
+                                                            <span class="icon">★</span>
+                                                            <span class="icon">★</span>
+                                                            <span class="icon">★</span>
+                                                        </label>
+                                                        <label>
+                                                            <input type="radio" name="stars" value="5" />
+                                                            <span class="icon">★</span>
+                                                            <span class="icon">★</span>
+                                                            <span class="icon">★</span>
+                                                            <span class="icon">★</span>
+                                                            <span class="icon">★</span>
+                                                        </label>
+                                                    </div>
+                                                    <button id="SetVal_Rating" onclick="document.getElementById('@NumPopUp').style.display='none'"  type="submit" class="btn btn-default submit">Đánh Giá</button>
                                                 </form>
-                                            <button onclick="document.getElementById('PopUp_Rating').style.display='none'">Quay Lại</button>
+                                            
+                                            <br>
+                                            <div class="submit-option-rating">
+                                                <a class="btn btn-outline-custom" onclick="document.getElementById('@NumPopUp').style.display='none'">Quay Lại</a>
+                                                <a class="btn btn-primary" id="SetVal_Rating" onclick="document.getElementById('@NumPopUp').style.display='none'" >Lưu</a>
+                                            </div>
+                                            }
+                                            
+                                            
                                         </div>
                                         </div>
                                     </div>
-
+                                    NumPopUp++;
                                 }
                         }
                     </div>

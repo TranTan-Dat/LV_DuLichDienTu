@@ -83,6 +83,7 @@ body {
   text-align: center;
 }
 
+
 .style-table{
   width: 65%;
 }
@@ -161,6 +162,9 @@ dl.chitiet > dd{
   border-style: ridge;
 }
 
+.submit-option-rating{
+  text-align: center;
+}
 
 .rating {
   display: inline-block;
@@ -168,6 +172,7 @@ dl.chitiet > dd{
   height: 50px;
   line-height: 50px;
   font-size: 50px;
+  margin: 0px 38%;
 }
 
 .rating label {
@@ -227,4 +232,26 @@ dl.chitiet > dd{
 .rating label input:focus:not(:checked) ~ .icon:last-child {
   color: #000;
   text-shadow: 0 0 5px rgb(199, 88, 88);
+}
+
+
+.btn-PopUp-Rating{    
+  color: #fff !important;
+  background: #f85959;
+  border: 2px solid #f85959;
+  padding: 5px !important;
+  border-radius: 5px;
+  margin-top: 6px !important;
+  margin: 0px auto;
+  display: block;
+  opacity: calc();
+}
+
+.icon-stars-resuilt{
+  color: #f85959;
+}
+
+.date-schedule{
+  display: block;
+  padding: 2px; background-color:white; margin:auto
 }

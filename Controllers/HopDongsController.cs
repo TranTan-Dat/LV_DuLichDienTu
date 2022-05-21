@@ -70,15 +70,16 @@ namespace LV_DuLichDienTu.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("hd_id,hd_ngaybatdau,hd_ngayketthuc,hd_chiphi,hd_danhgiachatluong,hd_phanhoi,dk_id,dv_id")] HopDong hopDong)
         {
+                string idDuKhach = hopDong.dk_id.ToString();
             if (ModelState.IsValid)
             {
                 _context.Add(hopDong);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("TravellingSchedule","HopDongs",new{id = idDuKhach});
             }
             ViewData["dv_id"] = new SelectList(_context.DichVu, "dv_id", "dv_id", hopDong.dv_id);
             ViewData["dk_id"] = new SelectList(_context.DuKhach, "dk_id", "dk_id", hopDong.dk_id);
-            return View(hopDong);
+            return RedirectToAction("TravellingSchedule","HopDongs",new{id = idDuKhach});
         }
 
         // GET: HopDongs/Edit/5
@@ -175,8 +176,36 @@ namespace LV_DuLichDienTu.Controllers
         {
             int ID = int.Parse(id);
             var acompec_lvdatContext = _context.HopDong.Include(h => h.dichVu).Include(h => h.duKhach).Where(m=>m.dk_id==ID).OrderBy(m=>m.hd_ngaybatdau);
-
             return View(await acompec_lvdatContext.ToListAsync());
         }
+
+        [HttpPost]
+        //id là id dung khách, rating => điểm đánh giá từ 1 đến 5, id hợp đồng để cho update
+        public async Task<IActionResult> Updaterating(double stars,  int hdid, int dvid, string userID)
+        {
+            HopDong hopDong = _context.HopDong.Single(m=>m.hd_id == hdid);
+            hopDong.hd_danhgiachatluong = stars;
+            
+
+
+            // cập nhật lại trung bình đánh giá chất lượng
+            double SumStart_In_HD = _context.HopDong.Where(m=>m.dv_id==dvid&&m.hd_danhgiachatluong!=0).Sum(c=>c.hd_danhgiachatluong);
+            int Count_HD_Voted = _context.HopDong.Where(m=>m.dv_id==dvid&&m.hd_danhgiachatluong!=0).Count();
+            
+            DichVu dichVu = _context.DichVu.Single(q=>q.dv_id==dvid);
+            dichVu.dv_trungbinhchatluong = SumStart_In_HD/Count_HD_Voted;
+            await _context.SaveChangesAsync();
+            
+            return RedirectToAction("TravellingSchedule","HopDongs",new{id = int.Parse(userID)});
+        }
+
+        // Hàm trả về trung bình điểm đánh giá 
+        // public  IActionResult AvgRating(int id)
+        // {
+            
+        //     var Sum = (from HD in _context.HopDong where HD.hd_danhgiachatluong!=0 && HD.hd_id==id select HD.hd_danhgiachatluong).Average();
+        //     TempData["sumRating"] = Sum;
+        //     return View();
+        // }
     }
 }

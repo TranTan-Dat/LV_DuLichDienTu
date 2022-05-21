@@ -91,9 +91,6 @@
                   @Html.DisplayNameFor(model => model.ncc_taikhoan)
                 </th>
 
-                <th>
-                  @Html.DisplayNameFor(model => model.ncc_matkhau)
-                  </th>
 
                 <th>
                   @Html.DisplayNameFor(model => model.ncc_ten)
@@ -111,9 +108,6 @@
                   @Html.DisplayNameFor(model => model.ncc_diachi)
                 </th>
 
-                <th>
-                  Tổng hợp đồng
-                </th>
 
 
 
@@ -128,9 +122,6 @@
                     @Html.DisplayFor(modelItem => item.ncc_taikhoan)
                   </td>
 
-                  <td type="password">
-                    @Html.DisplayFor(modelItem => item.ncc_matkhau)
-                    </td>
 
                   <td>
                     @Html.DisplayFor(modelItem => item.ncc_ten)
@@ -147,24 +138,18 @@
                   <td>
                     @Html.DisplayFor(modelItem => item.ncc_diachi)
                   </td>
-                  <td>cái này để tổng hợp đồng sau</td>
 
 
 
 
                   <td>
-                    <a asp-action="Details" asp-route-id="@item.ncc_id" class="btn btn-success btn-xs"><i
-                      class="fa fa-search"></i> Xem chi tiết</a>|
-                    <a asp-action="Edit" asp-route-id="@item.ncc_id" class="btn btn-primary btn-xs"><i
-                      class="fa fa-pencil"></i> Sửa </a>|
-                    <a asp-action="Delete" asp-route-id="@item.ncc_id" class="btn btn-danger btn-xs"><i
-                      class="fa fa-trash-o"></i> Xóa </a>
+                    <a asp-controller="DichVus" asp-action="Index" asp-route-id="@item.ncc_id" class="btn btn-success btn-xs"><i
+                      class="fa fa-search"></i>Dịch Vụ NCC</a>
                   </td>
                 </tr>
               }
             </tbody>
           </table>
-          *: Bấm vào chi tiết để xem được danh sách hợp đồng của nhà cung cấp
         </div>
       </div>
     </div>

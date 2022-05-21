@@ -7665,6 +7665,20 @@ h1, h2, h3, h4, h5,
       border-color: #fff;
       color: #f85959; }
 
+    .btn.btn-outline-custom {
+      border-color: rgba(179, 74, 74, 1);
+      background: none;
+      -webkit-border-radius: 30px;
+      -moz-border-radius: 30px;
+      -ms-border-radius: 30px;
+      border-radius: 30px;
+      border-width: 1px;
+      color: #fff; }
+      .btn.btn-outline-custom:hover, .btn.btn-outline-custom:focus, .btn.btn-outline-custom:active {
+        background: #fff;
+        border-color: #fff;
+        color: #f85959; }
+
 #accordion .card {
   margin-bottom: 5px;
   border: 1px solid #e6e6e6;

@@ -89,7 +89,7 @@
       <div class="x_content">
         <div> 
           <h2>
-            DỊCH VỤ <small><a asp-action="Create"> Thêm mới</a></small>
+            DỊCH VỤ
         </h2>
         </div>
         
@@ -162,15 +162,11 @@
                   @Html.DisplayFor(modelItem => item.loaiDichVu.ldv_ten)
                 </td>
                 <td>
-                  <a href="~/CamKetDichVus" class="btn btn-success btn-xs"><i
-                    class="fa fa-search"></i> Xem cam kết</a>|
-                  <a asp-action="Edit" asp-route-id="@item.dv_id" class="btn btn-primary btn-xs"><i
-                    class="fa fa-pencil"></i> Sửa </a>
+                  <a asp-controller="CamKetDichVus" asp-action="List_By_ID" asp-route-id="@item.dv_id" class="btn btn-success btn-xs"><i
+                    class="fa fa-search"></i> Xem cam kết</a>
                     <p></p>
                   <a asp-action="details" asp-route-id="@item.dv_id" class="btn btn-success btn-xs"><i
-                    class="fa fa-search"></i> Xem mô tả</a>|
-                  <a asp-action="Delete" asp-route-id="@item.dv_id" class="btn btn-danger btn-xs"><i
-                    class="fa fa-trash-o"></i> Xóa </a>
+                    class="fa fa-search"></i> Xem mô tả</a>
                 </td>
               </tr>
             }

@@ -64,6 +64,7 @@ class DichVu{
   + dv_quanhuyen: string
   + dv_hinh_duongdan: string
   + dv_tieude: string
+  + dv_trungbinhchatluong: dounble
 }
 
 class CamKetDichVu{

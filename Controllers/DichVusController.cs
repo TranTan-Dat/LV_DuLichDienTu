@@ -22,9 +22,9 @@ namespace LV_DuLichDienTu.Controllers
         }
 
         // GET: DichVus
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int?id)
         {
-            var acompec_lvdatContext = _context.DichVu.Include(d => d.loaiDichVu).Include(e => e.nhaCungCap);
+            var acompec_lvdatContext = _context.DichVu.Include(d => d.loaiDichVu).Include(e => e.nhaCungCap).Where(x=>x.ncc_id==id);
             return View(await acompec_lvdatContext.ToListAsync());
         }
 

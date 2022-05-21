@@ -35,10 +35,14 @@ namespace LV_DuLichDienTu.Models
         [DisplayName("Mô tả")]
         public string dv_mota{get;set;}
 
+        [DisplayName("Trung bình chất lượng")]
+        public double dv_trungbinhchatluong{get;set;}
+
         [ForeignKey("ckdv_id")]
         public int ckdv_id {get;set;}
         public ICollection<CamKetDichVu> camKetDichVus {get;set;}
         
+    
 
         [ForeignKey("ncc_id")]
         public int ncc_id {get;set;}
