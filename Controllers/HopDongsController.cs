@@ -185,13 +185,13 @@ namespace LV_DuLichDienTu.Controllers
         {
             HopDong hopDong = _context.HopDong.Single(m=>m.hd_id == hdid);
             hopDong.hd_danhgiachatluong = stars;
-            
+            await _context.SaveChangesAsync();
 
 
             // cập nhật lại trung bình đánh giá chất lượng
-            double SumStart_In_HD = _context.HopDong.Where(m=>m.dv_id==dvid&&m.hd_danhgiachatluong!=0).Sum(c=>c.hd_danhgiachatluong);
-            int Count_HD_Voted = _context.HopDong.Where(m=>m.dv_id==dvid&&m.hd_danhgiachatluong!=0).Count();
-            
+            double SumStart_In_HD = _context.HopDong.Where(m=>m.dv_id==dvid&&m.hd_danhgiachatluong >0).Sum(c=>c.hd_danhgiachatluong);
+            int Count_HD_Voted = _context.HopDong.Where(m=>m.dv_id==dvid&&m.hd_danhgiachatluong>0).Count();
+
             DichVu dichVu = _context.DichVu.Single(q=>q.dv_id==dvid);
             dichVu.dv_trungbinhchatluong = SumStart_In_HD/Count_HD_Voted;
             await _context.SaveChangesAsync();

@@ -20,7 +20,7 @@
     <div class="container">
         <div class="row block-9">
             <div class="col-md-12">
-                <P style="text-align: center;"> Lịch Trình Du Lịch</P>
+                <h2 style="text-align: center;"> Lịch Trình Du Lịch</h2>
                     <div class="form-group chitiet">
                         
                         @{
@@ -39,10 +39,10 @@
                                         
                                         
                                     }
-                                    <p style="color: green;">Dịch vụ: @item.dichVu.dv_ten</p>
+                                    <p style="color: green;"> @item.dichVu.dv_ten</p>
                                     <p>+ Thành phố: @item.dichVu.dv_tinhthanh <br>+ Đánh giá dịch vụ:  @item.hd_danhgiachatluong <span class="icon-stars-resuilt">★</span></p>
                                     <p></p>
-                                    
+                                    <img style="width:150px; height: 100px" src="@item.dichVu.dv_hinh_duongdan"/>
                                     <button onclick="document.getElementById('@NumPopUp').style.display='block'" class="btn-PopUp-Rating">Đánh giá chất lượng</button>
 
                                     <div id='@NumPopUp' class="w3-modal">

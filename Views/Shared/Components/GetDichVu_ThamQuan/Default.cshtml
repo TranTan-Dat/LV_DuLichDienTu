@@ -4,25 +4,24 @@
     {
         <div class="item">
             <div class="destination">
-                <a href="#" class="img img-2 d-flex justify-content-center align-items-center"
+                <a asp-controller="LayoutTourism" asp-action="Details_Service" asp-route-id="@item.dv_id" class="img img-2 d-flex justify-content-center align-items-center"
                     style="background-image: url('@Html.DisplayFor(modelItem => item.dv_hinh_duongdan)');object-fit: contain; ">
                     <div class="icon d-flex justify-content-center align-items-center">
                         <span class="icon-search2"></span>
                     </div>
                 </a>
                 <div class="text p-3">
-                    <div class="d-flex">
-                        <div class="one">
-                            <h3 class="title-destination"><a href="#">
+                    <div >
+                        <div class="items-center">
+                            <h3 class="title-destination"><a asp-controller="LayoutTourism" asp-action="Details_Service" asp-route-id="@item.dv_id">
                                 @Html.DisplayFor(modelItem => item.dv_ten)
                             </a></h3>
                         </div>
                     </div>
-                    <p class="square"></p>
                     <hr>
                     <p class="bottom-area d-flex">
                         <span><i class="icon-map-o"></i> @Html.DisplayFor(modelItem => item.dv_quanhuyen)</span>
-                        <span class="ml-auto"><a asp-controller="LayoutTourism" asp-action="Details_Service" asp-route-id="@item.dv_id">Chi Tiết</a></span>
+                        <span class="ml-auto"><a>@item.dv_trungbinhchatluong</a></span>
                     </p>
                 </div>
             </div>

@@ -1,5 +1,7 @@
 @model LV_DuLichDienTu.Models.DichVu
 
+@using Microsoft.AspNetCore.Http;
+@using System.Data;
 @{
     ViewData["Title"] = "Details";
 }
@@ -86,7 +88,10 @@
                     <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                             <div class="ln_solid"></div>        
-                            <a asp-action="Index" class="btn btn-success"> Quay lại</a>
+                            @{
+                                int temp_dvid = int.Parse(@Context.Session.GetString("userID"));
+                            }
+                            <a asp-action="List_By_ID" asp-route-id="@temp_dvid" class="btn btn-success"> Quay lại</a>
                         </div>
                     </div>
 

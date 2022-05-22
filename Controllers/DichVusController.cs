@@ -79,7 +79,8 @@ namespace LV_DuLichDienTu.Controllers
                 string[] tempCutSpilt = saveimg.Split('\\');
                 string ImgURL = "/"+tempCutSpilt[tempCutSpilt.Length-2]+"/"+tempCutSpilt[tempCutSpilt.Length-1];
                 dichVu.dv_hinh_duongdan = ImgURL;
-
+                
+                dichVu.dv_trungbinhchatluong =0;
                 _context.Add(dichVu);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("List_By_ID","DichVus", new{id = dichVu.ncc_id});
