@@ -21,7 +21,7 @@
                     <hr>
                     <p class="bottom-area d-flex">
                         <span><i class="icon-map-o"></i> @Html.DisplayFor(modelItem => item.dv_quanhuyen)</span>
-                        <span class="ml-auto"><a>@item.dv_trungbinhchatluong</a></span>
+                        <span class="ml-auto"><a>@{@Math.Round(@item.dv_trungbinhchatluong,1)}★</a></span>
                     </p>
                 </div>
             </div>
