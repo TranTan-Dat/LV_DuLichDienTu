@@ -23,6 +23,63 @@ namespace LV_DuLichDienTu.Controllers
 
         public IActionResult Index()
         {
+            
+            // đếm ra số du khách lên lịch trình
+            int count_DKID = (from item in _context.HopDong
+                        select item.dk_id).Distinct().Count();
+            //list lưu id dk
+            List<int> List_IDDK = new List<int>(count_DKID);
+            foreach (var item in _context.HopDong)
+            {
+                bool ContainInList = List_IDDK.Contains(item.dk_id);
+                if (ContainInList == false)
+                {
+                    List_IDDK.Add(item.dk_id);
+                }
+            }
+            
+            //LIST ITEM TỪ TRANSACTION
+            List<string> List_Item = new List<string> ();
+
+
+            // tạo một mảng 2 chiều cột đầu lưu id_dk, cột sau lưu iddv
+            string[,] TempArray = new string[List_IDDK.Count(),2];
+            for (int i = 0; i<  List_IDDK.Count();i++)
+            {string chuoidulieu = "";
+                // TempArray[i,0] = List_IDDK[i];
+                // TempArray[i,1] = 0;
+                var dataIDKH = _context.HopDong.Where(h => h.duKhach.dk_id == List_IDDK[i]).ToList();
+            
+                foreach(var item2 in dataIDKH)
+                {
+                    string temp = item2.dv_id.ToString();
+                    bool ContainORNoT = chuoidulieu.Contains(temp);
+                    if(ContainORNoT==false)
+                    {
+                        chuoidulieu = chuoidulieu+temp+' ';
+                    }
+
+                    //add các Item vào itemlist
+                    bool ItemInList = List_Item.Contains(temp);
+                    if(ItemInList == false)
+                    {
+                        List_Item.Add(temp);
+                    }
+
+                }
+                chuoidulieu = chuoidulieu.TrimEnd(' ');
+                TempArray[i,0]= List_IDDK[i].ToString();
+                TempArray[  i,1]=chuoidulieu;
+            }
+
+            //TRANSACTION D
+            //tạo một list lưu id dv theo id dk, list này có độ dài bằng list id du khách (dùng count)
+            List<string> List_Transaction_IDDV_ByIDDK = new List<string>(List_IDDK.Count());
+            for (var i = 0; i < List_IDDK.Count(); i++)
+            {
+                List_Transaction_IDDV_ByIDDK.Add(TempArray[ i,1]);
+            }
+
             return View();
         }
         [HttpPost]

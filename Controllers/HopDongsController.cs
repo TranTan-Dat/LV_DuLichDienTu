@@ -172,12 +172,24 @@ namespace LV_DuLichDienTu.Controllers
         {
             return _context.HopDong.Any(e => e.hd_id == id);
         }
+
+
         public async Task<IActionResult> TravellingSchedule(string id)
         {
+
+            
+
+            
+
+
+
+
             int ID = int.Parse(id);
             var acompec_lvdatContext = _context.HopDong.Include(h => h.dichVu).Include(h => h.duKhach).Where(m=>m.dk_id==ID).OrderBy(m=>m.hd_ngaybatdau);
             return View(await acompec_lvdatContext.ToListAsync());
         }
+
+        
 
         [HttpPost]
         //id là id dung khách, rating => điểm đánh giá từ 1 đến 5, id hợp đồng để cho update
