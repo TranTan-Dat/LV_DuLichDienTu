@@ -2,6 +2,27 @@
   "version": 3,
   "targets": {
     "net5.0": {
+      "Cotur.DataMining/1.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Cotur.DataMining.Association": "1.2.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/All.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/All.dll": {}
+        }
+      },
+      "Cotur.DataMining.Association/1.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Association.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Association.dll": {}
+        }
+      },
       "Humanizer.Core/2.8.26": {
         "type": "package",
         "compile": {
@@ -2190,6 +2211,32 @@
     }
   },
   "libraries": {
+    "Cotur.DataMining/1.2.0": {
+      "sha512": "5pX/pjFiQ2dEIDpSE96MG2rnNznAkLrPRKPY/ePmKy4W0kKu8XM9MXQpXOl7sGZ0lu855QDomeYVNKGEg1OiPA==",
+      "type": "package",
+      "path": "cotur.datamining/1.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "cotur.datamining.1.2.0.nupkg.sha512",
+        "cotur.datamining.nuspec",
+        "lib/netstandard2.0/All.dll"
+      ]
+    },
+    "Cotur.DataMining.Association/1.2.0": {
+      "sha512": "0Ex/VLFUibhETPZ7wcKGaRMUJrp6V4uFhn5PZf2GdPCWDvCJgh+jUA7yuGzpELdRg7/mzHrr8nrMbd6bpC97pA==",
+      "type": "package",
+      "path": "cotur.datamining.association/1.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "cotur.datamining.association.1.2.0.nupkg.sha512",
+        "cotur.datamining.association.nuspec",
+        "lib/netstandard2.0/Association.dll"
+      ]
+    },
     "Humanizer.Core/2.8.26": {
       "sha512": "OiKusGL20vby4uDEswj2IgkdchC1yQ6rwbIkZDVBPIR6al2b7n3pC91elBul9q33KaBgRKhbZH3+2Ur4fnWx2A==",
       "type": "package",
@@ -7493,6 +7540,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "Cotur.DataMining >= 1.2.0",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 5.0.14",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.14",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.14",
@@ -7545,6 +7593,10 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
+          "Cotur.DataMining": {
+            "target": "Package",
+            "version": "[1.2.0, )"
+          },
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
             "target": "Package",
             "version": "[5.0.14, )"

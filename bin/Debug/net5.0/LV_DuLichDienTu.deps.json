@@ -33,6 +33,7 @@
     ".NETCoreApp,Version=v5.0": {
       "LV_DuLichDienTu/1.0.0": {
         "dependencies": {
+          "Cotur.DataMining": "1.2.0",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "5.0.14",
           "Microsoft.EntityFrameworkCore.Design": "5.0.14",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.14",
@@ -326,6 +327,31 @@
         },
         "compile": {
           "LV_DuLichDienTu.dll": {}
+        }
+      },
+      "Cotur.DataMining/1.2.0": {
+        "dependencies": {
+          "Cotur.DataMining.Association": "1.2.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/All.dll": {
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/All.dll": {}
+        }
+      },
+      "Cotur.DataMining.Association/1.2.0": {
+        "runtime": {
+          "lib/netstandard2.0/Association.dll": {
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Association.dll": {}
         }
       },
       "Humanizer.Core/2.8.26": {
@@ -3687,6 +3713,20 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Cotur.DataMining/1.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5pX/pjFiQ2dEIDpSE96MG2rnNznAkLrPRKPY/ePmKy4W0kKu8XM9MXQpXOl7sGZ0lu855QDomeYVNKGEg1OiPA==",
+      "path": "cotur.datamining/1.2.0",
+      "hashPath": "cotur.datamining.1.2.0.nupkg.sha512"
+    },
+    "Cotur.DataMining.Association/1.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0Ex/VLFUibhETPZ7wcKGaRMUJrp6V4uFhn5PZf2GdPCWDvCJgh+jUA7yuGzpELdRg7/mzHrr8nrMbd6bpC97pA==",
+      "path": "cotur.datamining.association/1.2.0",
+      "hashPath": "cotur.datamining.association.1.2.0.nupkg.sha512"
     },
     "Humanizer.Core/2.8.26": {
       "type": "package",
