@@ -60,6 +60,9 @@
           <thead>
             <tr>
               <th>
+                STT
+              </th>
+              <th>
                 @Html.DisplayNameFor(model => model.ckdv_noidung)
               </th>
               <th>
@@ -72,31 +75,36 @@
             </tr>
           </thead>
           <tbody>
-            @foreach (var item in Model)
-            {
-              <tr>
-                <td>
-                  @Html.DisplayFor(modelItem => item.ckdv_noidung)
-                </td>
-                <td>
-                  @Html.DisplayFor(modelItem => item.ckdv_boithuong)
-                </td>
-                <td>
-                  @Html.DisplayFor(modelItem => item.dichVu.dv_ten)
-                  @*
-                    NẾU Ở ĐÂY ĐỂ DDDL_ID NÓ SẼ RA ID ĐỊA ĐIỂM CỦA TƯNG ẢNH
-                    @Html.DisplayFor(modelItem => item.dddl_id)
-                  *@
-                </td>
-                <td>
-                  <a asp-action="Details" asp-route-id="@item.ckdv_id" class="btn btn-success btn-xs"><i
-                    class="fa fa-search"></i> Xem chi tiết</a>|
-                  <a asp-action="Edit" asp-route-id="@item.ckdv_id" class="btn btn-primary btn-xs"><i
-                    class="fa fa-pencil"></i> Sửa </a>|
-                  <a asp-action="Delete" asp-route-id="@item.ckdv_id" class="btn btn-danger btn-xs"><i
-                    class="fa fa-trash-o"></i> Xóa </a>
-                </td>
-              </tr>
+            @{ int countSTT= 1; 
+              foreach (var item in Model)
+              {
+                <tr>
+                  <td>
+                    @countSTT
+                  </td>
+                  <td>
+                    @Html.DisplayFor(modelItem => item.ckdv_noidung)
+                  </td>
+                  <td>
+                    @Html.DisplayFor(modelItem => item.ckdv_boithuong)
+                  </td>
+                  <td>
+                    @Html.DisplayFor(modelItem => item.dichVu.dv_ten)
+                    @*
+                      NẾU Ở ĐÂY ĐỂ DDDL_ID NÓ SẼ RA ID ĐỊA ĐIỂM CỦA TƯNG ẢNH
+                      @Html.DisplayFor(modelItem => item.dddl_id)
+                    *@
+                  </td>
+                  <td>
+                    @* <a asp-action="Details" asp-route-id="@item.ckdv_id" class="btn btn-success btn-xs"><i
+                      class="fa fa-search"></i> Xem chi tiết</a>| *@
+                    <a asp-action="Edit" asp-route-id="@item.ckdv_id" class="btn btn-primary btn-xs"><i
+                      class="fa fa-pencil"></i> Sửa </a>|
+                    <a asp-action="Delete" asp-route-id="@item.ckdv_id" class="btn btn-danger btn-xs"><i
+                      class="fa fa-trash-o"></i> Xóa </a>
+                  </td>
+                </tr>
+              }
             }
           </tbody>
         </table>

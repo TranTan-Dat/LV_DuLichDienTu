@@ -98,8 +98,9 @@ body {
 
 }
 .login_content{text-shadow:unset;}
+/* Lưu ý */
 a{
-  color: #fff;
+  color: #217ac7;
 }
 .nav_menu{
   background-color: #217ac7 !important;

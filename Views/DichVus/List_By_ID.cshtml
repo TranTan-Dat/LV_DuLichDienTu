@@ -19,6 +19,9 @@
           <thead>
             <tr>
               <th>
+                STT
+              </th>
+              <th>
                 @Html.DisplayNameFor(model => model.dv_ten)
               </th>
               <th>
@@ -49,48 +52,51 @@
             </tr>
           </thead>
           <tbody>
-              
-                @foreach (var item in Model)
-              {
-                <tr>
-                  <td>
-                    @Html.DisplayFor(modelItem => item.dv_ten)
-                  </td>
-                  <td>
-                    <img style="width:150px; height: 100px" src="@Html.DisplayFor(modelItem => item.dv_hinh_duongdan)"/>
-                  </td>
-                  <td>
-                    @Html.DisplayFor(modelItem => item.dv_dienthoai_hotro)
-                  </td>
-                  <td>
-                    @Html.DisplayFor(modelItem => item.dv_tinhthanh)
-                  </td>
-                  <td>
-                    @Html.DisplayFor(modelItem => item.dv_quanhuyen)
-                  </td>
-                  @* <td>
-                    @Html.Raw(item.dv_mota)
-                  </td> *@
-                  <td>
-                    @Html.DisplayFor(modelItem => item.nhaCungCap.ncc_ten)
-                  </td>
-                  <td>
-                    @Html.DisplayFor(modelItem => item.loaiDichVu.ldv_ten)
-                  </td>
-                  <td>
-                    <a asp-controller="CamKetDichVus" asp-action="List_By_ID" asp-route-id="@item.dv_id"  class="btn btn-success btn-xs"><i
-                      class="fa fa-search"></i> Xem cam kết</a>|
-                    <a asp-action="Edit" asp-route-id="@item.dv_id" class="btn btn-primary btn-xs"><i
-                      class="fa fa-pencil"></i> Sửa </a>
-                      <p></p>
-                    <a asp-controller="DichVus" asp-action="details" asp-route-id="@item.dv_id"  class="btn btn-success btn-xs"><i
-                      class="fa fa-search"></i> Xem mô tả</a>|
-                    <a asp-action="Delete" asp-route-id="@item.dv_id" class="btn btn-danger btn-xs"><i
-                      class="fa fa-trash-o"></i> Xóa </a>
-                  </td>
-                </tr>
-              }
-            
+            @{int countSTT= 1; 
+                foreach (var item in Model)
+                {
+                  <tr>
+                    <td>
+                      @countSTT
+                    </td>
+                    <td>
+                      @Html.DisplayFor(modelItem => item.dv_ten)
+                    </td>
+                    <td>
+                      <img style="width:150px; height: 100px" src="@Html.DisplayFor(modelItem => item.dv_hinh_duongdan)"/>
+                    </td>
+                    <td>
+                      @Html.DisplayFor(modelItem => item.dv_dienthoai_hotro)
+                    </td>
+                    <td>
+                      @Html.DisplayFor(modelItem => item.dv_tinhthanh)
+                    </td>
+                    <td>
+                      @Html.DisplayFor(modelItem => item.dv_quanhuyen)
+                    </td>
+                    @* <td>
+                      @Html.Raw(item.dv_mota)
+                    </td> *@
+                    <td>
+                      @Html.DisplayFor(modelItem => item.nhaCungCap.ncc_ten)
+                    </td>
+                    <td>
+                      @Html.DisplayFor(modelItem => item.loaiDichVu.ldv_ten)
+                    </td>
+                    <td>
+                      <a asp-controller="CamKetDichVus" asp-action="List_By_ID" asp-route-id="@item.dv_id"  class="btn btn-success btn-xs"><i
+                        class="fa fa-search"></i> Xem cam kết</a>|
+                      <a asp-action="Edit" asp-route-id="@item.dv_id" class="btn btn-primary btn-xs"><i
+                        class="fa fa-pencil"></i> Sửa </a>
+                        <p></p>
+                      <a asp-controller="DichVus" asp-action="details" asp-route-id="@item.dv_id"  class="btn btn-success btn-xs"><i
+                        class="fa fa-search"></i> Xem mô tả</a>|
+                      <a asp-action="Delete" asp-route-id="@item.dv_id" class="btn btn-danger btn-xs"><i
+                        class="fa fa-trash-o"></i> Xóa </a>
+                    </td>
+                  </tr>
+                }
+            }
           </tbody>
         </table>
       </div>

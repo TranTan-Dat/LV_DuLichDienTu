@@ -100,8 +100,12 @@ namespace LV_DuLichDienTu.Controllers
             {
                 return NotFound();
             }
-            ViewData["dv_id"] = new SelectList(_context.DichVu, "dv_id", "dv_id", camKetDichVu.dv_id);
-            ViewData["selectdv_ten"] = new SelectList(_context.DichVu.Where(m=>m.dv_id ==id), "dv_id", "dv_ten");
+            ViewData["dv_id"] = new SelectList(_context.DichVu, "dv_id", "dv_id");
+            // từ id cám kết lấy ra id của dịch vụ
+            var TakeIdVal =  from takeID in _context.CamKetDichVu where takeID.ckdv_id == id select takeID.dv_id;
+            int fromID_CKDVTo_DV  = TakeIdVal.Single();
+            ViewData["VBag_IDDv"] = fromID_CKDVTo_DV;
+            ViewData["selectdv_ten"] = new SelectList(_context.DichVu.Where(m=>m.dv_id ==fromID_CKDVTo_DV), "dv_id", "dv_ten");
             return View(camKetDichVu);
         }
 

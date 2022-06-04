@@ -25,18 +25,18 @@ rectangle  SoDoTongQuan{
 QLTTKH - DKy
 CapNhat_TTKH ..> QLTTKH : extend
 
-KH --- CapNhat_TTKH
+KH -- CapNhat_TTKH
 KH --- DKy
 
-QLDD --- QL
+QLDD - QL
 QLTTKH -- QL
-QLLDV -- QL
+QLLDV - QL
 
 
 
-NCC --|> KH
+NCC -|> KH
 
-DKhach --|> KH
+DKhach ---|> KH
 
 NCC - CapNhat_TTDD
 NCC - Them_TTDD
