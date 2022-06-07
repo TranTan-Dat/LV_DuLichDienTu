@@ -257,3 +257,13 @@ dl.chitiet > dd{
   display: block;
   padding: 2px; background-color:white; margin:auto
 }
+
+.img_Article img{
+  display: block;
+    margin: auto;
+}
+.img_Article p> i{
+  display: block;
+  text-align: center;
+  max-width: -webkit-fill-available;
+}

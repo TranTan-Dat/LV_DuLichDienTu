@@ -13,16 +13,23 @@
 class NhaCungCap{
   + ncc_id: int
   + ncc_taikhoan: string
-  + ncc_matkhau: string
+  - ncc_matkhau: string
   + ncc_ten: string
   + ncc_email: string
   + ncc_dienthoai: string
   + ncc_diachi: string
+  
+  + dangnhap()
+  + dangxuat()
+  + quanlyDichVu()
+  + quanlyHopdong()
+  + capnhatThongtincanhan()
 }
 
 class DiaDiem_DuLich{
   + dddl_id: int
   + dddl_ten: string
+  + dddl_hinh_duongdan: string
   + dddl_mota: string
   + dddl_tinhthanh: string
   + dddl_quanhuyen: string
@@ -40,19 +47,25 @@ class BaiViet_DiaDiem{
 class DuKhach{
   + dk_id: int
   + dk_taikhoan: string
-  + dk_matKhau: string
+  - dk_matKhau: string
   + dk_hoten: string
   + dk_cmnd: string
   + dk_dienthoai: string
   + dk_diachi: string
   + dk_email: string 
   + dk_diemthanhvien: int
+
+  + dangnhap()
+  + dangxuat()
+  + quanlyHopdong()
+  + capnhatThongtincanhan()
+  
 }
 
 class LoaiDichVu{
-  ldv_id: int
-  ldv_ten: string
-  ldv_mota: string
+  + ldv_id: int
+  + ldv_ten: string
+  + ldv_mota: string
 }
 
 class DichVu{
@@ -85,18 +98,23 @@ class HopDong{
 class NhanVien{
   + nv_id: int
   + nv_taikhoan: string
-  + nv_matKhau: string
+  - nv_matKhau: string
   + nv_hoten: string
   + nv_cmnd: string
   + nv_dienthoai: string
   + nv_diachi: string
   + nv_email: string 
+  
+  + dangnhap()
+  + dangxuat()
+  + capnhatThongtincanhan()
+  + quanlyDiadiemdulich()
+  + quanlyLoaidichvu()
+  + quanlyBaivietdiadiem()
+  + xemthongtinDukhach()
+  + xemthongtinNhacungcap()
 }
 
-class Hinh_DiaDiemDuLich{
-  + hinh_id: int
-  + hinh_duongdan: string
-}
 
 NhaCungCap "1" -- "*" DichVu
 LoaiDichVu "1" -- "*" DichVu
@@ -104,7 +122,6 @@ DuKhach "1" -- "*" BaiViet_DiaDiem
 DiaDiem_DuLich "1" -- "*" BaiViet_DiaDiem
 NhanVien "1" -- "*" BaiViet_DiaDiem
 (DuKhach, DichVu) .. HopDong
-DiaDiem_DuLich "1" -- "*" Hinh_DiaDiemDuLich
 DichVu "1" -- "*" CamKetDichVu
 
 

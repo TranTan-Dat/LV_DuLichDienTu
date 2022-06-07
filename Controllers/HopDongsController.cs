@@ -275,8 +275,13 @@ namespace LV_DuLichDienTu.Controllers
             List<string> ReturnValK = new List<string>();
             List<string>  Str_DTheoK_sPlit= new List<string>();
              
-            for (int i = 1; i < 7; i++)
+
+            // nếu minsup = 2 => chạy tới i=3 là max
+            // nếu minsup = 1 => chạy tới i=7 là max
+
+            for (int i = 1; i < 3; i++)
             {
+                System.Console.WriteLine("----------K = {0}-----",i);
                 //lần đầu tiên lưu lại những ItemSet để dùng cho luật kết hợp, những lần sau gitri = false k gán bằng giá trị này được nữa
                 if (gitri ==true)
                 {
@@ -323,7 +328,6 @@ namespace LV_DuLichDienTu.Controllers
                             {
                                 Console.WriteLine(substring);
                                 ReturnValK.Add(substring);
-
                             }
                             
                         }
@@ -331,32 +335,44 @@ namespace LV_DuLichDienTu.Controllers
                     TempItem_plit = ReturnValK;
                     // lấy tập temitem_split để tính độ sub, kiểm tra sub so sánh min sub để loại ra
                 }
-                //Tạo 1 list lưu trữ item có sup >=3
-                string jádasd ="";
+                //Tạo 1 list lưu trữ item có sup >=1
                 for (int g = 0; g < TempItem_plit.Count(); g++)
                 {
-                    int MINSUP = 1;// gán cứng bằng 3, những phần tử nào dưới 3 sẽ bị loại
+                    int MINSUP = 2;// gán cứng bằng 2, những phần tử nào dưới 2 sẽ bị loại
                     if (Return_Sup(TempItem_plit[g], List_Transaction_IDDV_ByIDDK)< MINSUP)
                     {
+                        System.Console.WriteLine(TempItem_plit[g] + " Co SUP = "+Return_Sup(TempItem_plit[g], List_Transaction_IDDV_ByIDDK) + " < 2 => loai");
                         TempItem_plit.RemoveAt(g);
                         g = g -1  ;
                     }
+                    else{System.Console.WriteLine(TempItem_plit[g] + " Co SUP = "+Return_Sup(TempItem_plit[g], List_Transaction_IDDV_ByIDDK) + " >= 2  => ChapNhan---------");}
                 }
-                ///đang tính khúc này
+                
                 Str_DTheoK_sPlit = TempItem_plit;
-                //Min sub =1, K = 7 là max => không thể kết hợp ra hàm bên dưới
-                // if (Str_DTheoK_sPlit.Count()==1)
-                // {
-                //     break;
-                // }
+                
             }
             
-
-
-
-            // Trả về list những phần tử có sub>minsub & conf > minConf
-            //List<string> checkVal = new List<string>(ThuatToanSinhLuat(Str_DTheoK_sPlit,List_Transaction_IDDV_ByIDDK));
             
+
+
+
+            //Trả về list những phần tử có sub>minsub & conf > minConf
+           // List<string> checkVal = ThuatToanSinhLuat(Str_DTheoK_sPlit,List_Transaction_IDDV_ByIDDK);
+            // đang lỗi khúc add giá trị luật kết hợp vô CheckVal
+
+            List<string> checkVal = new List<string>();
+            for (var i = 0; i < Str_DTheoK_sPlit.Count(); i++)
+            {
+                string Split_val_from_Str_DTheoK_sPlit = Str_DTheoK_sPlit[i];
+                foreach (var item in ThuatToanSinhLuat(Split_val_from_Str_DTheoK_sPlit,List_Transaction_IDDV_ByIDDK))
+                {
+                    checkVal.Add(item);
+                }
+            }
+
+        
+            int check_VALllll = checkVal.Count();
+
 
             //Cần sửa lưu tập luật 
             
@@ -432,14 +448,16 @@ namespace LV_DuLichDienTu.Controllers
         {
             List<string> AprioriVal = new List<string>();
             
-            List<string> temp= new List<string>();
-            temp.Add(Item_theoK);
-            // List<string> temp = Item_theoK[0].Split(" ").ToList();
+            // List<string> temp= new List<string>();
+            // temp.Add(Item_theoK);
+
+            List<string> temp = Item_theoK.Split(" ").ToList();
 
             // List<string> ReturnValK = Item_theoK;
             List<string> ReturnValK = new List<string>();
             ReturnValK.Add(Item_theoK);
             List<string> val = temp;
+            
             for (int i = 1; i < temp.Count(); i++)
             {
                 ReturnValK = new List<string>();
@@ -490,21 +508,32 @@ namespace LV_DuLichDienTu.Controllers
             }
             //Loai Tap ban dau
             val.RemoveAt(val.Count()-1);
+            
+
             foreach (var item in val)
             {
                 Console.WriteLine(item);
             }
+            
+            
             // cho kết hơn giá trị đầu + giá trị cuối
             for (int item = 0; item < val.Count()/2; item++)
             {
                 string ItemA = val[item];
-                string ItemA_BCD = val[val.Count()-1-item];
+
+                string ItemBCD = val[val.Count()-1-item];
+                string ItemA_BCD = ItemA+" "+ItemBCD;  
                 double SupA = Return_Sup(ItemA, D);
                 double SupA_BCD= Return_Sup(ItemA_BCD, D);
-                double Conf = ( SupA_BCD/ SupA)*100;
-                if (Conf >= 70)
+                double Conf = ( SupA_BCD/ SupA);
+                if (Conf >= 0.5)
                 {
-                    AprioriVal.Add(ItemA_BCD);
+                    System.Console.WriteLine(SupA_BCD +" CONF =  "+Conf);
+                        if (checkContain(ItemA_BCD, AprioriVal) == false)
+                        {
+                            AprioriVal.Add(ItemA_BCD);
+                        }
+                    
                 }
             }
 

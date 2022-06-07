@@ -41,7 +41,7 @@
                                 <div class="text p-3">
                                     <div class="d-flex">
                                         <div class="one">
-                                            <h3 class="title-destination"><a href="#">
+                                            <h3 class="title-destination"><a asp-controller="DiaDiem_DuLichs" asp-action="Details" asp-route-id="@item.dddl_id">
                                                 @Html.DisplayFor(modelItem => item.dddl_ten)
                                             </a></h3>
                                         </div>
@@ -49,7 +49,7 @@
                                     <hr>
                                     <p class="bottom-area d-flex">
                                         <span><i class="icon-map-o"></i> @Html.DisplayFor(modelItem => item.dddl_quanhuyen)</span>
-                                        <span class="ml-auto"><a href="#">Chi Tiết</a></span>
+                                        <span class="ml-auto"><a asp-controller="DiaDiem_DuLichs" asp-action="Details" asp-route-id="@item.dddl_id">Chi Tiết</a></span>
                                     </p>
                                 </div>
                             </div>

@@ -17,8 +17,12 @@ rectangle  SoDoTongQuan{
 
   usecase "UC-6 Quản lý thông tin khách hàng" as QLTTKH
   usecase "UC-1 Đăng ký" as DKy
-  usecase "UC-2 Đăng nhập" as DNhap
-  usecase "UC-10 Quản lý lịch trình du lịch" as QLCD
+  usecase "UC-2 Đăng nhập" as DNhapz
+  usecase "UC-9 Quản lý lịch trình du lịch" as QLCD
+  
+  usecase "UC-10 Quản lý bài viết" as QLBV
+
+  
   ' chỗ nay nhà cung cấp và du khách đều dùng quản lý lịch trình du lịch
 }
 
@@ -28,10 +32,10 @@ CapNhat_TTKH ..> QLTTKH : extend
 KH -- CapNhat_TTKH
 KH --- DKy
 
-QLDD - QL
+QLDD -- QL
 QLTTKH -- QL
 QLLDV - QL
-
+QLBV -- QL
 
 
 NCC -|> KH
