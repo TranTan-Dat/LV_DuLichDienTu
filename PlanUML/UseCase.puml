@@ -6,7 +6,7 @@ actor "Nhà cung cấp" as NCC
 actor "Du khách" as DKhach
 
 
-rectangle  SoDoTongQuan{
+rectangle  "SO DO USECASE"{
   usecase "UC-8 Quản lý loại dịch vụ" as QLLDV
   usecase "UC-3 Quản lý địa điểm" as QLDD
   ' usecase "UC-9 Quản lý thông tin " as QLTTDD

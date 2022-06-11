@@ -398,3 +398,4 @@ C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\D
 C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\DiaDiem_DuLichs\Index.cshtml.g.cs
 C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\bin\Debug\net5.0\Association.dll
 C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\bin\Debug\net5.0\All.dll
+C:\Users\Asus\Desktop\LV_Etourism\LV_DuLichDienTu\obj\Debug\net5.0\Razor\Views\Shared\Components\GetAprioriFromDB\Default.cshtml.g.cs
