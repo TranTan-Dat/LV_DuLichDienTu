@@ -3,6 +3,8 @@
 }
 @using Microsoft.AspNetCore.Http;
 @using System.Data;
+@model IEnumerable<LV_DuLichDienTu.Models.HopDong>
+    
 <div class="hero-wrap js-fullheight" style="background-image: url('/TourismTemplate/images/bg_4.jpg');">
     <div class="overlay"></div>
     <div class="container">
@@ -113,13 +115,11 @@
 
             </div>
 
-            <div class="ln_solid"></div>
-            <h5 class="title-text">Dịch Vụ Lưu Trú</h5>
-            <div class="col-md-12">
-                @{int ID_Convert = int.Parse(Context.Session.GetString("userID"));
-                await Component.InvokeAsync("GetAprioriFromDB",ID_Convert);}
-            </div>
-
         </div>
     </div>
 </section>
+<div class="ln_solid"></div>
+    <h5 style="text-align: left;" class="title-text">Những dịch vụ có thể bạn sẽ thích</h5> 
+<div class="col-md-12">
+    @await Component.InvokeAsync("GetAprioriFromDB",int.Parse(Context.Session.GetString("userID")))
+</div>

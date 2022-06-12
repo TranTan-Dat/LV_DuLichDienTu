@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using LV_DuLichDienTu.Models;
 using Microsoft.AspNetCore.Http;
-namespace LV_DuLichDienTu.Views.Shared.Components.GetDichVu
+namespace LV_DuLichDienTu.Views.Shared.Components.GetAprioriFromDB
 {
     public class GetAprioriFromDB : ViewComponent
     {
@@ -42,7 +42,7 @@ namespace LV_DuLichDienTu.Views.Shared.Components.GetDichVu
             int check = Final_value.Count();
 
             // bắt đầu truy vấn lấy id dịch vụ mà du khách lựa chọn 
-            var acompec_lvdatContext = _context.HopDong.Include(h => h.dichVu).Include(h => h.duKhach).Where(m=>m.dk_id==ID).OrderBy(m=>m.hd_ngaybatdau);
+            var acompec_lvdatContext = _context.HopDong.Include(h => h.dichVu).Include(h => h.duKhach);
             var ListIDService_By_User =  _context.HopDong.Where(m=>m.dk_id== id_dukhach).Select(s => s.dv_id).Distinct().ToList();
             List<string> String_ListIDService_By_User = ListIDService_By_User.ConvertAll<string>(x => x.ToString());
             string SUbStringValIDServicesByUser = "";
@@ -53,7 +53,7 @@ namespace LV_DuLichDienTu.Views.Shared.Components.GetDichVu
             }
             SUbStringValIDServicesByUser=SUbStringValIDServicesByUser.TrimEnd(' ');
             int count = 0;
-    //tách sub ra thành list nhiều phần tử
+             //tách sub ra thành list nhiều phần tử
             List<string> Ptu_Sub = SUbStringValIDServicesByUser.Split(' ').ToList();
             //Duyệt trong List return 
             for (int i = 0; i < Final_value.Count; i++)
@@ -79,19 +79,44 @@ namespace LV_DuLichDienTu.Views.Shared.Components.GetDichVu
             }
             //Kết quả trả về là danh sách các phần tử có id giống như id dịch vụ ncc chọn
 
-            //Cần show các id đó lên màn hình
-
-
-            // Cần lọc lại danh sách để tránh trùng id địa điểm
-            //List<string> ListID_AFter_Distinct = ListIDService_By_User.FirstOrDefault().ToList();
-            //chạy vòng lặp for từng phần tử, nếu phần tử có trùng trong list =>loại
-
-            foreach (var item in Final_value)
+            //Danh sách gợi ý phải loại ra những thằng đã chọn
+            //1. tách List_ID_NeedToShow thành 1 tập phần tử lẻ
+            //2. lấy list địa điểm dk chọn (list là ptusup) Đã có
+            string substring_List_ID_NeedToShow = "";
+            for (var i = 0; i < List_ID_NeedToShow.Count; i++)
             {
-                
+                substring_List_ID_NeedToShow= substring_List_ID_NeedToShow+List_ID_NeedToShow[i]+" ";
+            }
+            substring_List_ID_NeedToShow=substring_List_ID_NeedToShow.Trim();
+            List<string> list_substring_List_ID_NeedToShow = substring_List_ID_NeedToShow.Split(' ').ToList(); //list id gợi ý cho dk khách
+
+            // chạy các for i -> ptusub.count , kiem tra ptusub[i] co nam trong List_substring_List_ID_NeedToShow 
+            for (var i = 0; i < list_substring_List_ID_NeedToShow.Count; i++)
+            {
+                for (var j = 0; j < Ptu_Sub.Count; j++)
+                {
+                    if (Ptu_Sub[j]==list_substring_List_ID_NeedToShow[i])
+                    {
+                        list_substring_List_ID_NeedToShow.RemoveAt(i);
+                        i=i-1;
+                    }
+                }
+            }
+            @ViewData["list4"] = list_substring_List_ID_NeedToShow;
+            // foreach (var item in list_substring_List_ID_NeedToShow)
+            // {
+            //    var KQ = _context.DichVu.Where(m => m.dv_id ==  int.Parse(item));
+            // }
+            // ViewBag.list4 = KQ;
+            System.Console.WriteLine("kq tra ve");
+            foreach (var item in ViewBag.list4)
+            {
+                System.Console.WriteLine(item);
             }
             
-            return View(await acompec_lvdatContext.ToListAsync());
+
+            var result = await _context.DichVu.ToListAsync();
+            return View<List<DichVu>>(result);
             
         }
 
