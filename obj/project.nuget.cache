@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4OOxlcMFD6jCLCUU+cpYfDcLQu5XigbeJptvK+Pye5pHc1X0869gM2NGhY7PkoRNIawdKfZsEx8HwcpU3cihUA==",
+  "dgSpecHash": "tYxJ7eqmYsKVaHUY4kscEYLWBJ1OImmeKqysE++iNKGb6PQFKbnjdhVK5ANC8fWG/+CUmJ8gxWBCjE+FI9AuwQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Asus\\Desktop\\LV_Etourism\\lv_dulichdientu\\LV_DuLichDienTu.csproj",
+  "projectFilePath": "C:\\Users\\Asus\\Desktop\\LV_Etourism\\LV_DuLichDienTu\\LV_DuLichDienTu.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Asus\\.nuget\\packages\\cotur.datamining\\1.2.0\\cotur.datamining.1.2.0.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\cotur.datamining.association\\1.2.0\\cotur.datamining.association.1.2.0.nupkg.sha512",
