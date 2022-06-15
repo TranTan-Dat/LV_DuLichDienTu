@@ -22,7 +22,7 @@ namespace LV_DuLichDienTu.Views.Shared.Components.GetAprioriFromDB
         public async Task<IViewComponentResult> InvokeAsync(int id_dukhach)
         {   
             int ID = id_dukhach ;
-            
+            List<string> list_substring_List_ID_NeedToShow = new List<string>();
             //Tập luật kết hợp trả về ds gợi ý địa điểm chưa tính theo rating
             List<string> Val_Apriori =  Function_Apriori();
             List<string> Final_value = new List<string>();
@@ -44,64 +44,73 @@ namespace LV_DuLichDienTu.Views.Shared.Components.GetAprioriFromDB
             // bắt đầu truy vấn lấy id dịch vụ mà du khách lựa chọn 
             var acompec_lvdatContext = _context.HopDong.Include(h => h.dichVu).Include(h => h.duKhach);
             var ListIDService_By_User =  _context.HopDong.Where(m=>m.dk_id== id_dukhach).Select(s => s.dv_id).Distinct().ToList();
-            List<string> String_ListIDService_By_User = ListIDService_By_User.ConvertAll<string>(x => x.ToString());
-            string SUbStringValIDServicesByUser = "";
-            List<string> List_ID_NeedToShow = new List<string>();
-            for (var i = 0; i < String_ListIDService_By_User.Count(); i++)
+            if (ListIDService_By_User.Count() ==0)
             {
-                SUbStringValIDServicesByUser= SUbStringValIDServicesByUser+String_ListIDService_By_User[i]+" ";
+                list_substring_List_ID_NeedToShow.Add("");
             }
-            SUbStringValIDServicesByUser=SUbStringValIDServicesByUser.TrimEnd(' ');
-            int count = 0;
-             //tách sub ra thành list nhiều phần tử
-            List<string> Ptu_Sub = SUbStringValIDServicesByUser.Split(' ').ToList();
-            //Duyệt trong List return 
-            for (int i = 0; i < Final_value.Count; i++)
-            {   count = 0;
-             bool CheckValContain = false;
-                //tách phẩn tử list return ra nhỏ hơn
-                //List<string> Ptu_ReturnVal = Final_value[i].Split(' ').ToList();
-                //kiểm tra phẩn tử sub nếu có trong phần tử list Final_value => count +1
-                for (int j = 0; j < Ptu_Sub.Count(); j++)
+            else
+            {
+                List<string> String_ListIDService_By_User = ListIDService_By_User.ConvertAll<string>(x => x.ToString());
+                string SUbStringValIDServicesByUser = "";
+                List<string> List_ID_NeedToShow = new List<string>();
+                for (var i = 0; i < String_ListIDService_By_User.Count(); i++)
                 {
-                     CheckValContain = Final_value[i].Contains(Ptu_Sub[j]);
-                        if (CheckValContain == true)
-                        {
-                            count++;
-                        }
-                    
+                    SUbStringValIDServicesByUser= SUbStringValIDServicesByUser+String_ListIDService_By_User[i]+" ";
                 }
-                if (count>= 1)
-                {
-                    List_ID_NeedToShow.Add(Final_value[i]);
-                }
-            
-            }
-            //Kết quả trả về là danh sách các phần tử có id giống như id dịch vụ ncc chọn
-
-            //Danh sách gợi ý phải loại ra những thằng đã chọn
-            //1. tách List_ID_NeedToShow thành 1 tập phần tử lẻ
-            //2. lấy list địa điểm dk chọn (list là ptusup) Đã có
-            string substring_List_ID_NeedToShow = "";
-            for (var i = 0; i < List_ID_NeedToShow.Count; i++)
-            {
-                substring_List_ID_NeedToShow= substring_List_ID_NeedToShow+List_ID_NeedToShow[i]+" ";
-            }
-            substring_List_ID_NeedToShow=substring_List_ID_NeedToShow.Trim();
-            List<string> list_substring_List_ID_NeedToShow = substring_List_ID_NeedToShow.Split(' ').ToList(); //list id gợi ý cho dk khách
-
-            // chạy các for i -> ptusub.count , kiem tra ptusub[i] co nam trong List_substring_List_ID_NeedToShow 
-            for (var i = 0; i < list_substring_List_ID_NeedToShow.Count; i++)
-            {
-                for (var j = 0; j < Ptu_Sub.Count; j++)
-                {
-                    if (Ptu_Sub[j]==list_substring_List_ID_NeedToShow[i])
+                SUbStringValIDServicesByUser=SUbStringValIDServicesByUser.TrimEnd(' ');
+                int count = 0;
+                //tách sub ra thành list nhiều phần tử
+                List<string> Ptu_Sub = SUbStringValIDServicesByUser.Split(' ').ToList();
+                for (int i = 0; i < Final_value.Count; i++)
+                {   count = 0;
+                bool CheckValContain = false;
+                    //tách phẩn tử list return ra nhỏ hơn
+                    //List<string> Ptu_ReturnVal = Final_value[i].Split(' ').ToList();
+                    //kiểm tra phẩn tử sub nếu có trong phần tử list Final_value => count +1
+                    for (int j = 0; j < Ptu_Sub.Count(); j++)
                     {
-                        list_substring_List_ID_NeedToShow.RemoveAt(i);
-                        i=i-1;
+                        CheckValContain = Final_value[i].Contains(Ptu_Sub[j]);
+                            if (CheckValContain == true)
+                            {
+                                count++;
+                            }
+                        
+                    }
+                    if (count>= 1)
+                    {
+                        List_ID_NeedToShow.Add(Final_value[i]);
+                    }
+                
+                }
+                //Duyệt trong List return 
+                
+                //Kết quả trả về là danh sách các phần tử có id giống như id dịch vụ ncc chọn
+
+                //Danh sách gợi ý phải loại ra những thằng đã chọn
+                //1. tách List_ID_NeedToShow thành 1 tập phần tử lẻ
+                //2. lấy list địa điểm dk chọn (list là ptusup) Đã có
+                string substring_List_ID_NeedToShow = "";
+                for (var i = 0; i < List_ID_NeedToShow.Count; i++)
+                {
+                    substring_List_ID_NeedToShow= substring_List_ID_NeedToShow+List_ID_NeedToShow[i]+" ";
+                }
+                substring_List_ID_NeedToShow=substring_List_ID_NeedToShow.Trim();
+                list_substring_List_ID_NeedToShow = substring_List_ID_NeedToShow.Split(' ').ToList(); //list id gợi ý cho dk khách
+
+                // chạy các for i -> ptusub.count , kiem tra ptusub[i] co nam trong List_substring_List_ID_NeedToShow 
+                for (var i = 0; i < list_substring_List_ID_NeedToShow.Count; i++)
+                {
+                    for (var j = 0; j < Ptu_Sub.Count; j++)
+                    {
+                        if (Ptu_Sub[j]==list_substring_List_ID_NeedToShow[i])
+                        {
+                            list_substring_List_ID_NeedToShow.RemoveAt(i);
+                            i=i-1;
+                        }
                     }
                 }
             }
+
             @ViewData["list4"] = list_substring_List_ID_NeedToShow;
             // foreach (var item in list_substring_List_ID_NeedToShow)
             // {

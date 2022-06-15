@@ -80,12 +80,23 @@
     ViewData["Title"] = "Edit";
 }
 
+<div class="hero-wrap js-fullheight" style="background-image: url(&quot;/TourismTemplate/images/bg_4.jpg&quot;); height: 738px;">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true" style="height: 738px;">
+            <div class="col-md-9 ftco-animate text-center fadeInUp ftco-animated" data-scrollax=" properties: { translateY: '70%' }" style="transform: translateZ(0px) translateY(35.2087%);">
+                <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }" style="opacity: 0.19523; transform: translateZ(0px) translateY(15.0894%);">Lịch Trình Du Lịch
+                </h1>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="">
-    <div class="row">
-        <div class="col-md-10 center-margin">
-            <div class="x_panel">
-                <div class="x_title">
+    <div class="row" style="display: -webkit-box; flex-wrap: nowrap;">
+        <div class="col-md-12 center-margin">
+            <div class="x_panel" >
+                <div class="x_title" style="text-align:center">
                     <h2>CHỈNH SỬA THÔNG TIN CÁ NHÂN DU KHÁCH</h2>
                     <div class="clearfix"></div>
                 </div>
@@ -96,20 +107,20 @@
                         <input type="hidden" asp-for="dk_id" />
 
                         <div class="form-group">
-                            <div class="control-label col-md-3 col-sm-3 col-xs-12">
+                            <div class="control-label col-md-3 col-sm-3 col-xs-12" style="margin-left: 25%">
                                 <label asp-for="dk_hoten"></label>
                             </div>
-                            <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="col-md-6 col-sm-6 col-xs-12" style="margin-left: 25%">
                                 <input asp-for="dk_hoten" class="form-control" />
                                 <span asp-validation-for="dk_hoten" class="text-danger"></span>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <div class="control-label col-md-3 col-sm-3 col-xs-12">
+                            <div class="control-label col-md-3 col-sm-3 col-xs-12" style="margin-left: 25%">
                                 <label asp-for="dk_taikhoan"></label>
                             </div>
-                            <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="col-md-6 col-sm-6 col-xs-12" style="margin-left: 25%">
                                 <input asp-for="dk_taikhoan" class="form-control" />
                                 <span asp-validation-for="dk_taikhoan" class="text-danger"></span>
                             </div>
@@ -117,48 +128,48 @@
 
 
                          <div class="form-group">
-                            <div class="control-label col-md-3 col-sm-3 col-xs-12">
+                            <div class="control-label col-md-3 col-sm-3 col-xs-12" style="margin-left: 25%">
                                 <label asp-for="dk_matkhau"></label>
                             </div>
-                            <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="col-md-6 col-sm-6 col-xs-12" style="margin-left: 25%">
                                 <input asp-for="dk_matkhau" class="form-control" />
                                 <span asp-validation-for="dk_matkhau" class="text-danger"></span>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <div class="control-label col-md-3 col-sm-3 col-xs-12">
+                            <div class="control-label col-md-3 col-sm-3 col-xs-12" style="margin-left: 25%">
                                 <label asp-for="dk_cmnd"></label>
                             </div>
-                            <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="col-md-6 col-sm-6 col-xs-12" style="margin-left: 25%">
                                 <input asp-for="dk_cmnd" class="form-control" />
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <div class="control-label col-md-3 col-sm-3 col-xs-12">
+                            <div class="control-label col-md-3 col-sm-3 col-xs-12" style="margin-left: 25%">
                                 <label asp-for="dk_dienthoai"></label>
                             </div>
-                            <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="col-md-6 col-sm-6 col-xs-12" style="margin-left: 25%">
                                 <input asp-for="dk_dienthoai" class="form-control" />
                                 <span asp-validation-for="dk_dienthoai" class="text-danger"></span>
                             </div>
                         </div>        
 
                         <div class="form-group">
-                            <div class="control-label col-md-3 col-sm-3 col-xs-12">
+                            <div class="control-label col-md-3 col-sm-3 col-xs-12" style="margin-left: 25%">
                                 <label asp-for="dk_diachi"></label>
                             </div>
-                            <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="col-md-6 col-sm-6 col-xs-12"style="margin-left: 25%">
                                 <input asp-for="dk_diachi" class="form-control" />
                                 <span asp-validation-for="dk_diachi" class="text-danger"></span>
                             </div>
                         </div> 
                         <div class="form-group">
-                            <div class="control-label col-md-3 col-sm-3 col-xs-12">
+                            <div class="control-label col-md-3 col-sm-3 col-xs-12"style="margin-left: 25%">
                                 <label asp-for="dk_email"></label>
                             </div>
-                            <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="col-md-6 col-sm-6 col-xs-12"style="margin-left: 25%">
                                 <input asp-for="dk_email" class="form-control" />
                                 <span asp-validation-for="dk_email" class="text-danger"></span>
                             </div>
@@ -166,9 +177,9 @@
                         
                         <div class="ln_solid"></div>
                         <div class="form-group">
-                            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3" style="margin-left: 45%;">
                                 @* <button asp-action="Index" class="btn btn-success"> Quay lại</button> *@
-                                <input type="submit" value="Lưu" class="btn btn-primary" />
+                                <input type="submit" value="Lưu" class="btn btn-primary"    style="padding: 6px 50px;" />
                             </div>
                         </div>
                     </form>

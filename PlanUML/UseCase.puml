@@ -15,9 +15,9 @@ rectangle  "SO DO USECASE"{
   usecase "UC-5 Cập nhật dịch vụ " as CapNhat_TTDD
   usecase "UC-7 Cập nhật thông tin khách hàng" as CapNhat_TTKH
 
-  usecase "UC-6 Quản lý thông tin khách hàng" as QLTTKH
+  usecase "UC-6 Xem thông tin nhà cung cấp" as QLTTKH
   usecase "UC-1 Đăng ký" as DKy
-  usecase "UC-2 Đăng nhập" as DNhapz
+  usecase "UC-2 Đăng nhập" as DNhap
   usecase "UC-9 Quản lý lịch trình du lịch" as QLCD
   
   usecase "UC-10 Quản lý bài viết" as QLBV
@@ -26,7 +26,7 @@ rectangle  "SO DO USECASE"{
   ' chỗ nay nhà cung cấp và du khách đều dùng quản lý lịch trình du lịch
 }
 
-QLTTKH - DKy
+
 CapNhat_TTKH ..> QLTTKH : extend
 
 KH -- CapNhat_TTKH
@@ -40,12 +40,12 @@ QLBV -- QL
 
 NCC -|> KH
 
-DKhach ---|> KH
+DKhach --|> KH
 
 NCC - CapNhat_TTDD
 NCC - Them_TTDD
 
 
-DKhach -- QLCD
+DKhach - QLCD
 
 @enduml
