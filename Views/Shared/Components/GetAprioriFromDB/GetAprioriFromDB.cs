@@ -110,7 +110,7 @@ namespace LV_DuLichDienTu.Views.Shared.Components.GetAprioriFromDB
                     }
                 }
             }
-
+            // lưu giá trị vài view Data
             @ViewData["list4"] = list_substring_List_ID_NeedToShow;
             // foreach (var item in list_substring_List_ID_NeedToShow)
             // {
@@ -332,7 +332,7 @@ namespace LV_DuLichDienTu.Views.Shared.Components.GetAprioriFromDB
         
              return checkVal;
         }
-
+        //Hàm kiểm tra string có nằm trong danh sách k 
         public static bool checkContain(string sub, List<string> ReTurnVal)
         {
             bool checkContain = false;
@@ -362,7 +362,7 @@ namespace LV_DuLichDienTu.Views.Shared.Components.GetAprioriFromDB
             
             return checkContain;
         }
-
+        //Tính sub
         static int Return_Sup(string Item, List<string> D)
         {
             
@@ -391,7 +391,7 @@ namespace LV_DuLichDienTu.Views.Shared.Components.GetAprioriFromDB
             }
             return sub;
         }
-
+        //Tính thuật toán sinh luật
         public static List<string> ThuatToanSinhLuat(string Item_theoK, List<string> D)
         {
             List<string> AprioriVal = new List<string>();

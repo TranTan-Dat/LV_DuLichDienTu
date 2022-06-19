@@ -261,9 +261,14 @@ dl.chitiet > dd{
 .img_Article img{
   display: block;
     margin: auto;
+    max-width: -webkit-fill-available;
 }
 .img_Article p> i{
   display: block;
   text-align: center;
   max-width: -webkit-fill-available;
+}
+.img_Article figure > image{
+  max-width: initial;
+  max-height: initial;
 }
