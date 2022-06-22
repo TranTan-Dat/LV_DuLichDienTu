@@ -31,7 +31,7 @@ namespace LV_DuLichDienTu.Controllers
         public async Task<IActionResult> List_By_ID(int?id)
         {
             var acompec_lvdatContext = _context.HopDong.Include(h => h.dichVu).Include(h => h.duKhach).Where(x=>x.dichVu.ncc_id==id);
-           
+            // ViewData["sdt"] = _context.HopDong.Include(h => h.dichVu).Include(h => h.duKhach).Where(x=>x.dichVu.ncc_id==id).Select(m=>m.duKhach.dk_dienthoai);
             return View(await acompec_lvdatContext.ToListAsync());
         }
 

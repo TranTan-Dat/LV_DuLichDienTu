@@ -105,7 +105,10 @@ namespace LV_DuLichDienTu.Views.Shared.Components.GetAprioriFromDB
                         if (Ptu_Sub[j]==list_substring_List_ID_NeedToShow[i])
                         {
                             list_substring_List_ID_NeedToShow.RemoveAt(i);
-                            i=i-1;
+                            if (i!=0)
+                            {i=i-1;
+                                break;
+                            }
                         }
                     }
                 }

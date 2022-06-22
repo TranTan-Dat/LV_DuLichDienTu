@@ -25,7 +25,8 @@
                 <h2 style="text-align: center;"> Lịch Trình Du Lịch</h2>
                     <div class="form-group chitiet">
                         
-                        @{
+                        @{ 
+                            int sum_chiphi=0;
                             string tempNgay ="";
                             int NumPopUp = 1;
                             string userID=Context.Session.GetString("userID");
@@ -44,20 +45,30 @@
                                     <p style="color: green;"> @item.dichVu.dv_ten</p>
                                     <p>+ Thành phố: @item.dichVu.dv_tinhthanh <br>+ Đánh giá dịch vụ:  @item.hd_danhgiachatluong <span class="icon-stars-resuilt">★</span></p>
                                     <p></p>
-                                    <img style="width:150px; height: 100px" src="@item.dichVu.dv_hinh_duongdan"/>
+                                    <div style="display: -webkit-box;;">
+                                        <div style="width:50%">
+                                            <img style="width:150px; height: 100px" src="@item.dichVu.dv_hinh_duongdan"/>
+                                        </div>
+                                        <div style="margin:auto 0px">Giá trung bình: @item.dichVu.dv_tb_gia</div>
+                                    </div>
+                                    sum_chiphi+=@item.dichVu.dv_tb_gia;
                                     <button onclick="document.getElementById('@NumPopUp').style.display='block'" class="btn-PopUp-Rating">Đánh giá chất lượng</button>
 
                                     <div id='@NumPopUp' class="w3-modal">
                                         <div class="w3-modal-content">
+                                            <div class="items-center" style="background-color: #446fd3e3;">
+                                                    <h3  style="color: white;">Đánh giá dịch vụ</h3>
+                                            </div>
                                         <div class="w3-container">
                                             @{
                                                 @* var tempHDid = @item.hd_id;
                                                 var tempDVid = @item.dv_id; *@
-                                                <h5>Đánh giá dịch vụ</h5>
+                                                
+                                                
                                                 <h4 class="items-center">
                                                     @item.dichVu.dv_ten
+                                                    
                                                 </h4>
-                                                <span onclick="document.getElementById('@NumPopUp').style.display='none'" class="w3-button w3-display-topright">&times;</span>
                                                 <form asp-controller="HopDongs" asp-action="Updaterating" asp-route-hdid="@item.hd_id" asp-route-dvid="@item.dv_id" asp-route-userID="@userID">
                                                     <div class="rating">
                                                             <label>
@@ -91,14 +102,12 @@
                                                             <span class="icon">★</span>
                                                         </label>
                                                     </div>
-                                                    <button id="SetVal_Rating" onclick="document.getElementById('@NumPopUp').style.display='none'"  type="submit" class="btn btn-default submit">Đánh Giá</button>
+                                                    <div class="submit-option-rating">
+                                                        <a class="btn btn-outline-custom" onclick="document.getElementById('@NumPopUp').style.display='none'">Quay Lại</a>
+                                                        <button id="SetVal_Rating" onclick="document.getElementById('@NumPopUp').style.display='none'"  type="submit" class="btn btn-default submit btn-primary">Đánh Giá</button>
+                                                    </div>
                                                 </form>
-                                            
                                             <br>
-                                            <div class="submit-option-rating">
-                                                <a class="btn btn-outline-custom" onclick="document.getElementById('@NumPopUp').style.display='none'">Quay Lại</a>
-                                                <a class="btn btn-primary" id="SetVal_Rating" onclick="document.getElementById('@NumPopUp').style.display='none'" >Lưu</a>
-                                            </div>
                                             }
                                             
                                             
@@ -109,17 +118,15 @@
                                 }
                         }
                     </div>
-                    <div class="form-group">
-                        <a asp-controller="HopDongs" asp-action="Edit" asp-route-id='@Context.Session.GetString("userID")' class="btn btn-primary py-3 px-5">Cập Nhật Thông Tin</a>
-                    </div>
-
+                <div class="ln_solid"></div>
+                <h3 style="text-align:right; color: #d28383; ">Tổng chi phí ước tính: <u>@sum_chiphi</u>  </h3>
             </div>
 
         </div>
     </div>
 </section>
 <div class="ln_solid"></div>
-    <h5 style="text-align: left;" class="title-text">Những dịch vụ có thể bạn sẽ thích</h5> 
+    <h5 style="text-align: center;" class="title-text">Những dịch vụ có thể bạn sẽ thích</h5> 
 <div class="col-md-12">
     @await Component.InvokeAsync("GetAprioriFromDB",int.Parse(Context.Session.GetString("userID")))
 </div>

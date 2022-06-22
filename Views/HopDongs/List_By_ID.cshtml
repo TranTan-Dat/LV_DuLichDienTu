@@ -20,11 +20,14 @@
                 <th>
                   STT
                 </th>
-                <th>
+                @* <th>
                   Tên dịch vụ
-                </th>
+                </th> *@
                 <th>
                   Tên du khách
+                </th>
+                <th>
+                  Số điện thoại
                 </th>
                 <th>
                   @Html.DisplayNameFor(model => model.hd_ngaybatdau)
@@ -32,7 +35,7 @@
                 <th>
                   @Html.DisplayNameFor(model => model.hd_ngayketthuc)
                 </th>
-                <th>Tùy chọn</th>
+                @* <th>Tùy chọn</th> *@
               </tr>
             </thead>
             <tbody>
@@ -43,12 +46,15 @@
                         <td>
                             @countSTT
                         </td>
-                        <td>
+                        @* <td>
                             @Html.DisplayFor(modelItem => item.dichVu.dv_ten)
                             
-                        </td>
+                        </td> *@
                         <td>
                             @Html.DisplayFor(modelItem => item.duKhach.dk_hoten)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.duKhach.dk_dienthoai)
                         </td>
                         <td>
                             @* @Html.DisplayFor(modelItem => item.hd_ngaybatdau) *@
@@ -64,14 +70,14 @@
                                 <p>@item.hd_ngayketthuc.ToString("dd/M/yyyy")</p>
                             }
                         </td>
-                    <td>
+                    @* <td>
                         <a asp-action="Details" asp-route-id="@item.hd_id" class="btn btn-success btn-xs"><i
                         class="fa fa-search"></i> Xem chi tiết</a>|
                         <a asp-action="Edit" asp-route-id="@item.hd_id" class="btn btn-primary btn-xs"><i
                         class="fa fa-pencil"></i> Sửa </a>|
                         <a asp-action="Delete" asp-route-id="@item.hd_id" class="btn btn-danger btn-xs"><i
                         class="fa fa-trash-o"></i> Xóa </a>
-                    </td>
+                    </td> *@
                     </tr>
                     countSTT++;
                 }

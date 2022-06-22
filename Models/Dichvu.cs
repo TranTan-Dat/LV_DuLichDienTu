@@ -35,6 +35,9 @@ namespace LV_DuLichDienTu.Models
         [DisplayName("Mô tả")]
         public string dv_mota{get;set;}
 
+        [DisplayName("Giá trung bình")]
+        public int dv_tb_gia{get;set;}
+
         [DisplayName("Trung bình chất lượng")]
         public double dv_trungbinhchatluong{get;set;}
 

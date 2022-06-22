@@ -1,205 +1,33 @@
 @startuml
+left to right direction
 skinparam linetype ortho
-class DeCuongchiTiet{
-    + mahp: int
-    + mahp_decuong: string
-    + tenhp_tviet: string
-    + tenhp_tanh: string
-    + sotc_lt: int
-    + sotc_th: int
-    + hp_tienquyet: string
-    + yeucau_hocphan: string
-    + yeucaukhacvoi_voihocphan: string
-    + tomtat_noidunghocphan: string
+actor "Quản trị viên" as ad
+actor "Giảng viên" as urs
+rectangle "Hệ thống chương trình đào tạo và đề cương chi tiết"{
+ urs -- (Quản lý Đề cương chi tiết)
+ (Quản lý Đề cương chi tiết) <..... (Xuất file PDF ĐCCTHP) : extends
+ urs -- (Quản lý Chương trình đào tạo)
+ (Quản lý Chương trình đào tạo) <..... (Xuất file PDF CTDT) : extends 
+ urs -- (Quản lý Tài liệu tham khảo)
+urs -- (Quản lý Mục tiêu đề cương học phần)
+urs -- (Quản lý Hình thức đánh giá)
+urs -- (Quản lý Quy trình đào tạo và Điểu kiện tốt nghiệp)
+urs -- (Quản lý Đối tượng tuyển sinh)
+urs -- (Quản lý Nhiệm vụ sinh viên)
+urs -- (Quản lý Quy định kiểm tra)
+urs -- (Quản lý Khối kiến thức)
+urs -- (Quản lý Giảng viên)
+urs -- (Quản lý Bộ môn)
+urs -- (Quản lý Khoa)
+urs -- (Quản lý Chi tiết môn học)
+urs -- (Quản lý Chi tiết chương)
+urs -- (Quản lý Học kỳ)
+urs -- (Quản lý Thời gian học)
+urs -- (Quản lý Khóa học)
+urs -- (Quản lý Phương pháp học)
+urs -- (Quản lý Phương pháp dạy)
+urs -- (Quản lý Chuẩn đầu ra đề cương học phần)
+urs -- (Quản lý Chuẩn đầu ra chương trình đào tạo)
+urs -- (Quản lý Mục tiêu đào tạo)
 }
-
-class Thoigianhoc{
-    + matg: int
-    + yeucauhocphan: string
-}
-
-class Hocky{
-    + mahk: int
-    + tenhk: string
-}
-
-class Khoahoc{
-    + makh: int
-    + tenkh: string
-    + nienkhoa: string
-}
-
-class GiangVien{
-    + magv: int
-    + hoten: string
-    + chucdanh: string
-    + hocham: string
-    + hocvi: string
-    + diachilienhe: string
-}
-class Phutrach{
-    + mapt: int
-    + vaitro: string
-}
-
-class Bomon{
-    + mabm: int
-    + tenbm: string
-}
-
-class Khoa{
-    + makh: int
-    + tenkh: string
-}
-
-class Muctieu{
-    + mamt: int
-    + noidung: string
-    + mtchinh: string
-    + mtphu: string
-}
-
-class Chuandaura_monhoc{
-    + macdrmon: int
-    + chisoclo: int
-    + noidung: string
-    + loai: string
-}
-
-class PLO{
-    + maplo: int
-    + tenloai_plo
-    + chitietten_plo
-    + chisoplo: string
-    + noidung: string
-}
-
-class CLPO{
-    + maclpo: int
-    + ngayupdate: datetime
-}
-
-class Chitietmonhoc{
-    + mact: int
-    + chiso: int
-    + tenchuong: string
-    + tietlt: int
-    + tietth: int
-}
-
-class Chitiet_Chuong{
-    + mactchuong: int
-    + chiso: int
-    + tentieumuc: string
-    + tuanhoc: int
-    + thoiluonghoc:double
-    + thoiluonghoc_thuchanh:double
-}
-
-class Phuongphap_Giangday{
-    + mappday: int
-    + tenpp: string
-}
-
-class CLOPhuongphapday{
-    + macloppday: int
-    + mucdo: string
-}
-
-class Phuongphap_hoc{
-    + mapphoc: int
-    + tenpp: string
-}
-
-class CLOPhuongphaphoc{
-    + maclopphoc: int
-    + mucdo:  string
-}
-
-class Quydinh_Kiemtra{
-    + maqd: int
-    + tenqd: string
-}
-
-class Hinhthuc_Danhgia{
-    + mahtdg: int
-    + thanhphan_danhgia: string
-    + hinhthuc: string
-    + trongso: int
-}
-
-class NhiemvuSV{
-    + manv: int
-    + noidung: string
-}
-
-class Tailieu{
-    + matl: int
-    + taccgia: string
-    + tentailieu: string
-    + thongtinkhac: string
-    + loaitl: string
-}
- 
-class Khoikienthuc{
-    + makkt: int
-    + kkt_ten: string
-    + kkt_tuchon: string
-    + kkt_mota: string
-}
- 
-class Quytrinhdaotao_Dieukientotnghiep{
-    + ma_qt_dktn: int
-    + noi_dung: string
-}
-class Muctieu_Daotao{
-    + ma_mtdt: int
-    + noi_dung: string
-    + mtdt_chinh: string
-    + mtdt_phu: string
-}
-class MoiquanhePLO_Muctieudaotao{
-    + ma_plo_mtdt: int
-    + ngay_update : date
-}
-class Doituong_Tuyensinh{
-    + ma_dtts : int
-    + noi_dung : string
-}
-
-class Chuongtrinh_daotao{
-    + ma_ctdt: int
-    + nganh_daotao: 
-    + trinhdo_daotao: string
-    + loaihinh_daotao: string
-    + thoigian_daotao: string
-    + tenvanbang: string
-    + noidaotao: string
-}
-
-
-
-(DeCuongchiTiet, Tailieu) .. DecuongTailieu
-(DeCuongchiTiet, NhiemvuSV) .. DeCuongNhiemvu
-(DeCuongchiTiet, Quydinh_Kiemtra) .. DeCuongQuyDinh
-(DeCuongchiTiet, Hinhthuc_Danhgia) .. DeCuongHinhthuc
-DeCuongchiTiet "1" -- "*" Thoigianhoc
-DeCuongchiTiet "*" - "1"Khoikienthuc
-Hocky "1" -- "*" Thoigianhoc
-Khoahoc "1" -- "*" Thoigianhoc
-(DeCuongchiTiet, GiangVien) .. Phutrach
-GiangVien "*" -- "1" Bomon
-Bomon "*" -- "1" Khoa
-DeCuongchiTiet "1" -- "*" Muctieu
-DeCuongchiTiet "1" -- "*" Chuandaura_monhoc
-(Chuandaura_monhoc,PLO) .. CLPO
-(PLO, Muctieu_Daotao) .. MoiquanhePLO_Muctieudaotao
-(Chuongtrinh_daotao, Quytrinhdaotao_Dieukientotnghiep) .. DecuongQuyTrinh
-(Chuongtrinh_daotao, Doituong_Tuyensinh) .. Chitiet_Doituong
-DeCuongchiTiet "1" -- "*" Chitietmonhoc
-Chitietmonhoc "1" -- "*" Chitiet_Chuong
-(Phuongphap_Giangday,Chuandaura_monhoc) .. CLOPhuongphapday
-(DeCuongchiTiet, Chuongtrinh_daotao) .. Decuong_Chuongtrinh
-(Phuongphap_hoc, Chuandaura_monhoc) .. CLOPhuongphaphoc
-(Chuongtrinh_daotao, Muctieu_Daotao) .. CTDT_Muctieudaotao
 @enduml

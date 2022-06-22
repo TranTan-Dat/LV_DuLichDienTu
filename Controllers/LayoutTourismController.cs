@@ -40,6 +40,8 @@ namespace LV_DuLichDienTu.Controllers
             {
                 return NotFound();
             }
+            var appDBContext = _context.BaiViet_DiaDiem.Include(e=>e.NhanVien).Include(g=>g.DiaDiem_DuLich);
+            ViewData["baiViet_goiY"] =appDBContext.ToList();
 
             return View(baiViet_DiaDiem);
         }

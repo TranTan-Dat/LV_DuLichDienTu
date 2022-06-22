@@ -36,13 +36,11 @@
 
             <div class="col-md-4 sidebar ftco-animate fadeInUp ftco-animated">
                 <div class="sidebar-box ftco-animate fadeInUp ftco-animated">
-                    <h3>Đăng ký bên dưới</h3>
+                    <h3>Đăng ký bên dưới</h3>   
 
-                    <div class="">
-                        <H3><a asp-controller="HopDongs" asp-route-id='@Context.Session.GetString("userID")' asp-route-service='@Model.dv_id'  asp-action="Create">Đăng ký</a></H3>
-                    </div>
+                    <h4><a class="btn_Dky" asp-controller="HopDongs" asp-route-id='@Context.Session.GetString("userID")' asp-route-service='@Model.dv_id'  asp-action="Create">Đăng ký</a></h4>
                 </div>
-            </div>
+            </div>  
 
         </div>
     </div>

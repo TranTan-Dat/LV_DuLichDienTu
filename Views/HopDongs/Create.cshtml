@@ -57,75 +57,86 @@
     </div> *@
 
 
-
+<div class="hero-wrap js-fullheight" style="background-image: url('/TourismTemplate/images/bg_4.jpg');">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center"
+            data-scrollax-parent="true">
+            <div class="col-md-9 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
+                <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Thêm Địa Điểm Vào Lịch Trình
+                </h1>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="">
     <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="x_panel">
                 <div class="x_title">
-                    <h2>THÊM HỢP ĐỒNG</h2>
+                    <h2 style="text-align:center;">Bạn muốn thêm địa điểm này vào lịch trình như thế nào?</h2>
                     <div class="clearfix"></div>
                 </div>
-                <div class="x_content">
+                <div class="x_content custom_">
                     <br />
                     <form asp-action="Create" id="demo-form2" data-parsley-validate
-                        class="form-horizontal form-label-left">
+                        class="form-horizontal form-label-left _form">
                         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-                        <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">
-                                <label asp-for="dk_id" class="control-label">Tên du khách</label>
-                                <span class="required">*</span>
+                        <div class="form-group _content">
+                            <label class="control-label col-md-12" for="last-name">
+                                <label asp-for="dk_id" class="control-label _custom_title">Tên du khách</label>
+                                <span class="required _custom_title">*</span>
                             </label>
 
-                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                <select class="form-control col-md-7 col-xs-12" asp-for="dk_id" class="form-control"
+                            <div class="col-md-12">
+                                <select class="form-control col-md-12" asp-for="dk_id"
                                     asp-items="ViewBag.dk_hoten" selected="selected"></select>
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">
-                                <label asp-for="dv_id" class="control-label">Tên dịch vụ</label>
-                                <span class="required">*</span>
+                        <div class="form-group _content">
+                            <label class="control-label col-md-12" for="last-name">
+                                <label asp-for="dv_id" class="control-label _custom_title">Tên dịch vụ</label>
+                                <span class="required _custom_title">*</span>
                             </label>
 
-                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                <select class="form-control col-md-7 col-xs-12" asp-for="dv_id" class="form-control"
+                            <div class="col-md-12">
+                                <select class="form-control col-md-12" asp-for="dv_id" 
                                     asp-items="ViewBag.dv_ten" selected="selected"></select>
                             </div>
                         </div>
 
 
 
-                        <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
-                                <label asp-for="hd_ngaybatdau"></label>
-                                <span class="required">
+                        <div class="form-group _content">
+                            <label class="control-label col-md-12" for="first-name">
+                                <label class="_custom_title ">Ngày bắt đầu</label>
+                                <span class="required _custom_title">
                                     *
                                 </span>
                             </label>
-                            <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="col-md-12">
                                 <input asp-for="hd_ngaybatdau" type="date" id="StartDate" required="required"
-                                    class="form-control col-md-7 col-xs-12">
+                                    class="form-control col-md-12">
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
-                                <label asp-for="hd_ngayketthuc"></label>
-                                <span class="required">
+                        <div class="form-group _content">
+                            <label class="control-label col-md-12" for="first-name">
+                                <label class="_custom_title">Ngày kết thúc</label>
+                                <span class="required _custom_title">
                                     *
                                 </span>
                             </label>
-                            <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="col-md-12">
                                 <input asp-for="hd_ngayketthuc" type="date" id="EndDate"
-                                    required="required" class="form-control col-md-7 col-xs-12">
+                                    required="required" class="form-control col-md-12">
                             </div>
                         </div>
                         @* <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
+                            <label class="control-label col-md-12" for="first-name">
                                 <label asp-for="hd_chiphi"></label>
                                 <span class="required">
                                     *
@@ -164,11 +175,11 @@
                         </div> *@
 
                         <div class="ln_solid"></div>
-                        <div class="form-group">
-                            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 items-center">
+                        <div class="form-group _content">
+                            <div class="items-center _button_custom">
 
                                 @* <a asp-action="Index" class="btn btn-success"> Quay lại</a> *@
-                                <button type="submit" onclick="displayResult()" class="btn btn-primary">Lưu</button>
+                                <button type="submit" onclick="displayResult()" class="btn btn-success _ct_btn">Lưu</button>
                             </div>
                         </div>
 

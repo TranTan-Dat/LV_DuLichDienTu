@@ -19,11 +19,12 @@ class NhaCungCap{
   + ncc_dienthoai: string
   + ncc_diachi: string
   
-  + dangnhap()
-  + dangxuat()
-  + quanlyDichVu()
-  + quanlyHopdong()
-  + capnhatThongtincanhan()
+  ' + dangnhap()
+  ' + dangxuat()
+  ' + quanlyDichVu()
+  ' + XemHopdong()
+  ' + quanlyCamketdichvu()
+  ' + capnhatThongtincanhan()
 }
 
 class DiaDiem_DuLich{
@@ -55,10 +56,10 @@ class DuKhach{
   + dk_email: string 
   + dk_diemthanhvien: int
 
-  + dangnhap()
-  + dangxuat()
-  + quanlyHopdong()
-  + capnhatThongtincanhan()
+  ' + dangnhap()
+  ' + dangxuat()
+  ' + quanlyHopdong()
+  ' + capnhatThongtincanhan()
   
 }
 
@@ -73,6 +74,7 @@ class DichVu{
   + dv_ten: string
   + dv_dienthoai_hotro: string
   + dv_mota: string
+  + dv_tb_gia: int
   + dv_tinhthanh: string
   + dv_quanhuyen: string
   + dv_hinh_duongdan: string
@@ -105,14 +107,14 @@ class NhanVien{
   + nv_diachi: string
   + nv_email: string 
   
-  + dangnhap()
-  + dangxuat()
-  + capnhatThongtincanhan()
-  + quanlyDiadiemdulich()
-  + quanlyLoaidichvu()
-  + quanlyBaivietdiadiem()
-  + xemthongtinDukhach()
-  + xemthongtinNhacungcap()
+  ' + dangnhap()
+  ' + dangxuat()
+  ' + capnhatThongtincanhan()
+  ' + quanlyDiadiemdulich()
+  ' + quanlyLoaidichvu()
+  ' + quanlyBaivietdiadiem()
+  ' + xemthongtinDukhach()
+  ' + xemthongtinNhacungcap()
 }
 
 

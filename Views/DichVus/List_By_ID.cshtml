@@ -28,6 +28,9 @@
                 Hình 
               </th>
               <th>
+                @Html.DisplayNameFor(model => model.dv_tb_gia)
+              </th>
+              <th>
                 @Html.DisplayNameFor(model => model.dv_dienthoai_hotro)
               </th>
               <th>
@@ -64,6 +67,9 @@
                     </td>
                     <td>
                       <img style="width:150px; height: 100px" src="@Html.DisplayFor(modelItem => item.dv_hinh_duongdan)"/>
+                    </td>
+                    <td>
+                      @Html.DisplayFor(modelItem => item.dv_tb_gia)
                     </td>
                     <td>
                       @Html.DisplayFor(modelItem => item.dv_dienthoai_hotro)

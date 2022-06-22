@@ -11,7 +11,8 @@
       <div class="x_content">
         <div> 
           <h2>
-            CAM KẾT DỊCH VỤ <small><a asp-action="Create" asp-route-id='@Context.Session.GetString("userID")'> Thêm mới</a></small>
+            CAM KẾT DỊCH VỤ 
+            @* <small><a asp-action="Create" asp-route-id='@Context.Session.GetString("userID")'> Thêm mới</a></small> *@
         </h2>
         </div>
         
@@ -19,27 +20,21 @@
           <thead>
             <tr>
               <th>
+                Tên dịch vụ
+              </th>
+              <th>
                 @Html.DisplayNameFor(model => model.ckdv_noidung)
               </th>
               <th>
                 @Html.DisplayNameFor(model => model.ckdv_boithuong)
               </th>
-              <th>
-                Tên dịch vụ
-              </th>
-              <th>Tùy chọn</th>
+              @* <th>Tùy chọn</th> *@
             </tr>
           </thead>
           <tbody>
             @foreach (var item in Model)
             {
               <tr>
-                <td>
-                  @Html.DisplayFor(modelItem => item.ckdv_noidung)
-                </td>
-                <td>
-                  @Html.DisplayFor(modelItem => item.ckdv_boithuong)
-                </td>
                 <td>
                   @Html.DisplayFor(modelItem => item.dichVu.dv_ten)
                   @*
@@ -48,13 +43,19 @@
                   *@
                 </td>
                 <td>
-                  @* <a asp-action="Details" asp-route-id="@item.ckdv_id" class="btn btn-success btn-xs"><i
-                    class="fa fa-search"></i> Xem chi tiết</a>| *@
+                  @Html.DisplayFor(modelItem => item.ckdv_noidung)
+                </td>
+                <td>
+                  @Html.DisplayFor(modelItem => item.ckdv_boithuong)
+                </td>
+                @* <td>
+                  <a asp-action="Details" asp-route-id="@item.ckdv_id" class="btn btn-success btn-xs"><i
+                    class="fa fa-search"></i> Xem chi tiết</a>|
                   <a asp-action="Edit" asp-route-id="@item.ckdv_id" class="btn btn-primary btn-xs"><i
                     class="fa fa-pencil"></i> Sửa </a>|
                   <a asp-action="Delete" asp-route-id="@item.ckdv_id" class="btn btn-danger btn-xs"><i
                     class="fa fa-trash-o"></i> Xóa </a>
-                </td>
+                </td> *@
               </tr>
             }
           </tbody>
