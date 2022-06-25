@@ -29,6 +29,7 @@ namespace LV_DuLichDienTu.Controllers
         
         public async Task<IActionResult> List_By_ID(int? id)
         {
+            @ViewData["Get_ID_NCC"] = id;
             var acompec_lvdatContext = _context.CamKetDichVu.Include(c => c.dichVu).Where(m=>m.dv_id==id);
             return View(await acompec_lvdatContext.ToListAsync());
         }
@@ -61,7 +62,7 @@ namespace LV_DuLichDienTu.Controllers
         public IActionResult Create(int id)
         {
             
-            ViewData["Select_dv_ten"] =new SelectList(_context.DichVu.Where(m=>m.ncc_id == id), "dv_id", "dv_ten");
+            ViewData["Select_dv_ten"] =new SelectList(_context.DichVu.Where(m=>m.dv_id == id), "dv_id", "dv_ten");
             return View();
         }
 

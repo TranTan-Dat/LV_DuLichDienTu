@@ -1,12 +1,13 @@
 @startuml SoDoUC
 left to right direction
 actor "Quản lý" as QL
-actor "Khách Hàng" as KH
 actor "Nhà cung cấp" as NCC
 actor "Du khách" as DKhach
 
 
 rectangle  "HỆ THỐNG HỖ TRỢ DU LỊCH ĐIỆN TỬ KẾT HỢP CÁC DỊCH VỤ"{
+  usecase "UC-9 Quản lý lịch trình du lịch" as QLCD
+  
   usecase "UC-8 Quản lý loại dịch vụ" as QLLDV
   usecase "UC-3 Quản lý địa điểm" as QLDD
   ' usecase "UC-9 Quản lý thông tin " as QLTTDD
@@ -18,29 +19,29 @@ rectangle  "HỆ THỐNG HỖ TRỢ DU LỊCH ĐIỆN TỬ KẾT HỢP CÁC DỊ
   usecase "UC-6 Xem thông tin nhà cung cấp" as QLTTKH
   usecase "UC-1 Đăng ký" as DKy
   usecase "UC-2 Đăng nhập" as DNhap
-  usecase "UC-9 Quản lý lịch trình du lịch" as QLCD
   
   usecase "UC-10 Quản lý bài viết" as QLBV
+  usecase "UC-11 Đánh giá chất lượng địa điểm" as DGCL
+  usecase "UC-12 Gợi ý địa điểm du lịch" as GYDD
+
 
   
   ' chỗ nay nhà cung cấp và du khách đều dùng quản lý lịch trình du lịch
 }
 
 
-CapNhat_TTKH ..> QLTTKH : extend
 
-KH -- CapNhat_TTKH
-KH --- DKy
+DKhach - CapNhat_TTKH
+DKhach -- DKy
 
 QLDD -- QL
 QLTTKH -- QL
-QLLDV - QL
+QLLDV -- QL
 QLBV -- QL
 
 
-NCC -|> KH
+NCC -|> DKhach
 
-DKhach --|> KH
 
 NCC - CapNhat_TTDD
 NCC - Them_TTDD
@@ -48,4 +49,18 @@ NCC - Them_TTDD
 
 DKhach - QLCD
 
+
+DNhap <.. QLLDV : include
+DNhap <.. QLBV : include
+DNhap <.. QLDD : include
+DNhap <.. QLTTKH : include
+
+CapNhat_TTDD ..> DNhap : include
+QLCD ..> DNhap : include
+CapNhat_TTKH ..> DNhap : include
+Them_TTDD ..> DNhap : includex
+
+
+QLCD <.. DGCL: extend
+QLCD <.. GYDD: extend
 @enduml

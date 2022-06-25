@@ -115,7 +115,7 @@ namespace LV_DuLichDienTu.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("dv_id,dv_ten,dv_dienthoai_hotro,dv_hinh_duongdan,dv_tieude,dv_tinhthanh,dv_quanhuyen,dv_mota,dv_tb_gia,ckdv_id,ncc_id,ldv_id,hd_id")] DichVu dichVu, IFormFile imageUpload)
         {
-            int temp = id;
+            int temp = dichVu.ncc_id;
             if (id != dichVu.dv_id)
             {
                 return NotFound();
@@ -147,7 +147,7 @@ namespace LV_DuLichDienTu.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("List_By_ID","DichVus", new{id = temp});
             }
             ViewData["Select_TenNCC"]= new SelectList(_context.NhaCungCap,"ncc_id","ncc_ten");
             ViewData["Select_TenLoaiDV"]= new SelectList(_context.LoaiDichVu,"ldv_id","ldv_ten");

@@ -127,7 +127,7 @@
                         </div>
 
 
-                         <div class="form-group">
+                         @* <div class="form-group">
                             <div class="control-label col-md-3 col-sm-3 col-xs-12" style="margin-left: 25%">
                                 <label asp-for="dk_matkhau"></label>
                             </div>
@@ -135,7 +135,8 @@
                                 <input asp-for="dk_matkhau" class="form-control" />
                                 <span asp-validation-for="dk_matkhau" class="text-danger"></span>
                             </div>
-                        </div>
+                        </div> *@
+                        <input type="hidden" asp-for="dk_matkhau" />
 
                         <div class="form-group">
                             <div class="control-label col-md-3 col-sm-3 col-xs-12" style="margin-left: 25%">

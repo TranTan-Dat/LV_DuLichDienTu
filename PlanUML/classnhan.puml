@@ -1,33 +1,85 @@
 @startuml
 left to right direction
-skinparam linetype ortho
-actor "Quản trị viên" as ad
-actor "Giảng viên" as urs
-rectangle "Hệ thống chương trình đào tạo và đề cương chi tiết"{
- urs -- (Quản lý Đề cương chi tiết)
- (Quản lý Đề cương chi tiết) <..... (Xuất file PDF ĐCCTHP) : extends
- urs -- (Quản lý Chương trình đào tạo)
- (Quản lý Chương trình đào tạo) <..... (Xuất file PDF CTDT) : extends 
- urs -- (Quản lý Tài liệu tham khảo)
-urs -- (Quản lý Mục tiêu đề cương học phần)
-urs -- (Quản lý Hình thức đánh giá)
-urs -- (Quản lý Quy trình đào tạo và Điểu kiện tốt nghiệp)
-urs -- (Quản lý Đối tượng tuyển sinh)
-urs -- (Quản lý Nhiệm vụ sinh viên)
-urs -- (Quản lý Quy định kiểm tra)
-urs -- (Quản lý Khối kiến thức)
-urs -- (Quản lý Giảng viên)
-urs -- (Quản lý Bộ môn)
-urs -- (Quản lý Khoa)
-urs -- (Quản lý Chi tiết môn học)
-urs -- (Quản lý Chi tiết chương)
-urs -- (Quản lý Học kỳ)
-urs -- (Quản lý Thời gian học)
-urs -- (Quản lý Khóa học)
-urs -- (Quản lý Phương pháp học)
-urs -- (Quản lý Phương pháp dạy)
-urs -- (Quản lý Chuẩn đầu ra đề cương học phần)
-urs -- (Quản lý Chuẩn đầu ra chương trình đào tạo)
-urs -- (Quản lý Mục tiêu đào tạo)
+skinparam packageStyle rectangle
+actor "Quản trị" as qt 
+rectangle "Hệ thống chương trình đào tạo và đề cương chi tiết" {
+
+    (QL Chương trình đào tạo) as ql_ctdt 
+    (QL Hình thức đánh giá) as ql_htdg
+    (QL Quy trình đào tạo ) as ql_qtdt
+    (QL Đối tượng tuyển sinh) as ql_dtts
+    (QL Khối kiến thức) as ql_kkt
+    (QL Bộ môn) as ql_bm
+    (QL Khoa) as ql_kh
+    (QL Học kỳ) as ql_hk
+    (QL Khóa học) as ql_khoc
+    (QL Giảng viên) as ql_gv
+    (QL Chuẩn đầu ra) as ql_cdr
+    (QL Quy định kiểm tra) as ql_qdkt
+    (QL Mục tiêu đào tạo) as ql_mtdt
+    (Gán vai trò) as gvt
+    (Cấp mật khẩu) as cmk
+    (Đăng nhập) as dn
+
+    (QL Đề cương chi tiết) as ql_dcct
+    (QL Tài liệu tham khảo) as ql_tltk
+    (QL Mục tiêu đề cương học phần) as ql_mtdchp
+    (QL Nhiệm vụ sinh viên) as ql_nvsv
+    (QL Chi tiết môn học) as ql_ctmh
+    (QL Chi tiết chương) as ql_ctc
+    (QL Thời gian học) as ql_tgh
+    (QL Phương pháp học) as ql_pph
+    (QL Phương pháp dạy) as ql_ppd
+    (QL Chuẩn đầu ra đề cương học phần) as ql_cdrdchp
+    (Xuất tập tin ) as xtt
 }
+
+actor "Giảng viên" as gv
+actor "Quản Lý" as ql
+
+gv <|-- ql
+qt -- ql_kh 
+ql_kh <.. ql_bm  : extend
+qt -- ql_hk
+qt -- ql_khoc
+qt -- ql_kkt
+qt --- ql_gv
+
+ql_gv <.. gvt : extend 
+ql_gv <.. cmk : extend
+ql_hk ...> dn : include
+ql_gv ...> dn : include
+ql_khoc ...> dn : include
+ql_kh ...> dn : include
+
+ql_ctdt -- ql
+ql_htdg -- ql
+ql_qtdt -- ql
+ql_dtts -- ql
+ql_mtdt -- ql
+ql_cdr -- ql
+ql_qdkt -- ql
+
+dn <.. ql_ctdt : include
+dn <.. ql_htdg : include
+dn <.. ql_qtdt : include
+dn <.. ql_dtts : include
+dn <.. ql_mtdt : include
+dn <.. ql_cdr  : include
+dn <.. ql_qdkt : include
+
+ql_dcct -- gv
+ql_tltk ...> ql_dcct : extend
+dn <... ql_dcct : include
+ql_mtdchp ...> ql_dcct : extend
+ql_nvsv ...> ql_dcct : extend
+ql_ctmh ....> ql_dcct : extend
+ql_ctc ...> ql_dcct : extend
+ql_tgh ...> ql_dcct : extend
+ql_pph ....> ql_dcct : extend
+ql_ppd ....> ql_dcct : extend
+ql_cdrdchp ...> ql_dcct : extend
+xtt ..> ql_dcct : extend
+xtt ..> ql_ctdt : extend
+
 @enduml
